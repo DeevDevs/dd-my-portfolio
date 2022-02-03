@@ -1,19 +1,22 @@
 .header-menu {
   display: flex;
   height: 10vh;
-  background-color: black;
+  background-color: map-get($colors, "day-theme-main");
   align-items: center;
   justify-content: space-between;
 }
 
 .side-menu {
   position: absolute;
+  // display: flex;
   display: none;
   flex-direction: column;
+  font-size: 1.3rem;
   top: 0;
-  background-color: lightyellow;
-  height: 100vh;
+  background-color: map-get($colors, "day-theme-secondary");
+  height: 100%;
   width: 80vw;
+  z-index: 5;
 }
 
 .menu-list {
@@ -39,4 +42,23 @@
   width: 10rem;
   background-color: red;
   margin: 0 0.5rem;
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(2px);
+  z-index: 2;
 }
