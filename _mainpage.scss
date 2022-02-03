@@ -1,5 +1,6 @@
 .test {
   background-color: map-get($colors, "day-theme-main");
-  width: 30rem;
+  width: 100vw;
+  margin: 2rem auto;
   height: 30rem;
 }
