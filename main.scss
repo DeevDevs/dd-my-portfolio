@@ -1,0 +1,8 @@
+@import "_base.scss";
+@import "_mainpage.scss";
+
+body {
+  margin: 0%;
+  box-sizing: border-box;
+  background-color: map-get($colors, "day-theme-secondary");
+}
