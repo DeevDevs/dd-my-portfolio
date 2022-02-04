@@ -4,11 +4,12 @@ body {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #f7f9ff;
+  background-color: #f0f6ff;
   font-family: "Comfortaa", cursive;
 }
 
 .sec__main {
+  color: #001392;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,7 +29,16 @@ body {
   height: calc(90vh - 0.5rem);
 }
 
+.sec__icon-container {
+  opacity: 0.7;
+}
+
+.sec__icon {
+  height: 12rem;
+}
+
 .sec__description {
+  color: inherit;
   margin: 0 3rem;
 }
 
@@ -76,13 +86,44 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 10vh;
-  background-color: #f7f9ff;
+  background-color: #f0f6ff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  vertical-align: middle;
+}
+
+.logo-container {
+  vertical-align: middle;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    margin: 0 1rem;
+    margin-right: auto;
+  }
+}
+
+.logo {
+  margin: auto;
+  height: 3rem;
+  -webkit-box-shadow: 2px 2px 3px rgba(156, 156, 156, 0.5);
+          box-shadow: 2px 2px 3px rgba(156, 156, 156, 0.5);
+}
+
+.theme-container {
+  margin: 0.5rem 0.75rem 0.5rem 2rem;
+}
+
+.icon__weather {
+  height: 2rem;
 }
 
 .side-menu {
@@ -113,16 +154,18 @@ body {
 
 .side-menu__btn {
   margin: 0 0.5rem;
-  height: 8vh;
-  width: 3rem;
-  background-color: green;
+  border: none;
+  background-color: transparent;
 }
 
-.logo-container {
-  height: 8vh;
-  width: 10rem;
-  background-color: red;
-  margin: 0 0.5rem;
+@media (min-width: 768px) {
+  .side-menu__btn {
+    display: none;
+  }
+}
+
+.icon__menu {
+  height: 2.5rem;
 }
 
 .footer-menu {

@@ -1,4 +1,5 @@
 .sec__main {
+  color: map-get($colors, "night-theme-secondary");
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,16 @@
   height: calc(90vh - 0.5rem);
 }
 
+.sec__icon-container {
+  opacity: 0.7;
+}
+
+.sec__icon {
+  height: 12rem;
+}
+
 .sec__description {
+  color: inherit;
   margin: 0 3rem;
 }
 
