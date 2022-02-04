@@ -3,15 +3,25 @@ $colors: (
   day-theme-secondary: #bfcaf4,
   day-theme-background: #dbe8ff,
   night-theme-secondary: #001392,
+  night-theme-background: #263dd4,
+  night-theme-main: #030d4d,
 );
 
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap");
+
+html {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   padding-top: calc(10vh - 1rem);
   position: relative;
   margin: 0;
-  box-sizing: border-box;
   background-color: map-get($colors, "day-theme-main");
   font-family: "Comfortaa", cursive;
+  transition: background-color 0.5s ease;
 }

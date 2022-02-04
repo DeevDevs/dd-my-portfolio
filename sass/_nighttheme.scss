@@ -1,0 +1,47 @@
+.bg-main {
+  background-color: map-get($colors, "night-theme-main");
+}
+
+.bg-secondary {
+  background-color: map-get($colors, "night-theme-secondary");
+}
+
+.bg-background {
+  background-color: map-get($colors, "night-theme-background");
+}
+
+.text-main {
+  color: map-get($colors, "day-theme-main");
+}
+
+.text-secondary {
+  color: map-get($colors, "day-theme-secondary");
+}
+
+.text-background {
+  color: map-get($colors, "day-theme-background");
+}
+
+// .bg-gradient {
+//   background: linear-gradient(rgba(38, 61, 212, 0.1), rgba(38, 61, 212, 0.1));
+// }
+
+.about-me-dark {
+  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+    url("../images/bg-me.jpg") center / cover no-repeat border-box;
+}
+
+.learning-dark {
+  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+    url("../images/bg-learning.jpg") center / cover no-repeat border-box;
+}
+
+.projects-dark {
+  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+    url("../images/bg-projects.jpg") center / cover no-repeat border-box;
+}
+
+.experience-dark {
+  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+    url("../images/bg-experience.jpg") center / cover no-repeat border-box;
+}

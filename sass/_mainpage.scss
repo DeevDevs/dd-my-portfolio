@@ -5,14 +5,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: map-get($colors, "day-theme-background");
   width: 100vw;
+  max-width: 100%;
   margin: 0.5rem auto;
   height: 90vh;
+  transition: background-color 0.5s ease;
 }
 
 .sec__icon-container {
-  opacity: 0.7;
+  opacity: 0.3;
+  transition: all 0.5s linear;
+}
+
+.zoomed {
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .sec__icon {
@@ -24,13 +31,24 @@
   margin: 0 3rem;
 }
 
+.sec__description p {
+  line-height: 1.6;
+  transition: all 0.5s linear;
+}
+
 .sec__description--title {
   font-size: 1.5rem;
   font-weight: 700;
+  transition: all 0.5s linear;
+}
+
+.zoomed__text {
+  transform: scale(1.05);
 }
 
 .sec__learn-more {
   width: inherit;
+  max-width: 100%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
@@ -63,7 +81,7 @@
 
 @media (min-width: 768px) {
   .sec__btn:hover > .sec__btn--arrow {
-    transform: translateX(1rem);
+    transform: translateX(2.5rem);
   }
 
   .sec__btn:hover > .sec__btn--circle {
@@ -79,13 +97,14 @@
 .sec__btn--arrow {
   position: absolute;
   height: 2.2rem;
-  padding: 0.4rem 1.5rem 0 1.5rem;
-  transform: translateX(1rem);
+  // padding: 0.8rem 1.5rem 0 1.5rem;
+  top: calc(50% - 1.1rem);
+  transform: translateX(2.5rem);
 
   @media (min-width: 768px) {
     position: absolute;
     height: 2.2rem;
-    padding: 0.4rem 1.5rem 0 1.5rem;
+    // padding: 0.4rem 1.5rem 0 1.5rem;
     transform: translateX(-2rem);
     transition: transform 0.5s ease-in-out;
   }
@@ -135,15 +154,3 @@
     ),
     url("../images/bg-experience.jpg") center / cover no-repeat border-box;
 }
-
-// @keyframes rotation-x {
-//   0% {
-//     transform: rotateX(0);
-//   }
-//   50% {
-//     transform: rotateX(160deg);
-//   }
-//   100% {
-//     transform: rotateX(360deg);
-//   }
-// }

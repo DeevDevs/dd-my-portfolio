@@ -2,8 +2,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./sass/main.css" />
+    <script defer type="module" src="./script/controller.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -14,17 +15,18 @@
       <div class="top-menu"></div>
       <div class="logo-container"><img class="logo" src="images/icons/logo-day.svg"></div>
       <div class="theme-container">
-        <div class="theme__btn">
-          <img class="icon__weather" src="images/icons/icon-night.svg">
-        </div>
+        <button class="theme-container__btn" type="button">
+          <img class="icon__theme icon__theme--night icon__theme--active" src="images/icons/icon-night.svg">
+          <img class="icon__theme icon__theme--day" src="images/icons/icon-day.svg">
+        </button>
       </div>
     </header>
     <section class="sec">
     <div class="sec__main about-me">
-      <div class="about-me__icon sec__icon-container"><img class="sec__icon" src="images/icons/about-me-icon.svg"></div>
+      <div class="sec__icon-container"><img class="sec__icon about-me__icon" src="images/icons/icon-me-day.svg"></div>
       <div class="about-me__description sec__description">
         <p class="sec__description--title">About me</p>
-        <p>
+        <p class="sec__description--text">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
           alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
           maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
@@ -40,10 +42,10 @@
       </div>
     </div>
     <div class="sec__main learning">
-      <div class="learning__icon sec__icon-container"><img class="sec__icon" src="images/icons/learning-icon.svg"></div>
+      <div class="sec__icon-container"><img class="sec__icon learning__icon" src="images/icons/learning-icon.svg"></div>
       <div class="learning__description sec__description">
-        <p class="sec__description--title">Learning History</p>
-        <p>
+        <p class="sec__description--title">Qualifications</p>
+        <p class="sec__description--text">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
           alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
           maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
@@ -59,10 +61,10 @@
       </div>
     </div>
     <div class="sec__main projects">
-      <div class="projects__icon sec__icon-container"><img class="sec__icon" src="images/icons/projects-icon.svg"></div>
+      <div class="sec__icon-container"><img class="sec__icon projects__icon" src="images/icons/projects-icon.svg"></div>
       <div class="projects__description sec__description">
         <p class="sec__description--title">My Projects</p>
-        <p>
+        <p class="sec__description--text">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
           alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
           maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
@@ -78,10 +80,10 @@
       </div>
     </div>
     <div class="sec__main experience">
-      <div class="experience__icon sec__icon-container"><img class="sec__icon" src="images/icons/experience-icon.svg"></div>
+      <div class="sec__icon-container"><img class="sec__icon experience__icon" src="images/icons/experience-icon.svg"></div>
       <div class="experience__description sec__description">
         <p class="sec__description--title">Work Experience</p>
-        <p>
+        <p class="sec__description--text">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
           alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
           maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
@@ -98,8 +100,8 @@
     </section>
     </div>
     <footer class="footer-menu">
-      <div><p>Contacts</p></div>
-      <div><p>Address:</p></div>
+      <p>Contact me</p>
+      <p>Address</p>
     </footer>
     <div class="side-menu">
       <ul class="menu-list">
