@@ -1,6 +1,13 @@
 .header-menu {
+  box-sizing: border-box;
+  position: fixed;
   display: flex;
-  height: 10vh;
+  z-index: 2;
+  height: 9vh;
+  min-height: 4rem;
+  width: 100vw;
+  top: 0;
+  margin: auto;
   background-color: map-get($colors, "day-theme-main");
   align-items: center;
   justify-content: space-between;
@@ -29,7 +36,8 @@
 }
 
 .icon__weather {
-  height: 2rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .side-menu {
@@ -68,6 +76,7 @@
 
 .icon__menu {
   height: 2.5rem;
+  transition: transform 0.5s ease-in-out;
 }
 
 .footer-menu {
@@ -86,5 +95,5 @@
   height: 100vh;
   width: 100vw;
   backdrop-filter: blur(2px);
-  z-index: 2;
+  z-index: 3;
 }
