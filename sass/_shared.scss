@@ -77,9 +77,9 @@
   height: 100%;
   width: 80vw;
   z-index: 7;
-  transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
   transition: background-color 0.5s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .side-menu__out {
