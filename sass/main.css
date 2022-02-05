@@ -735,4 +735,9 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.85)), to(rgba(38, 61, 212, 0.85))), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
   background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
 }
+
+.shadow-night {
+  -webkit-box-shadow: 2px 2px 3px #bfcaf4;
+          box-shadow: 2px 2px 3px #bfcaf4;
+}
 /*# sourceMappingURL=main.css.map */
