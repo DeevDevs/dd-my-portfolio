@@ -34,6 +34,7 @@ body {
           align-items: center;
   width: 100vw;
   max-width: 100%;
+  min-height: 92vh;
   overflow: hidden;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(219, 232, 255, 0.6)), to(rgba(219, 232, 255, 0.75))), url("../images/light-speed.jpg") center/cover no-repeat border-box;
   background: linear-gradient(rgba(219, 232, 255, 0.6), rgba(219, 232, 255, 0.75)), url("../images/light-speed.jpg") center/cover no-repeat border-box;
@@ -68,6 +69,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: auto;
   min-height: 12rem;
   min-width: 40%;
   position: relative;
@@ -192,6 +194,7 @@ body {
 }
 
 .advert__section {
+  min-height: 92vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,9 +209,6 @@ body {
           align-items: center;
   margin: 0.5rem auto;
   background-color: rgba(219, 232, 255, 0.75);
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
@@ -343,7 +343,7 @@ body {
   position: relative;
   width: 100vw;
   max-width: 100%;
-  height: 90vh;
+  min-height: 92vh;
 }
 
 @media (min-width: 1080px) {
@@ -397,7 +397,7 @@ body {
   margin: 0 1.5vw;
   padding: 2rem 0;
   max-width: 100%;
-  min-height: 90vh;
+  min-height: 92vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -446,7 +446,18 @@ body {
             transform: translateX(0);
     width: 24vw;
     margin: 0;
-    max-width: 23%;
+    max-width: 24.8%;
+  }
+}
+
+@media (min-width: 1080px) and (orientation: landscape) {
+  .sec__main {
+    position: static;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 24vw;
+    margin: 0;
+    max-width: 24.8%;
   }
 }
 
@@ -831,7 +842,9 @@ body {
 }
 
 .footer-menu p {
+  display: block;
   font-weight: 700;
+  margin: auto;
 }
 
 .overlay {
