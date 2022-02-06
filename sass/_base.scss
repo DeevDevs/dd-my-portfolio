@@ -7,7 +7,7 @@ $colors: (
   night-theme-main: #030d4d,
 );
 
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap');
 
 html {
   max-width: 100%;
@@ -21,7 +21,8 @@ body {
   padding-top: calc(10vh - 1rem);
   position: relative;
   margin: 0;
-  background-color: map-get($colors, "day-theme-main");
-  font-family: "Comfortaa", cursive;
+  background-color: map-get($colors, 'day-theme-main');
+  color: map-get($colors, 'night-theme-secondary');
+  font-family: 'Comfortaa', cursive;
   transition: background-color 0.5s ease;
 }
