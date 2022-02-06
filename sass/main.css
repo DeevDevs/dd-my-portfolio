@@ -666,8 +666,44 @@ body {
 .logo {
   margin: auto;
   height: 3rem;
-  -webkit-box-shadow: 0px 0px 5px #263dd4;
-          box-shadow: 0px 0px 5px #263dd4;
+}
+
+.top-menu {
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .top-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.top-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-self: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top-menu-list li {
+  list-style-type: none;
+  margin: auto;
+  padding: 0 2rem;
+  text-align: center;
+  line-height: 2;
+  cursor: pointer;
 }
 
 .theme-container {
@@ -761,7 +797,7 @@ body {
           animation: cube-rotation 5s cubic-bezier(0.19, 1, 0.22, 1) infinite;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   .side-menu__btn {
     display: none;
   }
@@ -784,8 +820,8 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   font-size: 1.15rem;
-  height: 8vh;
-  max-height: 4rem;
+  height: 9vh;
+  max-height: 8rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -877,27 +913,32 @@ body {
 }
 
 .about-me-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.85)), to(rgba(38, 61, 212, 0.85))), url("../images/bg-me.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)), url("../images/bg-me.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-me.jpg") center/cover no-repeat border-box;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-me.jpg") center/cover no-repeat border-box;
 }
 
 .learning-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.85)), to(rgba(38, 61, 212, 0.85))), url("../images/bg-learning.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)), url("../images/bg-learning.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-learning.jpg") center/cover no-repeat border-box;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-learning.jpg") center/cover no-repeat border-box;
 }
 
 .projects-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.85)), to(rgba(38, 61, 212, 0.85))), url("../images/bg-projects.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)), url("../images/bg-projects.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-projects.jpg") center/cover no-repeat border-box;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-projects.jpg") center/cover no-repeat border-box;
 }
 
 .experience-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.85)), to(rgba(38, 61, 212, 0.85))), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
+}
+
+.welcome-night {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/light-speed.jpg") center/cover no-repeat border-box;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/light-speed.jpg") center/cover no-repeat border-box;
 }
 
 .shadow-night {
-  -webkit-box-shadow: 2px 2px 3px #bfcaf4;
-          box-shadow: 2px 2px 3px #bfcaf4;
+  -webkit-box-shadow: 0px 0px 5px #bfcaf4;
+          box-shadow: 0px 0px 5px #bfcaf4;
 }
 /*# sourceMappingURL=main.css.map */

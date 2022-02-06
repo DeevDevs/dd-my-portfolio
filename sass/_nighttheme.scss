@@ -27,25 +27,30 @@
 // }
 
 .about-me-dark {
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)),
     url('../images/bg-me.jpg') center / cover no-repeat border-box;
 }
 
 .learning-dark {
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)),
     url('../images/bg-learning.jpg') center / cover no-repeat border-box;
 }
 
 .projects-dark {
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)),
     url('../images/bg-projects.jpg') center / cover no-repeat border-box;
 }
 
 .experience-dark {
-  background: linear-gradient(rgba(38, 61, 212, 0.85), rgba(38, 61, 212, 0.85)),
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)),
     url('../images/bg-experience.jpg') center / cover no-repeat border-box;
 }
 
+.welcome-night {
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)),
+    url('../images/light-speed.jpg') center / cover no-repeat border-box;
+}
+
 .shadow-night {
-  box-shadow: 2px 2px 3px map-get($colors, 'day-theme-secondary');
+  box-shadow: 0px 0px 5px map-get($colors, 'day-theme-secondary');
 }

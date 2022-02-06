@@ -18,6 +18,8 @@ class ThemeSwitcher {
   learnCircle = document.querySelectorAll('.sec__btn--circle');
   sectionArrowLeft = document.querySelector('.arrow-left');
   sectionArrowRight = document.querySelector('.arrow-right');
+  welcomeSection = document.querySelector('.welcome-section');
+  spinningBoxImages = document.querySelectorAll('.spin-image');
   theme = 'day';
 
   switchTheme() {
@@ -26,6 +28,7 @@ class ThemeSwitcher {
     this.sideMenu.classList.toggle('bg-secondary');
     this.footer.classList.toggle('text-main');
     document.body.classList.toggle('text-main');
+    this.welcomeSection.classList.toggle('welcome-night');
     this.sectionsMain.forEach((section) => {
       section.classList.toggle('text-main');
     });
@@ -36,12 +39,15 @@ class ThemeSwitcher {
     this.advertImages.forEach((image) => {
       image.classList.toggle('shadow-night');
     });
+    this.spinningBoxImages.forEach((image) => {
+      image.classList.toggle('shadow-night');
+    });
     this.sectionAbout.classList.toggle('about-me-dark');
     this.sectionLearning.classList.toggle('learning-dark');
     this.sectionProjects.classList.toggle('projects-dark');
     this.sectionExperience.classList.toggle('experience-dark');
     if (this.theme === 'day') {
-      this.logo.src = './images/icons/logo-night.svg';
+      this.logo.src = './images/icons/logo-box-night.svg';
       this.aboutMeIcon.src = './images/icons/icon-me-night.svg';
       this.learningIcon.src = './images/icons/learning-icon-night.svg';
       this.projectsIcon.src = './images/icons/projects-icon-night.svg';
@@ -54,9 +60,11 @@ class ThemeSwitcher {
       this.learnArrow.forEach((instance) => {
         instance.src = './images/icons/icon-arrow-night.svg';
       });
+      this.spinningBoxImages.forEach((instance) => (instance.src = './images/icons/logo-squared-night.svg'));
     }
     if (this.theme === 'night') {
-      this.logo.src = './images/icons/logo-day.svg';
+      this.spinningBoxImages.src = './images/icons/logo-squared-day.svg';
+      this.logo.src = './images/icons/logo-box-day.svg';
       this.aboutMeIcon.src = './images/icons/icon-me-day.svg';
       this.learningIcon.src = './images/icons/learning-icon-day.svg';
       this.projectsIcon.src = './images/icons/projects-icon-day.svg';
@@ -69,6 +77,7 @@ class ThemeSwitcher {
       this.learnArrow.forEach((instance) => {
         instance.src = './images/icons/icon-arrow-day.svg';
       });
+      this.spinningBoxImages.forEach((instance) => (instance.src = './images/icons/logo-squared-day.svg'));
     }
     if (this.theme === 'day') {
       this.theme = 'night';

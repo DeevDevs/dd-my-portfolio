@@ -16,8 +16,6 @@
   transition: background-color 0.5s ease;
 }
 
-//OLD 2D LOGO
-
 .logo-container {
   vertical-align: middle;
   width: fit-content;
@@ -28,119 +26,35 @@
   }
 }
 
-//////////////////////
-
-// 3D LOGO
-
-// .logo-container {
-//   position: relative;
-//   vertical-align: middle;
-//   padding-top: 0.5rem;
-//   @media (min-width: 768px) {
-//     margin-right: auto;
-//   }
-// }
-
-// .spin-logo__div {
-//   animation: rotation 10s linear infinite forwards;
-//   transform-style: preserve-3d;
-//   width: 14rem;
-//   height: 3rem;
-// }
-
-// .spin-image {
-//   // display: block;
-//   width: 100%;
-// }
-
-// .spin-logo {
-//   left: 1rem;
-//   position: absolute;
-//   width: 12rem;
-//   height: 3rem;
-//   transform: translateZ(1rem);
-//   box-shadow: 0px 0px 5px #263dd4;
-//   background-color: green;
-// }
-
-// .spin-logo2 {
-//   left: 1rem;
-//   position: absolute;
-//   width: 12rem;
-//   height: 3rem;
-//   transform: rotateY(180deg) translateZ(1rem);
-//   box-shadow: 0px 0px 5px #263dd4;
-//   background-color: green;
-// }
-
-// .spin-logo__side {
-//   left: 0;
-//   position: absolute;
-//   min-height: 100%;
-//   height: 3rem;
-//   background-color: #bfcaf4;
-//   /* width: 10px; */
-//   min-width: 2rem;
-//   transform: rotateY(90deg);
-//   box-shadow: 0px 0px 5px #263dd4;
-// }
-
-// .spin-logo__side2 {
-//   position: absolute;
-//   right: 0;
-//   min-height: 100%;
-//   height: 3rem;
-//   background-color: #bfcaf4;
-//   min-width: 2rem;
-//   transform: rotateY(90deg);
-//   box-shadow: 0px 0px 5px #263dd4;
-// }
-
-// .spin-logo__top {
-//   position: absolute;
-//   top: 0;
-//   left: 1rem;
-//   width: 12rem;
-//   height: 2rem;
-//   background-color: #bfcaf4;
-//   transform: rotateX(90deg) translateZ(1rem);
-//   box-shadow: 0px 0px 5px #263dd4;
-// }
-
-// .spin-logo__bottom {
-//   position: absolute;
-//   left: 1rem;
-//   bottom: 0;
-//   width: 12rem;
-//   height: 2rem;
-//   background-color: #bfcaf4;
-//   transform: rotateX(90deg) translateZ(-1rem);
-//   box-shadow: 0px 0px 5px #263dd4;
-// }
-
-// .spin-logo__div {
-//   // position: absolute;
-
-// }
-
-// @keyframes rotation {
-//   0% {
-//     transform: rotateX(0);
-//   }
-//   50% {
-//     transform: rotateX(360deg);
-//   }
-//   100% {
-//     transform: rotateY(180deg);
-//   }
-// }
-
-////////////////////////////////
-
 .logo {
   margin: auto;
   height: 3rem;
-  box-shadow: 0px 0px 5px #263dd4;
+  // box-shadow: 0px 0px 5px #263dd4;
+}
+
+.top-menu {
+  display: none;
+
+  @media (min-width: 1080px) {
+    display: flex;
+  }
+}
+
+.top-menu-list {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-menu-list li {
+  list-style-type: none;
+  margin: auto;
+  padding: 0 2rem;
+  text-align: center;
+  line-height: 2;
+  cursor: pointer;
 }
 
 .theme-container {
@@ -214,7 +128,7 @@
   border: none;
   background-color: transparent;
   animation: cube-rotation 5s cubic-bezier(0.19, 1, 0.22, 1) infinite;
-  @media (min-width: 768px) {
+  @media (min-width: 1080px) {
     display: none;
   }
 }
@@ -228,8 +142,8 @@
   display: flex;
   flex-direction: row;
   font-size: 1.15rem;
-  height: 8vh;
-  max-height: 4rem;
+  height: 9vh;
+  max-height: 8rem;
   justify-content: space-around;
   align-items: center;
   color: map-get($colors, 'night-theme-secondary');
