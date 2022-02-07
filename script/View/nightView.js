@@ -24,16 +24,11 @@ class ThemeSwitcher {
 
   switchTheme() {
     document.body.classList.toggle('bg-main');
+    document.body.classList.toggle('text-main');
     this.header.classList.toggle('bg-main');
     this.sideMenu.classList.toggle('bg-secondary');
-    this.footer.classList.toggle('text-main');
-    document.body.classList.toggle('text-main');
     this.welcomeSection.classList.toggle('welcome-night');
-    this.sectionsMain.forEach((section) => {
-      section.classList.toggle('text-main');
-    });
     this.sectionsAdvert.forEach((section) => {
-      section.classList.toggle('text-main');
       section.classList.toggle('bg-background');
     });
     this.advertImages.forEach((image) => {

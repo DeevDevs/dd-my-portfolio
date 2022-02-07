@@ -7,7 +7,7 @@
 }
 
 .bg-background {
-  background-color: map-get($colors, 'night-theme-background');
+  background: map-get($colors, 'night-theme-background');
 }
 
 .text-main {

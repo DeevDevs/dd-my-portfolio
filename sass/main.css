@@ -858,7 +858,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #001392;
   -webkit-transition: opacity 0.5s ease-out, -webkit-transform 1s ease-out;
   transition: opacity 0.5s ease-out, -webkit-transform 1s ease-out;
   transition: transform 1s ease-out, opacity 0.5s ease-out;
@@ -934,7 +933,7 @@ body {
 }
 
 .bg-background {
-  background-color: #263dd4;
+  background: #3f50be;
 }
 
 .text-main {

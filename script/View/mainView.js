@@ -53,13 +53,9 @@ class MainView {
 
   revealSection(entry) {
     if (entry[0].isIntersecting) {
-      console.log(entry[0].target.id);
       const thisSection = document.getElementById(entry[0].target.id);
       thisSection.classList.remove('section-hidden');
     }
-    // if (!entry[0].isIntersecting) {
-    //   console.log(entry[0]);
-    // }
   }
 
   checkSectionPosition() {
