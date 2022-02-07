@@ -34,7 +34,7 @@
 
 .top-menu {
   display: none;
-
+  transition: opacity 0.3s linear;
   @media (min-width: 1080px) {
     display: flex;
   }
@@ -147,6 +147,7 @@
   justify-content: space-around;
   align-items: center;
   color: map-get($colors, 'night-theme-secondary');
+  transition: transform 1s ease-out, opacity 0.5s ease-out;
 }
 
 .footer-menu p {

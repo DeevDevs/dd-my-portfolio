@@ -1,15 +1,24 @@
 class MainView {
-  advertSections = document.querySelectorAll('.advert__section');
+  allSections = document.querySelectorAll('.section');
+  topMenu = document.querySelector('.top-menu');
   viewportHeight = window.innerHeight;
-  mainSection = document.querySelector('.sec');
+  advertSections = document.querySelectorAll('.advert__section');
   mainSections = document.querySelectorAll('.sec__main');
+  mainSection = document.querySelector('.sec');
   arrowLeft = document.querySelector('.arrow-left--container');
   arrowRight = document.querySelector('.arrow-right--container');
   currentSlide = 0;
   xDown = null;
   yDown = null;
 
+  allSectionsObserver = new IntersectionObserver(this.revealSection.bind(this), { root: null, threshold: 0.1 });
+  mainSectionObserver = new IntersectionObserver(this.hideShowMenu.bind(this), { root: null, threshold: [0.4] });
+
   constructor() {
+    // this.mainSectionObserver.observe(this.mainSection);
+    // this.allSections.forEach((section) => this.allSectionsObserver.observe(section));
+    this.setObserversCheckPagePosition();
+    // this.activateObserver();
     window.addEventListener('scroll', this.checkSectionPosition.bind(this));
     // prettier-ignore
     this.arrowLeft.addEventListener('click', function () {this.swipeBtn('left');}.bind(this));
@@ -20,17 +29,50 @@ class MainView {
     this.mainSection.addEventListener('touchmove', this.handleTouchMove.bind(this), false);
   }
 
+  setObserversCheckPagePosition() {
+    setTimeout(
+      function () {
+        this.mainSectionObserver.observe(this.mainSection);
+        this.allSections.forEach((section) => this.allSectionsObserver.observe(section));
+        if (document.body.getBoundingClientRect().top < 0) {
+          this.allSections.forEach((section) => section.classList.remove('section-hidden'));
+        }
+      }.bind(this),
+      200
+    );
+  }
+
+  hideShowMenu(entry) {
+    if (entry[0].isIntersecting) {
+      this.topMenu.style.opacity = 0;
+    }
+    if (!entry[0].isIntersecting) {
+      this.topMenu.style.opacity = 1;
+    }
+  }
+
+  revealSection(entry) {
+    if (entry[0].isIntersecting) {
+      console.log(entry[0].target.id);
+      const thisSection = document.getElementById(entry[0].target.id);
+      thisSection.classList.remove('section-hidden');
+    }
+    // if (!entry[0].isIntersecting) {
+    //   console.log(entry[0]);
+    // }
+  }
+
   checkSectionPosition() {
     this.advertSections.forEach((section) => {
       const positionY = section.getBoundingClientRect().y;
       if (positionY > 0 - this.viewportHeight / 9 && positionY < this.viewportHeight - this.viewportHeight / 9) {
-        section.querySelector('.advert__section--headline').classList.add('zoomed');
-        section.querySelector('.advert__section--image-container').classList.add('zoomed');
-        section.querySelector('.advert__section--text-container').classList.add('zoomed');
+        // section.querySelector('.advert__section--headline').classList.add('zoomed');
+        // section.querySelector('.advert__section--image-container').classList.add('zoomed');
+        // section.querySelector('.advert__section--text-container').classList.add('zoomed');
       } else if (positionY < 0 + this.viewportHeight / 9 || positionY > this.viewportHeight - this.viewportHeight / 9) {
-        section.querySelector('.advert__section--headline').classList.remove('zoomed');
-        section.querySelector('.advert__section--image-container').classList.remove('zoomed');
-        section.querySelector('.advert__section--text-container').classList.remove('zoomed');
+        // section.querySelector('.advert__section--headline').classList.remove('zoomed');
+        // section.querySelector('.advert__section--image-container').classList.remove('zoomed');
+        // section.querySelector('.advert__section--text-container').classList.remove('zoomed');
       }
     });
   }

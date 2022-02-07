@@ -5,7 +5,18 @@ $colors: (
   night-theme-secondary: #001392,
   night-theme-background: #263dd4,
   night-theme-main: #030d4d,
+  night-linear-gradient: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)),
 );
+
+// :root{
+//   // --day-theme-main: #f0f6ff,
+//   --day-theme-main: #c3c3c3,
+//   --day-theme-secondary: #bfcaf4,
+//   --day-theme-background: #dbe8ff,
+//   --night-theme-secondary: #001392,
+//   --night-theme-background: #263dd4,
+//   --night-theme-main: #030d4d,
+// }
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap');
 

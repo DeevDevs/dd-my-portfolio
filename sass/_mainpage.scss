@@ -45,38 +45,40 @@
 }
 
 .spin-logo__div {
-  margin: auto;
-  transform-style: preserve-3d;
   width: 10rem;
   height: 10rem;
+  margin: auto;
+  // perspective: -300px;
+  // transform: rotateX(30deg);
+  // perspective-origin: top;
+  transform-style: preserve-3d;
   animation: rotation 10s linear infinite forwards;
 }
 
 .spin-image {
-  display: block;
   width: 100%;
 }
 
 .spin-logo {
+  display: block;
   position: absolute;
   width: 10rem;
   height: 10rem;
   transform: translateZ(5rem);
   box-shadow: 0px 0px 5px #263dd4;
-  background-color: green;
 }
 
 .spin-logo2 {
+  display: block;
   position: absolute;
   width: 10rem;
   height: 10rem;
   transform: rotateY(180deg) translateZ(5rem);
   box-shadow: 0px 0px 5px #263dd4;
-  background-color: green;
 }
 
 .spin-logo__side {
-  left: 0;
+  display: block;
   position: absolute;
   min-height: 100%;
   height: 10rem;
@@ -86,8 +88,8 @@
 }
 
 .spin-logo__side2 {
+  display: block;
   position: absolute;
-  right: 0;
   min-height: 100%;
   height: 10rem;
   min-width: 10rem;
@@ -127,10 +129,14 @@
   }
 }
 
+.section-hidden {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
 // ADVERTISEMENT SECTION
 
 .advert__sections {
-  color: map-get($colors, 'night-theme-secondary');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,7 +154,7 @@
   align-items: center;
   margin: 0.5rem auto;
   background-color: rgba(219, 232, 255, 0.75);
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
 }
 
 .advert__section--headline {
@@ -250,6 +256,7 @@
   width: 100vw;
   max-width: 100%;
   min-height: 92vh;
+  transition: transform 0.5s ease-out, opacity 0.3s ease-out;
 
   @media (min-width: 1080px) {
     overflow-x: visible;
@@ -279,7 +286,6 @@
 }
 
 .sec__main {
-  color: map-get($colors, 'night-theme-secondary');
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -291,8 +297,7 @@
   max-width: 100%;
   min-height: 92vh;
   height: fit-content;
-  transition: background-color 0.5s ease;
-  transition: transform 0.5s ease-in-out;
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .about-me {
@@ -402,6 +407,11 @@
 }
 
 .sec__learn-more--phrase {
+  @media (pointer: coarse) {
+    visibility: visible;
+    opacity: 1;
+  }
+
   @media (min-width: 1080px) {
     visibility: hidden;
     opacity: 0;
@@ -418,16 +428,10 @@
   // max-width: 3rem;
 
   @media (min-width: 768px) {
-    border: none;
-    background-color: transparent;
-    position: relative;
     margin-right: 3rem;
   }
 
   @media (min-width: 1080px) {
-    border: none;
-    background-color: transparent;
-    position: relative;
     margin-right: 0;
   }
 }
@@ -452,6 +456,13 @@
   height: 2.2rem;
   top: calc(50% - 1.1rem);
   transform: translateX(2.5rem);
+
+  @media (pointer: coarse) {
+    position: absolute;
+    height: 2.2rem;
+    top: calc(50% - 1.1rem);
+    transform: translateX(2.5rem);
+  }
 
   @media (min-width: 1080px) {
     position: absolute;
