@@ -14,17 +14,25 @@ class MainView {
 
   allSectionsObserver = new IntersectionObserver(this.revealSection.bind(this), { root: null, threshold: 0.1 });
   mainSectionObserver = new IntersectionObserver(this.hideShowMenu.bind(this), { root: null, threshold: [0.4] });
-  imageObserver = new IntersectionObserver(this.loadLazyImages.bind(this), { root: null, threshold: 0 });
+  imageObserver = new IntersectionObserver(this.loadLazyImages.bind(this), {
+    root: null,
+    threshold: 0,
+    rootMargin: '400px',
+  });
+  backgroundObserver = new IntersectionObserver(this.loadBackgroundImages.bind(this), {
+    root: null,
+    threshold: 0,
+    rootMargin: '400px',
+  });
 
   constructor() {
-    console.log(this.lazyImages);
-    // this.mainSectionObserver.observe(this.mainSection);
-    // this.allSections.forEach((section) => this.allSectionsObserver.observe(section));
     this.setObserversCheckPagePosition();
-    // this.activateObserver();
-    // window.addEventListener('scroll', this.checkSectionPosition.bind(this));
-    // prettier-ignore
-    this.arrowLeft.addEventListener('click', function () {this.swipeBtn('left');}.bind(this));
+    this.arrowLeft.addEventListener(
+      'click',
+      function () {
+        this.swipeBtn('left');
+      }.bind(this)
+    );
     // prettier-ignore
     this.arrowRight.addEventListener('click',function () {this.swipeBtn('right');}.bind(this));
     //TESTING
@@ -37,12 +45,13 @@ class MainView {
       function () {
         this.mainSectionObserver.observe(this.mainSection);
         this.allSections.forEach((section) => this.allSectionsObserver.observe(section));
+        this.backgroundObserver.observe(this.mainSection);
         this.lazyImages.forEach((image) => this.imageObserver.observe(image));
         if (document.body.getBoundingClientRect().top < 0) {
           this.allSections.forEach((section) => section.classList.remove('section-hidden'));
         }
       }.bind(this),
-      200
+      400
     );
   }
 
@@ -65,7 +74,6 @@ class MainView {
 
   loadLazyImages(entry, observer) {
     if (!entry[0].isIntersecting) return;
-    if (entry[0].isIntersecting) console.log(entry[0]);
 
     entry[0].target.src = entry[0].target.dataset.src;
     entry[0].target.addEventListener('load', function () {
@@ -75,20 +83,11 @@ class MainView {
     observer.unobserve(entry[0].target);
   }
 
-  // checkSectionPosition() {
-  //   this.advertSections.forEach((section) => {
-  //     const positionY = section.getBoundingClientRect().y;
-  //     if (positionY > 0 - this.viewportHeight / 9 && positionY < this.viewportHeight - this.viewportHeight / 9) {
-  //       // section.querySelector('.advert__section--headline').classList.add('zoomed');
-  //       // section.querySelector('.advert__section--image-container').classList.add('zoomed');
-  //       // section.querySelector('.advert__section--text-container').classList.add('zoomed');
-  //     } else if (positionY < 0 + this.viewportHeight / 9 || positionY > this.viewportHeight - this.viewportHeight / 9) {
-  //       // section.querySelector('.advert__section--headline').classList.remove('zoomed');
-  //       // section.querySelector('.advert__section--image-container').classList.remove('zoomed');
-  //       // section.querySelector('.advert__section--text-container').classList.remove('zoomed');
-  //     }
-  //   });
-  // }
+  loadBackgroundImages(entries, observer) {
+    if (!entries[0].isIntersecting) return;
+    entries[0].target.querySelectorAll('.sec__main').forEach((element) => element.classList.remove('lazy-bg'));
+    observer.unobserve(entries[0].target);
+  }
 
   swipeSlide(string) {
     if (string === 'right') {
@@ -99,10 +98,10 @@ class MainView {
       if (this.currentSlide <= 0) return;
       this.currentSlide--;
     }
-    document.querySelector('.about-me').style.transform = `translateX(${(0 - this.currentSlide) * 100}vw)`;
-    document.querySelector('.learning').style.transform = `translateX(${(1 - this.currentSlide) * 100}vw)`;
-    document.querySelector('.projects').style.transform = `translateX(${(2 - this.currentSlide) * 100}vw)`;
-    document.querySelector('.experience').style.transform = `translateX(${(3 - this.currentSlide) * 100}vw)`;
+    document.getElementById('about-me').style.transform = `translateX(${(0 - this.currentSlide) * 100}vw)`;
+    document.getElementById('learning').style.transform = `translateX(${(1 - this.currentSlide) * 100}vw)`;
+    document.getElementById('projects').style.transform = `translateX(${(2 - this.currentSlide) * 100}vw)`;
+    document.getElementById('experience').style.transform = `translateX(${(3 - this.currentSlide) * 100}vw)`;
   }
 
   //////////////////////// Swiping functions TESTING //////////////////////////////

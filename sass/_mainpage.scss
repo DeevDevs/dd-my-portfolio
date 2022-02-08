@@ -313,7 +313,7 @@
   transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
-.about-me {
+#about-me {
   top: 0;
   left: 0;
   transform: translateX(0);
@@ -321,19 +321,19 @@
     url('../images/bg-me.jpg') center / cover no-repeat border-box;
 }
 
-.learning {
+#learning {
   transform: translateX(100vw);
   background: linear-gradient(rgba(219, 232, 255, 0.75), rgba(219, 232, 255, 0.75)),
     url('../images/bg-learning.jpg') center / cover no-repeat border-box;
 }
 
-.projects {
+#projects {
   transform: translateX(200vw);
   background: linear-gradient(rgba(219, 232, 255, 0.75), rgba(219, 232, 255, 0.75)),
     url('../images/bg-projects.jpg') center / cover no-repeat border-box;
 }
 
-.experience {
+#experience {
   transform: translateX(300vw);
   background: linear-gradient(rgba(219, 232, 255, 0.75), rgba(219, 232, 255, 0.75)),
     url('../images/bg-experience.jpg') center / cover no-repeat border-box;
@@ -342,7 +342,7 @@
 @media (min-width: 1080px) {
   .sec__main {
     position: static;
-    transform: translateX(0);
+    transform: translateX(0) !important;
     width: 24vw;
     margin: 0;
     max-width: 24.8%;
@@ -357,6 +357,23 @@
     margin: 0;
     max-width: 24.8%;
   }
+}
+
+#about-me.lazy-bg {
+  background-image: none;
+  background-color: rgba(219, 232, 255, 0.75);
+}
+#learning.lazy-bg {
+  background-image: none;
+  background-color: rgba(219, 232, 255, 0.75);
+}
+#projects.lazy-bg {
+  background-image: none;
+  background-color: rgba(219, 232, 255, 0.75);
+}
+#experience.lazy-bg {
+  background-image: none;
+  background-color: rgba(219, 232, 255, 0.75);
 }
 
 .sec__icon-container {
@@ -465,10 +482,12 @@
 }
 
 .sec__btn--arrow {
+  width: 2.2rem;
   position: absolute;
   height: 2.2rem;
   top: calc(50% - 1.1rem);
   transform: translateX(2.5rem);
+  z-index: 100;
 
   @media (pointer: coarse) {
     position: absolute;

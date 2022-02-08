@@ -129,7 +129,7 @@
       <div class="arrow-container arrow-right--container">
         <img class="arrow-right" src="./images/icons/l-arrow-right-day.svg">
       </div>
-    <div class="sec__main about-me">
+    <div class="sec__main lazy-bg" id="about-me">
       <div class="sec__icon-container"><img class="sec__icon about-me__icon" src="images/icons/icon-me-day.svg"></div>
       <div class="about-me__description sec__description">
         <p class="sec__description--title">About me</p>
@@ -148,7 +148,7 @@
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>
     </div>
-    <div class="sec__main learning">
+    <div class="sec__main lazy-bg" id="learning">
       <div class="sec__icon-container"><img class="sec__icon learning__icon" src="images/icons/learning-icon-day.svg"></div>
       <div class="learning__description sec__description">
         <p class="sec__description--title">Qualifications</p>
@@ -167,7 +167,7 @@
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>
     </div>
-    <div class="sec__main projects">
+    <div class="sec__main lazy-bg" id="projects">
       <div class="sec__icon-container"><img class="sec__icon projects__icon" src="images/icons/projects-icon-day.svg"></div>
       <div class="projects__description sec__description">
         <p class="sec__description--title">My Projects</p>
@@ -180,13 +180,16 @@
       </div>
       <div class="sec__learn-more">
         <button class="projects__learn-more__btn sec__btn">
-          <img class="sec__btn--arrow" src="images/icons/icon-arrow-day.svg">
+          <!-- <img class="sec__btn--arrow" src="images/icons/icon-arrow-day.svg"> -->
+          <svg class="sec__btn--arrow">
+            <use href="images/icons/all-icons.svg#icon-arrow-day"></use>
+          </svg>
           <img class="sec__btn--circle" src="images/icons/icon-circle-day.svg">
         </button>
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>
     </div>
-    <div class="sec__main experience">
+    <div class="sec__main lazy-bg" id="experience">
       <div class="sec__icon-container"><img class="sec__icon experience__icon" src="images/icons/experience-icon-day.svg"></div>
       <div class="experience__description sec__description">
         <p class="sec__description--title">Work Experience</p>

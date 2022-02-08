@@ -6,10 +6,10 @@ class ThemeSwitcher {
   sectionsAdvert = document.querySelectorAll('.advert__section');
   advertImages = document.querySelectorAll('.advert__section--image-container');
   sectionsMain = document.querySelectorAll('.sec__main');
-  sectionAbout = document.querySelector('.about-me');
-  sectionLearning = document.querySelector('.learning');
-  sectionProjects = document.querySelector('.projects');
-  sectionExperience = document.querySelector('.experience');
+  sectionAbout = document.getElementById('about-me');
+  sectionLearning = document.getElementById('learning');
+  sectionProjects = document.getElementById('projects');
+  sectionExperience = document.getElementById('experience');
   aboutMeIcon = document.querySelector('.about-me__icon');
   learningIcon = document.querySelector('.learning__icon');
   projectsIcon = document.querySelector('.projects__icon');
