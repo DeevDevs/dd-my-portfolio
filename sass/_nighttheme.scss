@@ -27,22 +27,22 @@
 // }
 
 .about-me-dark {
-  background: map-get($colors, 'night-linear-gradient'), url('../images/bg-me.jpg') center / cover no-repeat border-box;
+  background: map-get($colors, 'night-linear-gradient'), url('../images/bg-me.jpg') center / cover no-repeat border-box !important;
 }
 
 .learning-dark {
   background: map-get($colors, 'night-linear-gradient'),
-    url('../images/bg-learning.jpg') center / cover no-repeat border-box;
+    url('../images/bg-learning.jpg') center / cover no-repeat border-box !important;
 }
 
 .projects-dark {
   background: map-get($colors, 'night-linear-gradient'),
-    url('../images/bg-projects.jpg') center / cover no-repeat border-box;
+    url('../images/bg-projects.jpg') center / cover no-repeat border-box !important;
 }
 
 .experience-dark {
   background: map-get($colors, 'night-linear-gradient'),
-    url('../images/bg-experience.jpg') center / cover no-repeat border-box;
+    url('../images/bg-experience.jpg') center / cover no-repeat border-box !important;
 }
 
 .welcome-night {

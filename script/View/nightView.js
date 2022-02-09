@@ -6,18 +6,21 @@ class ThemeSwitcher {
   sectionsAdvert = document.querySelectorAll('.advert__section');
   advertImages = document.querySelectorAll('.advert__section--image-container');
   sectionsMain = document.querySelectorAll('.sec__main');
+
   sectionAbout = document.getElementById('about-me');
   sectionLearning = document.getElementById('learning');
   sectionProjects = document.getElementById('projects');
   sectionExperience = document.getElementById('experience');
+
   aboutMeIcon = document.querySelector('.about-me__icon');
   learningIcon = document.querySelector('.learning__icon');
   projectsIcon = document.querySelector('.projects__icon');
   experienceIcon = document.querySelector('.experience__icon');
+
   learnArrow = document.querySelectorAll('.sec__btn--arrow');
   learnCircle = document.querySelectorAll('.sec__btn--circle');
-  sectionArrowLeft = document.querySelector('.arrow-left');
-  sectionArrowRight = document.querySelector('.arrow-right');
+  sectionArrowLeft = document.querySelector('.l-arrow-left');
+  sectionArrowRight = document.querySelector('.l-arrow-right');
   welcomeSection = document.querySelector('.welcome-section');
   spinningBoxImages = document.querySelectorAll('.spin-image');
   theme = 'day';
@@ -42,37 +45,38 @@ class ThemeSwitcher {
     this.sectionProjects.classList.toggle('projects-dark');
     this.sectionExperience.classList.toggle('experience-dark');
     if (this.theme === 'day') {
-      this.logo.src = './images/icons/logo-box-night.svg';
-      this.aboutMeIcon.src = './images/icons/icon-me-night.svg';
-      this.learningIcon.src = './images/icons/learning-icon-night.svg';
-      this.projectsIcon.src = './images/icons/projects-icon-night.svg';
-      this.experienceIcon.src = './images/icons/experience-icon-night.svg';
-      this.sectionArrowRight.src = './images/icons/l-arrow-right-night.svg';
-      this.sectionArrowLeft.src = './images/icons/l-arrow-left-night.svg';
-      this.learnCircle.forEach((instance) => {
-        instance.src = './images/icons/icon-circle-night.svg';
-      });
+      this.logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-night"></use>`;
+      this.sectionArrowRight.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-right-night"></use>`;
+      this.sectionArrowLeft.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-left-night"></use>`;
+      this.aboutMeIcon.innerHTML = `<use href="./images/icons/all-icons.svg#icon-me-night"></use>`;
+      this.learningIcon.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-night"></use>`;
+      this.projectsIcon.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-night"></use>`;
+      this.experienceIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-night"></use>`;
       this.learnArrow.forEach((instance) => {
-        instance.src = './images/icons/icon-arrow-night.svg';
+        instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-arrow-night"></use>`;
       });
-      this.spinningBoxImages.forEach((instance) => (instance.src = './images/icons/logo-squared-night.svg'));
+      this.learnCircle.forEach((instance) => {
+        instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-circle-night"></use>`;
+      });
+      // this.spinningBoxImages.forEach((instance) => (instance.src = './images/icons/logo-squared-night.svg'));
     }
     if (this.theme === 'night') {
-      this.spinningBoxImages.src = './images/icons/logo-squared-day.svg';
-      this.logo.src = './images/icons/logo-box-day.svg';
-      this.aboutMeIcon.src = './images/icons/icon-me-day.svg';
-      this.learningIcon.src = './images/icons/learning-icon-day.svg';
-      this.projectsIcon.src = './images/icons/projects-icon-day.svg';
-      this.experienceIcon.src = './images/icons/experience-icon-day.svg';
-      this.sectionArrowRight.src = './images/icons/l-arrow-right-day.svg';
-      this.sectionArrowLeft.src = './images/icons/l-arrow-left-day.svg';
-      this.learnCircle.forEach((instance) => {
-        instance.src = './images/icons/icon-circle-day.svg';
-      });
+      // this.spinningBoxImages.src = './images/icons/logo-squared-day.svg';
+
+      this.logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-day"></use>`;
+      this.sectionArrowRight.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-right-day"></use>`;
+      this.sectionArrowLeft.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-left-day"></use>`;
+      this.aboutMeIcon.innerHTML = `<use href="./images/icons/all-icons.svg#icon-me-day"></use>`;
+      this.learningIcon.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-day"></use>`;
+      this.projectsIcon.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-day"></use>`;
+      this.experienceIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-day"></use>`;
       this.learnArrow.forEach((instance) => {
-        instance.src = './images/icons/icon-arrow-day.svg';
+        instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-arrow-day"></use>`;
       });
-      this.spinningBoxImages.forEach((instance) => (instance.src = './images/icons/logo-squared-day.svg'));
+      this.learnCircle.forEach((instance) => {
+        instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-circle-day"></use>`;
+      });
+      // this.spinningBoxImages.forEach((instance) => (instance.src = './images/icons/logo-squared-day.svg'));
     }
     if (this.theme === 'day') {
       this.theme = 'night';

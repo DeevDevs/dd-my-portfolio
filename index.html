@@ -10,10 +10,16 @@
   <body>
     <header class="header-menu">
       <button class="side-menu__btn" type="button">
-        <img class="icon__menu" src="images/icons/icon-menu.svg">
+          <svg class="icon__menu">
+            <use href="./images/icons/all-icons.svg#icon-menu"></use>
+          </svg>  
       </button>
-      <!-- OLD 2D LOGO -->
-      <div class="logo-container"><img class="logo" src="images/icons/logo-box-day.svg"></div>
+      <div class="logo-container">
+        <!-- <img class="logo" src="images/icons/logo-box-day.svg"> -->
+        <svg class="logo">
+          <use href="./images/icons/all-icons.svg#logo-box-day"></use>
+        </svg>  
+      </div>
       <div class="top-menu">
         <ul class="top-menu-list">
           <li>About me</li>
@@ -39,8 +45,16 @@
       </div> -->
       <div class="theme-container">
         <button class="theme-container__btn" type="button">
-          <img class="icon__theme icon__theme--night icon__theme--active" src="images/icons/icon-night.svg">
-          <img class="icon__theme icon__theme--day" src="images/icons/icon-day.svg">
+          <span class="icon__theme icon__theme--night icon__theme--active">
+            <svg class="svg__header">
+              <use href="./images/icons/all-icons.svg#icon-night"></use>
+            </svg>
+          </span>
+          <span class="icon__theme icon__theme--day">
+            <svg class="svg__header">
+              <use href="./images/icons/all-icons.svg#icon-day"></use>
+            </svg>
+          </span>
         </button>
       </div>
     </header>
@@ -124,13 +138,24 @@
     </section>
     <section class="section sec section-hidden"  id="section-4">
       <div class="arrow-container arrow-left--container">
-        <img class="arrow-left" src="./images/icons/l-arrow-left-day.svg">
+        <!-- <img class="arrow-left" src="./images/icons/l-arrow-left-day.svg"> -->
+        <svg class="l-arrow l-arrow-left">
+          <use href="./images/icons/all-icons.svg#l-arrow-left-day"></use>
+        </svg>
       </div>
       <div class="arrow-container arrow-right--container">
-        <img class="arrow-right" src="./images/icons/l-arrow-right-day.svg">
+        <!-- <img class="arrow-right" src="./images/icons/l-arrow-right-day.svg"> -->
+        <svg class="l-arrow l-arrow-right">
+          <use href="./images/icons/all-icons.svg#l-arrow-right-day"></use>
+        </svg>
       </div>
     <div class="sec__main lazy-bg" id="about-me">
-      <div class="sec__icon-container"><img class="sec__icon about-me__icon" src="images/icons/icon-me-day.svg"></div>
+      <!-- <div class="lazy-bg" id="about-me"></div> -->
+      <div class="sec__icon-container">
+        <svg class="sec__icon about-me__icon">
+          <use href="./images/icons/all-icons.svg#icon-me-day"></use>
+        </svg>
+      </div>
       <div class="about-me__description sec__description">
         <p class="sec__description--title">About me</p>
         <p class="sec__description--text">
@@ -142,14 +167,22 @@
       </div>
       <div class="sec__learn-more">
         <button class="about-me__learn-more__btn sec__btn">
-          <img class="sec__btn--arrow" src="images/icons/icon-arrow-day.svg">
-          <img class="sec__btn--circle" src="images/icons/icon-circle-day.svg">
+          <svg class="sec__btn--arrow">
+            <use href="./images/icons/all-icons.svg#icon-arrow-day"></use>
+          </svg>
+          <svg class="sec__btn--circle">
+            <use href="./images/icons/all-icons.svg#icon-circle-day"></use>
+          </svg>
         </button>
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>
     </div>
     <div class="sec__main lazy-bg" id="learning">
-      <div class="sec__icon-container"><img class="sec__icon learning__icon" src="images/icons/learning-icon-day.svg"></div>
+      <div class="sec__icon-container">
+        <svg class="sec__icon learning__icon">
+          <use href="./images/icons/all-icons.svg#learning-icon-day"></use>
+        </svg>
+      </div>
       <div class="learning__description sec__description">
         <p class="sec__description--title">Qualifications</p>
         <p class="sec__description--text">
@@ -161,14 +194,23 @@
       </div>
       <div class="sec__learn-more">
         <button class="learning__learn-more__btn sec__btn">
-          <img class="sec__btn--arrow" src="images/icons/icon-arrow-day.svg">
-          <img class="sec__btn--circle" src="images/icons/icon-circle-day.svg">
+          <svg class="sec__btn--arrow">
+            <use href="./images/icons/all-icons.svg#icon-arrow-day"></use>
+          </svg>
+          <svg class="sec__btn--circle">
+            <use href="./images/icons/all-icons.svg#icon-circle-day"></use>
+          </svg>
         </button>
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>
     </div>
     <div class="sec__main lazy-bg" id="projects">
-      <div class="sec__icon-container"><img class="sec__icon projects__icon" src="images/icons/projects-icon-day.svg"></div>
+      <div class="sec__icon-container">
+        <!-- <img class="sec__icon projects__icon" src="images/icons/projects-icon-day.svg"> -->
+        <svg class="sec__icon projects__icon">
+          <use href="./images/icons/all-icons.svg#projects-icon-day"></use>
+        </svg>
+      </div>
       <div class="projects__description sec__description">
         <p class="sec__description--title">My Projects</p>
         <p class="sec__description--text">
@@ -180,24 +222,20 @@
       </div>
       <div class="sec__learn-more">
         <button class="projects__learn-more__btn sec__btn">
-          <!-- <img class="sec__btn--arrow" src="images/icons/icon-arrow-day.svg"> -->
-          <img class="sec__btn--circle" src="images/icons/icon-circle-day.svg">
           <svg class="sec__btn--arrow">
-            <use href="images/icons/all-icons.svg#icon-arrow-day"></use>
+            <use href="./images/icons/all-icons.svg#icon-arrow-day"></use>
           </svg>
-
-          <!-- <svg class="sec__btn--circle">
-            <use href="images/icons/all-icons.svg#icon-circle-day"></use>
-          </svg> -->
+          <svg class="sec__btn--circle">
+            <use href="./images/icons/all-icons.svg#icon-circle-day"></use>
+          </svg>
         </button>
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>
     </div>
     <div class="sec__main lazy-bg" id="experience">
       <div class="sec__icon-container">
-        <!-- <img class="sec__icon experience__icon" src="images/icons/experience-icon-day.svg"> -->
         <svg class="sec__icon experience__icon">
-          <use href="images/icons/all-icons.svg#experience-icon-day"></use>
+          <use href="./images/icons/all-icons.svg#experience-icon-day"></use>
         </svg>
       </div>
       <div class="experience__description sec__description">
@@ -211,8 +249,12 @@
       </div>
       <div class="sec__learn-more">
         <button class="experience__learn-more__btn sec__btn">
-          <img class="sec__btn--arrow" src="images/icons/icon-arrow-day.svg">
-          <img class="sec__btn--circle" src="images/icons/icon-circle-day.svg">
+          <svg class="sec__btn--arrow">
+            <use href="./images/icons/all-icons.svg#icon-arrow-day"></use>
+          </svg>
+          <svg class="sec__btn--circle">
+            <use href="./images/icons/all-icons.svg#icon-circle-day"></use>
+          </svg>
         </button>
         <p class="sec__learn-more--phrase">Learn More</p>
       </div>

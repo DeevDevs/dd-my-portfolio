@@ -390,10 +390,10 @@ body {
 
 .arrow-container {
   position: absolute;
-  height: 20vh;
+  height: 15rem;
   top: 30vh;
   z-index: 2;
-  opacity: 0.07;
+  opacity: 0.05;
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
@@ -402,6 +402,11 @@ body {
   .arrow-container {
     display: none;
   }
+}
+
+.l-arrow {
+  height: 15rem;
+  width: 3rem;
 }
 
 .arrow-left--container {
@@ -610,32 +615,29 @@ body {
 }
 
 .sec__btn {
+  position: relative;
   border: none;
   background-color: transparent;
-  position: relative;
-  margin-right: 1rem;
-}
-
-@media (min-width: 768px) {
-  .sec__btn {
-    margin-right: 3rem;
-  }
+  margin-right: 3rem;
+  margin-left: 2rem;
 }
 
 @media (min-width: 1080px) {
   .sec__btn {
-    margin-right: 0;
+    margin-left: 0;
+    margin-right: 2rem;
+    padding-left: 3rem;
   }
 }
 
 @media (min-width: 1080px) {
   .sec__btn:hover > .sec__btn--arrow {
-    -webkit-transform: translateX(2.5rem);
-            transform: translateX(2.5rem);
+    -webkit-transform: translateX(0.1rem) scale(0.8);
+            transform: translateX(0.1rem) scale(0.8);
   }
   .sec__btn:hover > .sec__btn--circle {
-    -webkit-transform: perspective(20rem) translateZ(1rem);
-            transform: perspective(20rem) translateZ(1rem);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
   .sec__btn:hover ~ .sec__learn-more--phrase {
     visibility: visible;
@@ -644,31 +646,17 @@ body {
 }
 
 .sec__btn--arrow {
-  width: 2.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   position: absolute;
-  height: 2.2rem;
-  top: calc(50% - 1.1rem);
-  -webkit-transform: translateX(2.5rem);
-          transform: translateX(2.5rem);
-  z-index: 100;
-}
-
-@media (pointer: coarse) {
-  .sec__btn--arrow {
-    position: absolute;
-    height: 2.2rem;
-    top: calc(50% - 1.1rem);
-    -webkit-transform: translateX(2.5rem);
-            transform: translateX(2.5rem);
-  }
+  -webkit-transform: scale(0.7) translateX(0.2rem);
+          transform: scale(0.7) translateX(0.2rem);
 }
 
 @media (min-width: 1080px) {
   .sec__btn--arrow {
-    position: absolute;
-    height: 2.2rem;
-    -webkit-transform: translateX(-2rem);
-            transform: translateX(-2rem);
+    -webkit-transform: scale(1) translateX(-4rem);
+            transform: scale(1) translateX(-4rem);
     -webkit-transition: -webkit-transform 0.5s ease-in-out;
     transition: -webkit-transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
@@ -677,9 +665,8 @@ body {
 }
 
 .sec__btn--circle {
-  height: 3rem;
-  width: auto;
-  padding: 0 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
@@ -688,14 +675,12 @@ body {
 
 @media (min-width: 1080px) {
   .sec__btn--circle {
-    height: 3rem;
-    padding: 0 2rem;
     -webkit-transition: -webkit-transform 0.5s ease-in-out;
     transition: -webkit-transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-    -webkit-transform: perspective(20rem) translateZ(-7rem);
-            transform: perspective(20rem) translateZ(-7rem);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
 }
 
@@ -883,6 +868,7 @@ body {
 
 .icon__menu {
   height: 2.5rem;
+  width: 2.5rem;
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
@@ -898,6 +884,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   font-size: 1.15rem;
+  min-height: 4.5rem;
   height: 9vh;
   max-height: 8rem;
   -ms-flex-pack: distribute;
@@ -971,6 +958,17 @@ body {
   }
 }
 
+.svg__header {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.svg__buttons {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: auto;
+}
+
 .bg-main {
   background-color: #030d4d;
 }
@@ -996,23 +994,23 @@ body {
 }
 
 .about-me-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-me.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-me.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-me.jpg") center/cover no-repeat border-box !important;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-me.jpg") center/cover no-repeat border-box !important;
 }
 
 .learning-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-learning.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-learning.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-learning.jpg") center/cover no-repeat border-box !important;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-learning.jpg") center/cover no-repeat border-box !important;
 }
 
 .projects-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-projects.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-projects.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-projects.jpg") center/cover no-repeat border-box !important;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-projects.jpg") center/cover no-repeat border-box !important;
 }
 
 .experience-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-experience.jpg") center/cover no-repeat border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-experience.jpg") center/cover no-repeat border-box !important;
+  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-experience.jpg") center/cover no-repeat border-box !important;
 }
 
 .welcome-night {
