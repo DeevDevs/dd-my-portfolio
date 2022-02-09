@@ -268,7 +268,7 @@
   position: relative;
   width: 100vw;
   max-width: 100%;
-  // min-height: fit-content;
+  min-height: max-content;
   min-height: 92vh;
   transition: transform 0.5s ease-out, opacity 0.3s ease-out;
 
