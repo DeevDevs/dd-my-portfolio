@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta http-equiv="Cache-control" content="public"> -->
     <link rel="stylesheet" href="./sass/main.css" />
     <script defer type="module" src="./script/controller.js"></script>
     <title>Document</title>
@@ -29,20 +30,6 @@
         </ul>
     </div>
       <!-- ////////////////////////////////////////// -->
-      <!-- <div class="logo-container">
-        <div class="spin-logo__div">
-          <div class="spin-logo__side"></div>
-          <div class="spin-logo__side2"></div>
-          <div class="spin-logo__top"></div>
-          <div class="spin-logo__bottom"></div>
-          <div class="spin-logo">
-            <img class="spin-image" src="./images/icons/logo-day.svg" />
-          </div>
-          <div class="spin-logo2">
-            <img class="spin-image" src="./images/icons/logo-day.svg" />
-          </div>
-        </div>
-      </div> -->
       <div class="theme-container">
         <button class="theme-container__btn" type="button">
           <span class="icon__theme icon__theme--night icon__theme--active">
@@ -61,26 +48,20 @@
     <section class="welcome-section">
       <div class="welcome-phrase"><p>Welcome to My Portfolio</p></div>
       <div class="welcome-3d-container">
+        <div class="vertical-rotation__div">
         <div class="spin-logo__div">
-          <div class="spin-logo__side">
-            <img class="spin-image" src="./images/icons/logo-squared-day.svg" />
-          </div>
-          <div class="spin-logo__side2">
-            <img class="spin-image" src="./images/icons/logo-squared-day.svg" />
-          </div>
-          <div class="spin-logo">
-            <img class="spin-image" src="./images/icons/logo-squared-day.svg" />
-          </div>
-          <div class="spin-logo2">
-            <img class="spin-image" src="./images/icons/logo-squared-day.svg" />
-          </div>
-    <!-- <div class="spin-logo__top">
-            <img class="spin-image" src="./images/icons/logo-squared-day.svg" />
-          </div>
-          <div class="spin-logo__bottom">
-            <img class="spin-image" src="./images/icons/logo-squared-day.svg" />
-          </div> -->
+            <svg class="spin-logo spinning__svg box-side">
+              <use class="spin-image" href="./images/icons/all-icons.svg#logo-box-day"></use>
+            </svg>
+          <div class="spin-logo__side box-side"></div>
+          <div class="spin-logo__side2 box-side"></div>
+          <div class="spin-logo__top box-side"></div>
+          <div class="spin-logo__bottom box-side"></div>
+            <svg class="spin-logo2 spinning__svg box-side">
+              <use class="spin-image" href="./images/icons/all-icons.svg#logo-box-day"></use>
+            </svg>
         </div>
+      </div>
       </div>
     </section>
     <section class="advert__sections">

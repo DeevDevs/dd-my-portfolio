@@ -29,7 +29,12 @@
 .logo {
   margin: auto;
   height: 3rem;
-  // box-shadow: 0px 0px 5px #263dd4;
+  width: 12rem;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 10px #737bb1;
+  }
 }
 
 .top-menu {
@@ -50,8 +55,8 @@
 
 .top-menu-list li {
   list-style-type: none;
-  margin: auto;
-  padding: 0 2rem;
+  // margin: auto;
+  margin: 0 2rem;
   text-align: center;
   line-height: 2;
   cursor: pointer;
@@ -68,6 +73,7 @@
   min-height: 1.5rem;
   min-width: 1.5rem;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .icon__theme {
@@ -155,6 +161,7 @@
   display: block;
   font-weight: 700;
   margin: auto;
+  cursor: pointer;
 }
 
 .overlay {

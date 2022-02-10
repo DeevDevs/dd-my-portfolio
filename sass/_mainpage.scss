@@ -20,14 +20,14 @@
 }
 
 .welcome-phrase {
-  // color: map-get($colors, 'night-theme-secondary');
-  margin-top: 2rem;
+  // margin-top: 2rem;
   font-size: 1.6rem;
   margin: auto;
   text-align: center;
 
   @media (min-width: 1080px) {
     font-size: 2.5rem;
+    // margin: 0 0 0 4rem;
   }
 }
 
@@ -38,86 +38,100 @@
   min-height: 12rem;
   min-width: 40%;
   position: relative;
+
   @media (min-width: 1080px) {
     min-height: 20rem;
     transform: scale(1.3);
   }
 }
 
-.spin-logo__div {
-  width: 10rem;
-  height: 10rem;
+.vertical-rotation__div {
   margin: auto;
-  // perspective: -300px;
-  // transform: rotateX(30deg);
-  // perspective-origin: top;
   transform-style: preserve-3d;
-  animation: rotation 10s linear infinite forwards;
+  animation: rotationY 7s linear infinite forwards;
+}
+
+.spin-logo__div {
+  position: relative;
+  margin: auto;
+  transform-style: preserve-3d;
+  width: 18rem;
+  height: 4rem;
+  animation: rotation 7s linear infinite forwards;
 }
 
 .spin-image {
-  width: 100%;
+  width: 18rem;
+  height: 4rem;
 }
 
 .spin-logo {
-  display: block;
   position: absolute;
-  width: 10rem;
-  height: 10rem;
-  transform: translateZ(5rem);
+  width: 16rem;
+  height: 4rem;
+  transform: translateZ(1rem);
   box-shadow: 0px 0px 5px #263dd4;
+  background-color: map-get($colors, 'day-theme-secondary');
 }
 
 .spin-logo2 {
-  display: block;
   position: absolute;
-  width: 10rem;
-  height: 10rem;
-  transform: rotateY(180deg) translateZ(5rem);
+  width: 16rem;
+  height: 4rem;
+  transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem);
   box-shadow: 0px 0px 5px #263dd4;
+  background-color: map-get($colors, 'day-theme-secondary');
 }
 
 .spin-logo__side {
-  display: block;
   position: absolute;
-  min-height: 100%;
-  height: 10rem;
-  min-width: 10rem;
-  transform: rotateY(270deg) translateZ(5rem);
+  height: 4rem;
+  background-color: #bfcaf4;
+  width: 2rem;
+  transform: rotateY(90deg) translateZ(-1rem);
   box-shadow: 0px 0px 5px #263dd4;
 }
 
 .spin-logo__side2 {
-  display: block;
   position: absolute;
-  min-height: 100%;
-  height: 10rem;
-  min-width: 10rem;
-  transform: rotateY(90deg) translateZ(5rem);
+  height: 4rem;
+  background-color: #bfcaf4;
+  width: 2rem;
+  transform: rotateY(90deg) translateZ(15rem);
   box-shadow: 0px 0px 5px #263dd4;
 }
 
-// .spin-logo__top {
-//   position: absolute;
-//   top: 0;
-//   width: 10rem;
-//   height: 10rem;
-//   background-color: green;
-//   transform: rotateX(90deg) translateZ(5rem);
-//   box-shadow: 0px 0px 5px #263dd4;
-// }
+.spin-logo__top {
+  position: absolute;
+  width: 16rem;
+  height: 2rem;
+  background-color: #bfcaf4;
+  transform: rotateX(90deg) translateZ(1rem);
+  box-shadow: 0px 0px 5px #263dd4;
+}
 
-// .spin-logo__bottom {
-//   position: absolute;
-//   bottom: 0;
-//   width: 10rem;
-//   height: 10rem;
-//   background-color: black;
-//   transform: rotateX(270deg) translateZ(5rem);
-//   box-shadow: 0px 0px 5px #263dd4;
-// }
+.spin-logo__bottom {
+  position: absolute;
+  width: 16rem;
+  height: 2rem;
+  background-color: #bfcaf4;
+  transform: rotateX(90deg) translateZ(-3rem);
+  box-shadow: 0px 0px 5px #263dd4;
+}
 
 @keyframes rotation {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(360deg);
+  }
+  100% {
+    transform: rotateX(720deg);
+  }
+}
+
+@keyframes rotationY {
   0% {
     transform: rotateY(0);
   }
@@ -389,6 +403,10 @@
   @media (min-width: 1080px) {
     width: 100%;
   }
+
+  @media (max-height: 640px) {
+    display: none;
+  }
 }
 
 .zoomed {
@@ -462,6 +480,7 @@
   background-color: transparent;
   margin-right: 3rem;
   margin-left: 2rem;
+  cursor: pointer;
 
   @media (min-width: 1080px) {
     margin-left: 0;

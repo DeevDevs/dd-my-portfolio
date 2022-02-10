@@ -22,10 +22,6 @@
   color: map-get($colors, 'day-theme-background');
 }
 
-// .bg-gradient {
-//   background: linear-gradient(rgba(38, 61, 212, 0.1), rgba(38, 61, 212, 0.1));
-// }
-
 .about-me-dark {
   background: map-get($colors, 'night-linear-gradient'), url('../images/bg-me.jpg') center / cover no-repeat border-box !important;
 }
