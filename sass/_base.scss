@@ -36,4 +36,5 @@ body {
   color: map-get($colors, 'night-theme-secondary');
   font-family: 'Comfortaa', cursive;
   transition: background-color 0.5s ease;
+  min-height: 100vh;
 }

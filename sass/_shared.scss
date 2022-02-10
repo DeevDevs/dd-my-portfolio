@@ -54,6 +54,7 @@
 }
 
 .top-menu-list li {
+  text-decoration: none;
   list-style-type: none;
   // margin: auto;
   margin: 0 2rem;
@@ -121,6 +122,9 @@
   padding-left: 0;
   margin-top: 4rem;
 }
+.menu-list a {
+  text-decoration: none;
+}
 
 .menu-list li {
   list-style-type: none;
@@ -178,19 +182,19 @@
   transition: all 0.5s ease-in-out;
 }
 
-@keyframes cube-rotation {
-  0% {
-    transform: rotateZ(0deg);
-    animation-play-state: running;
-  }
-  50% {
-    transform: rotateZ(360deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-    animation-play-state: paused;
-  }
-}
+// @keyframes cube-rotation {
+//   0% {
+//     transform: rotateZ(0deg);
+//     animation-play-state: running;
+//   }
+//   50% {
+//     transform: rotateZ(360deg);
+//   }
+//   100% {
+//     transform: rotateZ(360deg);
+//     animation-play-state: paused;
+//   }
+// }
 
 ////////////// SVG SETTINGS ////////////////
 
@@ -203,4 +207,11 @@
   height: 2.5rem;
   width: 2.5rem;
   margin: auto;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }

@@ -16,6 +16,7 @@ body {
   font-family: 'Comfortaa', cursive;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
+  min-height: 100vh;
 }
 
 .welcome-section {
@@ -837,6 +838,7 @@ body {
 }
 
 .top-menu-list li {
+  text-decoration: none;
   list-style-type: none;
   margin: 0 2rem;
   text-align: center;
@@ -921,6 +923,10 @@ body {
   margin-top: 4rem;
 }
 
+.menu-list a {
+  text-decoration: none;
+}
+
 .menu-list li {
   list-style-type: none;
   margin: 0 0 1rem 0;
@@ -997,44 +1003,6 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-@-webkit-keyframes cube-rotation {
-  0% {
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
-  }
-  50% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
-  }
-}
-
-@keyframes cube-rotation {
-  0% {
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
-  }
-  50% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
-  }
-}
-
 .svg__header {
   height: 1.5rem;
   width: 1.5rem;
@@ -1044,6 +1012,13 @@ body {
   height: 2.5rem;
   width: 2.5rem;
   margin: auto;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .bg-main {
