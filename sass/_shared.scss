@@ -182,19 +182,19 @@
   transition: all 0.5s ease-in-out;
 }
 
-// @keyframes cube-rotation {
-//   0% {
-//     transform: rotateZ(0deg);
-//     animation-play-state: running;
-//   }
-//   50% {
-//     transform: rotateZ(360deg);
-//   }
-//   100% {
-//     transform: rotateZ(360deg);
-//     animation-play-state: paused;
-//   }
-// }
+@keyframes cube-rotation {
+  0% {
+    transform: rotateZ(0deg);
+    animation-play-state: running;
+  }
+  50% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+    animation-play-state: paused;
+  }
+}
 
 ////////////// SVG SETTINGS ////////////////
 
