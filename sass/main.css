@@ -1187,8 +1187,8 @@ a:visited {
       -ms-flex-direction: column;
           flex-direction: column;
   opacity: 0;
-  -webkit-transition: opacity 0.6s linear;
-  transition: opacity 0.6s linear;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .shown-quals {

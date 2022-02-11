@@ -24,7 +24,7 @@ class QualificationsView {
     }.bind(this)));
     //prettier-ignore
     this.btnCloseQuals.addEventListener('click', function () {
-        this.toggleDisplayQualifications(this.qualsChosen, true);
+        this.closeDisplayQualifications(this.qualsChosen);
         this.displayTowers();
     }.bind(this));
   }
@@ -51,7 +51,7 @@ class QualificationsView {
       setTimeout(
         function () {
           this.towerBox.style.display = 'none';
-          this.toggleDisplayQualifications('short');
+          this.openDisplayQualifications('short');
         }.bind(this),
         1800
       );
@@ -75,7 +75,7 @@ class QualificationsView {
       setTimeout(
         function () {
           this.towerBox.style.display = 'none';
-          this.toggleDisplayQualifications('long');
+          this.openDisplayQualifications('long');
         }.bind(this),
         1800
       );
@@ -83,46 +83,79 @@ class QualificationsView {
     setTimeout(() => {
       this.bothTowers.forEach((tower) => {
         tower.style.transform = 'translateX(0)';
-        tower.style.opacity = '1';
+        // tower.style.opacity = '1';
       });
       this.allImageBoxes.forEach((box) => {
         box.style.transform = 'scale(1)';
-        box.style.opacity = '1';
+        // box.style.opacity = '1';
       });
     }, 1800);
   }
 
   displayTowers() {
-    this.towerBox.style.display = 'flex';
-    this.allImageBoxes.forEach((box) => {
-      box.style.visibility = 'visible';
-    });
-    this.bothTowers.forEach((tower) => {
-      tower.style.visibility = 'visible';
-    });
-    this.towersBase.style.visibility = 'visible';
+    setTimeout(
+      function () {
+        this.towerBox.style.display = 'flex';
+        this.allImageBoxes.forEach((box) => {
+          box.style.visibility = 'visible';
+          setTimeout(function () {
+            box.style.opacity = '1';
+          }, 50);
+        });
+        this.bothTowers.forEach((tower) => {
+          tower.style.visibility = 'visible';
+          setTimeout(function () {
+            tower.style.opacity = '1';
+          }, 50);
+        });
+        this.towersBase.style.visibility = 'visible';
+      }.bind(this),
+      550
+    );
   }
 
-  toggleDisplayQualifications(type, close = false) {
+  openDisplayQualifications(type) {
     if (type === 'short') {
-      this.qualsShort.style.display = `${close ? 'none' : 'flex'}`;
+      this.qualsShort.style.display = 'flex';
       setTimeout(
         function () {
-          this.qualsShort.style.opacity = `${close ? 0 : 1}`;
+          this.qualsShort.style.opacity = 1;
         }.bind(this),
-        200
+        300
       );
     }
     if (type === 'long') {
-      this.qualsLong.style.display = `${close ? 'none' : 'flex'}`;
+      this.qualsLong.style.display = 'flex';
       setTimeout(
         function () {
-          this.qualsLong.style.opacity = `${close ? 0 : 1}`;
+          this.qualsLong.style.opacity = 1;
         }.bind(this),
-        200
+        300
       );
     }
-    this.btnCloseEqualsBox.style.display = `${close ? 'none' : 'block'}`;
+    this.btnCloseEqualsBox.style.display = 'block';
+  }
+
+  closeDisplayQualifications(type) {
+    if (type === 'short') {
+      this.qualsShort.style.opacity = 0;
+      setTimeout(
+        function () {
+          this.qualsShort.style.display = 'none';
+        }.bind(this),
+        500
+      );
+    }
+    if (type === 'long') {
+      this.qualsLong.style.opacity = 0;
+      setTimeout(
+        function () {
+          this.qualsLong.style.display = 'none';
+        }.bind(this),
+        600
+      );
+    }
+    this.btnCloseEqualsBox.style.display = 'none';
   }
 }
 
