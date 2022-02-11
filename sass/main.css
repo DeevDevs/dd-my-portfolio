@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 html {
   max-width: 100%;
 }
@@ -1120,6 +1121,7 @@ a:visited {
 }
 
 .choice-part {
+  background-color: #bfcaf4;
   position: relative;
   padding-top: 5rem;
   display: -webkit-box;
@@ -1129,7 +1131,46 @@ a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 140vh;
+  min-height: 120vh;
+}
+
+.choice-part__image {
+  width: 100vw;
+  left: 0;
+  top: -10rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 20rem;
+}
+
+.choice-part__question {
+  width: 48%;
+  color: black;
+  font-family: 'Creepster', cursive;
+  font-size: 2.5rem;
+  text-shadow: 4px 4px 8px red;
+  padding-right: 1rem;
+}
+
+.shao-kahn {
+  width: 60vw;
+  max-width: 30rem;
+}
+
+.shao-kahn__question {
+  overflow-wrap: break-word;
 }
 
 .choice-part__towers {
@@ -1204,5 +1245,6 @@ a:visited {
   top: 0;
   right: 0;
   margin-top: 5rem;
+  z-index: 1;
 }
 /*# sourceMappingURL=main.css.map */
