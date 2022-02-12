@@ -1,5 +1,7 @@
 class QualificationsView {
+  introBox = document.querySelector('.intro-part');
   choiceBox = document.querySelector('.choice-part');
+  kahnBox = document.querySelector('.choice-part__image');
   towerBox = document.querySelector('.choice-part__towers');
   bothTowers = document.querySelectorAll('.towers');
   leftTower = document.querySelector('.tower-short');
@@ -12,8 +14,10 @@ class QualificationsView {
   bothQuals = document.querySelectorAll('.quals');
   qualsShort = document.querySelector('.quals-short');
   qualsLong = document.querySelector('.quals-long');
-  btnCloseEqualsBox = document.querySelector('.close-equals-btn__box');
-  btnCloseQuals = document.querySelector('.close-equals__btn');
+  btnCloseQualsBox = document.querySelector('.close-quals-btn__box');
+  btnCloseQuals = document.querySelector('.close-quals__btn');
+  eduIT = document.querySelector('.close-quals-it');
+  eduAll = document.querySelector('.close-quals-all');
 
   qualsChosen;
 
@@ -37,7 +41,10 @@ class QualificationsView {
       this.rightTower.style.opacity = '0';
       this.rightTower.style.visibility = 'hidden';
       this.imgBoxesLong.forEach((box) => (box.style.visibility = 'hidden'));
-      this.leftTower.style.transform = 'translateX(50%)';
+      // this.leftTower.style.transform = 'translateX(50%)';
+      window.innerWidth <= 1079
+        ? (this.leftTower.style.transform = 'translateX(50%)')
+        : (this.leftTower.style.transform = 'translateY(50%)');
       //prettier-ignore
       setTimeout(function () {this.leftTower.style.visibility = 'hidden';}.bind(this),900);
       this.imgBoxesShort.forEach((box) => {
@@ -52,6 +59,11 @@ class QualificationsView {
         function () {
           this.towerBox.style.display = 'none';
           this.openDisplayQualifications('short');
+          this.choiceBox.classList.add('choice-background');
+          this.introBox.classList.add('choice-background');
+          this._makeElementDisappear(this.kahnBox, 500);
+          this._makeElementAppear(this.btnCloseQuals, 500, 'inline-block');
+          this._makeElementAppear(this.eduIT, 500, 'inline-block');
         }.bind(this),
         1800
       );
@@ -61,7 +73,10 @@ class QualificationsView {
       this.leftTower.style.opacity = '0';
       this.leftTower.style.visibility = 'hidden';
       this.imgBoxesShort.forEach((box) => (box.style.visibility = 'hidden'));
-      this.rightTower.style.transform = 'translateX(-50%)';
+      // this.rightTower.style.transform = 'translateX(-50%)';
+      window.innerWidth <= 1079
+        ? (this.rightTower.style.transform = 'translateX(-50%)')
+        : (this.rightTower.style.transform = 'translateY(-50%)');
       //prettier-ignore
       setTimeout(function () {this.rightTower.style.visibility = 'hidden';}.bind(this),900);
       this.imgBoxesLong.forEach((box) => {
@@ -76,6 +91,11 @@ class QualificationsView {
         function () {
           this.towerBox.style.display = 'none';
           this.openDisplayQualifications('long');
+          this.choiceBox.classList.add('choice-background');
+          this.introBox.classList.add('choice-background');
+          this._makeElementDisappear(this.kahnBox, 500);
+          this._makeElementAppear(this.btnCloseQuals, 500, 'inline-block');
+          this._makeElementAppear(this.eduAll, 500, 'inline-block');
         }.bind(this),
         1800
       );
@@ -83,11 +103,9 @@ class QualificationsView {
     setTimeout(() => {
       this.bothTowers.forEach((tower) => {
         tower.style.transform = 'translateX(0)';
-        // tower.style.opacity = '1';
       });
       this.allImageBoxes.forEach((box) => {
         box.style.transform = 'scale(1)';
-        // box.style.opacity = '1';
       });
     }, 1800);
   }
@@ -109,6 +127,8 @@ class QualificationsView {
           }, 50);
         });
         this.towersBase.style.visibility = 'visible';
+        this.choiceBox.classList.remove('choice-background');
+        this.introBox.classList.remove('choice-background');
       }.bind(this),
       550
     );
@@ -116,46 +136,47 @@ class QualificationsView {
 
   openDisplayQualifications(type) {
     if (type === 'short') {
-      this.qualsShort.style.display = 'flex';
-      setTimeout(
-        function () {
-          this.qualsShort.style.opacity = 1;
-        }.bind(this),
-        300
-      );
+      this._makeElementAppear(this.qualsShort, 300, 'grid');
+      this._makeElementAppear(this.eduIT, 300, 'inline-block');
     }
     if (type === 'long') {
-      this.qualsLong.style.display = 'flex';
-      setTimeout(
-        function () {
-          this.qualsLong.style.opacity = 1;
-        }.bind(this),
-        300
-      );
+      this._makeElementAppear(this.qualsLong, 300, 'grid');
+      this._makeElementAppear(this.eduAll, 300, 'inline-block');
     }
-    this.btnCloseEqualsBox.style.display = 'block';
+    this.btnCloseQualsBox.style.display = 'flex';
   }
 
   closeDisplayQualifications(type) {
     if (type === 'short') {
-      this.qualsShort.style.opacity = 0;
-      setTimeout(
-        function () {
-          this.qualsShort.style.display = 'none';
-        }.bind(this),
-        500
-      );
+      this._makeElementDisappear(this.qualsShort, 500);
+      this._makeElementDisappear(this.eduIT, 500);
     }
     if (type === 'long') {
-      this.qualsLong.style.opacity = 0;
-      setTimeout(
-        function () {
-          this.qualsLong.style.display = 'none';
-        }.bind(this),
-        600
-      );
+      this._makeElementDisappear(this.qualsLong, 500);
+      this._makeElementDisappear(this.eduAll, 500);
     }
-    this.btnCloseEqualsBox.style.display = 'none';
+    this._makeElementDisappear(this.btnCloseQuals, 500);
+    this._makeElementAppear(this.kahnBox, 1000, 'flex');
+  }
+
+  _makeElementAppear(element, timer, display) {
+    element.style.display = display;
+    setTimeout(
+      function () {
+        element.style.opacity = 1;
+      }.bind(this),
+      timer
+    );
+  }
+
+  _makeElementDisappear(element, timer) {
+    element.style.opacity = 0;
+    setTimeout(
+      function () {
+        element.style.display = 'none';
+      }.bind(this),
+      timer
+    );
   }
 }
 
