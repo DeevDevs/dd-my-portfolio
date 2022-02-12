@@ -1,7 +1,9 @@
 class QualificationsView {
   introBox = document.querySelector('.intro-part');
+  introText = document.querySelector('.intro-part__text-box');
+  kahnInvisible = document.querySelector('.kahn-part__invisible');
   choiceBox = document.querySelector('.choice-part');
-  kahnBox = document.querySelector('.choice-part__image');
+  kahnBox = document.querySelector('.kahn-part');
   towerBox = document.querySelector('.choice-part__towers');
   bothTowers = document.querySelectorAll('.towers');
   leftTower = document.querySelector('.tower-short');
@@ -18,10 +20,15 @@ class QualificationsView {
   btnCloseQuals = document.querySelector('.close-quals__btn');
   eduIT = document.querySelector('.close-quals-it');
   eduAll = document.querySelector('.close-quals-all');
+  kahnObserver = new IntersectionObserver(this.kahnAttached.bind(this), {
+    root: null,
+    threshold: 1,
+  });
 
   qualsChosen;
 
   constructor() {
+    this.kahnObserver.observe(this.kahnInvisible);
     //prettier-ignore
     this.bothTowers.forEach((tower) => tower.addEventListener('click', function (e) {
         this.chooseTower(e);
@@ -31,6 +38,14 @@ class QualificationsView {
         this.closeDisplayQualifications(this.qualsChosen);
         this.displayTowers();
     }.bind(this));
+  }
+
+  kahnAttached(entry, observer) {
+    console.log(entry[0]);
+    if (!entry[0].isIntersecting && entry[0].boundingClientRect.top <= 0) {
+      this.kahnBox.classList.add('detatch');
+    }
+    if (entry[0].isIntersecting && entry[0].boundingClientRect.top >= 0) this.kahnBox.classList.remove('detatch');
   }
 
   chooseTower(e) {
