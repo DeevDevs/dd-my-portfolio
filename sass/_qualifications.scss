@@ -1,7 +1,7 @@
 .intro-part {
   position: relative;
   padding-top: 1.5rem;
-  height: 70vh;
+  height: 92vh;
   min-height: 20rem;
   background-image: linear-gradient(to bottom, map-get($colors, 'day-theme-secondary'), #121e69);
   display: flex;
@@ -112,6 +112,7 @@
   flex-direction: column;
   min-height: 40rem;
   overflow: auto;
+  min-height: 92vh;
 }
 
 .choice-background {
@@ -131,12 +132,13 @@
 .kahn-part,
 .kahn-part__invisible {
   left: 0;
-  top: -250px;
+  bottom: 0;
+  // top: -250px;
   position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  max-height: 17rem;
+  max-height: 13rem;
   margin-top: 2rem;
   padding-top: 3rem;
   transition: opacity 0.5s linear;
@@ -144,10 +146,21 @@
 
   @media (min-width: 640px) {
     max-width: 26.5rem;
-    max-height: 17rem;
+    max-height: 14.5rem;
     bottom: 0rem;
     justify-content: flex-start;
   }
+
+  @media (min-width: 1080px) {
+    max-width: 26.5rem;
+    max-height: 22rem;
+    bottom: 0rem;
+    justify-content: flex-start;
+  }
+}
+
+.choice-part__image-container {
+  height: 20rem;
 }
 
 .kahn-part__invisible {
@@ -329,4 +342,15 @@
   @media (min-width: 1080px) {
     font-size: 2rem;
   }
+}
+
+.details-section {
+  display: none;
+  // display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 4vh;
+  left: 2vh;
+  height: 92vh;
+  width: calc(100% - 4vh);
 }
