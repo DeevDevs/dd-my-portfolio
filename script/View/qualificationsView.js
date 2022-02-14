@@ -49,7 +49,7 @@ class QualificationsView {
   }
 
   chooseTower(e) {
-    this.choiceBox.scrollIntoView({ behavior: 'smooth' });
+    this.choiceBox.scrollIntoView({ block: 'start', behavior: 'smooth' });
     this.towersBase.style.visibility = 'hidden';
     if (e.target.closest('.tower-short')) {
       this.qualsChosen = 'short';
@@ -58,8 +58,8 @@ class QualificationsView {
       this.imgBoxesLong.forEach((box) => (box.style.visibility = 'hidden'));
       // this.leftTower.style.transform = 'translateX(50%)';
       window.innerWidth <= 1079
-        ? (this.leftTower.style.transform = 'translateX(50%)')
-        : (this.leftTower.style.transform = 'translateY(50%)');
+        ? (this.leftTower.style.transform = 'translateX(25vw)')
+        : (this.leftTower.style.transform = 'translateY(18vh)');
       //prettier-ignore
       setTimeout(function () {this.leftTower.style.visibility = 'hidden';}.bind(this),900);
       this.imgBoxesShort.forEach((box) => {
@@ -90,8 +90,8 @@ class QualificationsView {
       this.imgBoxesShort.forEach((box) => (box.style.visibility = 'hidden'));
       // this.rightTower.style.transform = 'translateX(-50%)';
       window.innerWidth <= 1079
-        ? (this.rightTower.style.transform = 'translateX(-50%)')
-        : (this.rightTower.style.transform = 'translateY(-50%)');
+        ? (this.rightTower.style.transform = 'translateX(-25vw)')
+        : (this.rightTower.style.transform = 'translateY(-18vh)');
       //prettier-ignore
       setTimeout(function () {this.rightTower.style.visibility = 'hidden';}.bind(this),900);
       this.imgBoxesLong.forEach((box) => {
