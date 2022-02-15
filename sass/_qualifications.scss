@@ -1,9 +1,10 @@
 .intro-part {
   position: relative;
   padding-bottom: 5rem;
+  margin-bottom: 1rem;
   height: 92vh;
   min-height: 20rem;
-  background-image: linear-gradient(to bottom, map-get($colors, 'day-theme-secondary'), #121e69);
+  background-image: linear-gradient(to bottom, rgba(219, 232, 255, 0.75), rgba(219, 232, 255, 0.75));
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -130,96 +131,124 @@
 
 .choice-background {
   // background-color: map-get($colors, 'day-theme-secondary');
-  background-image: linear-gradient(
-    to bottom,
-    map-get($colors, 'day-theme-secondary'),
-    map-get($colors, 'day-theme-secondary')
-  );
+  background-image: linear-gradient(to bottom, rgba(219, 232, 255, 0.75), rgba(219, 232, 255, 0.75));
 }
 
-.kahn__relative {
-  position: relative;
-  z-index: 2;
-}
+// .kahn__relative {
+//   position: relative;
+//   z-index: 2;
+// }
 
-.kahn-part,
-.kahn-part__invisible {
-  left: 0;
-  bottom: 0;
-  // top: -250px;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  max-height: 13rem;
-  margin-top: 2rem;
-  padding-top: 3rem;
-  transition: opacity 0.5s linear;
-  z-index: 1;
+// .kahn-part,
+// .kahn-part__invisible {
+//   left: 0;
+//   top: 0;
+//   // top: -250px;
+//   position: absolute;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+//   max-height: 13rem;
+//   margin-top: 2rem;
+//   padding-top: 3rem;
+//   transition: opacity 0.5s linear;
+//   z-index: 1;
 
-  @media (min-width: 640px) {
-    max-width: 26.5rem;
-    max-height: 14.5rem;
-    bottom: 0rem;
-    justify-content: flex-start;
-  }
+//   @media (min-width: 640px) {
+//     max-width: 26.5rem;
+//     max-height: 14.5rem;
+//     bottom: 0rem;
+//     justify-content: flex-start;
+//   }
 
-  @media (min-width: 1080px) {
-    max-width: 26.5rem;
-    max-height: 22rem;
-    bottom: 0rem;
-    justify-content: flex-start;
-  }
-}
+//   @media (min-width: 1080px) {
+//     left: calc(100vw - 30.5rem);
+//     top: 0;
+//     margin-top: 0;
+//     padding-top: 0;
+//     max-width: 26.5rem;
+//     max-height: 22rem;
+//     // bottom: 0rem;
+//     justify-content: flex-start;
+//   }
+// }
 
-.choice-part__image-container {
-  height: 20rem;
-}
+// .choice-part__image-container {
+//   height: 20rem;
+// }
 
-.kahn-part__invisible {
-  visibility: hidden;
-}
+// .kahn-part__invisible {
+//   visibility: hidden;
+// }
 
-.detatch {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 0;
-  margin-top: 3rem;
-  // height: 20rem;
-}
+// .detatch {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   padding-top: 0;
+//   margin-top: 3rem;
+//   // height: 20rem;
 
-.choice-part__question {
-  width: 10rem;
-  color: black;
-  font-family: 'Creepster', cursive;
-  font-size: 2.2rem;
-  text-shadow: 4px 4px 8px red;
-  padding-right: 1rem;
-  // margin-top: 4rem;
-  text-align: center;
-  @media (min-width: 640px) {
-    font-size: 2.5rem;
-    width: 12rem;
-  }
-}
+//   @media (min-width: 1080px) {
+//     left: calc(100vw - 30.5rem);
+//     top: 0;
+//     // right: 0;
+//     // max-width: 26.5rem;
+//     // max-height: 22rem;
+//     // // bottom: 0rem;
+//     // justify-content: flex-start;
+//     margin-top: 3rem;
+//   }
+// }
 
-.shao-kahn {
-  width: 10rem;
-  transform: scale(1.05);
+// .choice-part__question {
+//   width: 10rem;
+//   color: black;
+//   font-family: 'Creepster', cursive;
+//   font-size: 2.2rem;
+//   text-shadow: 4px 4px 8px red;
+//   padding-right: 1rem;
+//   // margin-top: 4rem;
+//   text-align: center;
+//   @media (min-width: 640px) {
+//     font-size: 2.5rem;
+//     width: 12rem;
+//   }
+// }
 
-  @media (min-width: 640px) {
-    width: 12rem;
-  }
+// .shao-kahn {
+//   width: 10rem;
+//   transform: scale(1.05);
 
-  @media (min-width: 1080px) {
-    width: 20rem;
-  }
-}
+//   @media (min-width: 640px) {
+//     width: 12rem;
+//   }
 
-.shao-kahn__question {
-  overflow-wrap: break-word;
-}
+//   @media (min-width: 1080px) {
+//     width: 20rem;
+//   }
+// }
+
+// .shao-kahn__question {
+//   overflow-wrap: break-word;
+// }
+
+// .choice-part__towers {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: flex-end;
+//   width: 100vw;
+//   max-width: 100%;
+//   overflow: hidden;
+
+//   @media (min-width: 1080px) {
+//     justify-content: space-around;
+//     flex-direction: column;
+//     min-height: 35rem;
+//     align-items: flex-start;
+//     margin-top: 5rem;
+//   }
+// }
 
 .choice-part__towers {
   display: flex;
@@ -323,8 +352,9 @@
   object-fit: cover;
 }
 
-// .quals-box__text {
-// }
+.quals-box__text {
+  padding-bottom: 0.75rem;
+}
 
 .shown-quals {
   display: flex;
@@ -365,7 +395,7 @@
 
 .details-section {
   // display: none;
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -380,19 +410,21 @@
   background-color: rgba(45, 63, 184, 0.6);
   z-index: 7;
   overflow-y: scroll;
+  transition: opacity 0.3s linear;
 }
 
 .details__name-text {
   font-weight: 700;
   font-size: 1.2rem;
+  max-height: 10%;
   color: map-get($colors, 'day-theme-main');
   // margin: 0;
 }
 
 .details__description-box {
   width: 95%;
-  height: 65%;
-  max-height: 65%;
+  height: 70%;
+  max-height: 70%;
   min-height: 20rem;
   background-color: rgb(161, 173, 253);
   border-radius: inherit;
@@ -408,10 +440,11 @@
 }
 
 .details__image-box {
-  min-height: 20%;
-  height: 20%;
-  min-height: 10rem;
-  max-width: 95%;
+  max-height: 15%;
+  height: 15%;
+  min-height: 5rem;
+  width: 50%;
+  min-width: 8rem;
   background-color: red;
   border-radius: inherit;
   overflow: hidden;
@@ -420,10 +453,45 @@
 }
 
 .details__image {
+  width: 11rem;
 }
 
 .details__button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
   border: none;
   border-radius: 0.3rem;
-  padding: 0.3rem 1.7rem;
+  margin-top: 0.5rem;
+  // padding: 0.4rem 1.7rem;
+  background-color: transparent;
+}
+
+.xbtn {
+  display: flex;
+  flex-direction: column;
+  height: 1.4rem;
+  width: 1.4rem;
+  position: relative;
+}
+
+.xbtn-span {
+  top: 0.4rem;
+  left: -0.2rem;
+  position: absolute;
+  margin: 0.2rem;
+  min-height: 0.2rem;
+  min-width: 1.4rem;
+  background-color: map-get($colors, 'day-theme-background');
+  border-radius: 5rem;
+}
+
+.span1 {
+  // transform-origin: center;
+  transform: rotateZ(45deg);
+}
+
+.span2 {
+  // transform-origin: center;
+  transform: rotateZ(-45deg);
 }

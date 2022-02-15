@@ -20,15 +20,18 @@ class QualificationsView {
   btnCloseQuals = document.querySelector('.close-quals__btn');
   eduIT = document.querySelector('.close-quals-it');
   eduAll = document.querySelector('.close-quals-all');
-  kahnObserver = new IntersectionObserver(this.kahnAttached.bind(this), {
-    root: null,
-    threshold: 1,
-  });
+  sectionDetails = document.querySelector('.details-section');
+  detailsCloseBtn = document.querySelector('.details__button-close');
+  overlay = document.querySelector('.overlay');
+  // kahnObserver = new IntersectionObserver(this.kahnAttached.bind(this), {
+  //   root: null,
+  //   threshold: 1,
+  // });
 
   qualsChosen;
 
   constructor() {
-    this.kahnObserver.observe(this.kahnInvisible);
+    // this.kahnObserver.observe(this.kahnInvisible);
     //prettier-ignore
     this.bothTowers.forEach((tower) => tower.addEventListener('click', function (e) {
         this.chooseTower(e);
@@ -37,7 +40,18 @@ class QualificationsView {
     this.btnCloseQuals.addEventListener('click', function () {
         this.closeDisplayQualifications(this.qualsChosen);
         this.displayTowers();
+        this.choiceBox.style.marginTop = '0';
     }.bind(this));
+
+    this.detailsCloseBtn.addEventListener('click', this.displayDetails.bind(this));
+    this.bothQuals.forEach((quals) => {
+      quals.addEventListener(
+        'click',
+        function (e) {
+          this.renderDisplayDetails(e);
+        }.bind(this)
+      );
+    });
   }
 
   kahnAttached(entry, observer) {
@@ -122,6 +136,7 @@ class QualificationsView {
       this.allImageBoxes.forEach((box) => {
         box.style.transform = 'scale(1)';
       });
+      this.choiceBox.style.marginTop = '1rem';
     }, 1800);
   }
 
@@ -192,6 +207,23 @@ class QualificationsView {
       }.bind(this),
       timer
     );
+  }
+
+  renderDisplayDetails(e) {
+    if (!e.target.closest('.quals-box')) return;
+    const id = e.target.closest('.quals-box').id;
+    console.log(id);
+    this.displayDetails();
+  }
+
+  displayDetails() {
+    if (this.sectionDetails.style.display === 'flex') {
+      this._makeElementDisappear(this.overlay, 300);
+      this._makeElementDisappear(this.sectionDetails, 300);
+    } else {
+      this._makeElementAppear(this.overlay, 300, 'block');
+      this._makeElementAppear(this.sectionDetails, 300, 'flex');
+    }
   }
 }
 

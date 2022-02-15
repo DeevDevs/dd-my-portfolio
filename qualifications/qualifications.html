@@ -58,7 +58,7 @@
         </svg>
       </div>
     </section>
-    <div class="kahn__relative">
+    <!-- <div class="kahn__relative">
       <div class="kahn-part">
         <div class="choice-part__image-container">
           <img class="shao-kahn" src="../images/shao-hat-shadowed.png" />
@@ -71,7 +71,7 @@
         </div>
         <div class="choice-part__question"><p class="shao-kahn__question">CHOOSE MY DESTINY</p></div>
       </div>
-    </div>
+    </div> -->
     <section class="choice-part">
       <div class="close-quals-btn__box">
         <div class="edu-category close-quals-it">Here is my IT-related educational experience.</div>
@@ -79,37 +79,37 @@
         <button class="close-quals__btn" type="button">CL</button>
       </div>
       <div class="quals-category quals quals-short">
-        <div class="quals-box">
+        <div class="quals-box" id="q1">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Long before time had a name</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q5">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2021, January: Groundhog month</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q6">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2021, February: Turning into a Ninja</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q7">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2021, April: Programming Shows its Real Face</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q8">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2022, January: Learning Design</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q9">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
@@ -117,55 +117,55 @@
         </div>
       </div>
       <div class="quals-category quals quals-long">
-        <div class="quals-box">
+        <div class="quals-box" id="q1">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Long before time had a name</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q2">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Schoolkid turns into a Student</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q3">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Student turns into a Teacher (NOT)</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q4">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Neverending Student</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q5">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2021, January: Groundhog month</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q6">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2021, February: Turning into a Ninja</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q7">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2021, April: Programming Shows its Real Face</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q8">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
           <p class="quals-box__text">Year 2022, January: Learning Design</p>
         </div>
-        <div class="quals-box">
+        <div class="quals-box" id="q9">
           <div class="quals-box__image-container">
             <img class="quals-box__image" src="../images/temp.jpg" />
           </div>
@@ -240,7 +240,8 @@
       </ul>
     </div>
     <div class="overlay"></div>
-    <div class="details-section">
+    <!-- for the sake of smooth animation I hard coded some styles -->
+    <div class="details-section" style="display: none; opacity: 0">
       <div class="details__name-box"><p class="details__name-text">Name of the chosen stage</p></div>
       <div class="details__description-box">
         <p class="details__desription-text">
@@ -259,7 +260,12 @@
       <div class="details__image-box">
         <img class="details__image" src="../images/temp.jpg" />
       </div>
-      <button class="details__button-close" type="button">Close</button>
+      <button class="details__button-close" type="button">
+        <div class="xbtn">
+          <span class="xbtn-span span1"></span>
+          <span class="xbtn-span span2"></span>
+        </div>
+      </button>
     </div>
   </body>
 </html>
