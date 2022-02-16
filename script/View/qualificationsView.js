@@ -1,9 +1,7 @@
 class QualificationsView {
   introBox = document.querySelector('.intro-part');
   introText = document.querySelector('.intro-part__text-box');
-  // kahnInvisible = document.querySelector('.kahn-part__invisible');
   choiceBox = document.querySelector('.choice-part');
-  // kahnBox = document.querySelector('.kahn-part');
   towerBox = document.querySelector('.choice-part__towers');
   bothTowers = document.querySelectorAll('.towers');
   towerDescription = document.querySelectorAll('.tower-description');
@@ -24,17 +22,15 @@ class QualificationsView {
   sectionDetails = document.querySelector('.details-section');
   detailsCloseBtn = document.querySelector('.details__button-close');
   overlay = document.querySelector('.overlay');
-  // kahnObserver = new IntersectionObserver(this.kahnAttached.bind(this), {
-  //   root: null,
-  //   threshold: 1,
-  // });
 
   qualsChosen;
   transformConditions;
 
+  qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
+
   constructor() {
-    // this.kahnObserver.observe(this.kahnInvisible);
-    this.positionImages();
+    this.qualSectionObserver.observe(this.choiceBox);
+    // this.positionImages();
     // prettier-ignore
     this.bothTowers.forEach((tower) => {
       tower.addEventListener('click', function (e) {
@@ -66,40 +62,21 @@ class QualificationsView {
     });
   }
 
-  positionImages(width = window.innerWidth) {
-    console.log(width < 1080);
-    this.imgBoxesShort.forEach((box) => {
-      console.log(+box.dataset.pos);
-      this.imageStyleRender(box);
-      // box.style.transform = `translateZ(-${box.dataset.pos}rem) translateY(${+box.dataset.pos / 1.5}rem) translateX(${
-      //   box.dataset.pos / 2
-      // }rem)`;
-      // box.style.opacity = 1 - +box.dataset.pos / 10;
-    });
-    this.imgBoxesLong.forEach((box) => {
-      console.log(+box.dataset.pos);
-      this.imageStyleRender(box);
-      // box.style.transform = `translateZ(-${box.dataset.pos}rem) translateY(${+box.dataset.pos / 1.5}rem) translateX(${
-      //   box.dataset.pos / 2
-      // }rem)`;
-      // box.style.opacity = 1 - +box.dataset.pos / 10;
-    });
-    // if (width > 640) {
-    //   this.imgBoxesShort.forEach((box) => {
-    //     console.log(+box.dataset.pos);
-    //     box.style.transform = `translateZ(${box.dataset.pos}rem) translateY(${+box.dataset.pos / 8}rem) translateX(${
-    //       +box.dataset.pos / 1
-    //     }rem)`;
-    //     box.style.opacity = 1 - (1 - +box.dataset.pos / 10) + 0.4;
-    //   });
-    //   this.imgBoxesLong.forEach((box) => {
-    //     console.log(+box.dataset.pos);
-    //     box.style.transform = `translateZ(${box.dataset.pos}rem) translateY(${+box.dataset.pos / 8}rem) translateX(${
-    //       +box.dataset.pos / 1
-    //     }rem)`;
-    //     box.style.opacity = 1 - (1 - +box.dataset.pos / 10) + 0.1;
-    //   });
-    // }
+  cardLikeImages(entry, observer) {
+    if (!entry[0].isIntersecting) return;
+    if (entry[0].isIntersecting) {
+      this.choiceBox.classList.remove('section-hidden');
+      this.positionImages();
+    }
+  }
+
+  positionImages() {
+    // prettier-ignore
+    Array.prototype.slice.call(this.imgBoxesShort, 0).reverse().forEach((box, i) => {
+        setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 200);});
+    // prettier-ignore
+    Array.prototype.slice.call(this.imgBoxesLong, 0).reverse().forEach((box, i) => {
+        setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 200);});
   }
 
   imageStandOut(e) {
@@ -123,57 +100,66 @@ class QualificationsView {
     element.style.opacity = `${1 - +`${element.dataset.pos >= 10 ? 9.5 : element.dataset.pos}` / 10 + 0.05}`;
   }
 
-  kahnAttached(entry, observer) {
-    console.log(entry[0]);
-    if (!entry[0].isIntersecting && entry[0].boundingClientRect.top <= 0) {
-      this.kahnBox.classList.add('detatch');
-    }
-    if (entry[0].isIntersecting && entry[0].boundingClientRect.top >= 0) this.kahnBox.classList.remove('detatch');
-  }
+  // kahnAttached(entry, observer) {
+  //   console.log(entry[0]);
+  //   if (!entry[0].isIntersecting && entry[0].boundingClientRect.top <= 0) {
+  //     this.kahnBox.classList.add('detatch');
+  //   }
+  //   if (entry[0].isIntersecting && entry[0].boundingClientRect.top >= 0) this.kahnBox.classList.remove('detatch');
+  // }
 
   chooseTower(e) {
-    this.choiceBox.scrollIntoView({ block: 'start', behavior: 'smooth' });
     if (e.target.closest('.tower-short')) {
+      //note the chosen tower
       this.qualsChosen = 'short';
-      this.rightTower.style.opacity = '0';
-      this.rightTower.style.visibility = 'hidden';
+      //move the other tower away
+      this.imgBoxesLong.forEach((box) => {
+        box.style.transform = 'translateX(-55rem)';
+      });
+      //move the chosen tower to the center
       window.innerWidth <= 639
         ? (this.leftTower.style.transform = 'translateY(25vh)')
         : (this.leftTower.style.transform = 'translateY(25vh) translateX(-25vw)');
-      setTimeout(
-        function () {
-          this.leftTower.style.opacity = '0';
-        }.bind(this),
-        1200
-      );
-      setTimeout(
-        function () {
-          this.openDisplayQualifications('short');
-          this._makeElementAppear(this.eduIT, 500, 'inline-block');
-        }.bind(this),
-        1800
-      );
+      //after 1200ms, make all the cards lose opacity one by one
+      // prettier-ignore
+      setTimeout(function () {this.imgBoxesShort.forEach((img) => {
+            setTimeout(function () {img.style.opacity = 0;}.bind(this),img.dataset.pos * 100);});
+        }.bind(this),1200);
     }
     if (e.target.closest('.tower-long')) {
+      //note the chosen tower
       this.qualsChosen = 'long';
-      this.leftTower.style.opacity = '0';
-      this.leftTower.style.visibility = 'hidden';
+      //move the other tower away
+      this.imgBoxesShort.forEach((box) => {
+        box.style.transform = 'translateX(55rem)';
+      });
+      //move the chosen tower to the center
       window.innerWidth <= 639
         ? (this.rightTower.style.transform = 'translateY(-25vh)')
         : (this.rightTower.style.transform = 'translateY(-18vh) translateX(22vw)');
-      //prettier-ignore
-      setTimeout(function () {this.rightTower.style.opacity = '0';}.bind(this),1200);
-      setTimeout(
-        function () {
-          this.openDisplayQualifications('long');
-          this._makeElementAppear(this.eduAll, 500, 'inline-block');
-        }.bind(this),
-        1800
-      );
+      //after 1200ms, make all the cards lose opacity one by one
+      // prettier-ignore
+      setTimeout(function () {this.imgBoxesLong.forEach((img) => {
+        setTimeout(function () {img.style.opacity = 0;}.bind(this),img.dataset.pos * 100);});
+    }.bind(this),1200);
     }
+    //after 1900ms make the chosen quals show up with the description over them
+    setTimeout(
+      function () {
+        this.openDisplayQualifications(this.qualsChosen);
+        if (this.qualsChosen === 'short') {
+          this._makeElementAppear(this.eduIT, 500, 'inline-block');
+        } else {
+          this._makeElementAppear(this.eduAll, 500, 'inline-block');
+        }
+      }.bind(this),
+      1900
+    );
+    //make tower descriptions disappear together with the shift of towers
     this.towerDescription.forEach((desc) => {
-      this._makeElementDisappear(desc, 1700);
+      this._makeElementDisappear(desc, 1900);
     });
+    //display close button and hide tower box (behind the scenes, return the towers back to the positions)
     setTimeout(() => {
       this._makeElementAppear(this.btnCloseQuals, 500, 'inline-block');
       this.towerBox.style.display = 'none';
@@ -187,17 +173,12 @@ class QualificationsView {
     setTimeout(
       function () {
         this.towerBox.style.display = 'flex';
-        this.bothTowers.forEach((tower) => {
-          tower.style.visibility = 'visible';
-          setTimeout(function () {
-            tower.style.opacity = '1';
-          }, 100);
-        });
+        this.allImageBoxes.forEach((img) => this.imageStyleRender(img));
         this.towerDescription.forEach((desc) => {
-          this._makeElementAppear(desc, 500, 'block');
+          this._makeElementAppear(desc, 50, 'block');
         });
       }.bind(this),
-      550
+      950
     );
   }
 
@@ -211,19 +192,19 @@ class QualificationsView {
       this._makeElementAppear(this.eduAll, 300, 'inline-block');
     }
     this.btnCloseQualsBox.style.display = 'flex';
+    this.choiceBox.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   closeDisplayQualifications(type) {
     if (type === 'short') {
-      this._makeElementDisappear(this.qualsShort, 500);
+      this._makeElementDisappear(this.qualsShort, 600);
       this._makeElementDisappear(this.eduIT, 500);
     }
     if (type === 'long') {
-      this._makeElementDisappear(this.qualsLong, 500);
+      this._makeElementDisappear(this.qualsLong, 600);
       this._makeElementDisappear(this.eduAll, 500);
     }
     this._makeElementDisappear(this.btnCloseQuals, 500);
-    // this._makeElementAppear(this.kahnBox, 1000, 'flex');
   }
 
   _makeElementAppear(element, timer, display) {
