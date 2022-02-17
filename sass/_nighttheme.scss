@@ -1,51 +1,47 @@
 .bg-main {
-  background-color: map-get($colors, 'night-theme-main');
+  background-color: $night-theme-main;
 }
 
 .bg-secondary {
-  background-color: map-get($colors, 'night-theme-secondary');
+  background-color: $night-theme-secondary;
 }
 
 .bg-background {
-  background: map-get($colors, 'night-theme-background');
+  background: $night-theme-background;
 }
 
 .text-main {
-  color: map-get($colors, 'day-theme-main');
+  color: $day-theme-main;
 }
 
 .text-secondary {
-  color: map-get($colors, 'day-theme-secondary');
+  color: $day-theme-secondary;
 }
 
 .text-background {
-  color: map-get($colors, 'day-theme-background');
+  color: $day-theme-background;
 }
 
 .about-me-dark {
-  background: map-get($colors, 'night-linear-gradient'), url('../images/bg-me.jpg') center / cover no-repeat border-box !important;
+  background: $night-linear-gradient, url('../images/bg-me.jpg') center / cover no-repeat border-box !important;
 }
 
 .learning-dark {
-  background: map-get($colors, 'night-linear-gradient'),
-    url('../images/bg-learning.jpg') center / cover no-repeat border-box !important;
+  background: $night-linear-gradient, url('../images/bg-learning.jpg') center / cover no-repeat border-box !important;
 }
 
 .projects-dark {
-  background: map-get($colors, 'night-linear-gradient'),
-    url('../images/bg-projects.jpg') center / cover no-repeat border-box !important;
+  background: $night-linear-gradient, url('../images/bg-projects.jpg') center / cover no-repeat border-box !important;
 }
 
 .experience-dark {
-  background: map-get($colors, 'night-linear-gradient'),
-    url('../images/bg-experience.jpg') center / cover no-repeat border-box !important;
+  background: $night-linear-gradient, url('../images/bg-experience.jpg') center / cover no-repeat border-box !important;
 }
 
 .welcome-night {
-  background: map-get($colors, 'night-linear-gradient'),
-    url('../images/light-speed.jpg') center / cover no-repeat border-box;
+  background: $night-linear-gradient, url('../images/light-speed.jpg') center / cover no-repeat border-box;
 }
 
 .shadow-night {
-  box-shadow: 0px 0px 5px map-get($colors, 'day-theme-secondary');
+  box-shadow: 0px 0px 5px $day-theme-secondary;
 }

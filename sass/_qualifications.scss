@@ -1,6 +1,5 @@
 .intro-part {
   position: relative;
-  padding-bottom: 5rem;
   margin-bottom: 1rem;
   height: 92vh;
   min-height: 20rem;
@@ -8,15 +7,13 @@
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
 
   @media (min-width: 640px) {
     flex-direction: row;
-    // margin: auto;
     justify-content: space-around;
-    // vertical-align: middle;
     align-items: center;
     padding-bottom: 0;
-    // padding-top: 5rem;
   }
 
   @media (min-width: 1080px) {
@@ -24,11 +21,6 @@
     justify-content: space-around;
     align-items: center;
     padding-bottom: 0;
-    padding-top: 8rem;
-  }
-
-  @media (max-height: 640px) {
-    padding-top: 2rem;
   }
 }
 
@@ -40,61 +32,37 @@
   text-align: center;
 
   @media (min-width: 640px) {
-    margin-top: 7.5rem;
-    margin-bottom: auto;
-    margin-right: 1rem;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
 
   @media (min-width: 1080px) {
-    margin-top: 8.5rem;
-    margin-bottom: auto;
     font-size: 3rem;
-  }
-
-  @media (max-height: 640px) {
-    margin-top: 5rem;
-  }
-
-  @media (max-height: 640px) and (max-width: 640px) {
-    margin-top: 0;
   }
 }
 
 .intro-part__text {
   color: #0a2353;
+  filter: drop-shadow(-10px 10px 4px rgba(0, 6, 37, 0.74));
 }
 
 .intro-part__icon-box {
-  padding-top: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-height: 640px) {
-    padding-top: 1rem;
-  }
-
   @media (min-width: 640px) {
-    margin-top: 2rem;
-    margin-bottom: auto;
-    margin-right: 3rem;
+    margin-right: 1rem;
   }
 
   @media (min-width: 1080px) {
-    margin-top: 3rem;
-    margin-bottom: auto;
     margin-right: 6rem;
-  }
-
-  @media (min-width: 1380px) {
-    font-size: 3rem;
   }
 }
 
 .intro-part__icon {
   height: 8rem;
   width: 8rem;
+  filter: drop-shadow(-20px 20px 8px rgba(0, 6, 37, 0.74));
 
   @media (min-width: 640px) {
     height: 9rem;
@@ -197,6 +165,7 @@
     font-size: 2rem;
     margin-right: auto;
     text-align: left;
+    padding-left: 2rem;
   }
 }
 
@@ -296,7 +265,7 @@
   height: 70%;
   overflow: hidden;
   border-radius: 0.4rem;
-  box-shadow: 4px 4px 5px map-get($colors, 'night-theme-secondary');
+  box-shadow: 4px 4px 5px $night-theme-secondary;
 }
 
 .quals-box__image {
@@ -326,20 +295,14 @@
 
 .close-quals__btn {
   padding: 0.2rem;
-  // margin-bottom: 3rem;
   display: none;
   opacity: 0;
   position: absolute;
-  bottom: 3rem;
-  right: 1rem;
+  bottom: 0;
+  right: 0.5rem;
   background-color: transparent;
   border-radius: 0.3rem;
-  border: 1px solid map-get($colors, 'night-theme-main');
-
-  // top: 0;
-  // right: 0;
-  // margin-top: 0.5rem;
-  // padding: 0.4rem 1.7rem;
+  border: 1px solid $night-theme-main;
 }
 
 .xbtn-span-quals {
@@ -349,7 +312,7 @@
   margin: 0.2rem;
   min-height: 0.2rem;
   min-width: 1.4rem;
-  background-color: map-get($colors, 'night-theme-main');
+  background-color: $night-theme-main;
   border-radius: 5rem;
 }
 
@@ -374,16 +337,17 @@
   position: fixed;
   padding: 1rem 0;
   border-radius: 0.8rem;
-  border: 1px solid map-get($colors, 'night-theme-secondary');
+  border: 1px solid $night-theme-secondary;
   top: 4vh;
   left: 2vh;
   height: 93vh;
-  // min-height: 40rem;
+  // max-height: 98vh;
   width: calc(100% - 4vh);
   background-color: rgba(45, 63, 184, 0.6);
   z-index: 7;
   overflow-y: scroll;
-  transition: opacity 0.3s linear;
+  transform: translateY(3rem);
+  transition: opacity 0.3s linear, transform 0.3s ease-in-out;
 
   @media (min-width: 480px) {
     width: calc(90% - 4vh);
@@ -393,13 +357,6 @@
   @media (min-width: 640px) {
     width: calc(80% - 4vh);
     left: calc(10% + 2vh);
-  }
-
-  @media (min-width: 860px) {
-    width: 42rem;
-    height: 41rem;
-    top: calc(50vh - 20.5rem);
-    left: calc(50vw - 21rem);
   }
 
   @media (min-width: 1080px) {
@@ -419,7 +376,7 @@
   font-weight: 700;
   font-size: 1.2rem;
   max-height: 10%;
-  color: map-get($colors, 'day-theme-main');
+  color: $day-theme-main;
 
   @media (min-width: 860px) {
     font-size: 1.4rem;
@@ -437,7 +394,7 @@
   min-height: 20rem;
   background-color: rgb(161, 173, 253);
   border-radius: inherit;
-  border: 1px solid map-get($colors, 'night-theme-secondary');
+  border: 1px solid $night-theme-secondary;
   overflow-y: scroll;
   margin-bottom: 0.5rem;
 
@@ -477,7 +434,7 @@
   // background-color: red;
   border-radius: inherit;
   overflow: hidden;
-  border: 1px solid map-get($colors, 'night-theme-secondary');
+  border: 1px solid $night-theme-secondary;
   object-fit: cover;
 
   @media (min-width: 480px) {
@@ -519,7 +476,7 @@
   margin: 0.2rem;
   min-height: 0.2rem;
   min-width: 1.4rem;
-  background-color: map-get($colors, 'day-theme-background');
+  background-color: $day-theme-background;
   border-radius: 5rem;
 }
 

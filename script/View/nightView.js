@@ -1,8 +1,11 @@
 class ThemeSwitcher {
+  //SharedElementsVariables
   header = document.querySelector('.header-menu');
   logo = document.querySelector('.logo');
   sideMenu = document.querySelector('.side-menu');
   footer = document.querySelector('.footer-menu');
+
+  //Main Page Variables
   sectionsAdvert = document.querySelectorAll('.advert__section');
   advertImages = document.querySelectorAll('.advert__section--image');
   sectionsMain = document.querySelectorAll('.sec__main');

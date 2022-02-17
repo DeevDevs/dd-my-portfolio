@@ -73,10 +73,10 @@ class QualificationsView {
   positionImages() {
     // prettier-ignore
     Array.prototype.slice.call(this.imgBoxesShort, 0).reverse().forEach((box, i) => {
-        setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 200);});
+        setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 170);});
     // prettier-ignore
     Array.prototype.slice.call(this.imgBoxesLong, 0).reverse().forEach((box, i) => {
-        setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 200);});
+        setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 120);});
   }
 
   imageStandOut(e) {
@@ -237,10 +237,18 @@ class QualificationsView {
   displayDetails() {
     if (this.sectionDetails.style.display === 'flex') {
       this._makeElementDisappear(this.overlay, 300);
-      this._makeElementDisappear(this.sectionDetails, 300);
+      this._makeElementDisappear(this.sectionDetails, 200);
+      this.sectionDetails.style.transform = `translateY(3rem)`;
     } else {
       this._makeElementAppear(this.overlay, 300, 'block');
-      this._makeElementAppear(this.sectionDetails, 300, 'flex');
+      this.sectionDetails.style.display = 'flex';
+      setTimeout(
+        function () {
+          this.sectionDetails.style.opacity = 1;
+          this.sectionDetails.style.transform = `translateY(0)`;
+        }.bind(this),
+        20
+      );
     }
   }
 }
