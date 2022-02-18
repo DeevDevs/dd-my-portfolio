@@ -13,7 +13,7 @@ class MainView {
   yDown = null;
 
   allSectionsObserver = new IntersectionObserver(this.revealSection.bind(this), { root: null, threshold: 0.1 });
-  mainSectionObserver = new IntersectionObserver(this.hideShowMenu.bind(this), { root: null, threshold: [0.4] });
+  mainSectionObserver = new IntersectionObserver(this.hideShowMenu.bind(this), { root: null, threshold: [0.6] });
   imageObserver = new IntersectionObserver(this.loadLazyImages.bind(this), {
     root: null,
     threshold: 0,

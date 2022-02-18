@@ -272,12 +272,17 @@
   height: 70%;
   overflow: hidden;
   border-radius: 0.4rem;
-  box-shadow: 4px 4px 5px var(--logo-image-shadow);
+  border: 2px solid var(--logo-image-shadow);
+  box-shadow: 0 0 10px var(--logo-image-shadow);
+  perspective-origin: center center;
+  transform: skew(15deg);
+  transition: transform 0.3s cubic-bezier(0.4, 0.49, 0.26, 1.04);
 }
 
 .quals-box__image {
   width: 18rem;
   object-fit: cover;
+  transform: skew(-15deg) scale(1.2);
 }
 
 .quals-box__text {
@@ -423,7 +428,7 @@
   width: 95%;
   height: 65%;
   min-height: 20rem;
-  background-color: rgba(191, 202, 244, 0.6);
+  background-color: var(--details-desc-bg);
   border-radius: inherit;
   border: inherit;
   overflow-y: scroll;
@@ -477,6 +482,7 @@
     max-height: 22%;
     width: 60%;
     max-width: 20rem;
+    margin-bottom: 1.5rem;
   }
 }
 

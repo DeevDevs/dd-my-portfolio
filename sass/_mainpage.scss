@@ -220,6 +220,8 @@
   overflow: hidden;
   // max-height: calc(85vw / 2);
   transition: transform 0.5s linear;
+  transform: skew(10deg);
+  box-shadow: 0 0 8px var(--logo-image-shadow);
 
   @media (min-width: 1080px) {
     min-width: 50%;
@@ -231,6 +233,7 @@
   margin: 0.5rem 0;
   max-width: 95%;
   box-shadow: 0 0 8px var(--logo-image-shadow);
+  transform: skew(-10deg) scale(1.2);
 
   @media (min-width: 1080px) {
     width: 90%;

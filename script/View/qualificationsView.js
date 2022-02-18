@@ -28,7 +28,25 @@ class QualificationsView {
 
   qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
 
+  allQualsImages = document.querySelectorAll('.quals-box__image-container');
+
   constructor() {
+    this.allQualsImages.forEach((img) =>
+      img.addEventListener(
+        'mousemove',
+        function (e) {
+          this.tiltQualsImage(e);
+        }.bind(this)
+      )
+    );
+    this.allQualsImages.forEach((img) =>
+      img.addEventListener(
+        'mouseout',
+        function (e) {
+          this.returnTiltedImage(e);
+        }.bind(this)
+      )
+    );
     this.qualSectionObserver.observe(this.choiceBox);
     // this.positionImages();
     // prettier-ignore
@@ -60,6 +78,83 @@ class QualificationsView {
         }.bind(this)
       );
     });
+  }
+
+  returnTiltedImage(e) {
+    const element = e.target.closest('.quals-box__image-container');
+    element.style.transform = 'rotateX(0deg) rotateY(0deg) skew(15deg)';
+    element.style.boxShadow = '0px 0px 10px var(--logo-image-shadow)';
+  }
+
+  tiltQualsImage(e) {
+    const element = e.target.closest('.quals-box__image-container');
+
+    if (e.offsetX < e.target.offsetWidth / 3 && e.offsetY < e.target.offsetHeight / 3) {
+      console.log(e);
+      element.style.transform = 'rotateX(12deg) rotateY(-12deg) skew(15deg)';
+      element.style.boxShadow = '5px 5px 5px var(--logo-image-shadow)';
+    }
+    if (
+      e.offsetX > e.target.offsetWidth / 3 &&
+      e.offsetX < (e.target.offsetWidth / 3) * 2 &&
+      e.offsetY < e.target.offsetHeight / 3
+    ) {
+      console.log(e);
+      element.style.transform = 'rotateX(12deg) rotateY(0) skew(15deg)';
+      element.style.boxShadow = '0px 5px 5px var(--logo-image-shadow)';
+    }
+    if (e.offsetX > (e.target.offsetWidth / 3) * 2 && e.offsetY < e.target.offsetHeight / 3) {
+      console.log(e);
+      element.style.transform = 'rotateX(12deg) rotateY(12deg) skew(15deg)';
+      element.style.boxShadow = '-5px 5px 5px var(--logo-image-shadow)';
+    }
+    if (
+      e.offsetX < e.target.offsetWidth / 3 &&
+      e.offsetY > e.target.offsetHeight / 3 &&
+      e.offsetY < (e.target.offsetHeight / 3) * 2
+    ) {
+      console.log(e);
+      element.style.transform = 'rotateX(0deg) rotateY(-12deg) skew(15deg)';
+      element.style.boxShadow = '5px 0px 5px var(--logo-image-shadow)';
+    }
+    if (e.offsetX < e.target.offsetWidth / 3 && e.offsetY > 2 * (e.target.offsetHeight / 3)) {
+      console.log(e);
+      element.style.transform = 'rotateX(-12deg) rotateY(-12deg) skew(15deg)';
+      element.style.boxShadow = '5px -5px 5px var(--logo-image-shadow)';
+    }
+    if (
+      e.offsetX > e.target.offsetWidth / 3 &&
+      e.offsetX < 2 * (e.target.offsetWidth / 3) &&
+      e.offsetY > 2 * (e.target.offsetHeight / 3)
+    ) {
+      console.log(e);
+      element.style.transform = 'rotateX(-12deg) rotateY(0deg) skew(15deg)';
+      element.style.boxShadow = '0px -5px 5px var(--logo-image-shadow)';
+    }
+    if (e.offsetX > 2 * (e.target.offsetWidth / 3) && e.offsetY > 2 * (e.target.offsetHeight / 3)) {
+      console.log(e);
+      element.style.transform = 'rotateX(-12deg) rotateY(12deg) skew(15deg)';
+      element.style.boxShadow = '-5px -5px 5px var(--logo-image-shadow)';
+    }
+    if (
+      e.offsetX > 2 * (e.target.offsetWidth / 3) &&
+      e.offsetY > e.target.offsetHeight / 3 &&
+      e.offsetY < 2 * (e.target.offsetHeight / 3)
+    ) {
+      console.log(e);
+      element.style.transform = 'rotateX(0deg) rotateY(12deg) skew(15deg)';
+      element.style.boxShadow = '-5px 0px 5px var(--logo-image-shadow)';
+    }
+    if (
+      e.offsetX > e.target.offsetWidth / 3 &&
+      e.offsetX < 2 * (e.target.offsetWidth / 3) &&
+      e.offsetY > e.target.offsetHeight / 3 &&
+      e.offsetY < 2 * (e.target.offsetHeight / 3)
+    ) {
+      console.log(e);
+      element.style.transform = 'rotateX(0deg) rotateY(0deg) skew(15deg)';
+      element.style.boxShadow = '0px 0px 10px var(--logo-image-shadow)';
+    }
   }
 
   cardLikeImages(entry, observer) {

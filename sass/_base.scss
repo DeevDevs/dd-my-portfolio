@@ -69,7 +69,7 @@ html {
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(219, 232, 255, 0.75), rgba(139, 181, 255, 0.75));
   --logo-bg: #bfcaf4;
-  --details-bg: rgba(139, 181, 255, 0.85);
+  --details-bg: rgba(139, 181, 255, 0.75);
   --details-desc-bg: rgba(191, 202, 244, 0.6);
 
   --font-border-color: #001079;
@@ -91,8 +91,8 @@ html[data-theme='dark'] {
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(105, 126, 219, 0.815), rgba(9, 19, 160, 0.75));
   --logo-bg: #001392;
-  --details-bg: rgba(10, 46, 204, 0.85);
-  --details-desc-bg: rgba(63, 87, 194, 0.85);
+  --details-bg: rgba(10, 46, 204, 0.75);
+  --details-desc-bg: rgba(5, 34, 163, 0.6);
 
   --font-border-color: #dbe8ff;
   --btn-color: #dbe8ff;
