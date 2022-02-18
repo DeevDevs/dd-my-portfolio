@@ -41,11 +41,12 @@
 }
 
 .intro-part__text {
-  // color: #0a2353;
   filter: drop-shadow(-10px 10px 4px var(--icons-headlines-shadow));
 }
 
 .intro-part__icon-box {
+  min-height: 8rem;
+  min-width: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,6 +265,9 @@
   align-items: center;
   text-align: center;
   justify-self: center;
+  transform-style: preserve-3d;
+  perspective: 35rem;
+  perspective-origin: 50% 50%;
 }
 
 .quals-box__image-container {
@@ -274,7 +278,9 @@
   border-radius: 0.4rem;
   border: 2px solid var(--logo-image-shadow);
   box-shadow: 0 0 10px var(--logo-image-shadow);
-  perspective-origin: center center;
+  // transform-style: preserve-3d;
+  // perspective-origin: 50% 15%;
+  // perspective: 20rem;
   transform: skew(15deg);
   transition: transform 0.3s cubic-bezier(0.4, 0.49, 0.26, 1.04);
 }

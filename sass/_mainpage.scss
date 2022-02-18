@@ -40,6 +40,9 @@
   min-height: 12rem;
   min-width: 40%;
   position: relative;
+  transform-style: preserve-3d;
+  perspective: 30rem;
+  perspective-origin: 50% 50%;
 
   @media (min-width: 640px) {
     min-height: 20rem;
@@ -55,7 +58,7 @@
 .vertical-rotation__div {
   margin: auto;
   transform-style: preserve-3d;
-  animation: rotationY 7s linear infinite forwards;
+  animation: rotationY 4s linear infinite forwards;
 }
 
 .spin-logo__div {
@@ -64,20 +67,22 @@
   transform-style: preserve-3d;
   width: 18rem;
   height: 4rem;
-  animation: rotation 7s linear infinite forwards;
+  animation: rotation 8s linear infinite forwards;
+  // animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .spin-image {
   width: 18rem;
-  height: 4rem;
+  height: 5rem;
 }
 
 .spin-logo {
   position: absolute;
   width: 16rem;
   height: 4rem;
-  transform: translateZ(1rem);
+  transform: translateZ(1rem) translateX(1rem);
   background-color: var(--logo-bg);
+  // background-color: yellow;
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
 
@@ -85,7 +90,7 @@
   position: absolute;
   width: 16rem;
   height: 4rem;
-  transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem);
+  transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem) translateX(-1rem);
   background-color: var(--logo-bg);
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
@@ -94,16 +99,17 @@
   position: absolute;
   height: 4rem;
   width: 2rem;
-  transform: rotateY(90deg) translateZ(-1rem);
+  transform: rotateY(90deg) translateZ(0rem);
   background-color: var(--logo-bg);
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
 
 .spin-logo__side2 {
   position: absolute;
+  right: 0;
   height: 4rem;
   width: 2rem;
-  transform: rotateY(90deg) translateZ(15rem);
+  transform: rotateY(90deg) translateZ(0rem);
   background-color: var(--logo-bg);
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
@@ -112,7 +118,7 @@
   position: absolute;
   width: 16rem;
   height: 2rem;
-  transform: rotateX(90deg) translateZ(1rem);
+  transform: rotateX(90deg) translateZ(1rem) translateX(1rem);
   background-color: var(--logo-bg);
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
@@ -121,7 +127,7 @@
   position: absolute;
   width: 16rem;
   height: 2rem;
-  transform: rotateX(90deg) translateZ(-3rem);
+  transform: rotateX(90deg) translateZ(-3rem) translateX(1rem);
   background-color: var(--logo-bg);
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
@@ -130,8 +136,14 @@
   0% {
     transform: rotateX(0);
   }
-  50% {
+  25% {
     transform: rotateX(360deg);
+  }
+  50% {
+    transform: rotateX(720deg);
+  }
+  75% {
+    transform: rotateX(720deg);
   }
   100% {
     transform: rotateX(720deg);

@@ -125,6 +125,12 @@ body {
   min-height: 12rem;
   min-width: 40%;
   position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 30rem;
+          perspective: 30rem;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
 }
 
 @media (min-width: 640px) {
@@ -147,8 +153,8 @@ body {
   margin: auto;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-animation: rotationY 7s linear infinite forwards;
-          animation: rotationY 7s linear infinite forwards;
+  -webkit-animation: rotationY 4s linear infinite forwards;
+          animation: rotationY 4s linear infinite forwards;
 }
 
 .spin-logo__div {
@@ -158,21 +164,21 @@ body {
           transform-style: preserve-3d;
   width: 18rem;
   height: 4rem;
-  -webkit-animation: rotation 7s linear infinite forwards;
-          animation: rotation 7s linear infinite forwards;
+  -webkit-animation: rotation 8s linear infinite forwards;
+          animation: rotation 8s linear infinite forwards;
 }
 
 .spin-image {
   width: 18rem;
-  height: 4rem;
+  height: 5rem;
 }
 
 .spin-logo {
   position: absolute;
   width: 16rem;
   height: 4rem;
-  -webkit-transform: translateZ(1rem);
-          transform: translateZ(1rem);
+  -webkit-transform: translateZ(1rem) translateX(1rem);
+          transform: translateZ(1rem) translateX(1rem);
   background-color: var(--logo-bg);
   -webkit-box-shadow: 0px 0px 6px var(--logo-image-shadow);
           box-shadow: 0px 0px 6px var(--logo-image-shadow);
@@ -182,8 +188,8 @@ body {
   position: absolute;
   width: 16rem;
   height: 4rem;
-  -webkit-transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem);
-          transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem);
+  -webkit-transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem) translateX(-1rem);
+          transform: rotateX(180deg) rotateZ(180deg) translateZ(1rem) translateX(-1rem);
   background-color: var(--logo-bg);
   -webkit-box-shadow: 0px 0px 6px var(--logo-image-shadow);
           box-shadow: 0px 0px 6px var(--logo-image-shadow);
@@ -193,8 +199,8 @@ body {
   position: absolute;
   height: 4rem;
   width: 2rem;
-  -webkit-transform: rotateY(90deg) translateZ(-1rem);
-          transform: rotateY(90deg) translateZ(-1rem);
+  -webkit-transform: rotateY(90deg) translateZ(0rem);
+          transform: rotateY(90deg) translateZ(0rem);
   background-color: var(--logo-bg);
   -webkit-box-shadow: 0px 0px 6px var(--logo-image-shadow);
           box-shadow: 0px 0px 6px var(--logo-image-shadow);
@@ -202,10 +208,11 @@ body {
 
 .spin-logo__side2 {
   position: absolute;
+  right: 0;
   height: 4rem;
   width: 2rem;
-  -webkit-transform: rotateY(90deg) translateZ(15rem);
-          transform: rotateY(90deg) translateZ(15rem);
+  -webkit-transform: rotateY(90deg) translateZ(0rem);
+          transform: rotateY(90deg) translateZ(0rem);
   background-color: var(--logo-bg);
   -webkit-box-shadow: 0px 0px 6px var(--logo-image-shadow);
           box-shadow: 0px 0px 6px var(--logo-image-shadow);
@@ -215,8 +222,8 @@ body {
   position: absolute;
   width: 16rem;
   height: 2rem;
-  -webkit-transform: rotateX(90deg) translateZ(1rem);
-          transform: rotateX(90deg) translateZ(1rem);
+  -webkit-transform: rotateX(90deg) translateZ(1rem) translateX(1rem);
+          transform: rotateX(90deg) translateZ(1rem) translateX(1rem);
   background-color: var(--logo-bg);
   -webkit-box-shadow: 0px 0px 6px var(--logo-image-shadow);
           box-shadow: 0px 0px 6px var(--logo-image-shadow);
@@ -226,8 +233,8 @@ body {
   position: absolute;
   width: 16rem;
   height: 2rem;
-  -webkit-transform: rotateX(90deg) translateZ(-3rem);
-          transform: rotateX(90deg) translateZ(-3rem);
+  -webkit-transform: rotateX(90deg) translateZ(-3rem) translateX(1rem);
+          transform: rotateX(90deg) translateZ(-3rem) translateX(1rem);
   background-color: var(--logo-bg);
   -webkit-box-shadow: 0px 0px 6px var(--logo-image-shadow);
           box-shadow: 0px 0px 6px var(--logo-image-shadow);
@@ -238,9 +245,17 @@ body {
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
   }
-  50% {
+  25% {
     -webkit-transform: rotateX(360deg);
             transform: rotateX(360deg);
+  }
+  50% {
+    -webkit-transform: rotateX(720deg);
+            transform: rotateX(720deg);
+  }
+  75% {
+    -webkit-transform: rotateX(720deg);
+            transform: rotateX(720deg);
   }
   100% {
     -webkit-transform: rotateX(720deg);
@@ -253,9 +268,17 @@ body {
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
   }
-  50% {
+  25% {
     -webkit-transform: rotateX(360deg);
             transform: rotateX(360deg);
+  }
+  50% {
+    -webkit-transform: rotateX(720deg);
+            transform: rotateX(720deg);
+  }
+  75% {
+    -webkit-transform: rotateX(720deg);
+            transform: rotateX(720deg);
   }
   100% {
     -webkit-transform: rotateX(720deg);
@@ -1284,6 +1307,8 @@ a:visited {
 }
 
 .intro-part__icon-box {
+  min-height: 8rem;
+  min-width: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1621,6 +1646,12 @@ a:visited {
           align-items: center;
   text-align: center;
   justify-self: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 35rem;
+          perspective: 35rem;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
 }
 
 .quals-box__image-container {
@@ -1632,8 +1663,6 @@ a:visited {
   border: 2px solid var(--logo-image-shadow);
   -webkit-box-shadow: 0 0 10px var(--logo-image-shadow);
           box-shadow: 0 0 10px var(--logo-image-shadow);
-  -webkit-perspective-origin: center center;
-          perspective-origin: center center;
   -webkit-transform: skew(15deg);
           transform: skew(15deg);
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0.49, 0.26, 1.04);
