@@ -12,11 +12,17 @@ class SharedView {
   constructor() {
     this.overlay.addEventListener('click', this._toggleSideMenu.bind(this));
     this.menuBtn.addEventListener('click', this._toggleSideMenu.bind(this));
-    this.themeBtn.addEventListener('click', this._changeTheme.bind(this));
-    this.topMenuLogo.addEventListener('click', this._switcher.bind(this));
+    this.themeBtn.addEventListener(
+      'click',
+      function () {
+        this._changeTheme();
+        this._changeIcons();
+      }.bind(this)
+    );
   }
 
-  _switcher() {
+  _changeTheme() {
+    document.querySelectorAll('.icon__theme').forEach((btn) => btn.classList.toggle('icon__theme--active'));
     if (this.switched === true) {
       document.documentElement.setAttribute('data-theme', 'dark');
       this.switched = false;
@@ -24,6 +30,12 @@ class SharedView {
       document.documentElement.setAttribute('data-theme', 'light');
       this.switched = true;
     }
+  }
+
+  _changeIcons() {
+    ThemeSwitcher.switchIconsShared();
+    if (window.location.href.endsWith('index.html')) ThemeSwitcher.switchIconsMain();
+    if (window.location.href.endsWith('qualifications.html')) ThemeSwitcher.switchIconsQualifications();
   }
 
   _toggleSideMenu() {
@@ -43,10 +55,10 @@ class SharedView {
     }
   }
 
-  _changeTheme() {
-    document.querySelectorAll('.icon__theme').forEach((btn) => btn.classList.toggle('icon__theme--active'));
-    ThemeSwitcher.switchTheme();
-  }
+  // _changeTheme() {
+  //   document.querySelectorAll('.icon__theme').forEach((btn) => btn.classList.toggle('icon__theme--active'));
+  //   ThemeSwitcher.switchTheme();
+  // }
 }
 
 export default new SharedView();

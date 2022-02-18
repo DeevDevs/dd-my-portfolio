@@ -9,7 +9,7 @@
   max-width: 100%;
   top: 0;
   margin: auto;
-  background-color: $day-theme-main;
+  background-color: var(--main-bg);
   align-items: center;
   justify-content: space-between;
   vertical-align: middle;
@@ -57,10 +57,17 @@
   text-decoration: none;
   list-style-type: none;
   // margin: auto;
-  margin: 0 2rem;
+  // margin: 0 2rem;
+  font-size: 1.2rem;
+  margin: 0 1.5rem;
   text-align: center;
   line-height: 2;
   cursor: pointer;
+
+  // @media (min-width: 1080px) {
+  //   font-size: 1.2rem;
+  //   margin: 0 1.5rem;
+  // }
 }
 
 .theme-container {
@@ -105,7 +112,7 @@
   flex-direction: column;
   font-size: 1.3rem;
   top: 0;
-  background-color: $day-theme-secondary;
+  background-color: var(--side-bg);
   height: 100%;
   width: 80vw;
   z-index: 7;
@@ -138,7 +145,7 @@
   border: none;
   background-color: transparent;
   animation: cube-rotation 5s cubic-bezier(0.19, 1, 0.22, 1) infinite;
-  filter: drop-shadow(0 0 3px rgba(0, 6, 37, 0.74));
+  filter: drop-shadow(0 0 3px var(--icons-headlines-shadow));
   @media (min-width: 1080px) {
     display: none;
   }
