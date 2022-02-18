@@ -1,6 +1,7 @@
 class QualificationsView {
   introBox = document.querySelector('.intro-part');
   introText = document.querySelector('.intro-part__text-box');
+  introIcon = document.querySelector('.intro-part__icon');
   choiceBox = document.querySelector('.choice-part');
   towerBox = document.querySelector('.choice-part__towers');
   bothTowers = document.querySelectorAll('.towers');

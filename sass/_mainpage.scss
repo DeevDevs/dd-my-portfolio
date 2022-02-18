@@ -58,7 +58,11 @@
 .vertical-rotation__div {
   margin: auto;
   transform-style: preserve-3d;
-  animation: rotationY 4s linear infinite forwards;
+  // animation: rotationY 4s linear infinite forwards;
+  animation: rotationY 4s cubic-bezier(0.86, 0.57, 0.24, 0.49) infinite forwards;
+  // &:active {
+  //   animation: rotationY 2s linear infinite forwards;
+  // }
 }
 
 .spin-logo__div {
@@ -67,8 +71,11 @@
   transform-style: preserve-3d;
   width: 18rem;
   height: 4rem;
-  animation: rotation 8s linear infinite forwards;
-  // animation: name duration timing-function delay iteration-count direction fill-mode;
+  transform: rotateX(10deg);
+  animation: rotation 8s cubic-bezier(0.71, -1.05, 0.34, 2.38) infinite forwards;
+  // &:active {
+  //   animation: rotation 4s linear infinite forwards;
+  // }
 }
 
 .spin-image {
@@ -134,19 +141,19 @@
 
 @keyframes rotation {
   0% {
-    transform: rotateX(0);
+    transform: rotateX(10deg);
   }
   25% {
     transform: rotateX(360deg);
   }
   50% {
-    transform: rotateX(720deg);
+    transform: rotateX(730deg);
   }
   75% {
-    transform: rotateX(720deg);
+    transform: rotateX(710deg);
   }
   100% {
-    transform: rotateX(720deg);
+    transform: rotateX(730deg);
   }
 }
 
@@ -190,7 +197,7 @@
 .advert__section--headline {
   width: 86%;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 2rem auto;
   transition: transform 0.5s linear;
@@ -232,8 +239,8 @@
   overflow: hidden;
   // max-height: calc(85vw / 2);
   transition: transform 0.5s linear;
-  transform: skew(10deg);
-  box-shadow: 0 0 8px var(--logo-image-shadow);
+  // transform: skew(10deg);
+  // box-shadow: 0 0 8px var(--logo-image-shadow);
 
   @media (min-width: 1080px) {
     min-width: 50%;
@@ -245,7 +252,7 @@
   margin: 0.5rem 0;
   max-width: 95%;
   box-shadow: 0 0 8px var(--logo-image-shadow);
-  transform: skew(-10deg) scale(1.2);
+  // transform: skew(-10deg) scale(1.2);
 
   @media (min-width: 1080px) {
     width: 90%;

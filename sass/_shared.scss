@@ -63,11 +63,12 @@
   text-align: center;
   line-height: 2;
   cursor: pointer;
+  transition: transform 0.1s ease-in-out;
 
-  // @media (min-width: 1080px) {
-  //   font-size: 1.2rem;
-  //   margin: 0 1.5rem;
-  // }
+  &:hover {
+    filter: drop-shadow(-5px 5px 4px var(--icons-headlines-shadow));
+    transform: translateY(-0.2rem);
+  }
 }
 
 .theme-container {
@@ -138,6 +139,7 @@
   margin: 0 0 1rem 0;
   text-align: center;
   line-height: 2;
+  filter: drop-shadow(-5px 5px 4px var(--icons-headlines-shadow));
 }
 
 .side-menu__btn {
