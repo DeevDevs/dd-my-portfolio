@@ -1,1 +1,5 @@
-import SharedView from './sharedView.js';
+class AboutMeView {
+  constructor() {}
+}
+
+export default new AboutMeView();

@@ -123,6 +123,7 @@ class QualificationsView {
   //////////////// PAGE MECHANICS: CHOOSING DISPLAYING TOWERS/QUALS //////////////////
 
   chooseTower(e) {
+    this.imageStyleRender(e.target.closest('.img-box'));
     if (e.target.closest('.tower-short')) {
       //note the chosen tower
       this.qualsChosen = 'short';

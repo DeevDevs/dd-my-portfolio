@@ -1,0 +1,148 @@
+.intro-part__photo-box {
+  min-height: 10rem;
+  min-width: 10rem;
+  display: flex;
+
+  @media (min-width: 640px) {
+    margin-right: 1rem;
+  }
+
+  @media (min-width: 1080px) {
+    margin-right: 6rem;
+  }
+}
+
+.intro-part__photo {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 10rem;
+  filter: drop-shadow(-15px 15px 8px var(--icons-shadow));
+
+  @media (min-width: 640px) {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  @media (min-width: 1080px) {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+.aboutmepage__main-part {
+  min-height: 92vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: var(--section-bg);
+  padding: 4rem 1rem;
+}
+
+.aboutmepage__sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  @media (min-width: 640px) {
+    padding-bottom: 1rem;
+  }
+  @media (min-width: 760px) {
+    padding-bottom: 1.5rem;
+  }
+  @media (min-width: 1080px) {
+    padding-bottom: 2rem;
+  }
+}
+
+.aboutmepage-text {
+  line-height: 1.6;
+  text-align: center;
+  margin: 1rem 0.5rem;
+  padding-bottom: 0.5rem;
+  @media (min-width: 640px) {
+    font-size: 1.1rem;
+  }
+  @media (min-width: 760px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 1080px) {
+    font-size: 1.4rem;
+  }
+}
+
+.aboutmepage__sub-one__hello {
+  text-align: center;
+}
+
+.aboutmepage-img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  margin: auto;
+  @media (min-width: 640px) {
+    width: 10rem;
+    height: 10rem;
+  }
+  @media (min-width: 760px) {
+    width: 12rem;
+    height: 12rem;
+  }
+  @media (min-width: 1080px) {
+    width: 22rem;
+    height: 22rem;
+  }
+}
+
+.aboutmepage__headline {
+  font-weight: 700;
+  font-size: 1.3rem;
+  filter: drop-shadow(-10px 10px 4px var(--icons-shadow));
+  @media (min-width: 640px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 760px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 1080px) {
+    font-size: 2rem;
+  }
+}
+
+.sub-splitter {
+  margin-bottom: 1.5rem;
+  width: 75vw;
+  min-height: 0.12rem;
+  background-color: var(--font-border-color);
+}
+
+.aboutmepage__flexed-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1080px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.aboutmepage__flexed-box__rev {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1080px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.aboutmepage__flexed-image {
+  margin: auto;
+  min-width: 40%;
+}
+
+.aboutmepage__flexed-text__rev {
+  @media (min-width: 1080px) {
+    margin-left: 7rem;
+  }
+}
+
+.aboutmepage-text__rev {
+  text-align: left;
+}
