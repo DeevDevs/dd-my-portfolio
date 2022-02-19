@@ -76,13 +76,15 @@ html {
   --btn-color: #001392;
 
   --logo-image-shadow: #263dd4;
-  --icons-headlines-shadow: rgba(0, 6, 37, 0.74);
+  --icons-shadow: rgba(0, 6, 37, 0.74);
+  --headlines-shadow: rgba(0, 6, 37, 0.74);
 }
 
 html[data-theme='dark'] {
   --main-bg: #030d4d;
   --side-bg: #001392;
-  --section-bg: rgba(51, 74, 180, 0.815);
+  // --section-bg: rgba(51, 74, 180, 0.815);
+  --section-bg: rgba(41, 53, 161, 0.808);
   --intro-section-bg: linear-gradient(
     to top right,
     rgba(0, 7, 110, 0.75),
@@ -98,7 +100,8 @@ html[data-theme='dark'] {
   --btn-color: #dbe8ff;
 
   --logo-image-shadow: #dbe8ff;
-  --icons-headlines-shadow: #023181;
+  --icons-shadow: #013288;
+  --headlines-shadow: #2f73e9;
 }
 
 * {

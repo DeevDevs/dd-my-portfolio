@@ -22,7 +22,7 @@
   font-weight: 700;
   margin: auto;
   text-align: center;
-  filter: drop-shadow(-10px 10px 4px var(--icons-headlines-shadow));
+  filter: drop-shadow(-10px 10px 4px var(--headlines-shadow));
 
   @media (min-width: 640px) {
     font-size: 2.6rem;
@@ -201,7 +201,7 @@
   font-weight: 700;
   margin: 2rem auto;
   transition: transform 0.5s linear;
-  filter: drop-shadow(0px 3px 4px var(--icons-headlines-shadow));
+  filter: drop-shadow(0px 3px 4px var(--headlines-shadow));
 
   @media (min-width: 640px) {
     padding-top: 1rem;
@@ -446,7 +446,7 @@
 
 .sec__icon {
   height: 12rem;
-  filter: drop-shadow(-20px 20px 8px var(--icons-headlines-shadow));
+  filter: drop-shadow(-20px 20px 8px var(--icons-shadow));
 
   @media (min-width: 1080px) {
     display: block;
@@ -498,12 +498,11 @@
 }
 
 .sec__learn-more--phrase {
-  @media (pointer: coarse) {
-    visibility: visible;
-    opacity: 1;
-  }
+  margin: auto 0;
+  visibility: visible;
+  opacity: 1;
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1080px) and (hover: hover) {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.1s;
@@ -516,10 +515,10 @@
   border: none;
   background-color: transparent;
   padding-right: 3rem;
-  margin-left: 2rem;
+  margin: 0.5rem;
   cursor: pointer;
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1080px) and (hover: hover) {
     margin-left: 0;
     padding-right: 2rem;
     padding-left: 3rem;
@@ -547,7 +546,7 @@
   position: absolute;
   transform: scale(0.7) translateX(0.2rem);
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1080px) and (hover: hover) {
     transform: scale(1) translateX(-4rem);
     transition: transform 0.5s ease-in-out;
   }
@@ -562,7 +561,7 @@
   width: 2.5rem;
   transition: transform 0.5s ease-in-out;
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1080px) and (hover: hover) {
     transition: transform 0.5s ease-in-out;
     transform: scale(0.7);
   }

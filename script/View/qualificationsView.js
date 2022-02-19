@@ -1,7 +1,8 @@
 class QualificationsView {
   introBox = document.querySelector('.intro-part');
-  introText = document.querySelector('.intro-part__text-box');
+  introText = document.querySelector('.intro-part__text');
   introIcon = document.querySelector('.intro-part__icon');
+
   choiceBox = document.querySelector('.choice-part');
   towerBox = document.querySelector('.choice-part__towers');
   bothTowers = document.querySelectorAll('.towers');
@@ -13,9 +14,11 @@ class QualificationsView {
   allImageBoxes = document.querySelectorAll('.img-box');
   tempBtn = document.querySelector('.choice-part__question');
   towersBase = document.querySelector('.towers-base');
+
   bothQuals = document.querySelectorAll('.quals');
   qualsShort = document.querySelector('.quals-short');
   qualsLong = document.querySelector('.quals-long');
+  allQualsImages = document.querySelectorAll('.quals-box__image-container');
   btnCloseQualsBox = document.querySelector('.close-quals-btn__box');
   btnCloseQuals = document.querySelector('.close-quals__btn');
   eduIT = document.querySelector('.close-quals-it');
@@ -29,40 +32,13 @@ class QualificationsView {
 
   qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
 
-  allQualsImages = document.querySelectorAll('.quals-box__image-container');
-
   constructor() {
-    this.allQualsImages.forEach((img) =>
-      img.addEventListener(
-        'mousemove',
-        function (e) {
-          this.tiltQualsImage(e);
-        }.bind(this)
-      )
-    );
-    this.allQualsImages.forEach((img) =>
-      img.addEventListener(
-        'mouseout',
-        function (e) {
-          this.returnTiltedImage(e);
-        }.bind(this)
-      )
-    );
+    // console.log(window.matchMedia('(hover: hover)').matches);
+    this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.qualSectionObserver.observe(this.choiceBox);
-    // this.positionImages();
-    // prettier-ignore
-    this.bothTowers.forEach((tower) => {
-      tower.addEventListener('click', function (e) {
-        this.chooseTower(e);
-      }.bind(this));
-    tower.addEventListener('mouseover', function (e) {
-      this.imageStandOut(e);
-      }.bind(this));
-      tower.addEventListener('mouseout', function (e) {
-        this.returnImageTransformValues(e);
-        }.bind(this));
-      
-    });
+
+    this.allQualsImages.forEach((img) => img.addEventListener('mousemove', this.tiltQualsImage.bind(this)));
+    this.allQualsImages.forEach((img) => img.addEventListener('mouseout', this.returnTiltedImage.bind(this)));
     //prettier-ignore
     this.btnCloseQuals.addEventListener('click', function () {
         this.closeDisplayQualifications(this.qualsChosen);
@@ -72,14 +48,11 @@ class QualificationsView {
 
     this.detailsCloseBtn.addEventListener('click', this.displayDetails.bind(this));
     this.bothQuals.forEach((quals) => {
-      quals.addEventListener(
-        'click',
-        function (e) {
-          this.renderDisplayDetails(e);
-        }.bind(this)
-      );
+      quals.addEventListener('click', this.renderDisplayDetails.bind(this));
     });
   }
+
+  /////////////////////////// IMAGE TILTING IN QUALS //////////////////////////////
 
   returnTiltedImage(e) {
     const element = e.target.closest('.quals-box__image-container');
@@ -89,74 +62,12 @@ class QualificationsView {
 
   tiltQualsImage(e) {
     const element = e.target.closest('.quals-box__image-container');
-
-    if (e.offsetX < e.target.offsetWidth / 3 && e.offsetY < e.target.offsetHeight / 3) {
-      console.log(e);
-      element.style.transform = 'rotateX(12deg) rotateY(-12deg) skew(15deg)';
-      element.style.boxShadow = '5px 5px 5px var(--logo-image-shadow)';
-    }
-    if (
-      e.offsetX > e.target.offsetWidth / 3 &&
-      e.offsetX < (e.target.offsetWidth / 3) * 2 &&
-      e.offsetY < e.target.offsetHeight / 3
-    ) {
-      console.log(e);
-      element.style.transform = 'rotateX(12deg) rotateY(0) skew(15deg)';
-      element.style.boxShadow = '0px 5px 5px var(--logo-image-shadow)';
-    }
-    if (e.offsetX > (e.target.offsetWidth / 3) * 2 && e.offsetY < e.target.offsetHeight / 3) {
-      console.log(e);
-      element.style.transform = 'rotateX(12deg) rotateY(12deg) skew(15deg)';
-      element.style.boxShadow = '-5px 5px 5px var(--logo-image-shadow)';
-    }
-    if (
-      e.offsetX < e.target.offsetWidth / 3 &&
-      e.offsetY > e.target.offsetHeight / 3 &&
-      e.offsetY < (e.target.offsetHeight / 3) * 2
-    ) {
-      console.log(e);
-      element.style.transform = 'rotateX(0deg) rotateY(-12deg) skew(15deg)';
-      element.style.boxShadow = '5px 0px 5px var(--logo-image-shadow)';
-    }
-    if (e.offsetX < e.target.offsetWidth / 3 && e.offsetY > 2 * (e.target.offsetHeight / 3)) {
-      console.log(e);
-      element.style.transform = 'rotateX(-12deg) rotateY(-12deg) skew(15deg)';
-      element.style.boxShadow = '5px -5px 5px var(--logo-image-shadow)';
-    }
-    if (
-      e.offsetX > e.target.offsetWidth / 3 &&
-      e.offsetX < 2 * (e.target.offsetWidth / 3) &&
-      e.offsetY > 2 * (e.target.offsetHeight / 3)
-    ) {
-      console.log(e);
-      element.style.transform = 'rotateX(-12deg) rotateY(0deg) skew(15deg)';
-      element.style.boxShadow = '0px -5px 5px var(--logo-image-shadow)';
-    }
-    if (e.offsetX > 2 * (e.target.offsetWidth / 3) && e.offsetY > 2 * (e.target.offsetHeight / 3)) {
-      console.log(e);
-      element.style.transform = 'rotateX(-12deg) rotateY(12deg) skew(15deg)';
-      element.style.boxShadow = '-5px -5px 5px var(--logo-image-shadow)';
-    }
-    if (
-      e.offsetX > 2 * (e.target.offsetWidth / 3) &&
-      e.offsetY > e.target.offsetHeight / 3 &&
-      e.offsetY < 2 * (e.target.offsetHeight / 3)
-    ) {
-      console.log(e);
-      element.style.transform = 'rotateX(0deg) rotateY(12deg) skew(15deg)';
-      element.style.boxShadow = '-5px 0px 5px var(--logo-image-shadow)';
-    }
-    if (
-      e.offsetX > e.target.offsetWidth / 3 &&
-      e.offsetX < 2 * (e.target.offsetWidth / 3) &&
-      e.offsetY > e.target.offsetHeight / 3 &&
-      e.offsetY < 2 * (e.target.offsetHeight / 3)
-    ) {
-      console.log(e);
-      element.style.transform = 'rotateX(0deg) rotateY(0deg) skew(15deg)';
-      element.style.boxShadow = '0px 0px 10px var(--logo-image-shadow)';
-    }
+    const parameters = this.movingShadow(e, element, 14);
+    element.style.transform = `rotateX(${parameters[1]}deg) rotateY(${-parameters[0]}deg) skew(15deg)`;
+    element.style.boxShadow = `${parameters[0] / 2}px ${parameters[1] / 2}px 5px var(--logo-image-shadow)`;
   }
+
+  /////////////////////////// IMAGES IN TOWERS RENDER //////////////////////////////
 
   cardLikeImages(entry, observer) {
     if (!entry[0].isIntersecting) return;
@@ -173,6 +84,19 @@ class QualificationsView {
     // prettier-ignore
     Array.prototype.slice.call(this.imgBoxesLong, 0).reverse().forEach((box, i) => {
         setTimeout(function () {this.imageStyleRender(box);}.bind(this),i * 120);});
+    //It adds listeners to towers
+    setTimeout(
+      function () {
+        this.bothTowers.forEach((tower) => {
+          tower.addEventListener('click', this.chooseTower.bind(this));
+          if (window.matchMedia('(hover: hover)').matches) {
+            tower.addEventListener('mouseover', this.imageStandOut.bind(this));
+            tower.addEventListener('mouseout', this.returnImageTransformValues.bind(this));
+          }
+        });
+      }.bind(this),
+      1200
+    );
   }
 
   imageStandOut(e) {
@@ -191,18 +115,12 @@ class QualificationsView {
 
   imageStyleRender(element) {
     element.style.transform = `translateZ(-${element.dataset.pos}rem) translateY(${
-      +element.dataset.pos / 1.5
+      +element.dataset.pos / 1.3
     }rem) translateX(${element.dataset.pos / 2}rem)`;
     element.style.opacity = `${1 - +`${element.dataset.pos >= 10 ? 9.5 : element.dataset.pos}` / 10 + 0.05}`;
   }
 
-  // kahnAttached(entry, observer) {
-  //   console.log(entry[0]);
-  //   if (!entry[0].isIntersecting && entry[0].boundingClientRect.top <= 0) {
-  //     this.kahnBox.classList.add('detatch');
-  //   }
-  //   if (entry[0].isIntersecting && entry[0].boundingClientRect.top >= 0) this.kahnBox.classList.remove('detatch');
-  // }
+  //////////////// PAGE MECHANICS: CHOOSING DISPLAYING TOWERS/QUALS //////////////////
 
   chooseTower(e) {
     if (e.target.closest('.tower-short')) {
@@ -215,7 +133,7 @@ class QualificationsView {
       //move the chosen tower to the center
       window.innerWidth <= 639
         ? (this.leftTower.style.transform = 'translateY(25vh)')
-        : (this.leftTower.style.transform = 'translateY(25vh) translateX(-25vw)');
+        : (this.leftTower.style.transform = 'translateY(22vh) translateX(-20vw)');
       //after 1200ms, make all the cards lose opacity one by one
       // prettier-ignore
       setTimeout(function () {this.imgBoxesShort.forEach((img) => {
@@ -232,7 +150,7 @@ class QualificationsView {
       //move the chosen tower to the center
       window.innerWidth <= 639
         ? (this.rightTower.style.transform = 'translateY(-25vh)')
-        : (this.rightTower.style.transform = 'translateY(-18vh) translateX(22vw)');
+        : (this.rightTower.style.transform = 'translateY(-15vh) translateX(20vw)');
       //after 1200ms, make all the cards lose opacity one by one
       // prettier-ignore
       setTimeout(function () {this.imgBoxesLong.forEach((img) => {
@@ -266,6 +184,7 @@ class QualificationsView {
   }
 
   displayTowers() {
+    this.choiceBox.scrollIntoView({ block: 'start', behavior: 'smooth' });
     setTimeout(
       function () {
         this.towerBox.style.display = 'flex';
@@ -323,6 +242,8 @@ class QualificationsView {
     );
   }
 
+  //////////////////////// DETAILS WINDOW FUNCTIONS /////////////////////
+
   renderDisplayDetails(e) {
     if (!e.target.closest('.quals-box')) return;
     const id = e.target.closest('.quals-box').id;
@@ -346,6 +267,29 @@ class QualificationsView {
         20
       );
     }
+  }
+
+  ////////////////////// MOVING SHADOW CODE ////////////////////////
+
+  addIntroMovingShadow(e) {
+    const shadowParameters = this.movingShadow(e, this.introBox, 15);
+    this.introText.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 4px var(--icons-shadow))`;
+    this.introIcon.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 8px var(--icons-shadow))`;
+  }
+
+  // addQualImagesMovingShadows(e) {
+  //   const shadowParameters = this.movingShadow(e, this.introBox, 15);
+  // }
+
+  movingShadow(e, element = e.target, maxShadow) {
+    const totalHeight = element.clientHeight;
+    const totalWidth = element.clientWidth;
+    const mouseX = e.offsetX;
+    const mouseY = e.offsetY;
+    return [
+      Math.trunc(((totalWidth / 2 - mouseX) * maxShadow) / (totalWidth / 2)),
+      Math.trunc(((totalHeight / 2 - mouseY) * maxShadow) / (totalHeight / 2)),
+    ];
   }
 }
 

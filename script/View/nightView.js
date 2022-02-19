@@ -64,10 +64,15 @@ class ThemeSwitcher {
 
   switchIconsQualifications() {
     const introIcon = document.querySelector('.intro-part__icon');
-    if (this.theme === 'dark')
+    const xBtns = document.querySelectorAll('.x-btn-svg');
+    if (this.theme === 'dark') {
       introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-night"></use>`;
-    if (this.theme === 'light')
+      xBtns.forEach((btn) => (btn.innerHTML = `<use href="./images/icons/all-icons.svg#x-button-light"></use>`));
+    }
+    if (this.theme === 'light') {
       introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-day"></use>`;
+      xBtns.forEach((btn) => (btn.innerHTML = `<use href="./images/icons/all-icons.svg#x-button-dark"></use>`));
+    }
   }
 
   // switchTheme() {
