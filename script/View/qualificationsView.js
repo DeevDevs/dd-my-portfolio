@@ -25,6 +25,7 @@ class QualificationsView {
   eduAll = document.querySelector('.close-quals-all');
   sectionDetails = document.querySelector('.details-section');
   detailsCloseBtn = document.querySelector('.details__button-close');
+  detailsText = document.querySelector('.details__desription-text');
   overlay = document.querySelector('.overlay');
 
   qualsChosen;
@@ -250,6 +251,7 @@ class QualificationsView {
     const id = e.target.closest('.quals-box').id;
     console.log(id);
     this.displayDetails();
+    this.detailsText.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   displayDetails() {
@@ -277,10 +279,6 @@ class QualificationsView {
     this.introText.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 4px var(--icons-shadow))`;
     this.introIcon.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 8px var(--icons-shadow))`;
   }
-
-  // addQualImagesMovingShadows(e) {
-  //   const shadowParameters = this.movingShadow(e, this.introBox, 15);
-  // }
 
   movingShadow(e, element = e.target, maxShadow) {
     const totalHeight = element.clientHeight;
