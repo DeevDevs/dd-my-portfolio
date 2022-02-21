@@ -597,11 +597,11 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   transform-style: preserve-3d;
-  transform: rotateY(-15deg) scale(0.8);
+  transform: rotateY(-12deg) scale(0.8);
   margin-right: 2rem;
 
   @media (min-width: 1080px) {
-    transform: rotateY(-15deg) scale(0.75);
+    transform: rotateY(-12deg) scale(0.75);
   }
 }
 
@@ -717,40 +717,40 @@
 }
 
 .mp__three-one {
-  animation: back-front-1 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: back-front-1 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-two {
-  animation: front-only 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: front-only 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-three {
-  animation: move-left 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: move-left 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-four {
-  animation: back-only 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: back-only 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
   // animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .mp__three-five {
-  animation: back-front-3 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: back-front-3 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-six {
-  animation: front-back-1 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: front-back-1 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-seven {
-  animation: back-front-2 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: back-front-2 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-eight {
-  animation: front-only 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: front-only 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 .mp__three-nine {
-  animation: move-up 14s cubic-bezier(0, 1, 0.96, 0.99) 2s infinite forwards;
+  animation: move-up 14s cubic-bezier(0.38, -1.29, 0.21, 1.31) 2s infinite forwards;
 }
 
 @keyframes back-front-1 {
