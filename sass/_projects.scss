@@ -1,0 +1,122 @@
+.intro-part {
+  position: relative;
+  margin-bottom: 1rem;
+  height: 92vh;
+  min-height: 20rem;
+  background-image: var(--intro-section-bg);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: 1080px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 0;
+  }
+}
+
+.intro-part__glass {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.intro-part__text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.9rem;
+  text-align: center;
+
+  @media (min-width: 640px) {
+    font-size: 2.6rem;
+  }
+
+  @media (min-width: 1080px) {
+    font-size: 3rem;
+  }
+}
+
+.intro-part__text {
+  filter: drop-shadow(-15px 15px 4px var(--icons-shadow));
+}
+
+.intro-part__icon-box {
+  min-height: 8rem;
+  min-width: 8rem;
+  perspective: 20rem;
+  perspective-origin: 50% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 640px) {
+    margin-right: 1rem;
+  }
+
+  @media (min-width: 1080px) {
+    margin-right: 6rem;
+  }
+}
+
+.intro-part__icon {
+  height: 8rem;
+  width: 8rem;
+  filter: drop-shadow(-15px 15px 8px var(--icons-shadow));
+
+  @media (min-width: 640px) {
+    height: 9rem;
+    width: 9rem;
+  }
+  @media (min-width: 1080px) {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  @media (min-width: 1380px) {
+    height: 14rem;
+    width: 14rem;
+  }
+}
+
+.pr-main-section {
+  display: flex;
+  height: 92vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: var(--section-bg);
+}
+
+.pr-general-view {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  background-color: blue;
+  margin: auto;
+  border-radius: 20rem 20rem 20rem 20rem;
+  perspective-origin: 50% 50%;
+  perspective: 100rem;
+}
+
+.justadiv {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 10rem;
+  height: 10rem;
+  background-color: wheat;
+  transform-style: preserve-3d;
+  transform: rotateY(15deg);
+}

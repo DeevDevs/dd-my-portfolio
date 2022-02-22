@@ -613,7 +613,7 @@
   grid-row-gap: 0px;
   transform-style: preserve-3d;
   transform: rotateY(15deg) scale(0.8);
-  margin-left: 4rem;
+  // margin-left: 4rem;
 
   @media (min-width: 1080px) {
     transform: rotateY(15deg) scale(0.75);
@@ -632,6 +632,7 @@
 }
 
 .advert__section--image__central {
+  margin-left: 1rem;
   max-width: 100%;
 
   @media (min-width: 1080px) {
@@ -639,6 +640,8 @@
     max-width: 100%;
     height: auto;
     box-shadow: -5px 5px 5px var(--logo-image-shadow);
+    margin-left: 6rem;
+    margin-bottom: 0.5rem;
   }
 }
 

@@ -884,7 +884,6 @@ body {
           transform-style: preserve-3d;
   -webkit-transform: rotateY(15deg) scale(0.8);
           transform: rotateY(15deg) scale(0.8);
-  margin-left: 4rem;
 }
 
 @media (min-width: 1080px) {
@@ -909,6 +908,7 @@ body {
 }
 
 .advert__section--image__central {
+  margin-left: 1rem;
   max-width: 100%;
 }
 
@@ -919,6 +919,8 @@ body {
     height: auto;
     -webkit-box-shadow: -5px 5px 5px var(--logo-image-shadow);
             box-shadow: -5px 5px 5px var(--logo-image-shadow);
+    margin-left: 6rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -3745,5 +3747,190 @@ a:visited {
     height: 1.8rem;
     width: 1.8rem;
   }
+}
+
+.intro-part {
+  position: relative;
+  margin-bottom: 1rem;
+  height: 92vh;
+  min-height: 20rem;
+  background-image: var(--intro-section-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 640px) {
+  .intro-part {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1080px) {
+  .intro-part {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0;
+  }
+}
+
+.intro-part__glass {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.intro-part__text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .intro-part__text-box {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .intro-part__text-box {
+    font-size: 3rem;
+  }
+}
+
+.intro-part__text {
+  -webkit-filter: drop-shadow(-15px 15px 4px var(--icons-shadow));
+          filter: drop-shadow(-15px 15px 4px var(--icons-shadow));
+}
+
+.intro-part__icon-box {
+  min-height: 8rem;
+  min-width: 8rem;
+  -webkit-perspective: 20rem;
+          perspective: 20rem;
+  -webkit-perspective-origin: 50% 0%;
+          perspective-origin: 50% 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 640px) {
+  .intro-part__icon-box {
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .intro-part__icon-box {
+    margin-right: 6rem;
+  }
+}
+
+.intro-part__icon {
+  height: 8rem;
+  width: 8rem;
+  -webkit-filter: drop-shadow(-15px 15px 8px var(--icons-shadow));
+          filter: drop-shadow(-15px 15px 8px var(--icons-shadow));
+}
+
+@media (min-width: 640px) {
+  .intro-part__icon {
+    height: 9rem;
+    width: 9rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .intro-part__icon {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+@media (min-width: 1380px) {
+  .intro-part__icon {
+    height: 14rem;
+    width: 14rem;
+  }
+}
+
+.pr-main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 92vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: var(--section-bg);
+}
+
+.pr-general-view {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  background-color: blue;
+  margin: auto;
+  border-radius: 20rem 20rem 20rem 20rem;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-perspective: 100rem;
+          perspective: 100rem;
+}
+
+.justadiv {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 10rem;
+  height: 10rem;
+  background-color: wheat;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(15deg);
+          transform: rotateY(15deg);
 }
 /*# sourceMappingURL=main.css.map */
