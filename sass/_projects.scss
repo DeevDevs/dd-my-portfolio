@@ -50,7 +50,7 @@
 }
 
 .intro-part__text {
-  filter: drop-shadow(-15px 15px 4px var(--icons-shadow));
+  filter: drop-shadow(0px 0px 4px var(--icons-shadow));
 }
 
 .intro-part__icon-box {
@@ -74,7 +74,7 @@
 .intro-part__icon {
   height: 8rem;
   width: 8rem;
-  filter: drop-shadow(-15px 15px 8px var(--icons-shadow));
+  filter: drop-shadow(0px 0px 8px var(--icons-shadow));
 
   @media (min-width: 640px) {
     height: 9rem;
@@ -92,46 +92,73 @@
 }
 
 .pr-main-section {
-  position: relative;
-  display: flex;
-  height: 92vh;
-  width: 100vw;
-  max-width: 100%;
-  background-color: var(--section-bg);
-  perspective-origin: 50% calc(50% + 5rem);
-  perspective: 100rem;
+  @media (min-width: 1080px) and (hover: hover) {
+    position: relative;
+    display: flex;
+    height: 92vh;
+    width: 100vw;
+    max-width: 100%;
+    background-color: var(--section-bg);
+    perspective-origin: 50% calc(50%);
+    perspective: 100rem;
+  }
 }
 
 .draggedover-div {
-  position: absolute;
-  width: 100%;
-  height: 60%;
-  top: 30%;
-  background-color: transparent;
-  z-index: 2;
+  @media (min-width: 1080px) and (hover: hover) {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 20%;
+    background-color: transparent;
+    z-index: 2;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
 }
 .dragged-div {
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  background-color: black;
-  opacity: 0.2;
-  z-index: 2;
+  @media (min-width: 1080px) and (hover: hover) {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    z-index: 2;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
 }
 
+// .grabbing {
+//   cursor: url('./images.grabbing.png') !important;
+// }
+
 .pr-general-view {
-  position: absolute;
-  background-color: blue;
-  left: 50%;
-  top: 50%;
-  transform-style: preserve-3d;
+  @media (min-width: 1080px) and (hover: hover) {
+    position: absolute;
+    background-color: blue;
+    left: 50%;
+    top: 35%;
+    transform-style: preserve-3d;
+  }
 }
 
 .justadiv {
-  position: absolute;
-  left: -5rem;
-  width: 10rem;
-  height: 10rem;
-  background-color: wheat;
-  transform: rotateY(15deg);
+  @media (min-width: 1080px) and (hover: hover) {
+    position: absolute;
+    left: -12vw;
+    width: 24vw;
+    height: calc(92vh * 0.3);
+    background-color: wheat;
+    transform: rotateY(15deg);
+  }
+}
+
+.pr-image {
+  height: 6rem;
 }
