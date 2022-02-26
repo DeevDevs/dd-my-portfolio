@@ -170,7 +170,7 @@ class ProjectsView {
   positionDivs() {
     if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches)
       this.justDivs.forEach((div) => {
-        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 50}rem)`;
       });
   }
 

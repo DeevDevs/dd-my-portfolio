@@ -123,6 +123,7 @@
   position: static;
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
   @media (min-width: 1080px) and (hover: hover) {
     position: absolute;
     background-color: blue;
@@ -135,21 +136,264 @@
 
 .justadiv {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 95vw;
   align-items: center;
-  height: 60vh;
+  // height: 60vh;
+  margin: 1rem auto;
   @media (min-width: 1080px) and (hover: hover) {
     position: absolute;
     left: -12vw;
     width: 24vw;
     height: calc(92vh * 0.3);
-    background-color: wheat;
+    background-color: #596be22c;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 8px var(--logo-image-shadow);
     transform: rotateY(15deg);
+    // backface-visibility: hidden;
   }
 }
 
-.pr-image {
-  height: 6rem;
+.justadiv__project-name {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem;
+  filter: drop-shadow(0 0 6px var(--headlines-shadow));
+  @media (min-width: 640px) {
+    font-size: 1.3rem;
+  }
+  @media (min-width: 740px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 1080px) and (hover: hover) {
+    // font-size: 1.4rem;
+    // position: absolute;
+    // transform: translateZ(0.5rem);
+    // backface-visibility: hidden;
+    display: none;
+  }
+}
+
+// .justadiv__content {
+//   // position: relative;
+//   // display: grid;
+//   // margin: auto;
+//   // // height: 80%;
+//   // width: 100%;
+//   // grid-template-rows: 1fr 1fr 1fr;
+//   // grid-template-columns: 1fr 1fr 1fr;
+//   // grid-template-areas:
+//   //   'top-one top-two top-two'
+//   //   'top-one top-two top-two'
+//   //   'bottom-left bottom-left bottom-right';
+
+//   @media (min-width: 1080px) {
+//     transform-style: preserve-3d;
+//     bottom: 0;
+//   }
+// }
+
+.justadiv__content-image-container {
+  // grid-area: top-two;
+  height: 100%;
+  width: 100%;
+  @media (min-width: 1080px) {
+    position: absolute;
+    transform: translateZ(1.5rem);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+}
+
+.justadiv__content-image {
+  // display: block;
+  // grid-area: top-two;
+  // width: 75%;
+  // max-width: 90%;
+  // max-height: 90%;
+  margin: auto;
+  // filter: drop-shadow(0 0 6px var(--logo-image-shadow));
+  @media (min-width: 1080px) and (hover: hover) {
+    // position: absolute;
+    // transform: translateZ(1.5rem);
+    margin: auto;
+    // transform-style: preserve-3d;
+    // backface-visibility: hidden;
+  }
+}
+
+.justadiv__content-image-two {
+  // grid-area: top-one;
+  // max-height: 100%;
+  margin: auto;
+  // filter: drop-shadow(0 0 6px var(--logo-image-shadow));
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(1rem);
+    backface-visibility: hidden;
+  }
+}
+
+/////////////// INDIVIDUAL PROJECT BOX STYLES ////////////////
+
+////////////// MAPTY
+.jad-mapty {
+  position: relative;
+  background-image: linear-gradient(to bottom left, #ffb54541, #00c46946);
+  padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    // background-color: #20202050;
+    background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+  }
+}
+
+.jad-mapty-content {
+  position: relative;
+  display: grid;
+  margin: auto;
+  width: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'top-two top-two top-two'
+    'top-two top-two top-two'
+    'bottom-two bottom-two top-one'
+    'bottom-two bottom-two top-one';
+  @media (min-width: 1080px) and (hover: hover) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'top-one top-two top-two'
+      'top-one top-two top-two'
+      'bottom-two bottom-two bottom-two';
+  }
+}
+
+.jad-mapty-image-container {
+  height: 100%;
+  grid-area: top-two;
+}
+
+.jad-mapty-image {
+  display: block;
+  width: 92%;
+  margin-top: 1.2rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    background-color: #20202050;
+  }
+}
+
+.jad-mapty-image-two-container {
+  padding-top: 0.5rem;
+  grid-area: top-one;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
+}
+
+.jad-mapty-image-two {
+  display: block;
+  width: 85%;
+  margin-right: auto;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    background-color: #20202050;
+  }
+}
+
+.jad-mapty-image-three-container {
+  grid-area: bottom-two;
+  padding: 1.5rem;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
+}
+
+.jad-mapty-image-three {
+  display: block;
+  width: 75%;
+  margin: auto;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    background-color: #20202050;
+  }
+}
+
+////////////// MAPTY
+
+.jad-bankist {
+  position: relative;
+  min-height: 92vh;
+  // background-image: linear-gradient(to bottom left, #ffb54541, #00c46946);
+  padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    // background-color: #20202050;
+    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+  }
+}
+
+.jad-bankist-content {
+  position: relative;
+  display: grid;
+  margin: auto;
+  width: 100%;
+  grid-template-rows: repeat (3, minmax(100px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-areas:
+  //   'empty bktop bktop bktop'
+  //   'bkmid bkmid bkmid empty'
+  //   'empty bkbtm bkbtm bkbtm';
+  @media (min-width: 1080px) and (hover: hover) {
+    // grid-template-rows: 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-areas:
+    //   'top-one top-two top-two'
+    //   'top-one top-two top-two'
+    //   'bottom-two bottom-two bottom-two';
+  }
+}
+
+.jad-bankist-image-container {
+  grid-area: bktop;
+  width: 10rem;
+  // height: 100%;
+}
+
+.jad-bankist-image {
+  display: block;
+  width: 50%;
+}
+
+.jad-bankist-image-two-container {
+  grid-area: bkmid;
+  width: 10rem;
+  // height: 100%;
+}
+
+.jad-bankist-image-two {
+  display: block;
+  width: 50%;
+}
+
+.jad-bankist-image-three-container {
+  grid-area: bkbtm;
+  width: 10rem;
+  // height: 100%;
+}
+
+.jad-bankist-image-three {
+  display: block;
+  width: 50%;
 }
 
 ////// ELEMENTS THAT SUPPORT WHEEL ANIMATION
