@@ -4265,6 +4265,42 @@ a:visited {
           box-shadow: 0 0 8px #2f8142;
 }
 
+.jad-bankist-app {
+  position: relative;
+  min-height: 50vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#e52a5938), color-stop(transparent), to(#39b38460));
+  background-image: linear-gradient(to bottom right, #e52a5938, transparent, #39b38460);
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+}
+
+@media (min-width: 1080px) and (hover: hover) {
+  .jad-bankist-app {
+    -webkit-box-shadow: 0 0 8px black;
+            box-shadow: 0 0 8px black;
+  }
+}
+
+.jad-bankist-app-content {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 80%;
+}
+
+.jad-bankist-app-image-container {
+  height: 100%;
+}
+
+.jad-bankist-app-image {
+  display: block;
+  width: 90%;
+  margin: auto;
+  -webkit-box-shadow: 0 0 8px #e52a5a;
+          box-shadow: 0 0 8px #e52a5a;
+}
+
 .draggedover-div {
   display: none;
 }
