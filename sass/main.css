@@ -4188,8 +4188,9 @@ a:visited {
 
 .jad-bankist {
   position: relative;
-  min-height: 92vh;
-  padding-bottom: 1rem;
+  min-height: 65vh;
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#9ae15d59), to(rgba(255, 255, 255, 0.335)));
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
   border-radius: 0.8rem;
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
@@ -4208,40 +4209,60 @@ a:visited {
   display: grid;
   margin: auto;
   width: 100%;
-  -ms-grid-rows: repeat 3, minmax(100px, 1fr);
-      grid-template-rows: repeat 3, minmax(100px, 1fr);
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 80%;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: 'a a a' 'b b b' 'c c c';
 }
 
 .jad-bankist-image-container {
-  grid-area: bktop;
-  width: 10rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: a;
+  height: 100%;
 }
 
 .jad-bankist-image {
   display: block;
-  width: 50%;
+  width: 90%;
+  margin: 1rem 0.5rem 1rem auto;
+  -webkit-box-shadow: 0 0 8px #2f8142;
+          box-shadow: 0 0 8px #2f8142;
 }
 
 .jad-bankist-image-two-container {
-  grid-area: bkmid;
-  width: 10rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: b;
+  height: 100%;
 }
 
 .jad-bankist-image-two {
   display: block;
-  width: 50%;
+  width: 90%;
+  margin: 0.5rem auto 1rem 0.5rem;
+  -webkit-box-shadow: 0 0 8px #2f8142;
+          box-shadow: 0 0 8px #2f8142;
 }
 
 .jad-bankist-image-three-container {
-  grid-area: bkbtm;
-  width: 10rem;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: c;
+  height: 100%;
 }
 
 .jad-bankist-image-three {
   display: block;
-  width: 50%;
+  width: 90%;
+  margin: 0 0.5rem 1rem auto;
+  -webkit-box-shadow: 0 0 8px #2f8142;
+          box-shadow: 0 0 8px #2f8142;
 }
 
 .draggedover-div {

@@ -330,9 +330,9 @@
 
 .jad-bankist {
   position: relative;
-  min-height: 92vh;
-  // background-image: linear-gradient(to bottom left, #ffb54541, #00c46946);
-  padding-bottom: 1rem;
+  min-height: 65vh;
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  // padding-bottom: 1rem;
   border-radius: 0.8rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
   @media (min-width: 1080px) and (hover: hover) {
@@ -347,12 +347,13 @@
   display: grid;
   margin: auto;
   width: 100%;
-  grid-template-rows: repeat (3, minmax(100px, 1fr));
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  // grid-template-areas:
-  //   'empty bktop bktop bktop'
-  //   'bkmid bkmid bkmid empty'
-  //   'empty bkbtm bkbtm bkbtm';
+  height: 80%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'a a a'
+    'b b b'
+    'c c c';
   @media (min-width: 1080px) and (hover: hover) {
     // grid-template-rows: 1fr 1fr 1fr;
     // grid-template-columns: 1fr 1fr 1fr;
@@ -364,36 +365,42 @@
 }
 
 .jad-bankist-image-container {
-  grid-area: bktop;
-  width: 10rem;
-  // height: 100%;
+  grid-area: a;
+
+  height: 100%;
 }
 
 .jad-bankist-image {
   display: block;
-  width: 50%;
+  width: 90%;
+  margin: 1rem 0.5rem 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
 }
 
 .jad-bankist-image-two-container {
-  grid-area: bkmid;
-  width: 10rem;
+  grid-area: b;
+  height: 100%;
   // height: 100%;
 }
 
 .jad-bankist-image-two {
   display: block;
-  width: 50%;
+  width: 90%;
+  margin: 0.5rem auto 1rem 0.5rem;
+  box-shadow: 0 0 8px #2f8142;
 }
 
 .jad-bankist-image-three-container {
-  grid-area: bkbtm;
-  width: 10rem;
+  grid-area: c;
+  height: 100%;
   // height: 100%;
 }
 
 .jad-bankist-image-three {
   display: block;
-  width: 50%;
+  width: 90%;
+  margin: 0 0.5rem 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
 }
 
 ////// ELEMENTS THAT SUPPORT WHEEL ANIMATION
