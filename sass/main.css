@@ -3898,58 +3898,56 @@ a:visited {
   }
 }
 
+.pr-main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  min-height: 92vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: var(--section-bg);
+}
+
 @media (min-width: 1080px) and (hover: hover) {
   .pr-main-section {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 92vh;
-    width: 100vw;
-    max-width: 100%;
-    background-color: var(--section-bg);
-    -webkit-perspective-origin: 50% calc(50%);
-            perspective-origin: 50% calc(50%);
+    -webkit-perspective-origin: 50% 25%;
+            perspective-origin: 50% 25%;
     -webkit-perspective: 100rem;
             perspective: 100rem;
   }
 }
 
 @media (min-width: 1080px) and (hover: hover) {
-  .draggedover-div {
-    position: absolute;
+  .pr-main__project-name {
+    margin-bottom: auto;
+    margin: 4rem auto 1rem;
+    font-size: 2rem;
+    text-align: center;
     width: 100%;
-    height: 60%;
-    top: 20%;
-    background-color: transparent;
-    z-index: 2;
-    cursor: -webkit-grab;
-    cursor: grab;
-  }
-  .draggedover-div:active {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
+    height: 6rem;
   }
 }
 
-@media (min-width: 1080px) and (hover: hover) {
-  .dragged-div {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    background-color: transparent;
-    z-index: 2;
-    cursor: -webkit-grab;
-    cursor: grab;
-  }
-  .dragged-div:active {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-  }
-}
-
-.grabbing {
-  cursor: url("./images.grabbing.png") !important;
+.pr-general-view {
+  position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media (min-width: 1080px) and (hover: hover) {
@@ -3957,10 +3955,27 @@ a:visited {
     position: absolute;
     background-color: blue;
     left: 50%;
-    top: 35%;
+    top: 30%;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0s;
+    transition: -webkit-transform 0s;
+    transition: transform 0s;
+    transition: transform 0s, -webkit-transform 0s;
   }
+}
+
+.justadiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60vh;
 }
 
 @media (min-width: 1080px) and (hover: hover) {
@@ -3977,5 +3992,48 @@ a:visited {
 
 .pr-image {
   height: 6rem;
+}
+
+.draggedover-div {
+  display: none;
+}
+
+@media (min-width: 1080px) and (hover: hover) {
+  .draggedover-div {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 20%;
+    background-color: transparent;
+    z-index: 2;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .draggedover-div:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+}
+
+.dragged-div {
+  display: none;
+}
+
+@media (min-width: 1080px) and (hover: hover) {
+  .dragged-div {
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    z-index: 2;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .dragged-div:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
 }
 /*# sourceMappingURL=main.css.map */

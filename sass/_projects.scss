@@ -92,63 +92,52 @@
 }
 
 .pr-main-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  min-height: 92vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: var(--section-bg);
   @media (min-width: 1080px) and (hover: hover) {
-    position: relative;
-    display: flex;
-    height: 92vh;
-    width: 100vw;
-    max-width: 100%;
-    background-color: var(--section-bg);
-    perspective-origin: 50% calc(50%);
+    perspective-origin: 50% 25%;
     perspective: 100rem;
   }
 }
 
-.draggedover-div {
+.pr-main__project-name {
+  display: none;
   @media (min-width: 1080px) and (hover: hover) {
-    position: absolute;
+    margin-bottom: auto;
+    margin: 4rem auto 1rem;
+    font-size: 2rem;
+    text-align: center;
     width: 100%;
-    height: 60%;
-    top: 20%;
-    background-color: transparent;
-    z-index: 2;
-    cursor: grab;
-
-    &:active {
-      cursor: grabbing;
-    }
+    height: 6rem;
   }
 }
-.dragged-div {
-  @media (min-width: 1080px) and (hover: hover) {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    background-color: transparent;
-    z-index: 2;
-    cursor: grab;
-
-    &:active {
-      cursor: grabbing;
-    }
-  }
-}
-
-// .grabbing {
-//   cursor: url('./images.grabbing.png') !important;
-// }
 
 .pr-general-view {
+  position: static;
+  display: flex;
+  flex-direction: column;
   @media (min-width: 1080px) and (hover: hover) {
     position: absolute;
     background-color: blue;
     left: 50%;
-    top: 35%;
+    top: 30%;
     transform-style: preserve-3d;
+    transition: transform 0s;
   }
 }
 
 .justadiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
   @media (min-width: 1080px) and (hover: hover) {
     position: absolute;
     left: -12vw;
@@ -161,4 +150,40 @@
 
 .pr-image {
   height: 6rem;
+}
+
+////// ELEMENTS THAT SUPPORT WHEEL ANIMATION
+
+.draggedover-div {
+  display: none;
+  @media (min-width: 1080px) and (hover: hover) {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 20%;
+    background-color: transparent;
+    z-index: 2;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+.dragged-div {
+  display: none;
+  @media (min-width: 1080px) and (hover: hover) {
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    z-index: 2;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
 }
