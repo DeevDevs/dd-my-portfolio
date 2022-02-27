@@ -126,7 +126,7 @@
   padding-top: 2rem;
   @media (min-width: 1080px) and (hover: hover) {
     position: absolute;
-    background-color: blue;
+    width: 0;
     left: 50%;
     top: 30%;
     transform-style: preserve-3d;
@@ -146,10 +146,11 @@
     left: -12vw;
     width: 24vw;
     height: calc(92vh * 0.3);
+    max-height: calc(92vh * 0.3);
     background-color: #596be22c;
     transform-style: preserve-3d;
     box-shadow: 0 0 8px var(--logo-image-shadow);
-    transform: rotateY(15deg);
+    // transform: rotateY(15deg);
     // backface-visibility: hidden;
   }
 }
@@ -157,7 +158,7 @@
 .justadiv__project-name {
   font-size: 1.2rem;
   text-align: center;
-  margin: 1rem;
+  margin: 2rem 1rem;
   filter: drop-shadow(0 0 6px var(--headlines-shadow));
   @media (min-width: 640px) {
     font-size: 1.3rem;
@@ -166,10 +167,6 @@
     font-size: 1.4rem;
   }
   @media (min-width: 1080px) and (hover: hover) {
-    // font-size: 1.4rem;
-    // position: absolute;
-    // transform: translateZ(0.5rem);
-    // backface-visibility: hidden;
     display: none;
   }
 }
@@ -192,18 +189,6 @@
 //     bottom: 0;
 //   }
 // }
-
-.justadiv__content-image-container {
-  // grid-area: top-two;
-  height: 100%;
-  width: 100%;
-  @media (min-width: 1080px) {
-    position: absolute;
-    transform: translateZ(1.5rem);
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
-}
 
 .justadiv__content-image {
   // display: block;
@@ -238,14 +223,13 @@
 ////////////// MAPTY
 .jad-mapty {
   position: relative;
-  background-image: linear-gradient(to bottom left, #ffb54541, #00c46946);
   padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
-    // background-color: #20202050;
-    background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+    border: 1px solid black;
+    position: absolute;
+    max-height: 65vh;
   }
 }
 
@@ -262,12 +246,15 @@
     'bottom-two bottom-two top-one'
     'bottom-two bottom-two top-one';
   @media (min-width: 1080px) and (hover: hover) {
-    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 1rem;
+    height: 90%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-      'top-one top-two top-two'
-      'top-one top-two top-two'
-      'bottom-two bottom-two bottom-two';
+      'top-two top-two top-one'
+      'top-two top-two top-one'
+      'bottom-two bottom-two top-one'
+      'bottom-two bottom-two top-one';
   }
 }
 
@@ -283,8 +270,10 @@
   border-radius: 0.2rem;
   box-shadow: 0 0 8px black;
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
-    background-color: #20202050;
+    margin: 0.5rem;
+    height: calc(85%);
+    width: auto;
+    max-height: 90%;
   }
 }
 
@@ -292,6 +281,8 @@
   padding-top: 0.5rem;
   grid-area: top-one;
   @media (min-width: 1080px) and (hover: hover) {
+    padding: 0;
+    height: auto;
   }
 }
 
@@ -302,15 +293,18 @@
   border-radius: 0.4rem;
   box-shadow: 0 0 8px black;
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
-    background-color: #20202050;
+    max-width: 90%;
+    padding: 0;
+    margin: 0.5rem 0.5rem auto auto;
+    max-height: 90%;
   }
 }
 
 .jad-mapty-image-three-container {
   grid-area: bottom-two;
-  padding: 1.5rem;
+  margin: 1.5rem;
   @media (min-width: 1080px) and (hover: hover) {
+    margin: 0;
   }
 }
 
@@ -321,24 +315,25 @@
   border-radius: 0.2rem;
   box-shadow: 0 0 8px black;
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
-    background-color: #20202050;
+    width: auto;
+    height: 90%;
+    margin: 0.5rem auto auto auto;
   }
 }
 
-////////////// MAPTY
+////////////// BANKIST
 
 .jad-bankist {
   position: relative;
   min-height: 65vh;
   background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
-  // padding-bottom: 1rem;
   border-radius: 0.8rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
-    // background-color: #20202050;
-    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+    border: 1px solid black;
+    position: absolute;
+    height: 65vh;
+    min-height: auto;
   }
 }
 
@@ -355,19 +350,25 @@
     'b b b'
     'c c c';
   @media (min-width: 1080px) and (hover: hover) {
-    // grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-areas:
-    //   'top-one top-two top-two'
-    //   'top-one top-two top-two'
-    //   'bottom-two bottom-two bottom-two';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'a a b b'
+      'c c c c';
+    height: auto;
+    margin-top: 1rem;
+    // margin-bottom: 0;
+    max-height: 65vh;
   }
 }
 
 .jad-bankist-image-container {
   grid-area: a;
-
   height: 100%;
+  @media (min-width: 1080px) and (hover: hover) {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .jad-bankist-image {
@@ -375,12 +376,19 @@
   width: 90%;
   margin: 1rem 0.5rem 1rem auto;
   box-shadow: 0 0 8px #2f8142;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 0.5rem;
+    width: 90%;
+  }
 }
 
 .jad-bankist-image-two-container {
   grid-area: b;
   height: 100%;
-  // height: 100%;
+  @media (min-width: 1080px) and (hover: hover) {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .jad-bankist-image-two {
@@ -388,12 +396,19 @@
   width: 90%;
   margin: 0.5rem auto 1rem 0.5rem;
   box-shadow: 0 0 8px #2f8142;
+  @media (min-width: 1080px) and (hover: hover) {
+    width: 90%;
+    margin: 0.5rem 0.5rem 1rem auto;
+  }
 }
 
 .jad-bankist-image-three-container {
   grid-area: c;
   height: 100%;
-  // height: 100%;
+  @media (min-width: 1080px) and (hover: hover) {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .jad-bankist-image-three {
@@ -401,6 +416,10 @@
   width: 90%;
   margin: 0 0.5rem 1rem auto;
   box-shadow: 0 0 8px #2f8142;
+  @media (min-width: 1080px) and (hover: hover) {
+    width: 60%;
+    margin: 0.5rem auto;
+  }
 }
 
 ///////////// BANKIST APP
@@ -413,9 +432,10 @@
   border-radius: 0.8rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
   @media (min-width: 1080px) and (hover: hover) {
+    border: 1px solid black;
     box-shadow: 0 0 8px black;
-    // background-color: #20202050;
-    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+    position: absolute;
+    min-height: auto;
   }
 }
 
@@ -424,6 +444,137 @@
   margin: auto;
   width: 100%;
   height: 80%;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 1rem;
+    height: 90%;
+  }
+}
+
+.jad-bankist-app-image-container {
+  height: 100%;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 0.5rem;
+  }
+}
+
+.jad-bankist-app-image {
+  display: block;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 0 8px #e52a5a;
+}
+
+///////// NATOURS
+
+.jad-natours {
+  position: relative;
+  min-height: 50vh;
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  // padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    border: 1px solid black;
+    min-height: auto;
+    position: absolute;
+  }
+}
+
+.jad-natours-content {
+  position: relative;
+  display: grid;
+  margin: auto;
+  width: 100%;
+  height: 80%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'ab ab ca'
+    'bc bc ca'
+    'bc bc ca';
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 1rem;
+  }
+}
+
+.jad-natours-image-container {
+  grid-area: ab;
+
+  height: 100%;
+}
+
+.jad-natours-image {
+  display: block;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 0 8px #2f8142;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 0.5rem;
+  }
+}
+
+.jad-natours-image-two-container {
+  grid-area: bc;
+  height: 100%;
+}
+
+.jad-natours-image-two {
+  display: block;
+  width: 90%;
+  margin: 20% auto;
+  box-shadow: 0 0 8px #2f8142;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 10%;
+  }
+}
+
+.jad-natours-image-three-container {
+  grid-area: ca;
+  height: 100%;
+  // height: 100%;
+}
+
+.jad-natours-image-three {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50%;
+  box-shadow: 0 0 8px #2f8142;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin-top: 30%;
+  }
+}
+
+//////// FORKIFY
+
+.jad-forkify {
+  position: relative;
+  min-height: 50vh;
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  // padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    border: 1px solid black;
+    box-shadow: 0 0 8px black;
+    position: absolute;
+    min-height: auto;
+    margin-top: 1rem;
+  }
+}
+
+.jad-forkify-content {
+  position: relative;
+  display: grid;
+  margin: auto;
+  width: 100%;
+  height: 80%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'ab ab ab .'
+    '. bc bc bc'
+    'ca ca ca .';
   @media (min-width: 1080px) and (hover: hover) {
     // grid-template-rows: 1fr 1fr 1fr;
     // grid-template-columns: 1fr 1fr 1fr;
@@ -434,15 +585,283 @@
   }
 }
 
-.jad-bankist-app-image-container {
+.jad-forkify-image-container {
+  grid-area: ab;
   height: 100%;
 }
 
-.jad-bankist-app-image {
+.jad-forkify-image {
   display: block;
   width: 90%;
+  margin: 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-forkify-image-two-container {
+  grid-area: bc;
+  // width: 90%;
+  height: 100%;
+}
+
+.jad-forkify-image-two {
+  display: block;
+  width: 90%;
+  margin: 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-forkify-image-three-container {
+  grid-area: ca;
+  height: 100%;
+  // height: 100%;
+}
+
+.jad-forkify-image-three {
+  display: block;
+  width: 90%;
+  margin: 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+////// CONNECT FOUR
+
+.jad-connect {
+  position: relative;
+  min-height: 50vh;
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  // padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    position: absolute;
+    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+  }
+}
+
+.jad-connect-content {
+  position: relative;
+  display: grid;
   margin: auto;
-  box-shadow: 0 0 8px #e52a5a;
+  width: 100%;
+  height: 80%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'ab ab .'
+    '. bc bc';
+  @media (min-width: 1080px) and (hover: hover) {
+    // grid-template-rows: 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-areas:
+    //   'top-one top-two top-two'
+    //   'top-one top-two top-two'
+    //   'bottom-two bottom-two bottom-two';
+  }
+}
+
+.jad-connect-image-container {
+  grid-area: ab;
+  height: 100%;
+}
+
+.jad-connect-image {
+  display: block;
+  width: 90%;
+  margin: 1rem 0 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-connect-image-two-container {
+  grid-area: bc;
+  // width: 90%;
+  height: 100%;
+}
+
+.jad-connect-image-two {
+  display: block;
+  width: 90%;
+  margin: 1rem auto 1rem 0;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+///////// PIG GAME
+
+.jad-piggame {
+  position: relative;
+  min-height: 50vh;
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  // padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    box-shadow: 0 0 8px black;
+    position: absolute;
+    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+  }
+}
+
+.jad-piggame-content {
+  position: relative;
+  display: grid;
+  margin: auto;
+  width: 100%;
+  height: 80%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'ab ab ab'
+    'bc bc bc';
+  @media (min-width: 1080px) and (hover: hover) {
+    // grid-template-rows: 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-areas:
+    //   'top-one top-two top-two'
+    //   'top-one top-two top-two'
+    //   'bottom-two bottom-two bottom-two';
+  }
+}
+
+.jad-piggame-image-container {
+  grid-area: ab;
+  height: 100%;
+}
+
+.jad-piggame-image {
+  display: block;
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-piggame-image-two-container {
+  grid-area: bc;
+  // width: 90%;
+  height: 100%;
+}
+
+.jad-piggame-image-two {
+  display: block;
+  width: 90%;
+  margin: 1rem auto auto auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+/////// PORTFOLIO WEBSITE
+
+.jad-portfolio {
+  position: relative;
+  min-height: 50vh;
+  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  // padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  @media (min-width: 1080px) and (hover: hover) {
+    height: 65rem;
+    box-shadow: 0 0 8px black;
+    position: absolute;
+    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+  }
+}
+
+.jad-portfolio-content {
+  position: relative;
+  display: grid;
+  margin: auto;
+  width: 100%;
+  height: 80%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'ab ab bc bc'
+    'cd cd cd cd'
+    'da da da da';
+  @media (min-width: 1080px) and (hover: hover) {
+    // grid-template-rows: 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-areas:
+    //   'top-one top-two top-two'
+    //   'top-one top-two top-two'
+    //   'bottom-two bottom-two bottom-two';
+  }
+}
+
+.jad-portfolio-image-container {
+  grid-area: ab;
+  margin-bottom: 1rem;
+  // height: auto;
+}
+
+.jad-portfolio-image {
+  display: block;
+  width: 70%;
+  margin: auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-portfolio-image-two-container {
+  grid-area: bc;
+  margin-bottom: 1rem;
+  // height: auto;
+  // height: 100%;
+}
+
+.jad-portfolio-image-two {
+  display: block;
+  width: 70%;
+  margin: auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-portfolio-image-three-container {
+  grid-area: cd;
+  height: 100%;
+  margin: 15% auto auto auto;
+  // height: 100%;
+}
+
+.jad-portfolio-image-three {
+  display: block;
+  width: 95%;
+  margin: auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+.jad-portfolio-image-four-container {
+  grid-area: da;
+  height: 100%;
+  margin: 10% auto auto auto;
+  // height: 100%;
+}
+
+.jad-portfolio-image-four {
+  display: block;
+  width: 95%;
+  margin: auto;
+  box-shadow: 0 0 8px #2f8142;
+}
+
+///// GENERAL JUSTADIV PARAMETERS
+
+.justadiv__content-image {
+  @media (min-width: 1080px) {
+    position: absolute;
+    // transform: translateZ(1.5rem);
+    // transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+}
+
+.justadiv__content-image-container {
+  // grid-area: top-two;
+  // height: 100%;
+  // width: 100%;
+  @media (min-width: 1080px) {
+    // position: absolute;
+    transform: translateZ(1.5rem);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
 }
 
 ////// ELEMENTS THAT SUPPORT WHEEL ANIMATION
