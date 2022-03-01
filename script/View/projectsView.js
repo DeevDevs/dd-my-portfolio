@@ -2,6 +2,7 @@ class ProjectsView {
   introBox = document.querySelector('.intro-part');
   introText = document.querySelector('.intro-part__text');
   introIcon = document.querySelector('.intro-part__icon');
+  mainProjectName = document.querySelector('.pr-main__project-name');
   justDivs = document.querySelectorAll('.justadiv');
   wheel = document.querySelector('.pr-general-view');
   wheelContainer = document.querySelector('.pr-main-section');
@@ -17,7 +18,16 @@ class ProjectsView {
   isMoving = true;
   dragDirection;
   newGrab = false;
-  // timer;
+  projectNames = [
+    'Mapty: Workout Records',
+    'Bankist: Home Page',
+    'Bankist: Application',
+    'Natours: Your Travelling Guide',
+    'Forkify: Enrich Your Kitchen Arsenal',
+    'Connect Four',
+    'Pig Game',
+    'Portfolio Website',
+  ];
 
   // qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
 
@@ -36,6 +46,69 @@ class ProjectsView {
     if (this.mousePositionX > window.innerWidth / 3 && this.mousePositionX < (window.innerWidth * 2) / 3)
       console.log('center');
     if (this.mousePositionX > (window.innerWidth * 2) / 3) console.log('right');
+  }
+
+  ////////////////////// FRONT DIV ANIMATION FUNCTIONS ///////////////////////////
+
+  identifyFrontDiv() {
+    switch (Math.abs(this.rotationValue % 360)) {
+      case 0:
+        this.revealProjectDetails('1-mapty');
+        break;
+      case 45:
+        this.rotationValue > 0 ? this.revealProjectDetails('8-portfolio') : this.revealProjectDetails('2-bankist');
+        break;
+      case 90:
+        this.rotationValue > 0 ? this.revealProjectDetails('7-piggame') : this.revealProjectDetails('3-bankapp');
+        break;
+      case 135:
+        this.rotationValue > 0 ? this.revealProjectDetails('6-connect') : this.revealProjectDetails('4-natours');
+        break;
+      case 180:
+        this.revealProjectDetails('5-forkify');
+        break;
+      case 225:
+        this.rotationValue > 0 ? this.revealProjectDetails('4-natours') : this.revealProjectDetails('6-connect');
+        break;
+      case 270:
+        this.rotationValue > 0 ? this.revealProjectDetails('3-bankapp') : this.revealProjectDetails('7-piggame');
+        break;
+      case 315:
+        this.rotationValue > 0 ? this.revealProjectDetails('2-bankist') : this.revealProjectDetails('8-portfolio');
+        break;
+      default:
+        break;
+    }
+  }
+
+  revealProjectDetails(projectId) {
+    const frontDiv = document.getElementById(projectId);
+    const mainContainer = frontDiv
+      .querySelector('.justadiv__content')
+      .querySelector('.jad__content-main-img__container');
+    mainContainer.style.transform = ' scale(1.02) translateZ(0.5rem)';
+    const secondaryContainers = frontDiv
+      .querySelector('.justadiv__content')
+      .querySelectorAll('.jad__content-secondary-img__container');
+    secondaryContainers.forEach((container) => {
+      container.style.opacity = 1;
+      container.style.transform = ' scale(1.1) translateZ(0.5rem)';
+    });
+    this.displayFrontProjectName(projectId);
+  }
+
+  displayFrontProjectName(projectId) {
+    const idNum = parseInt(projectId);
+    this.mainProjectName.textContent = this.projectNames[idNum - 1];
+  }
+
+  //////////////////// POSITION DIVS AT PAGELOAD ///////////////////
+
+  positionDivs() {
+    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches)
+      this.justDivs.forEach((div) => {
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
+      });
   }
 
   ///////////// WHEEL FUNCTIONS //////////////////
@@ -83,7 +156,7 @@ class ProjectsView {
     }
   }
 
-  endRotation(e) {
+  endRotation() {
     const remaining = Math.abs(this.rotationValue % 45);
     if (this.isMoving) {
       const distanceLeft = 45 - remaining;
@@ -131,47 +204,6 @@ class ProjectsView {
       }.bind(this),
       600
     );
-  }
-
-  identifyFrontDiv() {
-    switch (Math.abs(this.rotationValue % 360)) {
-      case 0:
-        console.log('div1');
-        break;
-      case 45:
-        this.rotationValue > 0 ? console.log('div8') : console.log('div2');
-        break;
-      case 90:
-        this.rotationValue > 0 ? console.log('div7') : console.log('div3');
-        break;
-      case 135:
-        this.rotationValue > 0 ? console.log('div6') : console.log('div4');
-        break;
-      case 180:
-        console.log('back');
-        break;
-      case 225:
-        this.rotationValue > 0 ? console.log('div4') : console.log('div6');
-        break;
-      case 270:
-        this.rotationValue > 0 ? console.log('div3') : console.log('div7');
-        break;
-      case 315:
-        this.rotationValue > 0 ? console.log('div2') : console.log('div8');
-        break;
-      default:
-        console.log('no div found');
-        break;
-    }
-  }
-
-  //////////////////// POSITION DIVS AT PAGELOAD ///////////////////
-
-  positionDivs() {
-    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches)
-      this.justDivs.forEach((div) => {
-        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
-      });
   }
 
   /////////////////////////// appear/disappear functions (just in case) //////////////////////////////
