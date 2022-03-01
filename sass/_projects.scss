@@ -139,7 +139,6 @@
   flex-direction: column;
   width: 95vw;
   align-items: center;
-  // height: 60vh;
   margin: 1rem auto;
   @media (min-width: 1080px) and (hover: hover) {
     position: absolute;
@@ -190,33 +189,20 @@
 //   }
 // }
 
-.justadiv__content-image {
-  // display: block;
-  // grid-area: top-two;
-  // width: 75%;
-  // max-width: 90%;
-  // max-height: 90%;
-  margin: auto;
-  // filter: drop-shadow(0 0 6px var(--logo-image-shadow));
-  @media (min-width: 1080px) and (hover: hover) {
-    // position: absolute;
-    // transform: translateZ(1.5rem);
-    margin: auto;
-    // transform-style: preserve-3d;
-    // backface-visibility: hidden;
-  }
-}
+// .justadiv__content-image {
+//   margin: auto;
+//   @media (min-width: 1080px) and (hover: hover) {
+//     margin: auto;
+//   }
+// }
 
-.justadiv__content-image-two {
-  // grid-area: top-one;
-  // max-height: 100%;
-  margin: auto;
-  // filter: drop-shadow(0 0 6px var(--logo-image-shadow));
-  @media (min-width: 1080px) and (hover: hover) {
-    transform: translateZ(1rem);
-    backface-visibility: hidden;
-  }
-}
+// .justadiv__content-image-two {
+//   margin: auto;
+//   @media (min-width: 1080px) and (hover: hover) {
+//     transform: translateZ(1rem);
+//     backface-visibility: hidden;
+//   }
+// }
 
 /////////////// INDIVIDUAL PROJECT BOX STYLES ////////////////
 
@@ -227,97 +213,61 @@
   border-radius: 0.8rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
+    padding: 0;
     border: 1px solid black;
     position: absolute;
-    max-height: 65vh;
+    height: 65vh;
   }
 }
 
 .jad-mapty-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    'top-two top-two top-two'
-    'top-two top-two top-two'
-    'bottom-two bottom-two top-one'
-    'bottom-two bottom-two top-one';
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 1rem;
     height: 90%;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      'top-two top-two top-one'
-      'top-two top-two top-one'
-      'bottom-two bottom-two top-one'
-      'bottom-two bottom-two top-one';
+    transform-style: preserve-3d;
   }
 }
 
 .jad-mapty-image-container {
-  height: 100%;
-  grid-area: top-two;
+  margin-top: 15%;
+  position: relative;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
+  }
 }
 
 .jad-mapty-image {
+  margin: auto;
   display: block;
   width: 92%;
-  margin-top: 1.2rem;
   border-radius: 0.2rem;
   box-shadow: 0 0 8px black;
   @media (min-width: 1080px) and (hover: hover) {
-    margin: 0.5rem;
-    height: calc(85%);
-    width: auto;
-    max-height: 90%;
   }
 }
 
 .jad-mapty-image-two-container {
-  padding-top: 0.5rem;
-  grid-area: top-one;
+  position: absolute;
+  top: -30%;
+  right: 15%;
+  width: 30%;
   @media (min-width: 1080px) and (hover: hover) {
-    padding: 0;
-    height: auto;
+    transform: translateZ(0.5rem);
   }
 }
 
 .jad-mapty-image-two {
+  margin: auto;
   display: block;
   width: 85%;
-  margin-right: auto;
   border-radius: 0.4rem;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 12px black;
   @media (min-width: 1080px) and (hover: hover) {
-    max-width: 90%;
-    padding: 0;
-    margin: 0.5rem 0.5rem auto auto;
-    max-height: 90%;
-  }
-}
-
-.jad-mapty-image-three-container {
-  grid-area: bottom-two;
-  margin: 1.5rem;
-  @media (min-width: 1080px) and (hover: hover) {
-    margin: 0;
-  }
-}
-
-.jad-mapty-image-three {
-  display: block;
-  width: 75%;
-  margin: auto;
-  border-radius: 0.2rem;
-  box-shadow: 0 0 8px black;
-  @media (min-width: 1080px) and (hover: hover) {
-    width: auto;
-    height: 90%;
-    margin: 0.5rem auto auto auto;
   }
 }
 
@@ -325,100 +275,85 @@
 
 .jad-bankist {
   position: relative;
-  min-height: 65vh;
-  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
+    padding: 0;
     border: 1px solid black;
     position: absolute;
     height: 65vh;
-    min-height: auto;
   }
 }
 
 .jad-bankist-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    'a a a'
-    'b b b'
-    'c c c';
   @media (min-width: 1080px) and (hover: hover) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      'a a b b'
-      'c c c c';
-    height: auto;
-    margin-top: 1rem;
-    // margin-bottom: 0;
-    max-height: 65vh;
+    height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-bankist-image-container {
-  grid-area: a;
-  height: 100%;
+  margin: 15% auto;
+  position: relative;
   @media (min-width: 1080px) and (hover: hover) {
-    height: auto;
-    width: 100%;
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
   }
 }
 
 .jad-bankist-image {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 1rem 0.5rem 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 0.5rem;
-    width: 90%;
   }
 }
 
 .jad-bankist-image-two-container {
-  grid-area: b;
-  height: 100%;
+  position: absolute;
+  top: -20%;
+  left: 15%;
+  width: 50%;
   @media (min-width: 1080px) and (hover: hover) {
-    height: auto;
-    width: 100%;
+    transform: translateZ(0.5rem);
   }
 }
 
 .jad-bankist-image-two {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 0.5rem auto 1rem 0.5rem;
-  box-shadow: 0 0 8px #2f8142;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
   @media (min-width: 1080px) and (hover: hover) {
-    width: 90%;
-    margin: 0.5rem 0.5rem 1rem auto;
   }
 }
 
 .jad-bankist-image-three-container {
-  grid-area: c;
-  height: 100%;
+  position: absolute;
+  bottom: -20%;
+  right: 15%;
+  width: 50%;
   @media (min-width: 1080px) and (hover: hover) {
-    height: auto;
-    width: 100%;
+    transform: translateZ(0.5rem);
   }
 }
 
 .jad-bankist-image-three {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 0 0.5rem 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
   @media (min-width: 1080px) and (hover: hover) {
-    width: 60%;
-    margin: 0.5rem auto;
   }
 }
 
@@ -426,122 +361,110 @@
 
 .jad-bankist-app {
   position: relative;
-  min-height: 50vh;
-  background-image: linear-gradient(to bottom right, #e52a5938, transparent, #39b38460);
-  // padding-bottom: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
+    padding: 0;
     border: 1px solid black;
-    box-shadow: 0 0 8px black;
     position: absolute;
-    min-height: auto;
+    height: 65vh;
   }
 }
 
 .jad-bankist-app-content {
   position: relative;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 1rem;
     height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-bankist-app-image-container {
-  height: 100%;
+  position: relative;
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 0.5rem;
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
   }
 }
 
 .jad-bankist-app-image {
-  display: block;
-  width: 90%;
   margin: auto;
-  box-shadow: 0 0 8px #e52a5a;
+  display: block;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 ///////// NATOURS
 
 .jad-natours {
   position: relative;
-  min-height: 50vh;
-  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
-  // padding-bottom: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
+    padding: 0;
     border: 1px solid black;
-    min-height: auto;
     position: absolute;
+    height: 65vh;
   }
 }
 
 .jad-natours-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    'ab ab ca'
-    'bc bc ca'
-    'bc bc ca';
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 1rem;
+    height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-natours-image-container {
-  grid-area: ab;
-
-  height: 100%;
+  margin-top: 15%;
+  position: relative;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
+  }
 }
 
 .jad-natours-image {
-  display: block;
-  width: 90%;
   margin: auto;
-  box-shadow: 0 0 8px #2f8142;
+  display: block;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 0.5rem;
   }
 }
 
 .jad-natours-image-two-container {
-  grid-area: bc;
-  height: 100%;
-}
-
-.jad-natours-image-two {
-  display: block;
-  width: 90%;
-  margin: 20% auto;
-  box-shadow: 0 0 8px #2f8142;
+  position: absolute;
+  top: -20%;
+  left: 10%;
+  width: 50%;
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 10%;
+    transform: translateZ(0.5rem);
   }
 }
 
-.jad-natours-image-three-container {
-  grid-area: ca;
-  height: 100%;
-  // height: 100%;
-}
-
-.jad-natours-image-three {
+.jad-natours-image-two {
+  margin: auto;
   display: block;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 50%;
-  box-shadow: 0 0 8px #2f8142;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
   @media (min-width: 1080px) and (hover: hover) {
-    margin-top: 30%;
   }
 }
 
@@ -549,320 +472,327 @@
 
 .jad-forkify {
   position: relative;
-  min-height: 50vh;
-  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
-  // padding-bottom: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
+    padding: 0;
     border: 1px solid black;
-    box-shadow: 0 0 8px black;
     position: absolute;
-    min-height: auto;
-    margin-top: 1rem;
+    height: 65vh;
   }
 }
 
 .jad-forkify-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    'ab ab ab .'
-    '. bc bc bc'
-    'ca ca ca .';
   @media (min-width: 1080px) and (hover: hover) {
-    // grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-areas:
-    //   'top-one top-two top-two'
-    //   'top-one top-two top-two'
-    //   'bottom-two bottom-two bottom-two';
+    height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-forkify-image-container {
-  grid-area: ab;
-  height: 100%;
+  margin: 15% auto;
+  position: relative;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
+  }
 }
 
 .jad-forkify-image {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 .jad-forkify-image-two-container {
-  grid-area: bc;
-  // width: 90%;
-  height: 100%;
+  position: absolute;
+  top: -30%;
+  right: 8%;
+  width: 30%;
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(0.5rem);
+  }
 }
 
 .jad-forkify-image-two {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 .jad-forkify-image-three-container {
-  grid-area: ca;
-  height: 100%;
-  // height: 100%;
+  position: absolute;
+  bottom: -20%;
+  left: 8%;
+  width: 50%;
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(0.5rem);
+  }
 }
 
 .jad-forkify-image-three {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 ////// CONNECT FOUR
 
 .jad-connect {
   position: relative;
-  min-height: 50vh;
-  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
-  // padding-bottom: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
+    padding: 0;
+    border: 1px solid black;
     position: absolute;
-    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+    height: 65vh;
   }
 }
 
 .jad-connect-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    'ab ab .'
-    '. bc bc';
   @media (min-width: 1080px) and (hover: hover) {
-    // grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-areas:
-    //   'top-one top-two top-two'
-    //   'top-one top-two top-two'
-    //   'bottom-two bottom-two bottom-two';
+    height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-connect-image-container {
-  grid-area: ab;
-  height: 100%;
+  margin-top: 15%;
+  position: relative;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
+  }
 }
 
 .jad-connect-image {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 1rem 0 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 .jad-connect-image-two-container {
-  grid-area: bc;
-  // width: 90%;
-  height: 100%;
+  position: absolute;
+  top: -15%;
+  left: 5%;
+  width: 50%;
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(0.5rem);
+  }
 }
 
 .jad-connect-image-two {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 1rem auto 1rem 0;
-  box-shadow: 0 0 8px #2f8142;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 ///////// PIG GAME
 
 .jad-piggame {
   position: relative;
-  min-height: 50vh;
-  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
-  // padding-bottom: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
-    box-shadow: 0 0 8px black;
+    padding: 0;
+    border: 1px solid black;
     position: absolute;
-    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+    height: 65vh;
   }
 }
 
 .jad-piggame-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    'ab ab ab'
-    'bc bc bc';
   @media (min-width: 1080px) and (hover: hover) {
-    // grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-areas:
-    //   'top-one top-two top-two'
-    //   'top-one top-two top-two'
-    //   'bottom-two bottom-two bottom-two';
+    height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-piggame-image-container {
-  grid-area: ab;
-  height: 100%;
+  position: relative;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
+  }
 }
 
 .jad-piggame-image {
+  margin: auto;
   display: block;
-  width: 90%;
-  margin: 0 auto 1rem auto;
-  box-shadow: 0 0 8px #2f8142;
-}
-
-.jad-piggame-image-two-container {
-  grid-area: bc;
-  // width: 90%;
-  height: 100%;
-}
-
-.jad-piggame-image-two {
-  display: block;
-  width: 90%;
-  margin: 1rem auto auto auto;
-  box-shadow: 0 0 8px #2f8142;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 /////// PORTFOLIO WEBSITE
 
 .jad-portfolio {
   position: relative;
-  min-height: 50vh;
-  background-image: linear-gradient(to bottom left, #9ae15d59, rgba(255, 255, 255, 0.335));
-  // padding-bottom: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
   @media (min-width: 1080px) and (hover: hover) {
-    height: 65rem;
-    box-shadow: 0 0 8px black;
+    padding: 0;
+    border: 1px solid black;
     position: absolute;
-    // background-image: linear-gradient(to bottom left, transparent, #ffb54541, #00c46946, transparent);
+    height: 65vh;
   }
 }
 
 .jad-portfolio-content {
   position: relative;
-  display: grid;
+  display: flex;
   margin: auto;
   width: 100%;
-  height: 80%;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    'ab ab bc bc'
-    'cd cd cd cd'
-    'da da da da';
   @media (min-width: 1080px) and (hover: hover) {
-    // grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-areas:
-    //   'top-one top-two top-two'
-    //   'top-one top-two top-two'
-    //   'bottom-two bottom-two bottom-two';
+    height: 90%;
+    transform-style: preserve-3d;
   }
 }
 
 .jad-portfolio-image-container {
-  grid-area: ab;
-  margin-bottom: 1rem;
-  // height: auto;
+  margin: 15% auto;
+  position: relative;
+  @media (min-width: 1080px) and (hover: hover) {
+    margin: auto;
+    transform: translateZ(0.5rem);
+    transform-style: preserve-3d;
+  }
 }
 
 .jad-portfolio-image {
-  display: block;
-  width: 70%;
   margin: auto;
-  box-shadow: 0 0 8px #2f8142;
+  display: block;
+  width: 92%;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 8px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 .jad-portfolio-image-two-container {
-  grid-area: bc;
-  margin-bottom: 1rem;
-  // height: auto;
-  // height: 100%;
+  position: absolute;
+  bottom: -25%;
+  right: 10%;
+  width: 25%;
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(0.5rem);
+  }
 }
 
 .jad-portfolio-image-two {
-  display: block;
-  width: 70%;
   margin: auto;
-  box-shadow: 0 0 8px #2f8142;
+  display: block;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 .jad-portfolio-image-three-container {
-  grid-area: cd;
-  height: 100%;
-  margin: 15% auto auto auto;
-  // height: 100%;
+  position: absolute;
+  top: -35%;
+  left: 10%;
+  width: 25%;
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(0.5rem);
+  }
 }
 
 .jad-portfolio-image-three {
-  display: block;
-  width: 95%;
   margin: auto;
-  box-shadow: 0 0 8px #2f8142;
+  display: block;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 .jad-portfolio-image-four-container {
-  grid-area: da;
-  height: 100%;
-  margin: 10% auto auto auto;
-  // height: 100%;
+  position: absolute;
+  top: -25%;
+  right: 5%;
+  width: 50%;
+  @media (min-width: 1080px) and (hover: hover) {
+    transform: translateZ(0.5rem);
+  }
 }
 
 .jad-portfolio-image-four {
-  display: block;
-  width: 95%;
   margin: auto;
-  box-shadow: 0 0 8px #2f8142;
+  display: block;
+  width: 85%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 12px black;
+  @media (min-width: 1080px) and (hover: hover) {
+  }
 }
 
 ///// GENERAL JUSTADIV PARAMETERS
 
-.justadiv__content-image {
-  @media (min-width: 1080px) {
-    position: absolute;
-    // transform: translateZ(1.5rem);
-    // transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
-}
+// .justadiv__content-image {
+//   @media (min-width: 1080px) {
+//     position: absolute;
+//     // transform: translateZ(1.5rem);
+//     // transform-style: preserve-3d;
+//     backface-visibility: hidden;
+//   }
+// }
 
-.justadiv__content-image-container {
-  // grid-area: top-two;
-  // height: 100%;
-  // width: 100%;
-  @media (min-width: 1080px) {
-    // position: absolute;
-    transform: translateZ(1.5rem);
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
-}
+// .justadiv__content-image-container {
+//   // grid-area: top-two;
+//   // height: 100%;
+//   // width: 100%;
+//   @media (min-width: 1080px) {
+//     // position: absolute;
+//     transform: translateZ(1.5rem);
+//     transform-style: preserve-3d;
+//     backface-visibility: hidden;
+//   }
+// }
 
 ////// ELEMENTS THAT SUPPORT WHEEL ANIMATION
 
