@@ -112,11 +112,23 @@
   @media (min-width: 1080px) and (hover: hover) {
     display: block;
     margin-bottom: auto;
-    margin: 2rem auto 1rem;
+    padding-top: 1rem;
+    margin: 1rem auto 1rem;
     font-size: 2rem;
     text-align: center;
     width: 100%;
     line-height: 6rem;
+  }
+}
+
+.switch-format__btn-box {
+  display: none;
+  @media (hover: hover) {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
   }
 }
 
@@ -125,21 +137,39 @@
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
+  @media (min-width: 640px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   @media (min-width: 1080px) and (hover: hover) {
     padding: 0;
     position: absolute;
     width: 0;
     left: 50%;
-    top: 30%;
+    top: 27%;
     transform-style: preserve-3d;
     transition: transform 0s;
   }
+}
+
+.nowheel {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 4rem;
+  width: 100vw;
+  max-width: 100%;
 }
 
 .justadiv {
   display: flex;
   flex-direction: column;
   width: 95vw;
+  max-width: 31rem;
   align-items: center;
   margin: 1rem auto;
   position: relative;
@@ -150,18 +180,35 @@
     position: absolute;
     left: -12vw;
     width: 24vw;
-    height: calc(92vh * 0.3);
-    max-height: calc(92vh * 0.3);
     background-color: #596be22c;
     transform-style: preserve-3d;
     padding: 0;
-    // border: 1px solid black;
-    position: absolute;
-    height: 65vh;
+    height: 30vh;
+  }
+}
+
+.back-side {
+  background-color: aqua;
+  position: absolute;
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.nowheel__divs {
+  @media (min-width: 1080px) and (hover: hover) {
+    position: relative;
+    width: 95%;
+    max-width: 31rem;
+    padding-bottom: 2rem;
+    left: 0vw;
+    height: auto;
   }
 }
 
 .justadiv__project-name {
+  display: block;
   font-size: 1.2rem;
   text-align: center;
   margin: 2rem 1rem;
@@ -191,6 +238,12 @@
 /////////////// INDIVIDUAL PROJECT BOX STYLES ////////////////
 
 ////////////// MAPTY
+
+.jad-mapty .back-side {
+  background-color: #738385de;
+  // background-image: linear-gradient(to top, #323f46, #d4ede4);
+}
+
 .jad-mapty-image-container {
   margin: 15% auto 2% auto;
 }
@@ -214,14 +267,12 @@
 
 ////////////// BANKIST
 
+.jad-bankist .back-side {
+  background-color: #ebeeebc9;
+}
+
 .jad-bankist-image-container {
   margin: 12% auto;
-  // position: relative;
-  // @media (min-width: 1080px) and (hover: hover) {
-  //   margin: auto;
-  //   transform: translateZ(0.5rem);
-  //   transform-style: preserve-3d;
-  // }
 }
 
 .jad-bankist-image {
@@ -251,9 +302,14 @@
   width: 85%;
   border-radius: 0.4rem;
   box-shadow: 0 0 12px black;
+  backface-visibility: hidden;
 }
 
 ///////////// BANKIST APP
+
+.jad-bankist-app .back-side {
+  background-color: #ede8dad5;
+}
 
 .jad-bankist-app-image-container {
   margin: 2% auto;
@@ -265,6 +321,10 @@
 }
 
 ///////// NATOURS
+
+.jad-natours .back-side {
+  background-color: #c2dfccce;
+}
 
 .jad-natours-image-container {
   margin: 12% auto 2% auto;
@@ -288,6 +348,10 @@
 }
 
 //////// FORKIFY
+
+.jad-forkify .back-side {
+  background-color: #fbcb95d5;
+}
 
 .jad-forkify-image-container {
   margin: 15% auto 12% auto;
@@ -324,6 +388,10 @@
 
 ////// CONNECT FOUR
 
+.jad-connect .back-side {
+  background-color: #fab24dd0;
+}
+
 .jad-connect-image-container {
   margin: 12% auto 2% auto;
 }
@@ -347,6 +415,10 @@
 
 ///////// PIG GAME
 
+.jad-piggame .back-side {
+  background-color: #af1e56dc;
+}
+
 .jad-piggame-image-container {
   margin: 2% auto;
 }
@@ -357,6 +429,10 @@
 }
 
 /////// PORTFOLIO WEBSITE
+
+.jad-portfolio .back-side {
+  background-color: #b1bcece3;
+}
 
 .jad-portfolio-image-container {
   margin: 15% auto;
@@ -411,14 +487,20 @@
     margin: auto;
     transform-style: preserve-3d;
     transition: transform 1s ease-out;
-    // transform: translateZ(0.5rem);
   }
+}
+
+.nowheel__main-img-container {
+  margin: 13% auto !important;
+  transition: transform 0ms;
 }
 
 .jad__content-main-img {
   margin: auto;
   display: block;
   border-radius: 0.2rem;
+  transform: translateZ(0.1rem);
+  // backface-visibility: hidden;
   @media (min-width: 1080px) and (hover: hover) {
   }
 }
@@ -427,9 +509,14 @@
   position: absolute;
   @media (min-width: 1080px) and (hover: hover) {
     transition: transform 2s ease-out, opacity 0.8s linear;
-    // transform: translateZ(0.5rem);
     opacity: 0;
+    transform: translateZ(0.1rem);
   }
+}
+
+.nowheel__secondary-img-container {
+  opacity: 1 !important;
+  transition: transform 0ms;
 }
 
 .jad__content-secondary-img {

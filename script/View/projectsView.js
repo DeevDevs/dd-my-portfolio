@@ -2,13 +2,18 @@ class ProjectsView {
   introBox = document.querySelector('.intro-part');
   introText = document.querySelector('.intro-part__text');
   introIcon = document.querySelector('.intro-part__icon');
-  mainProjectName = document.querySelector('.pr-main__project-name');
-  justDivs = document.querySelectorAll('.justadiv');
-  wheel = document.querySelector('.pr-general-view');
+  wheelGridBox = document.querySelector('.pr-general-view');
   wheelContainer = document.querySelector('.pr-main-section');
+  mainProjectName = document.querySelector('.pr-main__project-name');
+  individualProjectName = document.querySelectorAll('.justadiv__project-name');
+  justDivs = document.querySelectorAll('.justadiv');
+  mainImageContainers = document.querySelectorAll('.jad__content-main-img__container');
+  secondaryImageContainers = document.querySelectorAll('.jad__content-secondary-img__container');
   draggedOverDiv = document.querySelector('.draggedover-div');
   draggedDiv = document.querySelector('.dragged-div');
-
+  btnSwitchFormat = document.querySelector('.btn__switch-format');
+  projectViewFormat = 'wheel';
+  currentPageCondition;
   mousePositionX;
   mouseSpeed = 1;
   lastMousePosition;
@@ -32,6 +37,13 @@ class ProjectsView {
   // qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
 
   constructor() {
+    window.addEventListener('resize', this.followResizing.bind(this));
+    this.btnSwitchFormat.addEventListener(
+      'click',
+      function () {
+        this.toggleProjectViewFormat(this.projectViewFormat);
+      }.bind(this)
+    );
     this.positionDivs();
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.draggedOverDiv.addEventListener('mousemove', this.showMousePosition.bind(this));
@@ -39,6 +51,53 @@ class ProjectsView {
     this.draggedDiv.addEventListener('dragstart', this.startDrag.bind(this));
     this.draggedDiv.addEventListener('drag', this.seeDrag.bind(this));
     this.draggedDiv.addEventListener('dragend', this.endRotation.bind(this));
+  }
+
+  followResizing(e) {
+    if (e.target.innerWidth >= 1200) {
+      this.btnSwitchFormat.style.display = 'block';
+    }
+
+    if (e.target.innerWidth <= 1200 && this.projectViewFormat === 'wheel') {
+      this.toggleProjectViewFormat();
+      this.btnSwitchFormat.style.display = 'none';
+    }
+  }
+
+  toggleProjectViewFormat() {
+    if (this.projectViewFormat === 'wheel') {
+      this.wheelGridBox.classList.add('nowheel');
+      this.wheelGridBox.style.transform = 'rotateY(0deg)';
+      this.justDivs.forEach((div, i) => {
+        div.style.transform = `rotateY(0deg) translateZ(0rem)`;
+        div.classList.add('nowheel__divs');
+        div.style.position = 'relative';
+      });
+      this.mainImageContainers.forEach((container) => container.classList.add('nowheel__main-img-container'));
+      this.secondaryImageContainers.forEach((container) => container.classList.add('nowheel__secondary-img-container'));
+      this.individualProjectName.forEach((nameBox) => (nameBox.style.display = 'block'));
+      this.mainProjectName.style.display = 'none';
+      this.draggedDiv.style.display = 'none';
+      this.draggedOverDiv.style.display = 'none';
+      this.projectViewFormat = 'flex';
+    } else if (this.projectViewFormat === 'flex') {
+      this.wheelGridBox.classList.remove('nowheel');
+      this.wheelGridBox.style.transform = `rotateY(${this.rotationValue}deg)`;
+      this.justDivs.forEach((div) => {
+        div.classList.remove('nowheel__divs');
+        div.style.position = 'absolute';
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
+      });
+      this.mainImageContainers.forEach((container) => container.classList.remove('nowheel__main-img-container'));
+      this.secondaryImageContainers.forEach((container) =>
+        container.classList.remove('nowheel__secondary-img-container')
+      );
+      this.individualProjectName.forEach((nameBox) => (nameBox.style.display = 'none'));
+      this.mainProjectName.style.display = 'block';
+      this.draggedDiv.style.display = 'block';
+      this.draggedOverDiv.style.display = 'block';
+      this.projectViewFormat = 'wheel';
+    }
   }
 
   whereClicks() {
@@ -93,6 +152,7 @@ class ProjectsView {
     secondaryContainers.forEach((container) => {
       container.style.opacity = 1;
       container.style.transform = ' scale(1.1) translateZ(0.5rem)';
+      container.style.backfaceVisibility = 'hidden';
     });
     this.displayFrontProjectName(projectId);
   }
@@ -135,7 +195,7 @@ class ProjectsView {
   }
 
   seeDrag(e) {
-    this.wheel.style.transition = `transform 0s`;
+    this.wheelGridBox.style.transition = `transform 0s`;
     this.checkIfMoves(e.clientX, e.clientY);
     if (!isNaN(Math.abs(this.lastMousePosition - e.clientX)) && Math.abs(this.lastMousePosition - e.clientX) !== 0)
       this.mouseSpeed = Math.abs(this.lastMousePosition - e.clientX);
@@ -143,14 +203,14 @@ class ProjectsView {
     if (e.clientX > this.dragX) {
       // this.rotationValue += 0.4;
       this.rotationValue = this.rotationValue + 0.2 * this.mouseSpeed;
-      this.wheel.style.transform = `rotateY(${this.rotationValue}deg)`;
+      this.wheelGridBox.style.transform = `rotateY(${this.rotationValue}deg)`;
       this.dragX = e.clientX;
       if (e.y !== 0) this.dragDirection = 'right';
     }
     if (e.clientX < this.dragX && e.y !== 0) {
       // this.rotationValue -= 0.4;
       this.rotationValue = this.rotationValue - 0.2 * this.mouseSpeed;
-      this.wheel.style.transform = `rotateY(${this.rotationValue}deg)`;
+      this.wheelGridBox.style.transform = `rotateY(${this.rotationValue}deg)`;
       this.dragX = e.clientX;
       this.dragDirection = 'left';
     }
@@ -195,11 +255,11 @@ class ProjectsView {
   }
 
   setWheelFinalPosition() {
-    this.wheel.style.transition = `transform 0.6s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
-    this.wheel.style.transform = `rotateY(${this.rotationValue}deg)`;
+    this.wheelGridBox.style.transition = `transform 0.6s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
+    this.wheelGridBox.style.transform = `rotateY(${this.rotationValue}deg)`;
     this.timer = setTimeout(
       function () {
-        this.wheel.style.transition = `transform 0s`;
+        this.wheelGridBox.style.transition = `transform 0s`;
         this.identifyFrontDiv();
       }.bind(this),
       600
