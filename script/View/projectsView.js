@@ -101,10 +101,10 @@ class ProjectsView {
   }
 
   whereClicks() {
-    if (this.mousePositionX < window.innerWidth / 3) console.log('left');
-    if (this.mousePositionX > window.innerWidth / 3 && this.mousePositionX < (window.innerWidth * 2) / 3)
+    if (this.mousePositionX < window.innerWidth / 4) console.log('left');
+    if (this.mousePositionX > window.innerWidth / 4 && this.mousePositionX < (window.innerWidth * 3) / 4)
       console.log('center');
-    if (this.mousePositionX > (window.innerWidth * 2) / 3) console.log('right');
+    if (this.mousePositionX > (window.innerWidth * 3) / 4) console.log('right');
   }
 
   ////////////////////// FRONT DIV ANIMATION FUNCTIONS ///////////////////////////

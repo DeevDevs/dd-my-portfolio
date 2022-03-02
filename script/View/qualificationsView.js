@@ -105,8 +105,10 @@ class QualificationsView {
     const element = e.target.closest('.img-box');
     element.style.transform = `translateZ(10rem) translateY(${+element.dataset.pos / 1.5}rem) translateX(${
       element.dataset.pos / 2
-    }rem)`;
+    }rem) rotateZ(5deg)`;
     element.style.opacity = `1`;
+    // element.style.border = `2px solid black`;
+    // element.style.boxShadow = `0 0 20px black`;
   }
 
   returnImageTransformValues(e) {
@@ -117,7 +119,7 @@ class QualificationsView {
   imageStyleRender(element) {
     element.style.transform = `translateZ(-${element.dataset.pos}rem) translateY(${
       +element.dataset.pos / 1.3
-    }rem) translateX(${element.dataset.pos / 2}rem)`;
+    }rem) translateX(${element.dataset.pos / 1.5}rem)`;
     element.style.opacity = `${1 - +`${element.dataset.pos >= 10 ? 9.5 : element.dataset.pos}` / 10 + 0.05}`;
   }
 
