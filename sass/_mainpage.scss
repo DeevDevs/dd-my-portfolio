@@ -638,7 +638,7 @@
   @media (min-width: 1080px) {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     box-shadow: -5px 5px 5px var(--logo-image-shadow);
     margin-left: 6rem;
     margin-bottom: 0.5rem;
@@ -785,8 +785,11 @@
   25% {
     transform: translateZ(-1.4rem);
   }
+  50% {
+    transform: rotateZ(360deg) translateZ(0);
+  }
   60% {
-    transform: translateZ(1.4rem);
+    transform: rotateZ(0deg) translateZ(1.4rem);
   }
   90% {
     transform: translateZ(0rem);

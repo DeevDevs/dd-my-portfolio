@@ -101,14 +101,19 @@ class QualificationsView {
   }
 
   imageStandOut(e) {
+    // if (!e.target.closest('.img-box')) return;
+    // const element = e.target.closest('.img-box');
+    // element.style.transform = `translateZ(10rem) translateY(${+element.dataset.pos / 2.5}rem) translateX(${
+    //   element.dataset.pos / 2
+    // }rem) rotateZ(5deg)`;
+    // element.style.opacity = `1`;
     if (!e.target.closest('.img-box')) return;
     const element = e.target.closest('.img-box');
-    element.style.transform = `translateZ(10rem) translateY(${+element.dataset.pos / 1.5}rem) translateX(${
-      element.dataset.pos / 2
+    // console.log(element.style.transform);
+    element.style.transform = `translateZ(10rem) translateY(${+element.dataset.pos / 2.3 - 0.5}rem) translateX(${
+      element.dataset.pos / 1.5
     }rem) rotateZ(5deg)`;
     element.style.opacity = `1`;
-    // element.style.border = `2px solid black`;
-    // element.style.boxShadow = `0 0 20px black`;
   }
 
   returnImageTransformValues(e) {
@@ -118,7 +123,7 @@ class QualificationsView {
 
   imageStyleRender(element) {
     element.style.transform = `translateZ(-${element.dataset.pos}rem) translateY(${
-      +element.dataset.pos / 1.3
+      +element.dataset.pos / 2.3
     }rem) translateX(${element.dataset.pos / 1.5}rem)`;
     element.style.opacity = `${1 - +`${element.dataset.pos >= 10 ? 9.5 : element.dataset.pos}` / 10 + 0.05}`;
   }

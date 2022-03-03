@@ -7,6 +7,7 @@ class ProjectsView {
   mainProjectName = document.querySelector('.pr-main__project-name');
   individualProjectName = document.querySelectorAll('.justadiv__project-name');
   justDivs = document.querySelectorAll('.justadiv');
+  justDivsContentBoxes = document.querySelectorAll('.justadiv__content');
   mainImageContainers = document.querySelectorAll('.jad__content-main-img__container');
   secondaryImageContainers = document.querySelectorAll('.jad__content-secondary-img__container');
   draggedOverDiv = document.querySelector('.draggedover-div');
@@ -73,6 +74,9 @@ class ProjectsView {
         div.classList.add('nowheel__divs');
         div.style.position = 'relative';
       });
+      this.justDivsContentBoxes.forEach((div) => {
+        div.classList.add('nowheel__divs-content');
+      });
       this.mainImageContainers.forEach((container) => container.classList.add('nowheel__main-img-container'));
       this.secondaryImageContainers.forEach((container) => container.classList.add('nowheel__secondary-img-container'));
       this.individualProjectName.forEach((nameBox) => (nameBox.style.display = 'block'));
@@ -86,7 +90,10 @@ class ProjectsView {
       this.justDivs.forEach((div) => {
         div.classList.remove('nowheel__divs');
         div.style.position = 'absolute';
-        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 30}rem)`;
+      });
+      this.justDivsContentBoxes.forEach((div) => {
+        div.classList.remove('nowheel__divs-content');
       });
       this.mainImageContainers.forEach((container) => container.classList.remove('nowheel__main-img-container'));
       this.secondaryImageContainers.forEach((container) =>
@@ -145,13 +152,15 @@ class ProjectsView {
     const mainContainer = frontDiv
       .querySelector('.justadiv__content')
       .querySelector('.jad__content-main-img__container');
-    mainContainer.style.transform = ' scale(1.02) translateZ(0.5rem)';
+    // mainContainer.style.transform = ' scale(1.02) translateZ(0.5rem)';
+    mainContainer.style.transform = 'scale(1.02)';
     const secondaryContainers = frontDiv
       .querySelector('.justadiv__content')
       .querySelectorAll('.jad__content-secondary-img__container');
     secondaryContainers.forEach((container) => {
       container.style.opacity = 1;
-      container.style.transform = ' scale(1.1) translateZ(0.5rem)';
+      container.style.transform = 'scale(1.1)';
+      // container.style.transform = ' scale(1.1)';
       container.style.backfaceVisibility = 'hidden';
     });
     this.displayFrontProjectName(projectId);
@@ -167,7 +176,7 @@ class ProjectsView {
   positionDivs() {
     if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches)
       this.justDivs.forEach((div) => {
-        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 30}rem)`;
       });
   }
 
