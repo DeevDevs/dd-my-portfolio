@@ -274,6 +274,9 @@
   transition: opacity 0.3s linear;
   justify-content: center;
   align-items: center;
+  justify-items: center;
+  align-content: center;
+  flex-wrap: wrap;
   // padding-bottom: 1.5rem;
 }
 
@@ -312,6 +315,7 @@
 
 .quals-box__text {
   padding-bottom: 0.75rem;
+  margin-left: 1rem;
   min-height: 3.75rem;
   filter: drop-shadow(0 0 1px var(--headlines-shadow));
 }

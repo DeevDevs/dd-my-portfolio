@@ -103,6 +103,8 @@
   background-color: var(--section-bg);
   overflow-x: hidden;
   @media (min-width: 1080px) and (hover: hover) {
+    transform: translateY(5rem);
+    transition: transform 0.5s ease-in-out;
   }
 }
 
@@ -140,8 +142,8 @@
   & p {
     width: 25rem;
     line-height: 2;
-    padding: 3rem;
-    margin: 7rem auto auto 1rem;
+    padding: 2rem;
+    margin: 7rem auto auto 3rem;
     font-size: 1.2rem;
     font-weight: 700;
     transform: skew(-10deg) translateX(5rem);
@@ -158,8 +160,8 @@
   & p {
     width: 25rem;
     line-height: 2;
-    padding: 3rem 3rem 3rem 4rem;
-    margin: 7rem 0 auto auto;
+    padding: 2rem 2rem 2rem 4rem;
+    margin: 7rem 3rem auto auto;
     font-size: 1.2rem;
     font-weight: 700;
     transform: skew(-10deg) translateX(-5rem);
@@ -201,6 +203,8 @@
     margin-left: 25vw;
     height: 60vh;
     width: auto;
+    transform: translateX(75vw);
+    transition: transform 0.3s ease-out;
   }
 }
 
@@ -225,6 +229,7 @@
     box-shadow: none;
     padding: 0;
     margin: 0;
+    // margin: 2vw;
     height: 100%;
     border-radius: 0.8rem;
   }
@@ -236,12 +241,13 @@
     display: block;
     position: absolute;
     transform: translateZ(0.5rem) skew(10deg);
-    width: 9 5%;
+    width: 95%;
     height: 100%;
     border-radius: 0.8rem;
     opacity: 0.5;
   }
 }
+
 .justadiv__project-name {
   display: block;
   font-size: 1.2rem;
@@ -286,12 +292,30 @@
 .justadiv__content__learn-more {
   opacity: 0;
   position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 4.2rem);
   padding-bottom: 2rem;
   background-color: rgba(2, 19, 65, 0.808);
   z-index: 3;
   transition: opacity 0.3s linear;
+
+  @media (min-width: 640px) {
+    font-size: 1.3rem;
+    padding: 2rem 1rem;
+    height: calc(100% - 5.3rem);
+  }
+  @media (min-width: 740px) {
+    font-size: 1.4rem;
+    height: calc(100% - 5.4rem);
+  }
+  @media (min-width: 1080px) and (hover: hover) {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 
   & p {
     padding: 4rem;
@@ -313,7 +337,6 @@
 
 .jad-mapty .back-side {
   background-color: #738385de;
-  // background-image: linear-gradient(to top, #323f46, #d4ede4);
 }
 
 .jad-mapty-image-container {
@@ -329,17 +352,6 @@
   top: -20%;
   right: 15%;
   width: 30%;
-
-  // & .secondary-img__backside {
-  //   height: 100%;
-  //   width: 100%;
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   transform: rotateY(180deg);
-  //   background-color: gray;
-  //   backface-visibility: hidden;
-  // }
 }
 
 .jad-mapty-image-two {
@@ -351,7 +363,7 @@
 ////////////// BANKIST
 
 .jad-bankist .back-side {
-  background-color: #ebeeebc9;
+  background-color: #ebeeebf5;
 }
 
 .jad-bankist-image-container {
@@ -651,5 +663,6 @@
     background-color: black;
     z-index: 10;
     cursor: grab;
+    border-radius: 50%;
   }
 }

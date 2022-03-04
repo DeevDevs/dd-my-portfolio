@@ -38,13 +38,19 @@ class ProjectsView {
     'Portfolio Website',
   ];
 
+  observePrMainSection = new IntersectionObserver(this.bringFirstProject.bind(this), {
+    root: null,
+    threshold: [
+      0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1,
+    ],
+  });
+  intersectionCount = 0;
+
   constructor() {
-    // this.btnSwitchFormat.addEventListener(
-    //   'click',
-    //   function () {
-    //     this.toggleProjectViewFormat(this.projectViewFormat);
-    //   }.bind(this)
-    // );
+    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
+      this.observePrMainSection.observe(this.wheelContainer);
+    }
+
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.draggedOverDiv.addEventListener('mousemove', this.showMousePosition.bind(this));
     this.draggedDiv.addEventListener('click', this.whereClicks.bind(this));
@@ -53,49 +59,25 @@ class ProjectsView {
     this.draggedDiv.addEventListener('dragend', this.endRotation.bind(this));
   }
 
-  // toggleProjectViewFormat() {
-  //   // this.windowWidth = window.innerWidth;
-  //   if (this.projectViewFormat === 'wheel') {
-  //     this.wheelGridBox.classList.add('nowheel');
-  //     this.wheelGridBox.style.transform = 'rotateY(0deg)';
-  //     this.justDivs.forEach((div, i) => {
-  //       div.style.transform = `rotateY(0deg) translateZ(0rem)`;
-  //       div.classList.add('nowheel__divs');
-  //       div.style.position = 'relative';
-  //     });
-  //     this.justDivsContentBoxes.forEach((div) => {
-  //       div.classList.add('nowheel__divs-content');
-  //     });
-  //     this.mainImageContainers.forEach((container) => container.classList.add('nowheel__main-img-container'));
-  //     this.secondaryImageContainers.forEach((container) => container.classList.add('nowheel__secondary-img-container'));
-  //     this.individualProjectName.forEach((nameBox) => (nameBox.style.display = 'block'));
-  //     this.mainProjectName.style.display = 'none';
-  //     this.draggedDiv.style.display = 'none';
-  //     this.draggedOverDiv.style.display = 'none';
-  //     this.projectViewFormat = 'flex';
-  //   } else if (this.projectViewFormat === 'flex') {
-  //     this.wheelGridBox.classList.remove('nowheel');
-  //     this.wheelGridBox.style.transform = `rotateY(${this.rotationValue}deg)`;
-  //     this.justDivs.forEach((div) => {
-  //       div.classList.remove('nowheel__divs');
-  //       div.style.position = 'absolute';
-  //     });
+  bringFirstProject(entry, observer) {
+    if (!entry[0].isIntersecting) return;
+    entry[0].target.style.transform = 'translateY(0rem)';
+    this.wheelGridBox.style.transform = `translateX(${75 - this.intersectionCount * (75 / 20)}vw)`;
+    this.intersectionCount++;
+    console.log(entry[0], entry[0].intersectionRatio);
+    if (this.intersectionCount >= 20 || entry[0].intersectionRatio >= 0.97) {
+      // this.wheelGridBox.style.transform = `translateX(0vw)`;
+      this.setWheelFinalPosition();
+      setTimeout(
+        function () {
+          this.wheelGridBox.style.transition = 'transform 0ms';
+        }.bind(this),
+        600
+      );
 
-  //     this.justDivsContentBoxes.forEach((div) => {
-  //       div.classList.remove('nowheel__divs-content');
-  //     });
-  //     this.mainImageContainers.forEach((container) => container.classList.remove('nowheel__main-img-container'));
-  //     this.secondaryImageContainers.forEach((container) =>
-  //       container.classList.remove('nowheel__secondary-img-container')
-  //     );
-  //     this.individualProjectName.forEach((nameBox) => (nameBox.style.display = 'none'));
-  //     this.mainProjectName.style.display = 'block';
-  //     this.draggedDiv.style.display = 'block';
-  //     this.draggedOverDiv.style.display = 'flex';
-  //     this.projectViewFormat = 'wheel';
-  //     // this.positionDivs();
-  //   }
-  // }
+      observer.unobserve(this.wheelContainer);
+    }
+  }
 
   whereClicks() {
     if (this.mousePositionX < window.innerWidth / 4) this.shiftProjects('left');
@@ -248,7 +230,7 @@ class ProjectsView {
   setWheelFinalPosition() {
     if (this.shiftValue > 0) this.shiftValue = 0;
     if (this.shiftValue < -350) this.shiftValue = -350;
-    this.wheelGridBox.style.transition = `transform 0.6s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
+    this.wheelGridBox.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
     this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
     this.timer = setTimeout(
       function () {

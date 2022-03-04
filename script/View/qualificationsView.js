@@ -208,11 +208,11 @@ class QualificationsView {
 
   openDisplayQualifications(type) {
     if (type === 'short') {
-      this._makeElementAppear(this.qualsShort, 300, 'grid');
+      this._makeElementAppear(this.qualsShort, 300, 'flex');
       this._makeElementAppear(this.eduIT, 300, 'inline-block');
     }
     if (type === 'long') {
-      this._makeElementAppear(this.qualsLong, 300, 'grid');
+      this._makeElementAppear(this.qualsLong, 300, 'flex');
       this._makeElementAppear(this.eduAll, 300, 'inline-block');
     }
     this.btnCloseQualsBox.style.display = 'flex';
