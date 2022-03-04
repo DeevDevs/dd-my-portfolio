@@ -256,7 +256,7 @@
 
   &:hover {
     .justadiv__content__learn-more {
-      visibility: visible;
+      // visibility: visible;
       opacity: 1;
     }
   }
@@ -268,14 +268,14 @@
 
 .justadiv__content__learn-more {
   opacity: 0;
-  visibility: hidden;
+  // visibility: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
   padding-bottom: 2rem;
   background-color: rgba(2, 19, 65, 0.808);
   z-index: 3;
-  transition: opacity 0.3s linear 0.1s;
+  transition: opacity 0.2s linear;
 
   & p {
     padding: 4rem;
@@ -562,7 +562,9 @@
   border-radius: 0.2rem;
   // transform: translateZ(0.1rem);
   // backface-visibility: hidden;
-  image-rendering: crisp-edges;
+  // opacity: 0;
+  // transition: opacity 0.2s linear;
+  // image-rendering: crisp-edges;
   @media (min-width: 1080px) and (hover: hover) {
   }
 }

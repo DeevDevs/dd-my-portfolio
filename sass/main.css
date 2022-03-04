@@ -4157,7 +4157,6 @@ a:visited {
 }
 
 .justadiv__content:hover .justadiv__content__learn-more {
-  visibility: visible;
   opacity: 1;
 }
 
@@ -4167,15 +4166,14 @@ a:visited {
 
 .justadiv__content__learn-more {
   opacity: 0;
-  visibility: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
   padding-bottom: 2rem;
   background-color: rgba(2, 19, 65, 0.808);
   z-index: 3;
-  -webkit-transition: opacity 0.3s linear 0.1s;
-  transition: opacity 0.3s linear 0.1s;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
 .justadiv__content__learn-more p {
@@ -4456,7 +4454,6 @@ a:visited {
   margin: auto;
   display: block;
   border-radius: 0.2rem;
-  image-rendering: crisp-edges;
 }
 
 .jad__content-secondary-img__container {

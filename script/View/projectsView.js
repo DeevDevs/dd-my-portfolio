@@ -151,9 +151,11 @@ class ProjectsView {
     const frontDiv = document.getElementById(projectId);
     const mainContainer = frontDiv
       .querySelector('.justadiv__content')
-      .querySelector('.jad__content-main-img__container');
+      .querySelector('.jad__content-main-img__container')
+      .querySelector('.jad__content-main-img');
     // mainContainer.style.transform = ' scale(1.02) translateZ(0.5rem)';
-    mainContainer.style.transform = 'scale(1.02)';
+    mainContainer.style.transform = 'scale(1.04)';
+    mainContainer.style.opacity = 1;
     const secondaryContainers = frontDiv
       .querySelector('.justadiv__content')
       .querySelectorAll('.jad__content-secondary-img__container');
