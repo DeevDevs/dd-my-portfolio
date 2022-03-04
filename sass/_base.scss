@@ -56,7 +56,8 @@ $themes: (
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 html {
-  max-width: 100%;
+  // max-width: 2080px;
+  margin: auto;
 
   --main-bg: #f0f6ff;
   --side-bg: #bfcaf4;

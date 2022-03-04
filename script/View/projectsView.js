@@ -5,6 +5,7 @@ class ProjectsView {
   wheelGridBox = document.querySelector('.pr-general-view');
   wheelContainer = document.querySelector('.pr-main-section');
   mainProjectName = document.querySelector('.pr-main__project-name');
+  wheelDetails = document.querySelectorAll('.pr-wheel-details');
   individualProjectName = document.querySelectorAll('.justadiv__project-name');
   justDivs = document.querySelectorAll('.justadiv');
   justDivsContentBoxes = document.querySelectorAll('.justadiv__content');
@@ -34,6 +35,7 @@ class ProjectsView {
     'Pig Game',
     'Portfolio Website',
   ];
+  windowWidth = window.innerWidth;
 
   // qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
 
@@ -45,7 +47,9 @@ class ProjectsView {
         this.toggleProjectViewFormat(this.projectViewFormat);
       }.bind(this)
     );
-    this.positionDivs();
+    if (window.innerWidth >= 1200 && window.innerWidth <= 2400) {
+      this.positionDivs();
+    } else this.toggleProjectViewFormat();
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.draggedOverDiv.addEventListener('mousemove', this.showMousePosition.bind(this));
     this.draggedDiv.addEventListener('click', this.whereClicks.bind(this));
@@ -55,17 +59,24 @@ class ProjectsView {
   }
 
   followResizing(e) {
-    if (e.target.innerWidth >= 1200) {
+    console.log(e);
+    // if (this.projectViewFormat === 'wheel') {
+    //   this.positionDivs();
+    // }
+    if (e.target.innerWidth >= 1080) {
       this.btnSwitchFormat.style.display = 'block';
     }
-
-    if (e.target.innerWidth <= 1200 && this.projectViewFormat === 'wheel') {
+    if (
+      (e.target.innerWidth <= 1080 && this.projectViewFormat === 'wheel') ||
+      (e.target.innerWidth >= 2080 && this.projectViewFormat === 'wheel')
+    ) {
       this.toggleProjectViewFormat();
       this.btnSwitchFormat.style.display = 'none';
     }
   }
 
   toggleProjectViewFormat() {
+    // this.windowWidth = window.innerWidth;
     if (this.projectViewFormat === 'wheel') {
       this.wheelGridBox.classList.add('nowheel');
       this.wheelGridBox.style.transform = 'rotateY(0deg)';
@@ -90,7 +101,7 @@ class ProjectsView {
       this.justDivs.forEach((div) => {
         div.classList.remove('nowheel__divs');
         div.style.position = 'absolute';
-        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 30}rem)`;
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
       });
       this.justDivsContentBoxes.forEach((div) => {
         div.classList.remove('nowheel__divs-content');
@@ -102,8 +113,9 @@ class ProjectsView {
       this.individualProjectName.forEach((nameBox) => (nameBox.style.display = 'none'));
       this.mainProjectName.style.display = 'block';
       this.draggedDiv.style.display = 'block';
-      this.draggedOverDiv.style.display = 'block';
+      this.draggedOverDiv.style.display = 'flex';
       this.projectViewFormat = 'wheel';
+      // this.positionDivs();
     }
   }
 
@@ -151,11 +163,15 @@ class ProjectsView {
     const frontDiv = document.getElementById(projectId);
     const mainContainer = frontDiv
       .querySelector('.justadiv__content')
-      .querySelector('.jad__content-main-img__container')
-      .querySelector('.jad__content-main-img');
+      .querySelector('.jad__content-main-img__container');
+    // const mainImage = frontDiv
+    //   .querySelector('.justadiv__content')
+    //   .querySelector('.jad__content-main-img__container')
+    //   .querySelector('.jad__content-main-img');
     // mainContainer.style.transform = ' scale(1.02) translateZ(0.5rem)';
-    mainContainer.style.transform = 'scale(1.04)';
+    mainContainer.style.transform = 'scale(1.02)';
     mainContainer.style.opacity = 1;
+    // mainImage.style.display = 'block';
     const secondaryContainers = frontDiv
       .querySelector('.justadiv__content')
       .querySelectorAll('.jad__content-secondary-img__container');
@@ -166,6 +182,8 @@ class ProjectsView {
       container.style.backfaceVisibility = 'hidden';
     });
     this.displayFrontProjectName(projectId);
+    this.displayFrontProjectDetails(projectId);
+    this.wheelContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   displayFrontProjectName(projectId) {
@@ -173,12 +191,23 @@ class ProjectsView {
     this.mainProjectName.textContent = this.projectNames[idNum - 1];
   }
 
+  displayFrontProjectDetails(projectId) {
+    const idNum = parseInt(projectId);
+    this.wheelDetails.forEach((element) => {
+      element.style.opacity = 1;
+    });
+  }
+
   //////////////////// POSITION DIVS AT PAGELOAD ///////////////////
 
   positionDivs() {
-    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches)
+    // if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches)
+    //   this.justDivs.forEach((div) => {
+    //     div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
+    //   });
+    if (window.matchMedia('(hover: hover)').matches)
       this.justDivs.forEach((div) => {
-        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 30}rem)`;
+        div.style.transform = `rotateY(${div.dataset.place}deg) translateZ(${window.innerWidth / 40}rem)`;
       });
   }
 
@@ -203,6 +232,9 @@ class ProjectsView {
   startDrag(e) {
     this.mouseSpeed = e.clientX;
     this.lastMousePosition = e.clientX;
+    this.wheelDetails.forEach((element) => {
+      element.style.opacity = 0;
+    });
   }
 
   seeDrag(e) {

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 html {
-  max-width: 100%;
+  margin: auto;
   --main-bg: #f0f6ff;
   --side-bg: #bfcaf4;
   --section-bg: rgba(219, 232, 255, 0.75);
@@ -2299,8 +2299,7 @@ body {
   z-index: 2;
   height: 9vh;
   min-height: 4rem;
-  width: 100vw;
-  max-width: 100%;
+  width: 100%;
   top: 0;
   margin: auto;
   background-color: var(--main-bg);
@@ -3925,18 +3924,19 @@ a:visited {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  min-height: 92vh;
+  min-height: 100vh;
   width: 100vw;
   max-width: 100%;
   background-color: var(--section-bg);
+  overflow-x: hidden;
 }
 
 @media (min-width: 1080px) and (hover: hover) {
   .pr-main-section {
     -webkit-perspective-origin: 50% 25%;
             perspective-origin: 50% 25%;
-    -webkit-perspective: 100rem;
-            perspective: 100rem;
+    -webkit-perspective: 90rem;
+            perspective: 90rem;
   }
 }
 
@@ -3949,13 +3949,61 @@ a:visited {
     display: block;
     margin-bottom: auto;
     padding-top: 1rem;
-    margin: 1rem auto 1rem;
+    margin: 8vh auto 1rem auto;
     font-size: 2rem;
     text-align: center;
     width: 100%;
     line-height: 6rem;
     -webkit-filter: drop-shadow(0px 3px 4px var(--headlines-shadow));
             filter: drop-shadow(0px 3px 4px var(--headlines-shadow));
+  }
+}
+
+.pr-wheel-details {
+  opacity: 0;
+  height: 100%;
+  width: 26%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(#dbe8ff), color-stop(#fafafb), color-stop(#dbe8ff), to(transparent));
+  background-image: linear-gradient(to top, transparent, #dbe8ff, #fafafb, #dbe8ff, transparent);
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+
+.pr-wheel-details-left p {
+  width: 25rem;
+  line-height: 2;
+  padding: 3rem;
+  margin: 7rem auto auto 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-transform: skew(-10deg) translateX(5rem);
+          transform: skew(-10deg) translateX(5rem);
+}
+
+@media (max-width: 1580px) {
+  .pr-wheel-details-left p {
+    font-size: 1rem;
+    margin: 5rem 2rem auto auto;
+    width: 20rem;
+  }
+}
+
+.pr-wheel-details-right p {
+  width: 25rem;
+  line-height: 2;
+  padding: 3rem 3rem 3rem 4rem;
+  margin: 7rem 0 auto auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-transform: skew(-10deg) translateX(-5rem);
+          transform: skew(-10deg) translateX(-5rem);
+}
+
+@media (max-width: 1580px) {
+  .pr-wheel-details-right p {
+    width: 20rem;
+    font-size: 1rem;
+    margin: 5rem 0 auto auto;
   }
 }
 
@@ -4007,8 +4055,7 @@ a:visited {
     padding: 0;
     position: absolute;
     width: 0;
-    left: 50%;
-    top: 23%;
+    top: 27%;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
     -webkit-transition: -webkit-transform 0s;
@@ -4045,8 +4092,9 @@ a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100vw;
-  max-width: 31rem;
+  min-width: 15rem;
+  width: 31rem;
+  max-width: 2048px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -4062,8 +4110,12 @@ a:visited {
 @media (min-width: 1080px) and (hover: hover) {
   .justadiv {
     position: absolute;
-    left: -10.25vw;
-    width: 18vw;
+    left: calc(-12vw - 1.5rem);
+    width: 24vw;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
     -webkit-perspective-origin: 50% 50%;
@@ -4071,7 +4123,7 @@ a:visited {
     -webkit-perspective: 30rem;
             perspective: 30rem;
     padding: 0;
-    height: 20vh;
+    height: 26vh;
     border-radius: 0.8rem;
   }
 }
@@ -4093,13 +4145,14 @@ a:visited {
     position: relative;
     width: 95%;
     max-width: 31rem;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.493);
+    background-image: var(--main-sections-bg);
     left: 0vw;
     height: auto;
     margin: 1.5rem;
   }
   .nowheel__divs:hover {
-    -webkit-filter: drop-shadow(0 0 10px var(--logo-image-shadow));
-            filter: drop-shadow(0 0 10px var(--logo-image-shadow));
     cursor: pointer;
   }
 }
@@ -4172,14 +4225,21 @@ a:visited {
   padding-bottom: 2rem;
   background-color: rgba(2, 19, 65, 0.808);
   z-index: 3;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .justadiv__content__learn-more p {
   padding: 4rem;
   line-height: 1.4;
   color: var(--main-bg);
+}
+
+.jad__btn__learn-more {
+  display: block;
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
 }
 
 .jad-mapty .back-side {
@@ -4307,7 +4367,7 @@ a:visited {
 }
 
 .jad-forkify-image-two-container {
-  top: -30%;
+  top: -25%;
   right: 8%;
   width: 30%;
 }
@@ -4330,6 +4390,11 @@ a:visited {
   border-radius: 0.4rem;
   -webkit-box-shadow: 0 0 12px black;
           box-shadow: 0 0 12px black;
+}
+
+.pr-svg {
+  width: 12rem;
+  height: 10rem;
 }
 
 .jad-connect .back-side {
@@ -4388,7 +4453,7 @@ a:visited {
 }
 
 .jad-portfolio-image-two-container {
-  bottom: -25%;
+  bottom: -20%;
   right: 10%;
   width: 25%;
 }
@@ -4401,7 +4466,7 @@ a:visited {
 }
 
 .jad-portfolio-image-three-container {
-  top: -35%;
+  top: -25%;
   left: 10%;
   width: 25%;
 }
@@ -4489,19 +4554,26 @@ a:visited {
 
 @media (min-width: 1080px) and (hover: hover) {
   .draggedover-div {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     position: absolute;
-    width: 100%;
-    height: 80%;
-    top: 20%;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
+    width: 110%;
+    height: 85%;
+    bottom: 0;
     background-color: transparent;
     z-index: 2;
     cursor: -webkit-grab;
     cursor: grab;
-  }
-  .draggedover-div:active {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
   }
 }
 
