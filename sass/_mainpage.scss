@@ -581,8 +581,8 @@
   overflow: hidden;
   transition: transform 0.5s linear;
   transform-style: preserve-3d;
-  perspective-origin: 75% 35%;
-  perspective: 25rem;
+  perspective-origin: 75% 40%;
+  perspective: 30rem;
 
   @media (min-width: 1080px) {
     min-width: 50%;
@@ -708,7 +708,7 @@
 }
 
 .mp__two-seven {
-  animation: back-front-3-cetral 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
+  animation: back-front-4 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
 }
 
 .mp__two-eight {
@@ -1051,7 +1051,7 @@
   }
 }
 
-@keyframes back-front-3-central {
+@keyframes back-front-4 {
   0% {
     transform: translateZ(0rem);
     box-shadow: -5px 5px 8px var(--logo-image-shadow);

@@ -45,22 +45,25 @@
   max-width: 100%;
   background-color: var(--section-bg);
   padding: 4rem 1rem;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
 }
 
 .amp__sub {
   display: flex;
+  // display: none;
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  @media (min-width: 640px) {
-    padding-bottom: 1rem;
-  }
-  @media (min-width: 760px) {
-    padding-bottom: 1.5rem;
-  }
-  @media (min-width: 1080px) {
-    padding-bottom: 2rem;
-  }
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+  // @media (min-width: 640px) {
+  //   padding-bottom: 1rem;
+  // }
+  // @media (min-width: 760px) {
+  //   padding-bottom: 1.5rem;
+  // }
+  // @media (min-width: 1080px) {
+  //   padding-bottom: 2rem;
+  // }
 }
 
 .amp-text {
@@ -122,10 +125,41 @@
 }
 
 .sub-splitter {
-  margin-bottom: 1.5rem;
-  width: 75vw;
-  min-height: 0.12rem;
+  position: relative;
+  margin: 5rem auto 1.5rem auto;
+  width: 90vw;
+  height: 0.18rem;
   background-color: var(--font-border-color);
+  overflow: visible;
+  transition: transform 0.4s ease-in-out;
+}
+
+.amp-btn__reveal-section {
+  height: 2rem;
+  width: 2rem;
+  background-color: aqua;
+  position: absolute;
+  top: -3rem;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
+}
+
+.amp-headline__reveal-section {
+  // font-size: 1.2rem;
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 2rem;
+  width: 40rem;
+  position: absolute;
+  top: -2.6rem;
+  left: 3rem;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
+  @media (min-width: 640px) {
+    font-size: 1.1rem;
+  }
+  @media (min-width: 1080px) {
+    font-size: 1.2rem;
+  }
 }
 
 .amp__flexed-box {
@@ -177,13 +211,17 @@
   }
 }
 
-.amp__sub-left {
-  transform: translateX(-65vw) skewX(25deg);
-  transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear;
-}
+// .amp__sub-left {
+//   transform: translateX(-65vw) skewX(25deg);
+//   transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear;
+// }
 
-.amp__sub-right {
-  transform: translateX(65vw) skewX(-25deg);
+// .amp__sub-right {
+//   transform: translateX(65vw) skewX(-25deg);
+//   opacity: 0;
+//   transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear;
+// }
+
+.amp-element-hidden {
   opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear;
 }

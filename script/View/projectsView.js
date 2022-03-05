@@ -147,7 +147,7 @@ class ProjectsView {
     });
     this.displayFrontProjectName(projectId);
     this.displayFrontProjectDetails(projectId);
-    this.wheelContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // this.wheelContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   displayFrontProjectName(projectId) {

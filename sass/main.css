@@ -13,7 +13,7 @@ html {
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(219, 232, 255, 0.75), rgba(139, 181, 255, 0.75));
   --logo-bg: #bfcaf4;
-  --details-bg: rgba(139, 181, 255, 0.75);
+  --qual-details-bg: rgba(139, 181, 255, 0.75);
   --details-desc-bg: rgba(191, 202, 244, 0.6);
   --font-border-color: #001079;
   --btn-color: #001392;
@@ -42,7 +42,7 @@ html[data-theme='dark'] {
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(105, 126, 219, 0.815), rgba(9, 19, 160, 0.75));
   --logo-bg: #001392;
-  --details-bg: rgba(10, 46, 204, 0.75);
+  --qual-details-bg: rgba(0, 15, 75, 0.787);
   --details-desc-bg: rgba(5, 34, 163, 0.6);
   --font-border-color: #dbe8ff;
   --btn-color: #dbe8ff;
@@ -844,10 +844,10 @@ body {
   transition: transform 0.5s linear, -webkit-transform 0.5s linear;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-perspective-origin: 75% 35%;
-          perspective-origin: 75% 35%;
-  -webkit-perspective: 25rem;
-          perspective: 25rem;
+  -webkit-perspective-origin: 75% 40%;
+          perspective-origin: 75% 40%;
+  -webkit-perspective: 30rem;
+          perspective: 30rem;
 }
 
 @media (min-width: 1080px) {
@@ -1009,8 +1009,8 @@ body {
 }
 
 .mp__two-seven {
-  -webkit-animation: back-front-3-cetral 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
-          animation: back-front-3-cetral 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
+  -webkit-animation: back-front-4 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
+          animation: back-front-4 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
 }
 
 .mp__two-eight {
@@ -1880,7 +1880,7 @@ body {
   }
 }
 
-@-webkit-keyframes back-front-3-central {
+@-webkit-keyframes back-front-4 {
   0% {
     -webkit-transform: translateZ(0rem);
             transform: translateZ(0rem);
@@ -1909,7 +1909,7 @@ body {
   }
 }
 
-@keyframes back-front-3-central {
+@keyframes back-front-4 {
   0% {
     -webkit-transform: translateZ(0rem);
             transform: translateZ(0rem);
@@ -2723,6 +2723,10 @@ a:visited {
   max-width: 100%;
   background-color: var(--section-bg);
   padding: 4rem 1rem;
+  -webkit-transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 .amp__sub {
@@ -2737,24 +2741,10 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
   background-color: transparent;
-}
-
-@media (min-width: 640px) {
-  .amp__sub {
-    padding-bottom: 1rem;
-  }
-}
-
-@media (min-width: 760px) {
-  .amp__sub {
-    padding-bottom: 1.5rem;
-  }
-}
-
-@media (min-width: 1080px) {
-  .amp__sub {
-    padding-bottom: 2rem;
-  }
+  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
 }
 
 .amp-text {
@@ -2844,10 +2834,55 @@ a:visited {
 }
 
 .sub-splitter {
-  margin-bottom: 1.5rem;
-  width: 75vw;
-  min-height: 0.12rem;
+  position: relative;
+  margin: 5rem auto 1.5rem auto;
+  width: 90vw;
+  height: 0.18rem;
   background-color: var(--font-border-color);
+  overflow: visible;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.amp-btn__reveal-section {
+  height: 2rem;
+  width: 2rem;
+  background-color: aqua;
+  position: absolute;
+  top: -3rem;
+  -webkit-transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.amp-headline__reveal-section {
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 2rem;
+  width: 40rem;
+  position: absolute;
+  top: -2.6rem;
+  left: 3rem;
+  -webkit-transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+@media (min-width: 640px) {
+  .amp-headline__reveal-section {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .amp-headline__reveal-section {
+    font-size: 1.2rem;
+  }
 }
 
 .amp__flexed-box {
@@ -2925,23 +2960,8 @@ a:visited {
   }
 }
 
-.amp__sub-left {
-  -webkit-transform: translateX(-65vw) skewX(25deg);
-          transform: translateX(-65vw) skewX(25deg);
-  -webkit-transition: opacity 0.1s linear, -webkit-transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93);
-  transition: opacity 0.1s linear, -webkit-transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93);
-  transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear;
-  transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear, -webkit-transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93);
-}
-
-.amp__sub-right {
-  -webkit-transform: translateX(65vw) skewX(-25deg);
-          transform: translateX(65vw) skewX(-25deg);
+.amp-element-hidden {
   opacity: 0;
-  -webkit-transition: opacity 0.1s linear, -webkit-transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93);
-  transition: opacity 0.1s linear, -webkit-transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93);
-  transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear;
-  transition: transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93), opacity 0.1s linear, -webkit-transform 0.4s cubic-bezier(0.35, 0.68, 0.32, 1.93);
 }
 
 .intro-part {
@@ -3110,6 +3130,7 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
+  height: auto;
   -webkit-transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
   transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
   transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
@@ -3129,13 +3150,16 @@ a:visited {
   width: 100%;
   max-width: 100%;
   min-height: inherit;
+  padding-bottom: 6rem;
+  padding-top: 3rem;
   overflow: hidden;
 }
 
 @media (min-width: 1080px) {
   .choice-part__towers {
     margin-top: 3rem;
-    padding-top: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -3580,11 +3604,11 @@ a:visited {
   position: fixed;
   border-radius: 0.8rem;
   border: 1px solid var(--font-border-color);
-  top: 6vh;
+  top: 10vh;
   left: 2vh;
-  height: 92vh;
+  height: 88vh;
   width: calc(100% - 4vh);
-  background-color: var(--details-bg);
+  background-color: var(--qual-details-bg);
   z-index: 7;
   overflow-y: scroll;
   -webkit-transform: translateY(3rem);
@@ -3616,7 +3640,7 @@ a:visited {
     width: 60rem;
     height: 50rem;
     max-height: 82vh;
-    top: 8vh;
+    top: 12vh;
     left: calc(50vw - 30rem);
   }
 }
@@ -4125,14 +4149,15 @@ a:visited {
 }
 
 .justadiv__project-name {
+  z-index: 4;
   display: block;
   font-size: 1.2rem;
   text-align: center;
   padding: 1.5rem 1rem;
   width: 100%;
   background-color: var(--side-bg);
-  -webkit-filter: drop-shadow(0 0 6px var(--headlines-shadow));
-          filter: drop-shadow(0 0 6px var(--headlines-shadow));
+  -webkit-filter: drop-shadow(0 -3px 8px var(--headlines-shadow));
+          filter: drop-shadow(0 -3px 8px var(--headlines-shadow));
 }
 
 .justadiv__project-name p {
