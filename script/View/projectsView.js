@@ -47,10 +47,8 @@ class ProjectsView {
   intersectionCount = 0;
 
   constructor() {
-    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
-      this.observePrMainSection.observe(this.wheelContainer);
-    }
-
+    this.observePrMainSection.observe(this.wheelContainer);
+    window.addEventListener('resize', this.returnShiftedSection.bind(this));
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.draggedOverDiv.addEventListener('mousemove', this.showMousePosition.bind(this));
     this.draggedDiv.addEventListener('click', this.whereClicks.bind(this));
@@ -61,29 +59,37 @@ class ProjectsView {
 
   bringFirstProject(entry, observer) {
     if (!entry[0].isIntersecting) return;
-    entry[0].target.style.transform = 'translateY(0rem)';
-    this.wheelGridBox.style.transform = `translateX(${75 - this.intersectionCount * (75 / 20)}vw)`;
-    this.intersectionCount++;
-    console.log(entry[0], entry[0].intersectionRatio);
-    if (this.intersectionCount >= 20 || entry[0].intersectionRatio >= 0.97) {
-      // this.wheelGridBox.style.transform = `translateX(0vw)`;
-      this.setWheelFinalPosition();
-      setTimeout(
-        function () {
-          this.wheelGridBox.style.transition = 'transform 0ms';
-        }.bind(this),
-        600
-      );
+    entry[0].target.classList.remove('section-hidden');
+    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
+      this.wheelGridBox.style.transform = `translateX(${75 - this.intersectionCount * (75 / 20)}vw)`;
+      this.intersectionCount++;
+      console.log(entry[0], entry[0].intersectionRatio);
+      if (this.intersectionCount >= 20 || entry[0].intersectionRatio >= 0.97) {
+        // this.wheelGridBox.style.transform = `translateX(0vw)`;
+        this.setWheelFinalPosition();
+        setTimeout(
+          function () {
+            this.wheelGridBox.style.transition = 'transform 0ms';
+          }.bind(this),
+          600
+        );
 
-      observer.unobserve(this.wheelContainer);
+        observer.unobserve(this.wheelContainer);
+      }
+    }
+  }
+
+  returnShiftedSection() {
+    if (window.innerWidth <= 1080) {
+      this.wheelGridBox.style.transform = `translateX(0vw)`;
     }
   }
 
   whereClicks() {
-    if (this.mousePositionX < window.innerWidth / 4) this.shiftProjects('left');
+    // if (this.mousePositionX < window.innerWidth / 4) this.shiftProjects('left');
     if (this.mousePositionX > window.innerWidth / 4 && this.mousePositionX < (window.innerWidth * 3) / 4)
       console.log('center');
-    if (this.mousePositionX > (window.innerWidth * 3) / 4) this.shiftProjects('right');
+    // if (this.mousePositionX > (window.innerWidth * 3) / 4) this.shiftProjects('right');
   }
 
   shiftProjects(direction) {
@@ -190,13 +196,13 @@ class ProjectsView {
     if (e.clientY !== 0) this.lastMousePosition = e.clientX;
     if (e.clientX > this.dragX) {
       // this.rotationValue += 0.4;
-      this.shiftValue = this.shiftValue + 0.2 * this.mouseSpeed;
+      this.shiftValue = this.shiftValue + 0.1 * this.mouseSpeed;
       this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
       this.dragX = e.clientX;
       if (e.y !== 0) this.dragDirection = 'right';
     }
     if (e.clientX < this.dragX && e.y !== 0) {
-      this.shiftValue = this.shiftValue - 0.2 * this.mouseSpeed;
+      this.shiftValue = this.shiftValue - 0.1 * this.mouseSpeed;
       this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
       this.dragX = e.clientX;
       this.dragDirection = 'left';

@@ -79,6 +79,15 @@ html {
   --logo-image-shadow: #263dd4;
   --icons-shadow: rgba(0, 6, 37, 0.74);
   --headlines-shadow: rgba(0, 6, 37, 0.74);
+
+  --details-bg: linear-gradient(
+    to top,
+    transparent,
+    rgb(219, 232, 255),
+    rgb(250, 250, 251),
+    rgb(219, 232, 255),
+    transparent
+  );
 }
 
 html[data-theme='dark'] {
@@ -103,6 +112,8 @@ html[data-theme='dark'] {
   --logo-image-shadow: #dbe8ff;
   --icons-shadow: #013288;
   --headlines-shadow: #2f73e9;
+
+  --details-bg: linear-gradient(to top, transparent, rgb(3, 13, 77), rgb(2, 9, 54), rgb(3, 13, 77), transparent);
 }
 
 * {

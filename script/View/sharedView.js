@@ -36,6 +36,8 @@ class SharedView {
     ThemeSwitcher.switchIconsShared();
     if (window.location.href.endsWith('index.html')) ThemeSwitcher.switchIconsMain();
     if (window.location.href.endsWith('qualifications.html')) ThemeSwitcher.switchIconsQualifications();
+    if (window.location.href.endsWith('projects.html')) ThemeSwitcher.switchIconsProjects();
+    if (window.location.href.endsWith('experience.html')) ThemeSwitcher.switchIconsExperience();
   }
 
   _toggleSideMenu() {

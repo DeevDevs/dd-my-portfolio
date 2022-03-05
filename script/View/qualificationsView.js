@@ -101,18 +101,11 @@ class QualificationsView {
   }
 
   imageStandOut(e) {
-    // if (!e.target.closest('.img-box')) return;
-    // const element = e.target.closest('.img-box');
-    // element.style.transform = `translateZ(10rem) translateY(${+element.dataset.pos / 2.5}rem) translateX(${
-    //   element.dataset.pos / 2
-    // }rem) rotateZ(5deg)`;
-    // element.style.opacity = `1`;
     if (!e.target.closest('.img-box')) return;
     const element = e.target.closest('.img-box');
-    // console.log(element.style.transform);
     element.style.transform = `translateZ(10rem) translateY(${+element.dataset.pos / 2.3 - 0.5}rem) translateX(${
       element.dataset.pos / 1.5
-    }rem) rotateZ(5deg)`;
+    }rem) rotateZ(${element.dataset.pos * 2 - 5}deg)`;
     element.style.opacity = `1`;
   }
 
@@ -124,7 +117,7 @@ class QualificationsView {
   imageStyleRender(element) {
     element.style.transform = `translateZ(-${element.dataset.pos}rem) translateY(${
       +element.dataset.pos / 2.3
-    }rem) translateX(${element.dataset.pos / 1.5}rem)`;
+    }rem) translateX(${element.dataset.pos / 1.5}rem) rotateZ(${element.dataset.pos * 2}deg)`;
     element.style.opacity = `${1 - +`${element.dataset.pos >= 10 ? 9.5 : element.dataset.pos}` / 10 + 0.05}`;
   }
 
@@ -137,7 +130,7 @@ class QualificationsView {
       this.qualsChosen = 'short';
       //move the other tower away
       this.imgBoxesLong.forEach((box) => {
-        box.style.transform = 'translateX(-55rem)';
+        box.style.transform = 'translateX(-65rem)';
       });
       //move the chosen tower to the center
       window.innerWidth <= 639
@@ -154,7 +147,7 @@ class QualificationsView {
       this.qualsChosen = 'long';
       //move the other tower away
       this.imgBoxesShort.forEach((box) => {
-        box.style.transform = 'translateX(55rem)';
+        box.style.transform = 'translateX(65rem)';
       });
       //move the chosen tower to the center
       window.innerWidth <= 639

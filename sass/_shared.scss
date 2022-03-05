@@ -46,6 +46,7 @@
 }
 
 .top-menu-list {
+  color: var(--font-border-color);
   display: flex;
   flex-direction: row;
   justify-self: flex-end;
@@ -129,6 +130,7 @@
 .menu-list {
   padding-left: 0;
   margin-top: 4rem;
+  color: var(--font-border-color);
 }
 .menu-list a {
   text-decoration: none;

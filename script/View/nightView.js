@@ -75,68 +75,27 @@ class ThemeSwitcher {
     }
   }
 
-  // switchTheme() {
-  //   document.body.classList.toggle('bg-main');
-  //   document.body.classList.toggle('text-main');
-  //   this.header.classList.toggle('bg-main');
-  //   this.sideMenu.classList.toggle('bg-secondary');
-  //   this.welcomeSection.classList.toggle('welcome-night');
-  //   this.sectionsAdvert.forEach((section) => {
-  //     section.classList.toggle('bg-background');
-  //   });
-  //   this.advertImages.forEach((image) => {
-  //     image.classList.toggle('shadow-night');
-  //   });
-  //   this.boxSides.forEach((side) => {
-  //     side.classList.toggle('shadow-night');
-  //     side.classList.toggle('bg-secondary');
-  //   });
-  //   this.sectionAbout.classList.toggle('about-me-dark');
-  //   this.sectionLearning.classList.toggle('learning-dark');
-  //   this.sectionProjects.classList.toggle('projects-dark');
-  //   this.sectionExperience.classList.toggle('experience-dark');
-  //   if (this.theme === 'day') {
-  //     // this.logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-night"></use>`;
-  //     // this.sectionArrowRight.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-right-night"></use>`;
-  //     // this.sectionArrowLeft.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-left-night"></use>`;
-  //     // this.aboutMeIcon.innerHTML = `<use href="./images/icons/all-icons.svg#icon-me-night"></use>`;
-  //     // this.learningIcon.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-night"></use>`;
-  //     // this.projectsIcon.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-night"></use>`;
-  //     // this.experienceIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-night"></use>`;
-  //     // this.learnArrow.forEach((instance) => {
-  //     //   instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-arrow-night"></use>`;
-  //     // });
-  //     // this.learnCircle.forEach((instance) => {
-  //     //   instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-circle-night"></use>`;
-  //     // });
-  //     // this.spinningBoxImages.forEach(
-  //     //   (instance) =>
-  //     //     (instance.innerHTML = `<use class="spin-image" href="./images/icons/all-icons.svg#logo-box-night"></use>`)
-  //     // );
-  //   }
-  //   if (this.theme === 'night') {
-  //     // this.logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-day"></use>`;
-  //     // this.sectionArrowRight.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-right-day"></use>`;
-  //     // this.sectionArrowLeft.innerHTML = `<use href="./images/icons/all-icons.svg#l-arrow-left-day"></use>`;
-  //     // this.aboutMeIcon.innerHTML = `<use href="./images/icons/all-icons.svg#icon-me-day"></use>`;
-  //     // this.learningIcon.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-day"></use>`;
-  //     // this.projectsIcon.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-day"></use>`;
-  //     // this.experienceIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-day"></use>`;
-  //     // this.learnArrow.forEach((instance) => {
-  //     //   instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-arrow-day"></use>`;
-  //     // });
-  //     // this.learnCircle.forEach((instance) => {
-  //     //   instance.innerHTML = `<use href="./images/icons/all-icons.svg#icon-circle-day"></use>`;
-  //     // });
-  //     // this.spinningBoxImages.forEach(
-  //     //   (instance) =>
-  //     //     (instance.innerHTML = `<use class="spin-image" href="./images/icons/all-icons.svg#logo-box-day"></use>`)
-  //     // );
-  //   }
-  //   // if (this.theme === 'day') {
-  //   //   this.theme = 'night';
-  //   // } else this.theme = 'day';
-  // }
+  switchIconsProjects() {
+    const introIcon = document.querySelector('.intro-part__icon');
+    if (this.theme === 'dark') {
+      introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-night"></use>`;
+      // xBtns.forEach((btn) => (btn.innerHTML = `<use href="./images/icons/all-icons.svg#x-button-light"></use>`));
+    }
+    if (this.theme === 'light') {
+      introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-day"></use>`;
+      // xBtns.forEach((btn) => (btn.innerHTML = `<use href="./images/icons/all-icons.svg#x-button-dark"></use>`));
+    }
+  }
+
+  switchIconsExperience() {
+    const introIcon = document.querySelector('.intro-part__icon');
+    if (this.theme === 'dark') {
+      introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-night"></use>`;
+    }
+    if (this.theme === 'light') {
+      introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-day"></use>`;
+    }
+  }
 }
 
 export default new ThemeSwitcher();
