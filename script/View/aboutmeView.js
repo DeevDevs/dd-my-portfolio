@@ -21,6 +21,16 @@ class AboutMeView {
         }.bind(this)
       )
     );
+
+    this.ampHeadlinesRevealSection.forEach((headline) =>
+      headline.addEventListener(
+        'click',
+        function () {
+          this.revealInfoSection(headline.dataset.ampnum);
+        }.bind(this)
+      )
+    );
+
     this.allAmpSubs.forEach((sub) => this.countSectionHeight(sub));
     this.ampSectionObserver.observe(this.mainSection);
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
@@ -83,6 +93,10 @@ class AboutMeView {
   hideUsedBtn(num) {
     this.ampBtnsRevealSection[num].classList.add('amp-element-hidden');
     this.ampHeadlinesRevealSection[num].classList.add('amp-element-hidden');
+    setTimeout(() => {
+      this.ampBtnsRevealSection[num].style.display = 'none';
+      this.ampHeadlinesRevealSection[num].style.display = 'none';
+    }, 400);
   }
 
   // rollInTheSub(entry, observer) {
