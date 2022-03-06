@@ -2,9 +2,20 @@ class ExperienceView {
   introBox = document.querySelector('.intro-part');
   introText = document.querySelector('.intro-part__text');
   introIcon = document.querySelector('.intro-part__icon');
+  mainSection = document.querySelector('.exp__main-part');
+
+  expSectionObserver = new IntersectionObserver(this.revealExpSection.bind(this), { root: null, threshold: 0 });
 
   constructor() {
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
+    this.expSectionObserver.observe(this.mainSection);
+  }
+
+  revealExpSection(entry, observer) {
+    if (!entry[0].isIntersecting) return;
+    if (entry[0].isIntersecting) {
+      this.mainSection.classList.remove('section-hidden');
+    }
   }
 
   ////////////////////// MOVING SHADOW CODE ////////////////////////
