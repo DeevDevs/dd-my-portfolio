@@ -36,9 +36,9 @@
   }
   @media (min-width: 1080px) {
     position: absolute;
-    width: 50rem;
+    width: 60rem;
     left: 8rem;
-    top: 9rem;
+    top: 20vh;
   }
 }
 
@@ -64,7 +64,7 @@
   }
   @media (min-width: 1080px) {
     padding-left: 2rem;
-    width: 30rem;
+    width: 40rem;
     flex-direction: row;
   }
 }
@@ -74,7 +74,10 @@
   font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
-  @media (min-width: 1080px) {
+  @media (min-width: 920px) {
     font-size: 1.6rem;
+  }
+  @media (min-width: 1080px) {
+    font-size: 1.8rem;
   }
 }

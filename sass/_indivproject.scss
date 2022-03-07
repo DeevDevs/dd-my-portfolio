@@ -1,0 +1,114 @@
+.indiv-section__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 116vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: var(--section-bg);
+  transition: transform 0.3s linear;
+  transform: translateY(-8vh);
+  //   overflow-y: scroll;
+  @media (min-width: 1080px) {
+    position: fixed;
+    overflow-x: hidden;
+  }
+}
+
+.indiv-section__content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  //   height: auto;
+  width: 100vw;
+  transform: translateY(-8vh);
+  background-color: var(--section-bg);
+  overflow-x: hidden;
+  @media (min-width: 1080px) {
+    overflow-x: visible;
+    height: 100vh;
+    flex-direction: row;
+    min-width: 600vw;
+  }
+}
+
+.indiv-img-box__one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  width: 95vw;
+  height: 100vh;
+  position: relative;
+  @media (min-width: 1080px) {
+    margin-left: 20rem;
+    min-width: 30rem;
+    width: 60vw;
+  }
+}
+
+.indiv-img__one {
+  position: absolute;
+  width: 85%;
+  transform: translateY(12rem);
+  //   transition: transform 0.1s
+  @media (min-width: 1080px) {
+    width: 90%;
+    padding-bottom: 10rem;
+    transform: translateX(30rem);
+  }
+}
+
+.indiv-headline-text-box {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--logo-bg);
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 4rem;
+  width: 90%;
+  text-align: center;
+  z-index: 1;
+  transform: skew(-15deg);
+  @media (min-width: 420px) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: 1080px) {
+    min-width: 20rem;
+    width: 60vw;
+    font-size: 3rem;
+    height: 5rem;
+    margin-top: 15rem;
+    text-align: center;
+    transform: translateX(10rem) skew(-15deg);
+  }
+}
+
+.indiv-headline-text {
+  display: block;
+  transform: skew(15deg);
+}
+
+.indiv-section__scrolled-div {
+  display: none;
+  @media (min-width: 1080px) {
+    display: block;
+    height: 1100vh;
+    z-index: -1;
+    background-color: transparent;
+  }
+}
+
+.header-scroll-started {
+  transform: translateY(-8vh);
+}
+.footer-scroll-started {
+  transform: translateY(8vh);
+}
+// .main-scroll-started {
+//   min-height: 100vh;
+//   transform: translateY(-8vh);
+// }
