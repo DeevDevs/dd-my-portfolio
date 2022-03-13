@@ -96,6 +96,19 @@ class ThemeSwitcher {
       introIcon.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-day"></use>`;
     }
   }
+
+  switchIconsIndiv() {
+    const scrollBackIcon = document.querySelector('.scroll-back__svg-btn');
+    const scrollBackDot = document.querySelector('.scroll-back__svg-btn-dot');
+    if (this.theme === 'dark') {
+      scrollBackIcon.innerHTML = `<use href="./images/icons/all-icons.svg#scroll-back-icon-light"></use>`;
+      scrollBackDot.innerHTML = `<use href="./images/icons/all-icons.svg#scroll-back-spinning-dot-light"></use>`;
+    }
+    if (this.theme === 'light') {
+      scrollBackIcon.innerHTML = `<use href="./images/icons/all-icons.svg#scroll-back-icon-dark"></use>`;
+      scrollBackDot.innerHTML = `<use href="./images/icons/all-icons.svg#scroll-back-spinning-dot-dark"></use>`;
+    }
+  }
 }
 
 export default new ThemeSwitcher();

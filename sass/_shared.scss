@@ -163,8 +163,7 @@
 
 .footer-menu {
   display: flex;
-  flex-direction: row;
-  font-size: 1.15rem;
+  flex-direction: column;
   min-height: 4.5rem;
   height: 8vh;
   max-height: 8rem;
@@ -173,11 +172,143 @@
   transition: transform 1s ease-out, opacity 0.5s ease-out;
 }
 
-.footer-menu p {
+.footer-menu__expand {
+  min-height: calc(50vh + 1rem + 4.5rem);
+  height: calc(50vh + 1rem + 8vh);
+  // max-height: calc(40vh + 1rem + 8rem);
+}
+
+.footer-menu__buttons {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.15rem;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+  max-height: 8rem;
+  min-height: 4.5rem;
+  width: 100%;
+}
+
+.footer-menu__buttons p {
   display: block;
   font-weight: 700;
   margin: auto;
   cursor: pointer;
+}
+
+.footer-menu__extra {
+  min-height: 50vh;
+  // max-height: 40vh;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+}
+
+.footer-menu__extra__hidden {
+  display: none;
+}
+
+.footer-menu__contacts {
+  position: absolute;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+
+  & p {
+    margin: 0 0.2rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-align: center;
+  }
+}
+
+.footer-menu__form-div {
+  height: 35vh;
+  min-width: 100%;
+  & form {
+    min-height: 100%;
+    margin: auto;
+  }
+}
+
+.footer-menu__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 15% 70% 15%;
+  grid-template-areas:
+    'yourname yourcontacts yourcontacts'
+    'yourmessage yourmessage yourmessage'
+    '. . submitbtn';
+}
+
+.footer-menu__form-name {
+  grid-area: yourname;
+  height: 1.4rem;
+  width: 100%;
+  margin: auto 0.2rem auto 0;
+}
+
+.footer-menu__form-contacts {
+  grid-area: yourcontacts;
+  height: 1.4rem;
+  margin: auto 0 auto 0.2rem;
+}
+
+.footer-menu__form-message {
+  grid-area: yourmessage;
+  // vertical-align: top;
+}
+
+.footer-menu__form-submit {
+  grid-area: submitbtn;
+}
+
+.footer-menu__address {
+  position: absolute;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+
+  & p {
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-align: center;
+  }
+}
+
+.footer-menu__ad-cont-div {
+  display: flex;
+  margin: 1rem;
+
+  & p {
+    margin: 0;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+  }
+}
+
+.footer-copyright {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  & p {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 1;
+    margin: 0 0 0.3rem auto;
+    text-align: right;
+  }
+}
+
+.footer-menu__icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.footer-extra-div__hidden {
+  visibility: hidden;
 }
 
 .overlay {

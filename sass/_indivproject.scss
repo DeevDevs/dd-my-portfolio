@@ -40,7 +40,7 @@
   }
   &:hover .scroll-back__svg-btn {
     transform: scale(0.95) rotateX(180deg) rotateZ(270deg);
-    filter: drop-shadow(0 3px 5px rgb(194, 194, 255));
+    filter: drop-shadow(0 3px 5px var(--scrollback-btn));
   }
   &:hover .scroll-back__svg-btn-dot {
     animation: spin-dot 0.3s linear 0.3s infinite forwards;
@@ -71,7 +71,7 @@
   left: 0;
   top: 0;
   transform: rotateZ(270deg);
-  filter: drop-shadow(1px 1px 20px rgb(192, 207, 250));
+  filter: drop-shadow(1px 1px 15px var(--scrollback-btn));
 }
 
 @keyframes spin-dot {
@@ -93,7 +93,7 @@
   font-size: 0.9rem;
   padding-left: 1rem;
   transition: opacity 0.2s ease-in-out;
-  filter: drop-shadow(0 3px 5px rgb(194, 194, 255));
+  filter: drop-shadow(0 3px 5px var(--scrollback-btn));
   cursor: default;
 }
 
@@ -460,7 +460,7 @@
   width: 90%;
   max-width: 75rem;
   z-index: 1;
-  background-color: rgba(149, 216, 216, 0.774);
+  background-color: var(--logo-bg);
   border-radius: 5px;
   @media (min-width: 1080px) and (hover: hover) {
     margin-top: 10vh;
@@ -495,7 +495,7 @@
     width: 95%;
     overflow-y: scroll;
     transform: skew(12deg);
-    background-color: aquamarine;
+    background-color: var(--main-bg);
     border-radius: 5px;
   }
 }
@@ -605,7 +605,7 @@
   height: auto;
   width: 90%;
   z-index: 1;
-  background-color: rgba(149, 216, 216, 0.774);
+  background-color: var(--logo-bg);
   border-radius: 5px;
   max-width: 75rem;
   @media (min-width: 640px) {
@@ -633,7 +633,7 @@
     width: 95%;
     overflow-y: scroll;
     transform: skew(12deg);
-    background-color: aquamarine;
+    background-color: var(--main-bg);
     border-radius: 5px;
   }
 }
@@ -739,7 +739,7 @@
   height: auto;
   width: 90%;
   z-index: 1;
-  background-color: rgba(149, 216, 216, 0.774);
+  background-color: var(--logo-bg);
   border-radius: 5px;
   max-width: 75rem;
   @media (min-width: 640px) {
@@ -766,7 +766,7 @@
     width: 90%;
     overflow-y: scroll;
     transform: skew(12deg);
-    background-color: aquamarine;
+    background-color: var(--main-bg);
     border-radius: 5px;
   }
 }

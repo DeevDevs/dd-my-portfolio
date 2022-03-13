@@ -91,6 +91,7 @@ html {
 
   --scrollbar--1: rgba(139, 181, 255, 0.75);
   --scrollbar--2: rgb(219, 232, 255);
+  --scrollback-btn: rgb(2, 52, 190);
 }
 
 html[data-theme='dark'] {
@@ -120,6 +121,7 @@ html[data-theme='dark'] {
 
   --scrollbar--1: rgba(14, 45, 187, 0.815);
   --scrollbar--2: rgb(56, 105, 190);
+  --scrollback-btn: rgb(192, 207, 250);
 }
 
 * {

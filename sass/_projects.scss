@@ -50,7 +50,7 @@
 }
 
 .intro-part__text {
-  filter: drop-shadow(0px 0px 4px var(--icons-shadow));
+  filter: drop-shadow(-10px 10px 4px var(--headlines-shadow));
 }
 
 .intro-part__icon-box {
@@ -74,7 +74,7 @@
 .intro-part__icon {
   height: 8rem;
   width: 8rem;
-  filter: drop-shadow(0px 0px 8px var(--icons-shadow));
+  filter: drop-shadow(-10px 10px 8px var(--icons-shadow));
 
   @media (min-width: 640px) {
     height: 9rem;
