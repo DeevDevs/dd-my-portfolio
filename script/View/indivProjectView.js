@@ -7,6 +7,7 @@ class IndividualView {
   allIndivSections = document.querySelectorAll('.indiv-section-box');
   allIndivTextBoxes = document.querySelectorAll('.indiv-headline-text-box');
   allParagraphBoxes = document.querySelectorAll('.indiv-par-box');
+  scrollBackBtn = document.querySelector('.scroll-back__btn-div');
 
   maxWidthPossible;
   mode = 'desktop';
@@ -40,6 +41,7 @@ class IndividualView {
   sectionFourWideScroll = -3;
 
   indivSectionsObserver = new IntersectionObserver(this.runScrollAnimation.bind(this), { root: null, threshold: 0.05 });
+
   constructor() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
@@ -84,32 +86,21 @@ class IndividualView {
     this.allIndivSections.forEach((section) => {
       this.indivSectionsObserver.observe(section);
     });
+
+    this.scrollBackBtn.addEventListener('click', this.indivScrollBack.bind(this));
+  }
+
+  indivScrollBack() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   toggleSmartphoneMode() {
-    window.scrollTo(0, 0);
-    // this.indivMainSection.classList.toggle('indiv-section__main__desktop');
-    // this.indivContentSection.classList.toggle('indiv-section__content__desktop');
-    // this.allIndivSections.forEach((section) => section.classList.toggle('indiv-section-box__desktop'));
-    // this.allIndivTextBoxes.forEach((box) => box.classList.toggle('indiv-headline-text-box__desktop'));
-    // this.allParagraphBoxes.forEach((paragraph) => paragraph.classList.toggle('indiv-par-box__desktop'));
-    // this.indivScrolledSection.classList.toggle('indiv-section__scrolled-div__desktop');
-    // // section 1
-    // this.boxOne.classList.toggle('indiv-box-one__desktop');
-    // this.headlineImage.classList.toggle('indiv-img__one__desktop');
-    // this.headlineBox.classList.toggle('indiv-headline-box-one__desktop');
-    // //section 2
-    // this.boxTwo.classList.toggle('indiv-box-two__desktop');
-    // this.sectionTwoImageLeft.classList.toggle('indiv-img__two-left__desktop');
-    // this.sectionTwoImageRight.classList.toggle('indiv-img__two-right__desktop');
-    // this.headlineBoxTwo.classList.toggle('indiv-headline-box-two__desktop');
-    // this.paragraphBoxTwo.classList.toggle('indiv-par-box-two__desktop');
-    // // this.paragraphTwo.classList.toggle('');
-
+    this.indivScrollBack();
     //Real Features to Switch
     this.headerBox.classList.remove('header-scroll-started');
     this.footerBox.classList.remove('footer-scroll-started');
     this.indivMainSection.classList.remove('main-scroll-started');
+    this.scrollBackBtn.classList.add('scroll-back__div-hidden');
     if (window.innerWidth <= 1080) {
       this.indivContentSection.style.transform = `translateY(-8vh) translateX(0)`;
       this.headlineImage.style.transform = `translateX(0)`;
@@ -150,21 +141,6 @@ class IndividualView {
     observer.unobserve(entry[0].target);
   }
 
-  // narrActivateIndivOne() {
-  //   if (this.scrollEvent > this.maxWidthPossible) return;
-  //   if (this.scrollEvent < window.pageYOffset) {
-  //     //headline image one
-  //     this.headlineImageNarrowScroll = this.headlineImageNarrowScroll - (window.pageYOffset - this.scrollEvent) / 45;
-  //     this.headlineImage.style.transform = `translateY(${this.headlineImageNarrowScroll}rem)`;
-  //   }
-  //   if (this.scrollEvent > window.pageYOffset) {
-  //     //headline image one
-  //     this.headlineImageNarrowScroll = this.headlineImageNarrowScroll + (this.scrollEvent - window.pageYOffset) / 45;
-  //     this.headlineImage.style.transform = `translateY(${this.headlineImageNarrowScroll}rem)`;
-  //   }
-  //   this.scrollEvent = window.pageYOffset;
-  // }
-
   wideActivateIndivOne() {
     if (window.innerWidth <= 1080) return;
     if (this.scrollEvent < window.pageYOffset) {
@@ -174,6 +150,7 @@ class IndividualView {
         this.headerBox.classList.add('header-scroll-started');
         this.footerBox.classList.add('footer-scroll-started');
         this.indivMainSection.classList.add('main-scroll-started');
+        this.scrollBackBtn.classList.remove('scroll-back__div-hidden');
       }
       this.indivContentSection.style.transform = `translateY(-8vh) translateX(-${this.scrollEvent}px)`;
       //headline image one
@@ -182,10 +159,11 @@ class IndividualView {
     }
     if (this.scrollEvent > window.pageYOffset) {
       this.indivContentSection.style.transform = `translateY(-8vh) translateX(-${this.scrollEvent}px`;
-      if (this.scrollEvent < 10 && this.headerBox.classList.contains('header-scroll-started')) {
+      if (this.scrollEvent < 20 && this.headerBox.classList.contains('header-scroll-started')) {
         this.headerBox.classList.remove('header-scroll-started');
         this.footerBox.classList.remove('footer-scroll-started');
         this.indivMainSection.classList.remove('main-scroll-started');
+        this.scrollBackBtn.classList.add('scroll-back__div-hidden');
       }
 
       //headline image one
@@ -196,34 +174,6 @@ class IndividualView {
     //renew scrollEvent
     this.scrollEvent = window.pageYOffset;
   }
-
-  // narrActivateIndivTwo() {
-  //   // console.log(window.pageYOffset - this.scrollEventTwo);
-  //   if (this.scrollEventTwo < window.pageYOffset) {
-  //     //headline image one
-  //     this.sectionTwoNarrowScroll = this.sectionTwoNarrowScroll - (window.pageYOffset - this.scrollEventTwo) / 105;
-  //     this.sectionTwoImageLeft.style.transform = `translateX(${
-  //       this.sectionTwoNarrowScroll > 0
-  //         ? -this.sectionTwoNarrowScroll.toFixed(3)
-  //         : Math.abs(this.sectionTwoNarrowScroll.toFixed(3))
-  //     }rem)`;
-  //     this.sectionTwoImageRight.style.transform = `translateX(${this.sectionTwoNarrowScroll.toFixed(3)}rem)`;
-  //   }
-  //   if (this.scrollEventTwo > window.pageYOffset) {
-  //     //headline image one
-  //     this.sectionTwoNarrowScroll = this.sectionTwoNarrowScroll + (this.scrollEventTwo - window.pageYOffset) / 105;
-  //     this.sectionTwoImageLeft.style.transform = `translateX(${
-  //       this.sectionTwoNarrowScroll > 0
-  //         ? -this.sectionTwoNarrowScroll.toFixed(3)
-  //         : Math.abs(this.sectionTwoNarrowScroll.toFixed(3))
-  //     }rem)`;
-  //     this.sectionTwoImageRight.style.transform = `translateX(${this.sectionTwoNarrowScroll.toFixed(3)}rem)`;
-  //   }
-
-  //   // console.log(this.sectionTwoNarrowScroll, (window.pageYOffset - this.scrollEventTwo) / 20);
-  //   //renew scrollEvent
-  //   this.scrollEventTwo = window.pageYOffset;
-  // }
 
   wideActivateIndivTwo() {
     if (window.innerWidth <= 1080) return;
@@ -250,20 +200,6 @@ class IndividualView {
     this.scrollEventTwo = window.pageYOffset;
   }
 
-  // narrActivateIndivThree() {
-  //   if (this.scrollEventThree < window.pageYOffset) {
-  //     // console.log(this.sectionThreeNarrowScroll);
-  //     //headline image one
-  //     this.sectionThreeNarrowScroll = this.sectionThreeNarrowScroll + (window.pageYOffset - this.scrollEventThree) / 65;
-  //     this.sectionThreeImage.style.transform = `translateX(${this.sectionThreeNarrowScroll}rem) translateY(-${this.sectionThreeNarrowScroll}rem) `;
-  //   }
-  //   if (this.scrollEventThree > window.pageYOffset) {
-  //     //headline image one
-  //     this.sectionThreeNarrowScroll = this.sectionThreeNarrowScroll - (this.scrollEventThree - window.pageYOffset) / 65;
-  //     this.sectionThreeImage.style.transform = `translateX(${this.sectionThreeNarrowScroll}rem) translateY(-${this.sectionThreeNarrowScroll}rem)`;
-  //   }
-  //   this.scrollEventThree = window.pageYOffset;
-  // }
   wideActivateIndivThree() {
     if (window.innerWidth <= 1080) return;
     if (this.scrollEventThree < window.pageYOffset) {
@@ -278,20 +214,6 @@ class IndividualView {
     }
     this.scrollEventThree = window.pageYOffset;
   }
-
-  // narrActivateIndivFour() {
-  //   if (this.scrollEventFour < window.pageYOffset) {
-  //     //headline image one
-  //     this.sectionFourNarrowScroll = this.sectionFourNarrowScroll + (window.pageYOffset - this.scrollEventFour) / 60;
-  //     this.sectionFourImage.style.transform = `translateY(${this.sectionFourNarrowScroll}rem)`;
-  //   }
-  //   if (this.scrollEventFour > window.pageYOffset) {
-  //     //headline image one
-  //     this.sectionFourNarrowScroll = this.sectionFourNarrowScroll - (this.scrollEventFour - window.pageYOffset) / 60;
-  //     this.sectionFourImage.style.transform = `translateY(${this.sectionFourNarrowScroll}rem)`;
-  //   }
-  //   this.scrollEventFour = window.pageYOffset;
-  // }
 
   wideActivateIndivFour() {
     if (window.innerWidth <= 1080) return;

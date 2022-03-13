@@ -4957,6 +4957,10 @@ a:visited {
   top: 3vh;
 }
 
+.scroll-back__div-hidden {
+  visibility: hidden;
+}
+
 .scroll-back__btn-box {
   height: 2rem;
   width: 2rem;
