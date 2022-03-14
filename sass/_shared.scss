@@ -198,11 +198,20 @@
 }
 
 .footer-menu__extra {
-  min-height: 50vh;
+  min-height: calc(50vh + 1.3rem);
   // max-height: 40vh;
   width: 100vw;
   max-width: 100%;
   position: relative;
+  height: auto;
+  transition: transform 0.3s linear;
+  transform-style: preserve-3d;
+  @media (min-width: 1080px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 .footer-menu__extra__hidden {
@@ -210,16 +219,27 @@
 }
 
 .footer-menu__contacts {
+  background-color: red;
   position: absolute;
   min-width: 100%;
   left: 0;
   top: 0;
+  transform: translateZ(1px);
+  backface-visibility: hidden;
 
   & p {
-    margin: 0 0.2rem;
+    margin: 1rem 0.2rem 0.5rem 0;
     font-weight: 700;
     font-size: 1.05rem;
     text-align: center;
+  }
+
+  @media (min-width: 1080px) {
+    position: static;
+    min-width: 50%;
+    width: 40vw;
+    transform: translate(0);
+    height: 100%;
   }
 }
 
@@ -236,56 +256,136 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 15% 70% 15%;
+  grid-column-gap: 0.2rem;
   grid-template-areas:
     'yourname yourcontacts yourcontacts'
     'yourmessage yourmessage yourmessage'
     '. . submitbtn';
+  max-width: 35rem;
+  @media (min-width: 1080px) {
+    max-width: 35vw;
+  }
 }
 
 .footer-menu__form-name {
   grid-area: yourname;
   height: 1.4rem;
   width: 100%;
-  margin: auto 0.2rem auto 0;
+  margin: auto 0.2rem;
+  padding-right: 0.2rem;
+  &::placeholder {
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    padding-left: 0.2rem;
+  }
+
+  &:focus {
+    // outline: none !important;
+    border-color: var(--font-border-color);
+  }
 }
 
 .footer-menu__form-contacts {
   grid-area: yourcontacts;
   height: 1.4rem;
-  margin: auto 0 auto 0.2rem;
+  margin: auto 0.2rem;
+
+  &::placeholder {
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    padding-left: 0.2rem;
+  }
+
+  &:focus {
+    // outline: none !important;
+    border-color: var(--font-border-color);
+  }
 }
 
 .footer-menu__form-message {
   grid-area: yourmessage;
-  // vertical-align: top;
+  margin: 0.2rem;
+
+  &::placeholder {
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    padding: 0.2rem 0 0 0.2rem;
+  }
+
+  &:focus {
+    // outline: none !important;
+    border-color: var(--font-border-color);
+  }
+}
+
+input[type='text'] {
+  padding: 0.1rem 0.2rem;
+  box-sizing: border-box;
+}
+
+textarea[type='text'] {
+  padding: 0.1rem 0.2rem;
+  box-sizing: border-box;
 }
 
 .footer-menu__form-submit {
   grid-area: submitbtn;
+  margin: 0.2rem;
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.72rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--font-border-color);
+  background-color: var(--logo-bg);
+  color: var(--font-border-color);
+}
+
+.label-hidden {
+  display: none;
 }
 
 .footer-menu__address {
   position: absolute;
   min-width: 100%;
+  min-height: 100%;
   left: 0;
   top: 0;
+  transform: rotateY(180deg) translateZ(1px);
+  backface-visibility: hidden;
+  background-color: yellow;
 
   & p {
     font-weight: 700;
     font-size: 1.05rem;
     text-align: center;
   }
+
+  @media (min-width: 1080px) {
+    position: static;
+    min-width: 50%;
+    width: 40vw;
+    transform: translate(0);
+    height: 100%;
+  }
 }
 
 .footer-menu__ad-cont-div {
   display: flex;
   margin: 1rem;
+  padding-bottom: 0.5rem;
 
   & p {
     margin: 0;
     line-height: 1.5rem;
     font-size: 0.8rem;
     padding-left: 1rem;
+  }
+
+  @media (min-width: 1080px) {
+    width: 30rem;
+    padding-left: 6.5vw;
   }
 }
 
@@ -300,6 +400,11 @@
     margin: 0 0 0.3rem auto;
     text-align: right;
   }
+  @media (min-width: 1080px) {
+    width: 20rem;
+    margin: auto 0 0 auto;
+    padding: 0 2rem 2rem 0;
+  }
 }
 
 .footer-menu__icon {
@@ -307,9 +412,9 @@
   width: 1.5rem;
 }
 
-.footer-extra-div__hidden {
-  visibility: hidden;
-}
+// .footer-extra-div__hidden {
+//   visibility: hidden;
+// }
 
 .overlay {
   display: none;

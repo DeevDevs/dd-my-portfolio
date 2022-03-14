@@ -11,6 +11,8 @@ class SharedView {
   footerMenu = document.querySelector('.footer-menu');
   footerBtns = document.querySelector('.footer-menu__buttons');
   footerExtraDiv = document.querySelector('.footer-menu__extra');
+  footerSubmitBtn = document.querySelector('.footer-menu__form-submit');
+  footerWindow = 'contacts';
 
   footerMenuObserver = new IntersectionObserver(this.hideExtraFooterBox.bind(this), { root: null, threshold: 0 });
 
@@ -26,17 +28,40 @@ class SharedView {
     );
     this.footerBtns.addEventListener('click', this.displayExtraFooterBox.bind(this));
     this.footerMenuObserver.observe(this.footerMenu);
+    this.footerSubmitBtn.addEventListener('click', this.submitFooterMessage.bind(this));
   }
 
-  displayExtraFooterBox() {
+  displayExtraFooterBox(e) {
     this.footerMenu.classList.add('footer-menu__expand');
     this.footerExtraDiv.classList.remove('footer-menu__extra__hidden');
-    setTimeout(() => this.footerMenu.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50);
+    if (e.target.closest('.footer-contacts-btn')) {
+      if (this.footerWindow !== 'contacts') {
+        if (window.innerWidth > 1080) return;
+        this.footerExtraDiv.style.transform = `rotateY(0deg)`;
+        this.footerWindow = 'contacts';
+      }
+    }
+    if (e.target.closest('.footer-address-btn')) {
+      if (this.footerWindow !== 'address') {
+        if (window.innerWidth > 1080) return;
+        this.footerExtraDiv.style.transform = `rotateY(180deg)`;
+        this.footerWindow = 'address';
+      }
+    }
+    setTimeout(() => document.body.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50);
   }
 
   hideExtraFooterBox() {
     this.footerMenu.classList.remove('footer-menu__expand');
     this.footerExtraDiv.classList.add('footer-menu__extra__hidden');
+  }
+
+  submitFooterMessage(e) {
+    e.preventDefault();
+    const messageArr = new FormData(document.querySelector('.footer-menu__form'));
+    const messageObject = Object.fromEntries(messageArr);
+    console.log(messageObject);
+    document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
   }
 
   _changeTheme() {
