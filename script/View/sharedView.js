@@ -29,6 +29,8 @@ class SharedView {
     this.footerBtns.addEventListener('click', this.displayExtraFooterBox.bind(this));
     this.footerMenuObserver.observe(this.footerMenu);
     this.footerSubmitBtn.addEventListener('click', this.submitFooterMessage.bind(this));
+    //empty form fields
+    document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
   }
 
   displayExtraFooterBox(e) {
@@ -36,18 +38,22 @@ class SharedView {
     this.footerExtraDiv.classList.remove('footer-menu__extra__hidden');
     if (e.target.closest('.footer-contacts-btn')) {
       if (this.footerWindow !== 'contacts') {
-        if (window.innerWidth > 1080) return;
-        this.footerExtraDiv.style.transform = `rotateY(0deg)`;
-        this.footerWindow = 'contacts';
+        if (window.innerWidth < 1080) {
+          this.footerExtraDiv.style.transform = `rotateY(0deg)`;
+          this.footerWindow = 'contacts';
+        }
       }
     }
     if (e.target.closest('.footer-address-btn')) {
       if (this.footerWindow !== 'address') {
-        if (window.innerWidth > 1080) return;
-        this.footerExtraDiv.style.transform = `rotateY(180deg)`;
-        this.footerWindow = 'address';
+        if (window.innerWidth < 1080) {
+          this.footerExtraDiv.style.transform = `rotateY(180deg)`;
+          this.footerWindow = 'address';
+          console.log('switched');
+        }
       }
     }
+    console.log('scrolling');
     setTimeout(() => document.body.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50);
   }
 

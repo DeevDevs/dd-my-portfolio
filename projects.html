@@ -311,8 +311,76 @@
     </section>
 
     <footer class="footer-menu" id="section-5">
-      <p>Contact me</p>
-      <p>Address</p>
+      <div class="footer-menu__buttons">
+        <p class="footer-contacts-btn">Contact me</p>
+        <p class="footer-address-btn">Address</p>
+      </div>
+      <div class="footer-menu__extra">
+        <div class="footer-menu__contacts">
+          <p>You can contact me using the form below, or via email</p>
+          <div class="footer-menu__form-div">
+            <form class="footer-menu__form">
+              <label class="label-hidden" for="visitorName">visitorName</label>
+              <input
+                class="footer-menu__form-name footer__input-field"
+                id="visitorName"
+                type="text"
+                placeholder="Your name"
+                name="visitorName"
+              />
+              <label class="label-hidden" for="visitorEmail">visitorEmail</label>
+              <input
+                class="footer-menu__form-contacts footer__input-field"
+                type="text"
+                placeholder="Your email"
+                name="visitorEmail"
+              />
+              <label class="label-hidden" for="visitorMessage">visitorMessage</label>
+              <textarea
+                class="footer-menu__form-message footer__input-field"
+                type="text"
+                placeholder="Your message"
+                name="visitorMessage"
+              >
+              </textarea>
+              <input class="footer-menu__form-submit" type="submit" />
+              <!-- Send Message</button> -->
+            </form>
+          </div>
+          <div class="footer-menu__ad-cont-div footer-menu__email-div">
+            <svg class="footer-menu__icon">
+              <use href="./images/icons/all-icons.svg#logo-email"></use>
+            </svg>
+            <p>dmitriy.vnuchkov@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-menu__address">
+          <p>Find me Online and in Real World</p>
+          <div class="footer-menu__ad-cont-div">
+            <svg class="footer-menu__icon">
+              <use href="./images/icons/all-icons.svg#logo-vk"></use>
+            </svg>
+            <p>Dmitriy Vnuchkov</p>
+          </div>
+          <div class="footer-menu__ad-cont-div">
+            <svg class="footer-menu__icon">
+              <use href="./images/icons/all-icons.svg#logo-instagram"></use>
+            </svg>
+            <p>DmitriyDeevDevs</p>
+          </div>
+          <div class="footer-menu__ad-cont-div">
+            <svg class="footer-menu__icon">
+              <use href="./images/icons/all-icons.svg#logo-location"></use>
+            </svg>
+            <p>Currently in Oman, North Sharqiyah, Ibra</p>
+          </div>
+          <div class="footer-menu__address-div footer-copyright">
+            <p>last updated in March 2022</p>
+            <br />
+            <p>Copyright by Dmitriy Vnuchkov</p>
+          </div>
+        </div>
+      </div>
     </footer>
     <div class="side-menu">
       <ul class="menu-list">
