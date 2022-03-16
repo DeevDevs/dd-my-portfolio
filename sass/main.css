@@ -732,13 +732,6 @@ body {
   }
 }
 
-.sec__description--title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-}
-
 @media (min-width: 740px) {
   .sec__description--text {
     font-size: 1.1rem;
@@ -749,6 +742,13 @@ body {
   .sec__description--text {
     font-size: 1.1rem;
   }
+}
+
+.sec__description--title {
+  font-size: 1.5rem !important;
+  font-weight: 700;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .sec__learn-more {
@@ -5208,13 +5208,16 @@ a:visited {
   .dragged-div {
     display: block;
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    background-color: black;
     z-index: 10;
     cursor: -webkit-grab;
     cursor: grab;
     border-radius: 50%;
+    padding: 4rem;
+    -webkit-transform: translate(-4rem, -4rem);
+            transform: translate(-4rem, -4rem);
   }
 }
 

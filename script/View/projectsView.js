@@ -168,8 +168,8 @@ class ProjectsView {
 
   showMousePosition(e) {
     this.mousePositionX = e.pageX;
-    this.draggedDiv.style.left = `${e.pageX - 10}px`;
-    this.draggedDiv.style.top = `${e.pageY - 10}px`;
+    this.draggedDiv.style.left = `${e.pageX}px`;
+    this.draggedDiv.style.top = `${e.pageY}px`;
   }
 
   checkIfMoves(curMoveX, curMoveY) {
@@ -288,6 +288,51 @@ class ProjectsView {
       Math.trunc(((totalWidth / 2 - mouseX) * maxShadow) / (totalWidth / 2)),
       Math.trunc(((totalHeight / 2 - mouseY) * maxShadow) / (totalHeight / 2)),
     ];
+  }
+
+  //TESTING NEW PRINCIPLE
+  _makeWindowDraggable(thatDiv) {
+    // prettier-ignore
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    document.querySelector('.dragged-div').onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      const maxWidth = document.querySelector('.body').offsetWidth;
+      const maxHeight = document.querySelector('.body').offsetHeight;
+      // set the element's new position
+      modalWindow.style.top = modalWindow.offsetTop - pos2 + 'px';
+      modalWindow.style.left = modalWindow.offsetLeft - pos1 + 'px';
+      if (modalWindow.offsetTop - pos2 < 0) modalWindow.style.top = 0 + 'px';
+      if (modalWindow.offsetLeft - pos1 < 0) modalWindow.style.left = 0 + 'px';
+      if (modalWindow.offsetLeft - pos1 > maxWidth - modalWindow.offsetWidth / 2)
+        modalWindow.style.left = maxWidth - modalWindow.offsetWidth / 2 + 'px';
+      //prettier-ignore
+      if (modalWindow.offsetTop - pos2 >maxHeight - modalWindow.offsetHeight / 2)
+        modalWindow.style.top = maxHeight - modalWindow.offsetHeight / 2 + 'px';
+    }
+
+    function closeDragElement() {
+      // stop moving when mouse button is released
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
   }
 }
 
