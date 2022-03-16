@@ -155,7 +155,7 @@
     height: 60vh;
     width: auto;
     transform: translateX(75vw);
-    transition: transform 0.3s ease-out;
+    transition: transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19);
   }
 }
 
@@ -699,7 +699,7 @@
 .dragged-div {
   display: none;
   @media (min-width: 1080px) and (hover: hover) {
-    display: block;
+    // display: block;
     position: absolute;
     width: 2rem;
     height: 2rem;
@@ -710,4 +710,8 @@
     padding: 4rem;
     transform: translate(-4rem, -4rem);
   }
+}
+
+.supreme-div {
+  z-index: 30 !important;
 }

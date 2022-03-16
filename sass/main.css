@@ -4625,10 +4625,10 @@ a:visited {
     width: auto;
     -webkit-transform: translateX(75vw);
             transform: translateX(75vw);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19);
+    transition: -webkit-transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19);
+    transition: transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19);
+    transition: transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19), -webkit-transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19);
   }
 }
 
@@ -5206,7 +5206,6 @@ a:visited {
 
 @media (min-width: 1080px) and (hover: hover) {
   .dragged-div {
-    display: block;
     position: absolute;
     width: 2rem;
     height: 2rem;
@@ -5219,6 +5218,10 @@ a:visited {
     -webkit-transform: translate(-4rem, -4rem);
             transform: translate(-4rem, -4rem);
   }
+}
+
+.supreme-div {
+  z-index: 30 !important;
 }
 
 .exp__main-part {

@@ -12,6 +12,7 @@ class ProjectsView {
   mainImageContainers = document.querySelectorAll('.jad__content-main-img__container');
   secondaryImageContainers = document.querySelectorAll('.jad__content-secondary-img__container');
   draggedOverDiv = document.querySelector('.draggedover-div');
+  draggedOverDivSupreme = document.querySelector('.supreme-div');
   draggedDiv = document.querySelector('.dragged-div');
   btnSwitchFormat = document.querySelector('.btn__switch-format');
 
@@ -55,6 +56,7 @@ class ProjectsView {
     this.draggedDiv.addEventListener('dragstart', this.startDrag.bind(this));
     this.draggedDiv.addEventListener('drag', this.seeDrag.bind(this));
     this.draggedDiv.addEventListener('dragend', this.endRotation.bind(this));
+    this.draggingProjects();
   }
 
   bringFirstProject(entry, observer) {
@@ -291,49 +293,100 @@ class ProjectsView {
   }
 
   //TESTING NEW PRINCIPLE
-  _makeWindowDraggable(thatDiv) {
+  draggingProjects() {
     // prettier-ignore
-    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    let pos1 = 0, pos2 = 0;
 
-    document.querySelector('.dragged-div').onmousedown = dragMouseDown;
+    this.draggedOverDivSupreme.onmousedown = dragWhileMouseDown;
+    let movedElement = this.wheelGridBox;
+    let shiftValue = 0;
+    let direction;
 
-    function dragMouseDown(e) {
+    function dragWhileMouseDown(e) {
       e = e || window.event;
       e.preventDefault();
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      document.onmouseup = closeDragElement;
-      document.onmousemove = elementDrag;
+      pos2 = e.clientX;
+      // console.log(pos2);
+      movedElement.style.transition = `transform 0.05s`;
+      document.onmouseup = closeProjectsDrag;
+      document.onmousemove = projectsDrag;
     }
 
-    function elementDrag(e) {
+    function projectsDrag(e) {
       e = e || window.event;
       e.preventDefault();
-      // calculate the new cursor position
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      const maxWidth = document.querySelector('.body').offsetWidth;
-      const maxHeight = document.querySelector('.body').offsetHeight;
-      // set the element's new position
-      modalWindow.style.top = modalWindow.offsetTop - pos2 + 'px';
-      modalWindow.style.left = modalWindow.offsetLeft - pos1 + 'px';
-      if (modalWindow.offsetTop - pos2 < 0) modalWindow.style.top = 0 + 'px';
-      if (modalWindow.offsetLeft - pos1 < 0) modalWindow.style.left = 0 + 'px';
-      if (modalWindow.offsetLeft - pos1 > maxWidth - modalWindow.offsetWidth / 2)
-        modalWindow.style.left = maxWidth - modalWindow.offsetWidth / 2 + 'px';
-      //prettier-ignore
-      if (modalWindow.offsetTop - pos2 >maxHeight - modalWindow.offsetHeight / 2)
-        modalWindow.style.top = maxHeight - modalWindow.offsetHeight / 2 + 'px';
+
+      shiftValue = Number(movedElement.style.transform.slice(11, movedElement.style.transform.length - 3));
+      // console.log(shiftValue);
+      pos1 = pos2 - e.clientX;
+      pos2 = e.clientX;
+
+      // console.log(pos1, pos2);
+      if (pos1 < 0) {
+        shiftValue = shiftValue + 0.1 * Math.abs(pos1);
+        movedElement.style.transform = `translateX(${shiftValue}vw)`;
+        direction = 'right';
+      }
+
+      if (pos1 > 0) {
+        shiftValue = shiftValue - 0.1 * Math.abs(pos1);
+        movedElement.style.transform = `translateX(${shiftValue}vw)`;
+        direction = 'left';
+      }
     }
 
-    function closeDragElement() {
+    function closeProjectsDrag() {
+      movedElement.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
       // stop moving when mouse button is released
       document.onmouseup = null;
       document.onmousemove = null;
+      //place the project in the center of the window
+      if (shiftValue > 0) shiftValue = 0;
+      if (shiftValue < -350) shiftValue = -350;
+      console.log(direction);
+      console.log(Math.abs(shiftValue) % 50);
+      if (direction === 'left' && shiftValue > -350 && shiftValue < 0)
+        shiftValue = shiftValue - (50 - Math.abs(shiftValue % 50));
+      if (direction === 'right' && shiftValue > -350 && shiftValue < 0)
+        shiftValue = shiftValue + Math.abs(shiftValue % 50);
+      movedElement.style.transform = `translateX(${shiftValue}vw)`;
     }
   }
+
+  // _dragWhileMouseDown(e) {
+  //   e = e || window.event;
+  //   e.preventDefault();
+  //   pos2 = e.clientX;
+  //   document.onmouseup = this._closeProjectsDrag;
+  //   document.onmousemove = this._projectsDrag;
+  // }
+
+  // _projectsDrag(e) {
+  //   e = e || window.event;
+  //   e.preventDefault();
+  //   console.log(e);
+  //   // calculate the new cursor position
+  //   pos1 = pos2 - e.clientX;
+  //   pos2 = e.clientX;
+  //   //calculate mouseSpeed
+  //   mouseSpeed = Math.abs(pos1 - pos2);
+  //   //move the element according to new mouse position
+  //   if (pos1 > pos2) {
+  //     movedElement.style.transform = `translateX(-${pos1 - pos2}px)`;
+  //     this.shiftValue = this.shiftValue + 0.1 * this.mouseSpeed;
+  //     this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
+  //   }
+
+  //   if (pos1 < pos2) {
+  //     movedElement.style.transform = `translateX(${pos2 - pos1}px)`;
+  //   }
+  // }
+
+  // _closeProjectsDrag() {
+  //   // stop moving when mouse button is released
+  //   document.onmouseup = null;
+  //   document.onmousemove = null;
+  // }
 }
 
 export default new ProjectsView();
