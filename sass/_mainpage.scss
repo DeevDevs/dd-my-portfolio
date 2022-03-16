@@ -607,6 +607,15 @@
   @media (min-width: 1080px) {
     transform: rotateY(-12deg) scale(0.75);
   }
+
+  @media (min-width: 1480px) {
+    transform: rotateY(-12deg) scale(0.7);
+  }
+
+  @media (min-width: 3480px) {
+    transform: rotateY(-12deg) scale(0.5);
+    margin-right: 5vw;
+  }
 }
 
 .mp-image-grid__central {
@@ -616,11 +625,20 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   transform-style: preserve-3d;
-  transform: rotateY(15deg) scale(0.8);
+  transform: rotateY(13deg) scale(0.8);
   // margin-left: 4rem;
 
   @media (min-width: 1080px) {
-    transform: rotateY(15deg) scale(0.75);
+    transform: rotateY(12deg) scale(0.75);
+  }
+
+  @media (min-width: 1480px) {
+    transform: rotateY(12deg) scale(0.7);
+  }
+
+  @media (min-width: 3480px) {
+    transform: rotateY(12deg) scale(0.5);
+    margin-left: 5vw;
   }
 }
 

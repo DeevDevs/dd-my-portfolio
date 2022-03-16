@@ -151,7 +151,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin-left: 25vw;
-    margin-top: 2rem;
+    // margin-top: 2rem;
     height: 60vh;
     width: auto;
     transform: translateX(75vw);
@@ -594,11 +594,12 @@
     transform: skew(10deg);
     width: 108%;
     left: -4.5%;
-    height: 85%;
+    height: 100%;
     bottom: 0;
     background-color: transparent;
     z-index: 9;
     cursor: grab;
+    overflow-x: hidden;
 
     // &:active {
     //   cursor: grabbing;
@@ -612,13 +613,18 @@
   width: 26%;
   background-image: var(--details-bg);
   transition: opacity 0.4s ease-in;
+  // overflow-y: scroll;
 }
 
 .pr-wheel-details-left {
   & p {
-    width: 15rem;
+    // width: 15rem;
+    width: 20vw;
     line-height: 2;
-    margin: 7rem auto auto 0;
+    // margin: 7rem auto auto 0;
+    // margin-top: 7rem;
+    margin-top: 5vh;
+    // margin-left: 1vw;
     padding: 2rem 2rem 2rem 0;
     font-size: 1rem;
     // font-size: clamp(0.8rem - 1.2rem);
@@ -627,38 +633,65 @@
     // height: 80%;
     // width: 50%;
     @media (min-width: 1280px) {
-      margin: 7rem auto auto 0;
-      padding: 2rem 2rem 2rem 1rem;
+      // margin: 7rem auto auto 0;
+      // margin-top: 7rem;
+      margin-top: 11vh;
+      padding: 1rem 1rem 1rem 1rem;
       font-size: 1.1rem;
-      width: 20rem;
+      // width: 20rem;
     }
     @media (min-width: 1480px) {
-      margin: 7rem auto auto 2rem;
+      // margin: 7rem auto auto 2rem;
+      // margin-top: 7rem;
+      margin-top: 22vh;
       padding: 2rem;
       font-size: 1.2rem;
-      width: 22rem;
+      // width: 22rem;
+    }
+    @media (min-width: 2080px) {
+      // margin: 7rem auto auto 2rem;
+      margin-top: 33vh;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      font-size: 1.2rem;
+      max-width: 40rem;
+      // width: 22rem;
     }
   }
 }
 
 .pr-wheel-details-right {
   & p {
-    width: 15rem;
+    // width: 15rem;
+    width: 22vw;
     line-height: 2;
     padding: 2rem 0rem 2rem 4rem;
-    margin: 6rem 0 auto auto;
+    // margin: 6rem 0 auto auto;
+    margin-top: 5vh;
+    margin-left: 6vw;
     font-size: 1rem;
     font-weight: 700;
     transform: skew(-10deg) translateX(-5rem);
     @media (min-width: 1280px) {
-      margin: 6rem 0 auto auto;
+      margin-top: 11vh;
       font-size: 1.1rem;
-      width: 20rem;
+      // width: 20rem;
     }
     @media (min-width: 1480px) {
       font-size: 1.2rem;
-      width: 22rem;
-      margin: 7rem 0rem auto auto;
+      margin-top: 22vh;
+      // margin: 7rem 0rem auto auto;
+    }
+    @media (min-width: 2080px) {
+      // margin: 7rem auto auto 2rem;
+      margin-top: 33vh;
+      margin-left: 6vw;
+      margin-right: auto;
+      padding: 2rem;
+      font-size: 1.2rem;
+      max-width: 40rem;
+      // width: 22rem;
     }
   }
 }
@@ -668,8 +701,8 @@
   @media (min-width: 1080px) and (hover: hover) {
     display: block;
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 20px;
+    height: 20px;
     background-color: transparent;
     z-index: 10;
     cursor: grab;

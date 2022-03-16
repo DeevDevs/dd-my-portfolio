@@ -73,6 +73,7 @@ body {
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 @media (max-height: 640px) and (max-width: 640px) {
@@ -912,6 +913,21 @@ body {
   }
 }
 
+@media (min-width: 1480px) {
+  .mp-image-grid {
+    -webkit-transform: rotateY(-12deg) scale(0.7);
+            transform: rotateY(-12deg) scale(0.7);
+  }
+}
+
+@media (min-width: 3480px) {
+  .mp-image-grid {
+    -webkit-transform: rotateY(-12deg) scale(0.5);
+            transform: rotateY(-12deg) scale(0.5);
+    margin-right: 5vw;
+  }
+}
+
 .mp-image-grid__central {
   display: -ms-grid;
   display: grid;
@@ -923,14 +939,29 @@ body {
   grid-row-gap: 0px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: rotateY(15deg) scale(0.8);
-          transform: rotateY(15deg) scale(0.8);
+  -webkit-transform: rotateY(13deg) scale(0.8);
+          transform: rotateY(13deg) scale(0.8);
 }
 
 @media (min-width: 1080px) {
   .mp-image-grid__central {
-    -webkit-transform: rotateY(15deg) scale(0.75);
-            transform: rotateY(15deg) scale(0.75);
+    -webkit-transform: rotateY(12deg) scale(0.75);
+            transform: rotateY(12deg) scale(0.75);
+  }
+}
+
+@media (min-width: 1480px) {
+  .mp-image-grid__central {
+    -webkit-transform: rotateY(12deg) scale(0.7);
+            transform: rotateY(12deg) scale(0.7);
+  }
+}
+
+@media (min-width: 3480px) {
+  .mp-image-grid__central {
+    -webkit-transform: rotateY(12deg) scale(0.5);
+            transform: rotateY(12deg) scale(0.5);
+    margin-left: 5vw;
   }
 }
 
@@ -4590,7 +4621,6 @@ a:visited {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     margin-left: 25vw;
-    margin-top: 2rem;
     height: 60vh;
     width: auto;
     -webkit-transform: translateX(75vw);
@@ -5076,12 +5106,13 @@ a:visited {
             transform: skew(10deg);
     width: 108%;
     left: -4.5%;
-    height: 85%;
+    height: 100%;
     bottom: 0;
     background-color: transparent;
     z-index: 9;
     cursor: -webkit-grab;
     cursor: grab;
+    overflow-x: hidden;
   }
 }
 
@@ -5095,9 +5126,9 @@ a:visited {
 }
 
 .pr-wheel-details-left p {
-  width: 15rem;
+  width: 20vw;
   line-height: 2;
-  margin: 7rem auto auto 0;
+  margin-top: 5vh;
   padding: 2rem 2rem 2rem 0;
   font-size: 1rem;
   font-weight: 700;
@@ -5107,27 +5138,37 @@ a:visited {
 
 @media (min-width: 1280px) {
   .pr-wheel-details-left p {
-    margin: 7rem auto auto 0;
-    padding: 2rem 2rem 2rem 1rem;
+    margin-top: 11vh;
+    padding: 1rem 1rem 1rem 1rem;
     font-size: 1.1rem;
-    width: 20rem;
   }
 }
 
 @media (min-width: 1480px) {
   .pr-wheel-details-left p {
-    margin: 7rem auto auto 2rem;
+    margin-top: 22vh;
     padding: 2rem;
     font-size: 1.2rem;
-    width: 22rem;
+  }
+}
+
+@media (min-width: 2080px) {
+  .pr-wheel-details-left p {
+    margin-top: 33vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    font-size: 1.2rem;
+    max-width: 40rem;
   }
 }
 
 .pr-wheel-details-right p {
-  width: 15rem;
+  width: 22vw;
   line-height: 2;
   padding: 2rem 0rem 2rem 4rem;
-  margin: 6rem 0 auto auto;
+  margin-top: 5vh;
+  margin-left: 6vw;
   font-size: 1rem;
   font-weight: 700;
   -webkit-transform: skew(-10deg) translateX(-5rem);
@@ -5136,17 +5177,26 @@ a:visited {
 
 @media (min-width: 1280px) {
   .pr-wheel-details-right p {
-    margin: 6rem 0 auto auto;
+    margin-top: 11vh;
     font-size: 1.1rem;
-    width: 20rem;
   }
 }
 
 @media (min-width: 1480px) {
   .pr-wheel-details-right p {
     font-size: 1.2rem;
-    width: 22rem;
-    margin: 7rem 0rem auto auto;
+    margin-top: 22vh;
+  }
+}
+
+@media (min-width: 2080px) {
+  .pr-wheel-details-right p {
+    margin-top: 33vh;
+    margin-left: 6vw;
+    margin-right: auto;
+    padding: 2rem;
+    font-size: 1.2rem;
+    max-width: 40rem;
   }
 }
 
@@ -5158,8 +5208,8 @@ a:visited {
   .dragged-div {
     display: block;
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 20px;
+    height: 20px;
     background-color: transparent;
     z-index: 10;
     cursor: -webkit-grab;

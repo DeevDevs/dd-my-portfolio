@@ -83,6 +83,8 @@ class ProjectsView {
     if (window.innerWidth <= 1080) {
       this.wheelGridBox.style.transform = `translateX(0vw)`;
     }
+    this.draggedDiv.style.left = `0px`;
+    this.draggedDiv.style.top = `0px`;
   }
 
   whereClicks() {
