@@ -194,6 +194,7 @@
     transform: translateZ(0.5rem) skew(10deg);
     width: 95%;
     height: 100%;
+    max-height: 75vh;
     border-radius: 0.8rem;
     opacity: 0.5;
   }
@@ -232,6 +233,7 @@
   height: 100%;
   @media (min-width: 1080px) and (hover: hover) {
     height: 90%;
+    // max-height: 60vh;
   }
 
   &:hover {
@@ -584,7 +586,7 @@
 
 ////// ELEMENTS THAT SUPPORT WHEEL ANIMATION
 
-.draggedover-div {
+.placedover-div {
   display: none;
   @media (min-width: 1080px) and (hover: hover) {
     display: flex;
@@ -597,13 +599,9 @@
     height: 100%;
     bottom: 0;
     background-color: transparent;
-    z-index: 9;
+    z-index: 8;
     cursor: grab;
     overflow-x: hidden;
-
-    // &:active {
-    //   cursor: grabbing;
-    // }
   }
 }
 
@@ -620,10 +618,11 @@
   & p {
     // width: 15rem;
     width: 20vw;
-    line-height: 2;
+    line-height: 1.8;
+
     // margin: 7rem auto auto 0;
     // margin-top: 7rem;
-    margin-top: 5vh;
+    margin-top: 7vh;
     // margin-left: 1vw;
     padding: 2rem 2rem 2rem 0;
     font-size: 1rem;
@@ -635,6 +634,7 @@
     @media (min-width: 1280px) {
       // margin: 7rem auto auto 0;
       // margin-top: 7rem;
+      line-height: 2;
       margin-top: 11vh;
       padding: 1rem 1rem 1rem 1rem;
       font-size: 1.1rem;
@@ -665,15 +665,16 @@
   & p {
     // width: 15rem;
     width: 22vw;
-    line-height: 2;
+    line-height: 1.8;
     padding: 2rem 0rem 2rem 4rem;
     // margin: 6rem 0 auto auto;
-    margin-top: 5vh;
+    margin-top: 7vh;
     margin-left: 6vw;
     font-size: 1rem;
     font-weight: 700;
     transform: skew(-10deg) translateX(-5rem);
     @media (min-width: 1280px) {
+      line-height: 2;
       margin-top: 11vh;
       font-size: 1.1rem;
       // width: 20rem;
@@ -696,22 +697,22 @@
   }
 }
 
-.dragged-div {
-  display: none;
-  @media (min-width: 1080px) and (hover: hover) {
-    // display: block;
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    background-color: black;
-    z-index: 10;
-    cursor: grab;
-    border-radius: 50%;
-    padding: 4rem;
-    transform: translate(-4rem, -4rem);
-  }
-}
+// .dragged-div {
+//   display: none;
+//   @media (min-width: 1080px) and (hover: hover) {
+//     // display: block;
+//     position: absolute;
+//     width: 2rem;
+//     height: 2rem;
+//     background-color: black;
+//     z-index: 10;
+//     cursor: grab;
+//     border-radius: 50%;
+//     padding: 4rem;
+//     transform: translate(-4rem, -4rem);
+//   }
+// }
 
 .supreme-div {
-  z-index: 30 !important;
+  z-index: 9;
 }

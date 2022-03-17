@@ -11,22 +11,19 @@ class ProjectsView {
   justDivsContentBoxes = document.querySelectorAll('.justadiv__content');
   mainImageContainers = document.querySelectorAll('.jad__content-main-img__container');
   secondaryImageContainers = document.querySelectorAll('.jad__content-secondary-img__container');
-  draggedOverDiv = document.querySelector('.draggedover-div');
   draggedOverDivSupreme = document.querySelector('.supreme-div');
-  draggedDiv = document.querySelector('.dragged-div');
   btnSwitchFormat = document.querySelector('.btn__switch-format');
 
   projectViewFormat = 'wheel';
 
   mousePositionX;
-  mouseSpeed = 1;
-  lastMousePosition;
-  shiftValue = 0;
-  dragX = 0;
-  movingStore;
   isMoving = true;
+  isDragging = false;
+  movingTimer;
+  timerAfterMouseRelease;
+
+  shiftValue = 0;
   dragDirection;
-  currentDivsPosition = 0;
 
   projectNames = [
     'Mapty: Workout Records',
@@ -51,59 +48,133 @@ class ProjectsView {
     this.observePrMainSection.observe(this.wheelContainer);
     window.addEventListener('resize', this.returnShiftedSection.bind(this));
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
-    this.draggedOverDiv.addEventListener('mousemove', this.showMousePosition.bind(this));
-    this.draggedDiv.addEventListener('click', this.whereClicks.bind(this));
-    this.draggedDiv.addEventListener('dragstart', this.startDrag.bind(this));
-    this.draggedDiv.addEventListener('drag', this.seeDrag.bind(this));
-    this.draggedDiv.addEventListener('dragend', this.endRotation.bind(this));
+    this.draggedOverDivSupreme.addEventListener('mouseup', this.whereClicks.bind(this));
     this.draggingProjects();
   }
 
+  //this function is used to return the projects div to the page when mode is shifter from desktop to mobile
+  returnShiftedSection() {
+    if (window.innerWidth <= 1080) {
+      this.wheelGridBox.style.transform = `translateX(0vw)`;
+    }
+  }
+
+  //it brings first project preview to the center of the page and reveals details
   bringFirstProject(entry, observer) {
     if (!entry[0].isIntersecting) return;
     entry[0].target.classList.remove('section-hidden');
     if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
       this.wheelGridBox.style.transform = `translateX(${75 - this.intersectionCount * (75 / 20)}vw)`;
       this.intersectionCount++;
-      console.log(entry[0], entry[0].intersectionRatio);
       if (this.intersectionCount >= 20 || entry[0].intersectionRatio >= 0.97) {
-        // this.wheelGridBox.style.transform = `translateX(0vw)`;
         this.setWheelFinalPosition();
-        setTimeout(
-          function () {
-            this.wheelGridBox.style.transition = 'transform 0ms';
-          }.bind(this),
-          600
-        );
-
+        //prettier-ignore
+        setTimeout(function () {this.wheelGridBox.style.transition = 'transform 0ms';}.bind(this),600);
         observer.unobserve(this.wheelContainer);
       }
     }
   }
 
-  returnShiftedSection() {
-    if (window.innerWidth <= 1080) {
-      this.wheelGridBox.style.transform = `translateX(0vw)`;
+  // it allows dragging the block
+  draggingProjects() {
+    let pos1 = 0,
+      pos2 = 0;
+    this.draggedOverDivSupreme.onmousedown = dragWhileMouseDown.bind(this);
+
+    function dragWhileMouseDown(e) {
+      this.isDragging = false;
+      e = e || window.event;
+      e.preventDefault();
+      pos2 = e.clientX;
+      this.wheelGridBox.style.transition = `transform 0.05s`;
+      this.draggedOverDivSupreme.style.cursor = 'grabbing';
+      document.onmouseup = closeProjectsDrag.bind(this);
+      document.onmousemove = projectsDrag.bind(this);
     }
-    this.draggedDiv.style.left = `0px`;
-    this.draggedDiv.style.top = `0px`;
+
+    function projectsDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      this.wheelDetails.forEach((element) => {
+        element.style.opacity = 0;
+      });
+
+      clearTimeout(this.timerAfterMouseRelease);
+      this.isDragging = true;
+      this.shiftValue = Number(
+        this.wheelGridBox.style.transform.slice(11, this.wheelGridBox.style.transform.length - 3)
+      );
+      this.isCursorMoving(e);
+
+      pos1 = pos2 - e.clientX;
+      pos2 = e.clientX;
+
+      if (pos1 < 0) {
+        this.shiftValue = this.shiftValue + 0.1 * Math.abs(pos1);
+        this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
+        this.dragDirection = 'right';
+      }
+      if (pos1 > 0) {
+        this.shiftValue = this.shiftValue - 0.1 * Math.abs(pos1);
+        this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
+        this.dragDirection = 'left';
+      }
+    }
+
+    function closeProjectsDrag() {
+      // stop moving when mouse button is released
+      document.onmouseup = null;
+      document.onmousemove = null;
+      this.draggedOverDivSupreme.style.cursor = 'grab';
+      if (!this.isDragging) return;
+      this.wheelGridBox.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
+      //place the project in the center of the window
+      if (this.dragDirection === 'left' && this.shiftValue > -350 && this.shiftValue < 0 && this.isMoving)
+        this.shiftValue = this.shiftValue - (50 - Math.abs(this.shiftValue % 50));
+      if (this.dragDirection === 'right' && this.shiftValue > -350 && this.shiftValue < 0 && this.isMoving)
+        this.shiftValue = this.shiftValue + Math.abs(this.shiftValue % 50);
+      //in case cursor didn't move on the moment of release, then the nearest project is shown
+      if (!this.isMoving && this.shiftValue > -350 && this.shiftValue < 0)
+        Math.abs(this.shiftValue % 50) > 25
+          ? (this.shiftValue = this.shiftValue - (50 - Math.abs(this.shiftValue % 50)))
+          : (this.shiftValue = this.shiftValue + Math.abs(this.shiftValue % 50));
+      this.setWheelFinalPosition();
+    }
   }
 
-  whereClicks() {
-    // if (this.mousePositionX < window.innerWidth / 4) this.shiftProjects('left');
-    if (this.mousePositionX > window.innerWidth / 4 && this.mousePositionX < (window.innerWidth * 3) / 4)
-      console.log('center');
-    // if (this.mousePositionX > (window.innerWidth * 3) / 4) this.shiftProjects('right');
+  //this function places the closest project (as per the mechanics) to the center of the page
+  setWheelFinalPosition() {
+    if (this.shiftValue > 0) this.shiftValue = 0;
+    if (this.shiftValue < -350) this.shiftValue = -350;
+    this.wheelGridBox.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
+    this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
+    this.timerAfterMouseRelease = setTimeout(
+      function () {
+        this.wheelGridBox.style.transition = `transform 0.05s`;
+        this.identifyFrontDiv();
+      }.bind(this),
+      600
+    );
   }
 
-  shiftProjects(direction) {
-    if (direction === 'right' && this.currentDivsPosition < 7) this.currentDivsPosition++;
-    if (direction === 'left' && this.currentDivsPosition > 0) this.currentDivsPosition--;
-    this.wheelGridBox.style.transform = `translateX(${this.currentDivsPosition * -50}vw)`;
+  //this function identifies where clicking is happening over the manipulation field
+  whereClicks(e) {
+    if (this.isDragging) return;
+    if (e.clientX > window.innerWidth / 4 && e.clientX < (window.innerWidth * 3) / 4) console.log('center');
   }
 
   ////////////////////// FRONT DIV ANIMATION FUNCTIONS ///////////////////////////
 
+  //it identifies if the mouse was moving on the moment of mouse button release
+  isCursorMoving(e) {
+    clearTimeout(this.movingTimer);
+    this.mousePositionX !== e.clientX ? (this.isMoving = true) : (this.isMoving = false);
+    this.mousePositionX = e.clientX;
+    //prettier-ignore
+    this.movingTimer = setTimeout(function () {this.isMoving = false;}.bind(this), 125);
+  }
+
+  //it identifies the front project
   identifyFrontDiv() {
     switch (this.shiftValue) {
       case 0:
@@ -135,6 +206,7 @@ class ProjectsView {
     }
   }
 
+  //it reveals the name of the front project and animates the front project
   revealProjectDetails(projectId) {
     const frontDiv = document.getElementById(projectId);
     const mainContainer = frontDiv
@@ -151,14 +223,15 @@ class ProjectsView {
     });
     this.displayFrontProjectName(projectId);
     this.displayFrontProjectDetails(projectId);
-    // this.wheelContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  //function to identify and reveal project name
   displayFrontProjectName(projectId) {
     const idNum = parseInt(projectId);
     this.mainProjectName.textContent = this.projectNames[idNum - 1];
   }
 
+  //funtion to identify (and SOON REVEAL) project details
   displayFrontProjectDetails(projectId) {
     const idNum = parseInt(projectId);
     this.wheelDetails.forEach((element) => {
@@ -166,89 +239,23 @@ class ProjectsView {
     });
   }
 
-  ///////////// WHEEL FUNCTIONS //////////////////
+  ////////////////////// MOVING SHADOW CODE ////////////////////////
 
-  showMousePosition(e) {
-    this.mousePositionX = e.pageX;
-    this.draggedDiv.style.left = `${e.pageX}px`;
-    this.draggedDiv.style.top = `${e.pageY}px`;
+  addIntroMovingShadow(e) {
+    const shadowParameters = this.movingShadow(e, this.introBox, 15);
+    this.introText.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 4px var(--icons-shadow))`;
+    this.introIcon.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 8px var(--icons-shadow))`;
   }
 
-  checkIfMoves(curMoveX, curMoveY) {
-    if (curMoveX === 0 && curMoveY === 0) return;
-    if (curMoveX !== this.movingStore) {
-      this.isMoving = true;
-    } else {
-      this.isMoving = false;
-    }
-    if (curMoveX !== 0) this.movingStore = curMoveX;
-  }
-
-  startDrag(e) {
-    this.mouseSpeed = e.clientX;
-    this.lastMousePosition = e.clientX;
-    this.wheelDetails.forEach((element) => {
-      element.style.opacity = 0;
-    });
-  }
-
-  seeDrag(e) {
-    this.wheelGridBox.style.transition = `transform 0s`;
-    this.checkIfMoves(e.clientX, e.clientY);
-    if (!isNaN(Math.abs(this.lastMousePosition - e.clientX)) && Math.abs(this.lastMousePosition - e.clientX) !== 0)
-      this.mouseSpeed = Math.abs(this.lastMousePosition - e.clientX);
-    if (e.clientY !== 0) this.lastMousePosition = e.clientX;
-    if (e.clientX > this.dragX) {
-      // this.rotationValue += 0.4;
-      this.shiftValue = this.shiftValue + 0.1 * this.mouseSpeed;
-      this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
-      this.dragX = e.clientX;
-      if (e.y !== 0) this.dragDirection = 'right';
-    }
-    if (e.clientX < this.dragX && e.y !== 0) {
-      this.shiftValue = this.shiftValue - 0.1 * this.mouseSpeed;
-      this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
-      this.dragX = e.clientX;
-      this.dragDirection = 'left';
-    }
-  }
-
-  endRotation() {
-    const remaining = Math.abs(this.shiftValue % 50);
-    if (this.isMoving) {
-      const distanceLeft = 50 - remaining;
-      if (this.dragDirection === 'right') this.slowRotation(this.dragDirection, remaining);
-      if (this.dragDirection === 'left') this.slowRotation(this.dragDirection, distanceLeft);
-    }
-    if (!this.isMoving) {
-      remaining > 25 ? (this.shiftValue -= 50 - remaining) : (this.shiftValue += remaining);
-      this.setWheelFinalPosition();
-    }
-  }
-
-  slowRotation(direction, value) {
-    if (direction === 'right') {
-      this.shiftValue += value;
-      this.setWheelFinalPosition();
-    }
-    if (direction === 'left') {
-      this.shiftValue -= value;
-      this.setWheelFinalPosition();
-    }
-  }
-
-  setWheelFinalPosition() {
-    if (this.shiftValue > 0) this.shiftValue = 0;
-    if (this.shiftValue < -350) this.shiftValue = -350;
-    this.wheelGridBox.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
-    this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
-    this.timer = setTimeout(
-      function () {
-        this.wheelGridBox.style.transition = `transform 0s`;
-        this.identifyFrontDiv();
-      }.bind(this),
-      600
-    );
+  movingShadow(e, element = e.target, maxShadow) {
+    const totalHeight = element.clientHeight;
+    const totalWidth = element.clientWidth;
+    const mouseX = e.offsetX;
+    const mouseY = e.offsetY;
+    return [
+      Math.trunc(((totalWidth / 2 - mouseX) * maxShadow) / (totalWidth / 2)),
+      Math.trunc(((totalHeight / 2 - mouseY) * maxShadow) / (totalHeight / 2)),
+    ];
   }
 
   /////////////////////////// appear/disappear functions (just in case) //////////////////////////////
@@ -272,121 +279,6 @@ class ProjectsView {
       timer
     );
   }
-
-  ////////////////////// MOVING SHADOW CODE ////////////////////////
-
-  addIntroMovingShadow(e) {
-    const shadowParameters = this.movingShadow(e, this.introBox, 15);
-    this.introText.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 4px var(--icons-shadow))`;
-    this.introIcon.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 8px var(--icons-shadow))`;
-  }
-
-  movingShadow(e, element = e.target, maxShadow) {
-    const totalHeight = element.clientHeight;
-    const totalWidth = element.clientWidth;
-    const mouseX = e.offsetX;
-    const mouseY = e.offsetY;
-    return [
-      Math.trunc(((totalWidth / 2 - mouseX) * maxShadow) / (totalWidth / 2)),
-      Math.trunc(((totalHeight / 2 - mouseY) * maxShadow) / (totalHeight / 2)),
-    ];
-  }
-
-  //TESTING NEW PRINCIPLE
-  draggingProjects() {
-    // prettier-ignore
-    let pos1 = 0, pos2 = 0;
-
-    this.draggedOverDivSupreme.onmousedown = dragWhileMouseDown;
-    let movedElement = this.wheelGridBox;
-    let shiftValue = 0;
-    let direction;
-
-    function dragWhileMouseDown(e) {
-      e = e || window.event;
-      e.preventDefault();
-      pos2 = e.clientX;
-      // console.log(pos2);
-      movedElement.style.transition = `transform 0.05s`;
-      document.onmouseup = closeProjectsDrag;
-      document.onmousemove = projectsDrag;
-    }
-
-    function projectsDrag(e) {
-      e = e || window.event;
-      e.preventDefault();
-
-      shiftValue = Number(movedElement.style.transform.slice(11, movedElement.style.transform.length - 3));
-      // console.log(shiftValue);
-      pos1 = pos2 - e.clientX;
-      pos2 = e.clientX;
-
-      // console.log(pos1, pos2);
-      if (pos1 < 0) {
-        shiftValue = shiftValue + 0.1 * Math.abs(pos1);
-        movedElement.style.transform = `translateX(${shiftValue}vw)`;
-        direction = 'right';
-      }
-
-      if (pos1 > 0) {
-        shiftValue = shiftValue - 0.1 * Math.abs(pos1);
-        movedElement.style.transform = `translateX(${shiftValue}vw)`;
-        direction = 'left';
-      }
-    }
-
-    function closeProjectsDrag() {
-      movedElement.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
-      // stop moving when mouse button is released
-      document.onmouseup = null;
-      document.onmousemove = null;
-      //place the project in the center of the window
-      if (shiftValue > 0) shiftValue = 0;
-      if (shiftValue < -350) shiftValue = -350;
-      console.log(direction);
-      console.log(Math.abs(shiftValue) % 50);
-      if (direction === 'left' && shiftValue > -350 && shiftValue < 0)
-        shiftValue = shiftValue - (50 - Math.abs(shiftValue % 50));
-      if (direction === 'right' && shiftValue > -350 && shiftValue < 0)
-        shiftValue = shiftValue + Math.abs(shiftValue % 50);
-      movedElement.style.transform = `translateX(${shiftValue}vw)`;
-    }
-  }
-
-  // _dragWhileMouseDown(e) {
-  //   e = e || window.event;
-  //   e.preventDefault();
-  //   pos2 = e.clientX;
-  //   document.onmouseup = this._closeProjectsDrag;
-  //   document.onmousemove = this._projectsDrag;
-  // }
-
-  // _projectsDrag(e) {
-  //   e = e || window.event;
-  //   e.preventDefault();
-  //   console.log(e);
-  //   // calculate the new cursor position
-  //   pos1 = pos2 - e.clientX;
-  //   pos2 = e.clientX;
-  //   //calculate mouseSpeed
-  //   mouseSpeed = Math.abs(pos1 - pos2);
-  //   //move the element according to new mouse position
-  //   if (pos1 > pos2) {
-  //     movedElement.style.transform = `translateX(-${pos1 - pos2}px)`;
-  //     this.shiftValue = this.shiftValue + 0.1 * this.mouseSpeed;
-  //     this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
-  //   }
-
-  //   if (pos1 < pos2) {
-  //     movedElement.style.transform = `translateX(${pos2 - pos1}px)`;
-  //   }
-  // }
-
-  // _closeProjectsDrag() {
-  //   // stop moving when mouse button is released
-  //   document.onmouseup = null;
-  //   document.onmousemove = null;
-  // }
 }
 
 export default new ProjectsView();

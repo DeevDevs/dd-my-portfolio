@@ -129,16 +129,9 @@ html[data-theme='dark'] {
 }
 
 body {
-  // @include themed() {
-  //   color: t($night-theme-secondary);
-  //   background-color: t($day-theme-main);
-  // }
-
   padding-top: 8vh;
   position: relative;
   margin: 0;
-  // background-color: $day-theme-main;
-  // color: $night-theme-secondary;
   background-color: var(--main-bg);
   color: var(--font-border-color);
   font-family: 'Comfortaa', cursive;

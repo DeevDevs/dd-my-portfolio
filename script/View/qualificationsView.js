@@ -26,6 +26,8 @@ class QualificationsView {
   sectionDetails = document.querySelector('.details-section');
   detailsCloseBtn = document.querySelector('.details__button-close');
   detailsText = document.querySelector('.details__desription-text');
+  imageViewContainer = document.querySelector('.image-view__container');
+  btnImageViewClose = document.querySelector('.image-view__close-button');
   overlay = document.querySelector('.overlay');
 
   qualsChosen;
@@ -51,6 +53,9 @@ class QualificationsView {
     this.bothQuals.forEach((quals) => {
       quals.addEventListener('click', this.renderDisplayDetails.bind(this));
     });
+
+    this.sectionDetails.addEventListener('click', this.showDetailsImage.bind(this));
+    this.btnImageViewClose.addEventListener('click', this.hideDetailsImage.bind(this));
   }
 
   /////////////////////////// IMAGE TILTING IN QUALS //////////////////////////////
@@ -270,6 +275,19 @@ class QualificationsView {
         20
       );
     }
+  }
+
+  showDetailsImage(e) {
+    if (!e.target.closest('.details__image-box')) return;
+    const imageBox = e.target.closest('.details__image-box');
+    const imageSource = imageBox.getElementsByTagName('img')[0].src;
+    document.querySelector('.image-view__image').src = imageSource;
+    this._makeElementAppear(this.imageViewContainer, 50, 'block');
+    // this.imageViewContainer.style.display = 'block';
+  }
+
+  hideDetailsImage() {
+    this._makeElementDisappear(this.imageViewContainer, 200);
   }
 
   ////////////////////// MOVING SHADOW CODE ////////////////////////
