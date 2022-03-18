@@ -274,7 +274,7 @@
   & p {
     padding: 4rem;
     line-height: 1.4;
-    color: var(--main-bg);
+    color: #dbe8ff;
   }
 }
 
@@ -283,6 +283,9 @@
   position: absolute;
   bottom: 3rem;
   right: 3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /////////////// INDIVIDUAL PROJECT BOX STYLES ////////////////

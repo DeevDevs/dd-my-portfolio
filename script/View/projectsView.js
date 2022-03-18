@@ -160,7 +160,8 @@ class ProjectsView {
   //this function identifies where clicking is happening over the manipulation field
   whereClicks(e) {
     if (this.isDragging) return;
-    if (e.clientX > window.innerWidth / 4 && e.clientX < (window.innerWidth * 3) / 4) console.log('center');
+    if (e.clientX > window.innerWidth / 4 && e.clientX < (window.innerWidth * 3) / 4)
+      window.open('./indivproject.html', '_self');
   }
 
   ////////////////////// FRONT DIV ANIMATION FUNCTIONS ///////////////////////////

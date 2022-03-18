@@ -56,11 +56,12 @@ $night-linear-gradient: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 21
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 html {
-  // max-width: 2080px;
   margin: auto;
 
+  // // old color system
   --main-bg: #f0f6ff;
   --side-bg: #bfcaf4;
+  --side-menu-btn-bg: rgb(119, 143, 241);
   --section-bg: rgb(219, 232, 255);
   --intro-section-bg: linear-gradient(
     to top right,
@@ -70,6 +71,8 @@ html {
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(219, 232, 255, 0.75), rgba(139, 181, 255, 0.75));
   --logo-bg: #bfcaf4;
+
+  --qual-details-box-bg: #f0f6ffbe;
   --qual-details-bg: rgba(139, 181, 255, 0.75);
   --details-desc-bg: rgba(191, 202, 244, 0.6);
 
@@ -92,13 +95,16 @@ html {
   --scrollbar--1: rgba(139, 181, 255, 0.75);
   --scrollbar--2: rgb(219, 232, 255);
   --scrollback-btn: rgb(2, 52, 190);
+
+  --footer-bg: rgb(139, 182, 255);
 }
 
 html[data-theme='dark'] {
   --main-bg: #030d4d;
   --side-bg: #001392;
+  --side-menu-btn-bg: rgb(14, 57, 226);
   // --section-bg: rgba(51, 74, 180, 0.815);
-  --section-bg: rgba(41, 53, 161, 0.808);
+  --section-bg: rgb(41, 53, 161);
   --intro-section-bg: linear-gradient(
     to top right,
     rgba(0, 7, 110, 0.75),
@@ -107,6 +113,8 @@ html[data-theme='dark'] {
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(105, 126, 219, 0.815), rgba(9, 19, 160, 0.75));
   --logo-bg: #001392;
+
+  --qual-details-box-bg: #001969;
   --qual-details-bg: rgba(0, 15, 75, 0.787);
   --details-desc-bg: rgba(5, 34, 163, 0.6);
 
@@ -122,6 +130,8 @@ html[data-theme='dark'] {
   --scrollbar--1: rgba(14, 45, 187, 0.815);
   --scrollbar--2: rgb(56, 105, 190);
   --scrollback-btn: rgb(192, 207, 250);
+
+  --footer-bg: rgb(0, 7, 110);
 }
 
 * {

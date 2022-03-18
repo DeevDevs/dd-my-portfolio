@@ -10,8 +10,27 @@ class ThemeSwitcher {
   switchIconsShared() {
     this.switchThemeIdentifier();
     const logo = document.querySelector('.logo');
-    if (this.theme === 'dark') logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-night"></use>`;
-    if (this.theme === 'light') logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-day"></use>`;
+    const sideMenuIconhome = document.querySelector('.side-menu-icon__home');
+    const sideMenuIconAboutme = document.querySelector('.side-menu-icon__aboutme');
+    const sideMenuIconLearning = document.querySelector('.side-menu-icon__learning');
+    const sideMenuIconProjects = document.querySelector('.side-menu-icon__projects');
+    const sideMenuIconExperience = document.querySelector('.side-menu-icon__experience');
+    if (this.theme === 'dark') {
+      logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-night"></use>`;
+      sideMenuIconhome.innerHTML = `<use href="./images/icons/all-icons.svg#home-menu-icon-light"></use>`;
+      sideMenuIconAboutme.innerHTML = `<use href="./images/icons/all-icons.svg#icon-me-night"></use>`;
+      sideMenuIconLearning.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-night"></use>`;
+      sideMenuIconProjects.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-night"></use>`;
+      sideMenuIconExperience.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-night"></use>`;
+    }
+    if (this.theme === 'light') {
+      logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-day"></use>`;
+      sideMenuIconhome.innerHTML = `<use href="./images/icons/all-icons.svg#home-menu-icon-dark"></use>`;
+      sideMenuIconAboutme.innerHTML = `<use href="./images/icons/all-icons.svg#aboutme-menu-icon-dark"></use>`;
+      sideMenuIconLearning.innerHTML = `<use href="./images/icons/all-icons.svg#learning-menu-icon-dark"></use>`;
+      sideMenuIconProjects.innerHTML = `<use href="./images/icons/all-icons.svg#projects-menu-icon-dark"></use>`;
+      sideMenuIconExperience.innerHTML = `<use href="./images/icons/all-icons.svg#experience-menu-icon-dark"></use>`;
+    }
   }
 
   switchIconsMain() {
@@ -60,6 +79,18 @@ class ThemeSwitcher {
           (instance.innerHTML = `<use class="spin-image" href="./images/icons/all-icons.svg#logo-box-day"></use>`)
       );
     }
+  }
+
+  switchIconsAboutMe() {
+    const arrowDownSvgs = document.querySelectorAll('.amp-btn-down__icon');
+    if (this.theme === 'light')
+      arrowDownSvgs.forEach(
+        (svgContainer) => (svgContainer.innerHTML = `<use href="./images/icons/all-icons.svg#arrow-down-dark"></use>`)
+      );
+    if (this.theme === 'dark')
+      arrowDownSvgs.forEach(
+        (svgContainer) => (svgContainer.innerHTML = `<use href="./images/icons/all-icons.svg#arrow-down-light"></use>`)
+      );
   }
 
   switchIconsQualifications() {
