@@ -2483,7 +2483,7 @@ body {
 .top-menu-li-active {
   -webkit-filter: drop-shadow(0px 5px 4px var(--headlines-shadow));
           filter: drop-shadow(0px 5px 4px var(--headlines-shadow));
-  background-color: var(--side-bg);
+  background-image: linear-gradient(to top, var(--side-bg) 60%, transparent);
   -webkit-transform: translateY(-0.2rem);
           transform: translateY(-0.2rem);
 }
@@ -2985,6 +2985,8 @@ textarea[type='text'] {
 .footer-menu__form-submit:hover {
   -webkit-box-shadow: -2px 4px 2px var(--icons-shadow);
           box-shadow: -2px 4px 2px var(--icons-shadow);
+  border: 2px solid var(--font-border-color);
+  font-weight: 700;
 }
 
 .footer-menu__form-submit:active {
@@ -3062,6 +3064,12 @@ textarea[type='text'] {
   display: flex;
   margin: 1rem;
   padding-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.footer-menu__ad-cont-div:hover {
+  -webkit-filter: drop-shadow(-5px 5px 2px var(--headlines-shadow));
+          filter: drop-shadow(-5px 5px 2px var(--headlines-shadow));
 }
 
 .footer-menu__ad-cont-div p {
