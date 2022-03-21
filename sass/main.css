@@ -5,19 +5,19 @@ html {
   --main-bg: #f0f6ff;
   --side-bg: #bfcaf4;
   --side-menu-btn-bg: rgb(119, 143, 241);
-  --section-bg: rgb(219, 232, 255);
+  --section-bg: rgba(219, 232, 255, 0.904);
   --intro-section-bg: linear-gradient(
     to top right,
-    rgba(139, 181, 255, 0.75),
+    rgba(139, 182, 255, 0.89),
     rgba(250, 250, 251, 0.815),
-    rgba(139, 181, 255, 0.75)
+    rgba(139, 182, 255, 0.897)
   );
   --main-sections-bg: linear-gradient(to bottom left, rgba(219, 232, 255, 0.75), rgba(139, 181, 255, 0.75));
   --logo-bg: #bfcaf4;
   --qual-details-box-bg: #f0f6ffbe;
   --qual-details-bg: rgba(139, 181, 255, 0.75);
   --details-desc-bg: rgba(191, 202, 244, 0.6);
-  --font-border-color: #001079;
+  --font-border-color: rgb(0, 16, 121);
   --btn-color: #001392;
   --logo-image-shadow: #263dd4;
   --icons-shadow: rgba(0, 6, 37, 0.74);
@@ -52,7 +52,7 @@ html[data-theme='dark'] {
   --qual-details-box-bg: #001969;
   --qual-details-bg: rgba(0, 15, 75, 0.787);
   --details-desc-bg: rgba(5, 34, 163, 0.6);
-  --font-border-color: #dbe8ff;
+  --font-border-color: rgb(219, 232, 255);
   --btn-color: #dbe8ff;
   --logo-image-shadow: #dbe8ff;
   --icons-shadow: #013288;
@@ -80,6 +80,9 @@ body {
   transition: background-color 0.5s ease;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-height: 640px) and (max-width: 640px) {
@@ -2700,10 +2703,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 8vh;
+  height: 9vh;
   max-height: 8rem;
   min-height: 4.5rem;
   width: 100%;
+  background-color: var(--main-bg);
 }
 
 .footer-menu__buttons p {
@@ -2741,6 +2745,8 @@ body {
             flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    height: calc(53vh + 3rem);
+    max-height: calc(53vh + 3rem);
   }
 }
 
@@ -2977,21 +2983,20 @@ textarea[type='text'] {
   border: 1px solid var(--font-border-color);
   background-color: var(--logo-bg);
   color: var(--font-border-color);
-  -webkit-box-shadow: -1px 3px 2px var(--icons-shadow);
-          box-shadow: -1px 3px 2px var(--icons-shadow);
+  -webkit-box-shadow: 2px 2px 2px var(--icons-shadow), -2px 2px 2px var(--icons-shadow);
+          box-shadow: 2px 2px 2px var(--icons-shadow), -2px 2px 2px var(--icons-shadow);
   min-height: 1.5rem;
 }
 
 .footer-menu__form-submit:hover {
-  -webkit-box-shadow: -2px 4px 2px var(--icons-shadow);
-          box-shadow: -2px 4px 2px var(--icons-shadow);
-  border: 2px solid var(--font-border-color);
+  -webkit-box-shadow: 3px 4px 2px var(--icons-shadow), -3px 4px 2px var(--icons-shadow);
+          box-shadow: 3px 4px 2px var(--icons-shadow), -3px 4px 2px var(--icons-shadow);
   font-weight: 700;
 }
 
 .footer-menu__form-submit:active {
-  -webkit-box-shadow: 0px 0px 0px var(--icons-shadow);
-          box-shadow: 0px 0px 0px var(--icons-shadow);
+  -webkit-box-shadow: 1px 2px 2px inset var(--icons-shadow), -1px 2px 2px inset var(--icons-shadow);
+          box-shadow: 1px 2px 2px inset var(--icons-shadow), -1px 2px 2px inset var(--icons-shadow);
 }
 
 @media (min-width: 640px) {
@@ -3213,6 +3218,60 @@ a:active,
 a:visited {
   text-decoration: none;
   color: inherit;
+}
+
+.intro-part__running-code-box {
+  position: fixed;
+  z-index: -1;
+  min-height: 90vh;
+  height: 90vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(10vh) scale(1);
+          transform: translateY(10vh) scale(1);
+  overflow: hidden;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.intro-part__animated-code {
+  display: block;
+  height: 90vh;
+  margin: auto;
+}
+
+.falling-down-div {
+  position: absolute;
+  background-color: var(--main-bg);
+  min-height: 90vh;
+  height: 90vh;
+  min-width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.running-right-div {
+  position: absolute;
+  background-color: var(--main-bg);
+  min-height: 3vh;
+  min-width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 6s linear;
+  transition: -webkit-transform 6s linear;
+  transition: transform 6s linear;
+  transition: transform 6s linear, -webkit-transform 6s linear;
 }
 
 .bg-main {

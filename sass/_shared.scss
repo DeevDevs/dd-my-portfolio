@@ -243,10 +243,12 @@
   font-size: 1.15rem;
   justify-content: space-around;
   align-items: center;
-  height: 8vh;
+  height: 9vh;
   max-height: 8rem;
   min-height: 4.5rem;
   width: 100%;
+  background-color: var(--main-bg);
+  // border: 1px solid black;
 }
 
 .footer-menu__buttons p {
@@ -273,6 +275,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    height: calc(53vh + 3rem);
+    max-height: calc(53vh + 3rem);
   }
 }
 
@@ -417,15 +421,15 @@ textarea[type='text'] {
   border: 1px solid var(--font-border-color);
   background-color: var(--logo-bg);
   color: var(--font-border-color);
-  box-shadow: -1px 3px 2px var(--icons-shadow);
+  box-shadow: 2px 2px 2px var(--icons-shadow), -2px 2px 2px var(--icons-shadow);
   min-height: 1.5rem;
   &:hover {
-    box-shadow: -2px 4px 2px var(--icons-shadow);
-    border: 2px solid var(--font-border-color);
+    box-shadow: 3px 4px 2px var(--icons-shadow), -3px 4px 2px var(--icons-shadow);
+    // border: 2px solid var(--font-border-color);
     font-weight: 700;
   }
   &:active {
-    box-shadow: 0px 0px 0px var(--icons-shadow);
+    box-shadow: 1px 2px 2px inset var(--icons-shadow), -1px 2px 2px inset var(--icons-shadow);
   }
   @media (min-width: 640px) {
     font-size: 0.9rem;
@@ -592,4 +596,50 @@ a:active,
 a:visited {
   text-decoration: none;
   color: inherit;
+}
+
+// running code related rules
+
+.intro-part__running-code-box {
+  position: fixed;
+  z-index: -1;
+  min-height: 90vh;
+  height: 90vh;
+  // max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(10vh) scale(1);
+  overflow: hidden;
+  opacity: 1;
+  transition: transform 0.4s ease-in-out;
+}
+
+.intro-part__animated-code {
+  display: block;
+  height: 90vh;
+  margin: auto;
+}
+
+.falling-down-div {
+  position: absolute;
+  background-color: var(--main-bg);
+  // opacity: 1;
+  min-height: 90vh;
+  height: 90vh;
+  min-width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.running-right-div {
+  position: absolute;
+  background-color: var(--main-bg);
+  // opacity: 1;
+  min-height: 3vh;
+  min-width: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 6s linear;
 }

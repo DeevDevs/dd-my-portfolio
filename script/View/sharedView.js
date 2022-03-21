@@ -14,6 +14,12 @@ class SharedView {
   footerSubmitBtn = document.querySelector('.footer-menu__form-submit');
   footerWindow = 'contacts';
 
+  //running code-related variables
+  runningCodeDiv = document.querySelector('.intro-part__running-code-box');
+  fallingDiv = document.querySelector('.falling-down-div');
+  runningDiv = document.querySelector('.running-right-div');
+  fallingDivTranslateValue = 2.25;
+
   footerMenuObserver = new IntersectionObserver(this.hideExtraFooterBox.bind(this), { root: null, threshold: 0 });
 
   constructor() {
@@ -31,6 +37,67 @@ class SharedView {
     this.footerSubmitBtn.addEventListener('click', this.submitFooterMessage.bind(this));
     //empty form fields
     document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
+
+    this.makeDivFall();
+  }
+
+  // running code-related functions
+  makeDivFall() {
+    this.fallingDiv.style.transform = `translateY(${this.fallingDivTranslateValue}vh)`;
+    this.fallingDivTranslateValue < 90
+      ? (this.fallingDivTranslateValue += 2.25)
+      : (this.fallingDivTranslateValue = 2.25);
+
+    if (this.fallingDivTranslateValue > 2.25) {
+      this.runningCodeDiv.style.transform = `translateY(2vh) scale(1)`;
+      this.runningCodeDiv.style.backgroundImage = `none`;
+    }
+    if (this.fallingDivTranslateValue > 9.75) {
+      this.runningCodeDiv.style.transform = `translateY(18vh) scale(1.2)`;
+    }
+    if (this.fallingDivTranslateValue > 14.5) {
+      this.runningCodeDiv.style.transform = `translateY(9vh) scale(1.1)`;
+    }
+    if (this.fallingDivTranslateValue > 20.75) {
+      this.runningCodeDiv.style.transform = `translateY(5vh) scale(1.1)`;
+    }
+    if (this.fallingDivTranslateValue > 23) {
+      this.runningCodeDiv.style.transform = `translateY(3vh) scale(1.1)`;
+    }
+    if (this.fallingDivTranslateValue > 26.75) {
+      this.runningCodeDiv.style.transform = `translateY(-12vh) scale(1.3)`;
+    }
+    if (this.fallingDivTranslateValue > 46.75) {
+      this.runningCodeDiv.style.transform = `translateY(2vh) scale(1)`;
+    }
+    if (this.fallingDivTranslateValue > 50) {
+      this.runningCodeDiv.style.transform = `translateY(-2vh) scale(1)`;
+    }
+    if (this.fallingDivTranslateValue > 66.75) {
+      this.runningCodeDiv.style.transform = `translateY(-25vh) scale(1.2)`;
+      this.runningCodeDiv.style.backgroundImage = `linear-gradient(to top, var(--main-bg), transparent)`;
+    }
+    if (this.fallingDivTranslateValue > 85.75) {
+      this.runningCodeDiv.style.transform = `translateY(2vh) scale(1)`;
+    }
+    setTimeout(
+      function () {
+        this.runningDiv.style.transform = `translateX(100%)`;
+      }.bind(this),
+      50
+    );
+    setTimeout(() => {
+      this.runningDiv.style.transition = `transform 0s`;
+      this.runningDiv.style.transform = `translateX(0%)`;
+      this.runningDiv.style.top = `${this.fallingDivTranslateValue - 2.25}vh`;
+      setTimeout(
+        function () {
+          this.runningDiv.style.transition = `transform 6s linear`;
+        }.bind(this),
+        50
+      );
+      this.makeDivFall();
+    }, 6200);
   }
 
   displayExtraFooterBox(e) {
