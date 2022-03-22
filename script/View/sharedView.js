@@ -87,12 +87,12 @@ class SharedView {
       50
     );
     setTimeout(() => {
-      this.runningDiv.style.transition = `transform 0s`;
+      this.runningDiv.style.transition = `transform 0s, background-color 0.5s ease`;
       this.runningDiv.style.transform = `translateX(0%)`;
       this.runningDiv.style.top = `${this.fallingDivTranslateValue - 2.25}vh`;
       setTimeout(
         function () {
-          this.runningDiv.style.transition = `transform 6s linear`;
+          this.runningDiv.style.transition = `transform 6s linear, background-color 0.5s ease`;
         }.bind(this),
         50
       );

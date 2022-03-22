@@ -4,13 +4,24 @@
   width: 100vw;
   max-width: 100%;
   //   background-color: var(--section-bg);
-  background: var(--main-sections-bg), url('../images/exp-puzzled.png') top / cover no-repeat border-box;
+  // background: var(--main-sections-bg), url('../images/exp-puzzled.png') top / cover no-repeat border-box;
   transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.exp__main-part::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: var(--main-sections-bg), url('../images/exp-puzzled.png') top / cover no-repeat border-box;
+  opacity: 0.9;
 }
 
 .exp__no-exp-div {

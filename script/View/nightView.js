@@ -15,6 +15,7 @@ class ThemeSwitcher {
     const sideMenuIconLearning = document.querySelector('.side-menu-icon__learning');
     const sideMenuIconProjects = document.querySelector('.side-menu-icon__projects');
     const sideMenuIconExperience = document.querySelector('.side-menu-icon__experience');
+    const runningCodeImage = document.querySelector('.intro-part__animated-code');
     if (this.theme === 'dark') {
       logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-night"></use>`;
       sideMenuIconhome.innerHTML = `<use href="./images/icons/all-icons.svg#home-menu-icon-light"></use>`;
@@ -22,6 +23,7 @@ class ThemeSwitcher {
       sideMenuIconLearning.innerHTML = `<use href="./images/icons/all-icons.svg#learning-icon-night"></use>`;
       sideMenuIconProjects.innerHTML = `<use href="./images/icons/all-icons.svg#projects-icon-night"></use>`;
       sideMenuIconExperience.innerHTML = `<use href="./images/icons/all-icons.svg#experience-icon-night"></use>`;
+      runningCodeImage.src = './images/js-code-white.png';
     }
     if (this.theme === 'light') {
       logo.innerHTML = `<use href="./images/icons/all-icons.svg#logo-box-day"></use>`;
@@ -30,6 +32,7 @@ class ThemeSwitcher {
       sideMenuIconLearning.innerHTML = `<use href="./images/icons/all-icons.svg#learning-menu-icon-dark"></use>`;
       sideMenuIconProjects.innerHTML = `<use href="./images/icons/all-icons.svg#projects-menu-icon-dark"></use>`;
       sideMenuIconExperience.innerHTML = `<use href="./images/icons/all-icons.svg#experience-menu-icon-dark"></use>`;
+      runningCodeImage.src = './images/js-code-darkblue.png';
     }
   }
 

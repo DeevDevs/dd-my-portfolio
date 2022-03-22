@@ -247,7 +247,7 @@
   max-height: 8rem;
   min-height: 4.5rem;
   width: 100%;
-  background-color: var(--main-bg);
+  background-color: var(--main-bg-transparent);
   // border: 1px solid black;
 }
 
@@ -613,7 +613,8 @@ a:visited {
   transform: translateY(10vh) scale(1);
   overflow: hidden;
   opacity: 1;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, background-color 0.5s ease;
+  // transition: background-color 0.5s ease;
 }
 
 .intro-part__animated-code {
@@ -631,6 +632,7 @@ a:visited {
   min-width: 100%;
   top: 0;
   left: 0;
+  transition: background-color 0.5s ease;
 }
 
 .running-right-div {
@@ -641,5 +643,5 @@ a:visited {
   min-width: 100%;
   top: 0;
   left: 0;
-  transition: transform 6s linear;
+  transition: transform 6s linear, background-color 0.5s ease;
 }

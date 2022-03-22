@@ -3,6 +3,7 @@
 html {
   margin: auto;
   --main-bg: #f0f6ff;
+  --main-bg-transparent: rgba(240, 246, 255, 0.89);
   --side-bg: #bfcaf4;
   --side-menu-btn-bg: rgb(119, 143, 241);
   --section-bg: rgba(219, 232, 255, 0.904);
@@ -33,14 +34,15 @@ html {
   --scrollbar--1: rgba(139, 181, 255, 0.75);
   --scrollbar--2: rgb(219, 232, 255);
   --scrollback-btn: rgb(2, 52, 190);
-  --footer-bg: rgb(139, 182, 255);
+  --footer-bg: rgba(140, 182, 255, 0.897);
 }
 
 html[data-theme='dark'] {
   --main-bg: #030d4d;
+  --main-bg-transparent: rgba(3, 13, 77, 0.897);
   --side-bg: #001392;
   --side-menu-btn-bg: rgb(14, 57, 226);
-  --section-bg: rgb(41, 53, 161);
+  --section-bg: rgba(41, 53, 161, 0.897);
   --intro-section-bg: linear-gradient(
     to top right,
     rgba(0, 7, 110, 0.75),
@@ -61,7 +63,7 @@ html[data-theme='dark'] {
   --scrollbar--1: rgba(14, 45, 187, 0.815);
   --scrollbar--2: rgb(56, 105, 190);
   --scrollback-btn: rgb(192, 207, 250);
-  --footer-bg: rgb(0, 7, 110);
+  --footer-bg: rgba(0, 7, 110, 0.89);
 }
 
 * {
@@ -127,7 +129,6 @@ body {
   max-width: 100%;
   min-height: 92vh;
   overflow: hidden;
-  background: var(--intro-section-bg), url("../images/light-speed.jpg") center/cover no-repeat border-box;
 }
 
 @media (min-width: 1080px) {
@@ -137,6 +138,17 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: var(--intro-section-bg), url("../images/light-speed.jpg") center/cover no-repeat border-box;
+  opacity: 0.9;
 }
 
 .welcome-phrase {
@@ -539,6 +551,7 @@ body {
   transition: opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out, opacity 0.3s ease-out;
   transition: transform 0.5s ease-out, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  background-color: var(--main-bg-transparent);
 }
 
 @media (min-width: 1080px) {
@@ -2707,7 +2720,7 @@ body {
   max-height: 8rem;
   min-height: 4.5rem;
   width: 100%;
-  background-color: var(--main-bg);
+  background-color: var(--main-bg-transparent);
 }
 
 .footer-menu__buttons p {
@@ -3239,10 +3252,10 @@ a:visited {
           transform: translateY(10vh) scale(1);
   overflow: hidden;
   opacity: 1;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -webkit-transition: background-color 0.5s ease, -webkit-transform 0.4s ease-in-out;
+  transition: background-color 0.5s ease, -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, background-color 0.5s ease;
+  transition: transform 0.4s ease-in-out, background-color 0.5s ease, -webkit-transform 0.4s ease-in-out;
 }
 
 .intro-part__animated-code {
@@ -3259,6 +3272,8 @@ a:visited {
   min-width: 100%;
   top: 0;
   left: 0;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 .running-right-div {
@@ -3268,10 +3283,10 @@ a:visited {
   min-width: 100%;
   top: 0;
   left: 0;
-  -webkit-transition: -webkit-transform 6s linear;
-  transition: -webkit-transform 6s linear;
-  transition: transform 6s linear;
-  transition: transform 6s linear, -webkit-transform 6s linear;
+  -webkit-transition: background-color 0.5s ease, -webkit-transform 6s linear;
+  transition: background-color 0.5s ease, -webkit-transform 6s linear;
+  transition: transform 6s linear, background-color 0.5s ease;
+  transition: transform 6s linear, background-color 0.5s ease, -webkit-transform 6s linear;
 }
 
 .bg-main {
@@ -3532,6 +3547,10 @@ a:visited {
   top: 0;
   height: 1.8rem;
   width: 1.8rem;
+  -webkit-transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
+  transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 .amp-btn-down__anim-div {
@@ -3546,9 +3565,10 @@ a:visited {
 }
 
 .amp-btn-down__anim-div:hover {
-  opacity: 1;
-  -webkit-animation: arrow-down-reveal 2s linear infinite forwards;
-          animation: arrow-down-reveal 2s linear infinite forwards;
+  -webkit-filter: drop-shadow(5px 6px 2px var(--headlines-shadow));
+          filter: drop-shadow(5px 6px 2px var(--headlines-shadow));
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
 }
 
 @-webkit-keyframes arrow-down-reveal {
@@ -3591,10 +3611,11 @@ a:visited {
   bottom: 0;
 }
 
-.amp-btn-down__hover-div:hover ~ .amp-btn-down__anim-div {
-  opacity: 1;
-  -webkit-animation: arrow-down-reveal 1.3s linear infinite forwards;
-          animation: arrow-down-reveal 1.3s linear infinite forwards;
+.amp-btn-down__hover-div:hover ~ .amp-btn-down__icon {
+  -webkit-filter: drop-shadow(5px 6px 2px var(--headlines-shadow));
+          filter: drop-shadow(5px 6px 2px var(--headlines-shadow));
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
 }
 
 .amp-btn-down__hover-div:hover ~ .amp-headline__reveal-section {
@@ -5473,7 +5494,6 @@ a:visited {
   min-height: 92vh;
   width: 100vw;
   max-width: 100%;
-  background: var(--main-sections-bg), url("../images/exp-puzzled.png") top/cover no-repeat border-box;
   -webkit-transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
   transition: background-color 0.5s ease, opacity 0.3s ease-out, -webkit-transform 0.5s ease-out;
   transition: background-color 0.5s ease, transform 0.5s ease-out, opacity 0.3s ease-out;
@@ -5492,6 +5512,17 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+}
+
+.exp__main-part::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: var(--main-sections-bg), url("../images/exp-puzzled.png") top/cover no-repeat border-box;
+  opacity: 0.9;
 }
 
 .exp__no-exp-div {

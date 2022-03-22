@@ -60,6 +60,7 @@ html {
 
   // // old color system
   --main-bg: #f0f6ff;
+  --main-bg-transparent: rgba(240, 246, 255, 0.89);
   --side-bg: #bfcaf4;
   --side-menu-btn-bg: rgb(119, 143, 241);
   --section-bg: rgba(219, 232, 255, 0.904);
@@ -96,15 +97,16 @@ html {
   --scrollbar--2: rgb(219, 232, 255);
   --scrollback-btn: rgb(2, 52, 190);
 
-  --footer-bg: rgb(139, 182, 255);
+  --footer-bg: rgba(140, 182, 255, 0.897);
 }
 
 html[data-theme='dark'] {
   --main-bg: #030d4d;
+  --main-bg-transparent: rgba(3, 13, 77, 0.897);
   --side-bg: #001392;
   --side-menu-btn-bg: rgb(14, 57, 226);
   // --section-bg: rgba(51, 74, 180, 0.815);
-  --section-bg: rgb(41, 53, 161);
+  --section-bg: rgba(41, 53, 161, 0.897);
   --intro-section-bg: linear-gradient(
     to top right,
     rgba(0, 7, 110, 0.75),
@@ -131,7 +133,7 @@ html[data-theme='dark'] {
   --scrollbar--2: rgb(56, 105, 190);
   --scrollback-btn: rgb(192, 207, 250);
 
-  --footer-bg: rgb(0, 7, 110);
+  --footer-bg: rgba(0, 7, 110, 0.89);
 }
 
 * {

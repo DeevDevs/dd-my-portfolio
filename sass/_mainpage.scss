@@ -10,11 +10,21 @@
   max-width: 100%;
   min-height: 92vh;
   overflow: hidden;
-  background: var(--intro-section-bg), url('../images/light-speed.jpg') center / cover no-repeat border-box;
-
+  // background: var(--intro-section-bg), url('../images/light-speed.jpg') center / cover no-repeat border-box;
   @media (min-width: 1080px) {
     flex-direction: row;
   }
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: var(--intro-section-bg), url('../images/light-speed.jpg') center / cover no-repeat border-box;
+  opacity: 0.9;
 }
 
 .welcome-phrase {
@@ -313,6 +323,7 @@
   min-height: max-content;
   min-height: 92vh;
   transition: transform 0.5s ease-out, opacity 0.3s ease-out;
+  background-color: var(--main-bg-transparent);
 
   @media (min-width: 1080px) {
     overflow-x: visible;
