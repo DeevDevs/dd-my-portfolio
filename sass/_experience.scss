@@ -22,6 +22,7 @@
   left: 0px;
   background: var(--main-sections-bg), url('../images/exp-puzzled.png') top / cover no-repeat border-box;
   opacity: 0.9;
+  z-index: -1;
 }
 
 .exp__no-exp-div {

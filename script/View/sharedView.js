@@ -43,6 +43,7 @@ class SharedView {
 
   // running code-related functions
   makeDivFall() {
+    if (window.location.href.endsWith('indivproject.html')) return;
     this.fallingDiv.style.transform = `translateY(${this.fallingDivTranslateValue}vh)`;
     this.fallingDivTranslateValue < 90
       ? (this.fallingDivTranslateValue += 2.25)
@@ -121,7 +122,7 @@ class SharedView {
       }
     }
     console.log('scrolling');
-    setTimeout(() => document.body.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50);
+    setTimeout(() => document.body.scrollIntoView({ block: 'end', behavior: 'smooth' }), 100);
   }
 
   hideExtraFooterBox() {

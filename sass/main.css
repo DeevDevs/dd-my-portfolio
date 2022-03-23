@@ -2522,6 +2522,7 @@ body {
   min-width: 1.5rem;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 4rem;
 }
 
 .icon__theme {
@@ -2727,6 +2728,7 @@ body {
   display: block;
   font-weight: 700;
   margin: auto;
+  padding: 1.5rem;
   cursor: pointer;
 }
 
@@ -5523,6 +5525,7 @@ a:visited {
   left: 0px;
   background: var(--main-sections-bg), url("../images/exp-puzzled.png") top/cover no-repeat border-box;
   opacity: 0.9;
+  z-index: -1;
 }
 
 .exp__no-exp-div {
