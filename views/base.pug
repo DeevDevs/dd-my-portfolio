@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    // <meta http-equiv="Cache-control" content="public">
+    link(rel='stylesheet', href='/sass/main.css')
+    title DeevDevs: Homepage
+  body 
+    include _header
+
+    block content 
+
+    include _footer
+
+    include _side  
+
+    script(type='module', defer src='/js/controller.js')

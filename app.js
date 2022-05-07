@@ -1,13 +1,16 @@
 const express = require('express');
 const path = require('path');
-const mainPageRouter = require('./server/mainPageRouter.js');
+const mainPageRouter = require('./routers/mainPageRouter.js');
 // const compression = require('compression');
 
 const app = express();
 
 app.use(express.json({ limit: '10kb' }));
-// app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname)));
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const sayHello = function (req, res, next) {
   console.log('HELLO');

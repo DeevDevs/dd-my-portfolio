@@ -1,0 +1,175 @@
+extends base
+
+block content
+  .intro-part__running-code-box(style='transform: translateY(2vh) scale(1)')
+    img.intro-part__animated-code(src='/images/js-code-darkblue.png', alt='')
+    .falling-down-div
+    .running-right-div
+  section.welcome-section
+    .intro-part__glass
+    .welcome-phrase
+      p Welcome to My Portfolio
+    .welcome-3d-container
+      .vertical-rotation__div
+        .spin-logo__div
+          svg.spin-logo.spinning__svg.box-side
+            use.spin-image(href='/images/icons/all-icons.svg#logo-box-day')
+          .spin-logo__side.box-side
+          .spin-logo__side2.box-side
+          .spin-logo__top.box-side
+          .spin-logo__bottom.box-side
+          svg.spin-logo2.spinning__svg.box-side
+            use.spin-image(href='/images/icons/all-icons.svg#logo-box-day')
+  section.advert__sections
+    #section-1.section.advert__section.section-hidden
+      p.advert__section--headline Attractive Websites with Advanced Modern Features
+      .advert__section--details
+        .advert__section--image-container
+          .mp-image-grid
+            img.advert__section--image.mp__one-one(src='/images/cut-images3/t1.png')
+            img.advert__section--image.mp__one-two(src='/images/cut-images3/t2.png')
+            img.advert__section--image.mp__one-three(src='/images/cut-images3/t3.png')
+            img.advert__section--image.mp__one-four(src='/images/cut-images3/m1.png')
+            img.advert__section--image.mp__one-five(src='/images/cut-images3/m2.png')
+            img.advert__section--image.mp__one-six(src='/images/cut-images3/m3.png')
+            img.advert__section--image.mp__one-seven(src='/images/cut-images3/b1.png')
+            img.advert__section--image.mp__one-eight(src='/images/cut-images3/b2.png')
+            img.advert__section--image.mp__one-nine(src='/images/cut-images3/b3.png')
+        .advert__section--text-container
+          p.advert__section--text
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+            | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+            | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+            | sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+            | sint! Esse, tenetur cumque!
+    #section-2.section.advert__section.section-hidden
+      p.advert__section--headline Fast and Effective Server Side or Cutting-Edge API
+      .advert__section--details.advert__section--details__central
+        .advert__section--image-container
+          .mp-image-grid__central
+            img.advert__section--image__central.mp__two-one(src='/images/cut-images2/t1.jpg')
+            img.advert__section--image__central.mp__two-two(src='/images/cut-images2/t2.jpg')
+            img.advert__section--image__central.mp__two-three(src='/images/cut-images2/t3.jpg')
+            img.advert__section--image__central.mp__two-four(src='/images/cut-images2/m1.jpg')
+            img.advert__section--image__central.mp__two-five(src='/images/cut-images2/m2.jpg')
+            img.advert__section--image__central.mp__two-six(src='/images/cut-images2/m3.jpg')
+            img.advert__section--image__central.mp__two-seven(src='/images/cut-images2/b1.jpg')
+            img.advert__section--image__central.mp__two-eight(src='/images/cut-images2/b2.jpg')
+            img.advert__section--image__central.mp__two-nine(src='/images/cut-images2/b3.jpg')
+        .advert__section--text-container
+          p.advert__section--text
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+            | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+            | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+            | sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+            | sint! Esse, tenetur cumque!
+    #section-3.section.advert__section.section-hidden
+      p.advert__section--headline Entire Web Project
+      .advert__section--details
+        //- <div class="advert__section--image-container image__full">
+        .advert__section--image-container
+          .mp-image-grid
+            img.advert__section--image.mp__three-one(src='/images/cut-images/t1.jpg')
+            img.advert__section--image.mp__three-two(src='/images/cut-images/t2.jpg')
+            img.advert__section--image.mp__three-three(src='/images/cut-images/t3.jpg')
+            img.advert__section--image.mp__three-four(src='/images/cut-images/m1.jpg')
+            img.advert__section--image.mp__three-five(src='/images/cut-images/m2.jpg')
+            img.advert__section--image.mp__three-six(src='/images/cut-images/m3.jpg')
+            img.advert__section--image.mp__three-seven(src='/images/cut-images/b1.jpg')
+            img.advert__section--image.mp__three-eight(src='/images/cut-images/b2.jpg')
+            img.advert__section--image.mp__three-nine(src='/images/cut-images/b3.jpg')
+          //- <img class="advert__section--image blurred" src="./images/img-full-stack-lazy.jpg" data-src="./images/img-full-stack.jpg">
+        .advert__section--text-container
+          p.advert__section--text
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+            | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+            | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+            | sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+            | sint! Esse, tenetur cumque!
+  section#section-4.section.sec.section-hidden
+    .arrow-container.arrow-left--container
+      //- <img class="arrow-left" src="./images/icons/l-arrow-left-day.svg">
+      svg.l-arrow.l-arrow-left
+        use(href='/images/icons/all-icons.svg#l-arrow-left-day')
+    .arrow-container.arrow-right--container
+      //- <img class="arrow-right" src="./images/icons/l-arrow-right-day.svg">
+      svg.l-arrow.l-arrow-right
+        use(href='/images/icons/all-icons.svg#l-arrow-right-day')
+    #about-me.sec__main.lazy-bg
+      .sec__icon-container
+        //- <img class="sec__icon about-me__icon" src="images/icons/icon-me-day.svg">
+        svg.sec__icon.about-me__icon
+          use(href='/images/icons/all-icons.svg#icon-me-day')
+      .about-me__description.sec__description
+        p.sec__description--title About me
+        p.sec__description--text
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+          | sint! Esse, tenetur cumque!
+      .sec__learn-more
+        a.sec__btn-link(href='./aboutme.html')
+          button.about-me__learn-more__btn.sec__btn
+            svg.sec__btn--arrow
+              use(href='/images/icons/all-icons.svg#icon-arrow-day')
+            svg.sec__btn--circle
+              use(href='/images/icons/all-icons.svg#icon-circle-day')
+        p.sec__learn-more--phrase Learn More
+    #learning.sec__main.lazy-bg
+      .sec__icon-container
+        svg.sec__icon.learning__icon
+          use(href='/images/icons/all-icons.svg#learning-icon-day')
+      .learning__description.sec__description
+        p.sec__description--title Qualifications
+        p.sec__description--text
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+          | sint! Esse, tenetur cumque!
+      .sec__learn-more
+        a.sec__btn-link(href='./qualifications.html')
+          button.learning__learn-more__btn.sec__btn
+            svg.sec__btn--arrow
+              use(href='/images/icons/all-icons.svg#icon-arrow-day')
+            svg.sec__btn--circle
+              use(href='/images/icons/all-icons.svg#icon-circle-day')
+        p.sec__learn-more--phrase Learn More
+    #projects.sec__main.lazy-bg
+      .sec__icon-container
+        svg.sec__icon.projects__icon
+          use(href='/images/icons/all-icons.svg#projects-icon-day')
+      .projects__description.sec__description
+        p.sec__description--title My Projects
+        p.sec__description--text
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+          | sint! Esse, tenetur cumque!
+      .sec__learn-more
+        a.sec__btn-link(href='./projects.html')
+          button.projects__learn-more__btn.sec__btn
+            svg.sec__btn--arrow
+              use(href='/images/icons/all-icons.svg#icon-arrow-day')
+            svg.sec__btn--circle
+              use(href='/images/icons/all-icons.svg#icon-circle-day')
+        p.sec__learn-more--phrase Learn More
+    #experience.sec__main.lazy-bg
+      .sec__icon-container
+        //- <img class="sec__icon experience__icon" src="images/icons/experience-icon-day.svg">
+        svg.sec__icon.experience__icon
+          use(href='/images/icons/all-icons.svg#experience-icon-day')
+      .experience__description.sec__description
+        p.sec__description--title Work Experience
+        p.sec__description--text
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
+          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
+          | sint! Esse, tenetur cumque!
+      .sec__learn-more
+        a.sec__btn-link(href='./experience.html')
+          button.experience__learn-more__btn.sec__btn
+            svg.sec__btn--arrow
+              use(href='/images/icons/all-icons.svg#icon-arrow-day')
+            svg.sec__btn--circle
+              use(href='/images/icons/all-icons.svg#icon-circle-day')
+        p.sec__learn-more--phrase Learn More

@@ -1,0 +1,28 @@
+header.header-menu
+  button.side-menu__btn(type='button')
+    svg.icon__menu
+      use(href='/images/icons/all-icons.svg#icon-menu')
+  .logo-container
+    //- <img class="logo" src="images/icons/logo-box-day.svg">
+    svg.logo
+      use(href='/images/icons/all-icons.svg#logo-box-day')
+  .top-menu
+    ul.top-menu-list
+      a(href='./index.html')
+        li.top-menu-li-active Home
+      a(href='./aboutme.html')
+        li About me
+      a(href='./qualifications.html')
+        li Qualifications
+      a(href='./projects.html')
+        li Projects
+      a(href='./experience.html')
+        li Experience
+  .theme-container
+    button.theme-container__btn(type='button')
+      span.icon__theme.icon__theme--night.icon__theme--active
+        svg.svg__header
+          use(href='/images/icons/all-icons.svg#icon-night')
+      span.icon__theme.icon__theme--day
+        svg.svg__header
+          use(href='/images/icons/all-icons.svg#icon-day')

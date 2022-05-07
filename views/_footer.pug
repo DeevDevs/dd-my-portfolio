@@ -1,0 +1,39 @@
+footer#section-5.footer-menu
+  .footer-menu__buttons
+    p.footer-contacts-btn Contact me
+    p.footer-address-btn Address
+  .footer-menu__extra
+    .footer-menu__contacts
+      p You can contact me using the form below, or via email
+      .footer-menu__form-div
+        form.footer-menu__form
+          label.label-hidden(for='visitorName') visitorName
+          input#visitorName.footer-menu__form-name.footer__input-field(type='text', placeholder='Your name', name='visitorName')
+          label.label-hidden(for='visitorEmail') visitorEmail
+          input.footer-menu__form-contacts.footer__input-field(type='text', placeholder='Your email', name='visitorEmail')
+          label.label-hidden(for='visitorMessage') visitorMessage
+          textarea.footer-menu__form-message.footer__input-field(type='text', placeholder='Your message', name='visitorMessage')  
+          input.footer-menu__form-submit(type='submit')
+          // Send Message</button>
+      .footer-menu__ad-cont-div.footer-menu__email-div
+        svg.footer-menu__icon
+          use(href='/images/icons/all-icons.svg#logo-email')
+        p dmitriy.vnuchkov@gmail.com
+    .footer-menu__address
+      p Find me Online and in Real World
+      .footer-menu__ad-cont-div
+        svg.footer-menu__icon
+          use(href='/images/icons/all-icons.svg#logo-vk')
+        p Dmitriy Vnuchkov
+      .footer-menu__ad-cont-div
+        svg.footer-menu__icon
+          use(href='/images/icons/all-icons.svg#logo-instagram')
+        p DmitriyDeevDevs
+      .footer-menu__ad-cont-div
+        svg.footer-menu__icon
+          use(href='/images/icons/all-icons.svg#logo-location')
+        p Currently in Oman, North Sharqiyah, Ibra
+      .footer-menu__address-div.footer-copyright
+        p last updated in March 2022
+        br
+        p Copyright by Dmitriy Vnuchkov
