@@ -43,7 +43,7 @@ class SharedView {
 
   // running code-related functions
   makeDivFall() {
-    if (window.location.href.endsWith('indivproject.html')) return;
+    if (window.location.href.endsWith('indivproject')) return;
     this.fallingDiv.style.transform = `translateY(${this.fallingDivTranslateValue}vh)`;
     this.fallingDivTranslateValue < 90
       ? (this.fallingDivTranslateValue += 2.25)
@@ -152,11 +152,11 @@ class SharedView {
   _changeIcons() {
     ThemeSwitcher.switchIconsShared();
     if (window.location.href.endsWith('main-page')) ThemeSwitcher.switchIconsMain();
-    if (window.location.href.endsWith('aboutme.html')) ThemeSwitcher.switchIconsAboutMe();
-    if (window.location.href.endsWith('qualifications.html')) ThemeSwitcher.switchIconsQualifications();
-    if (window.location.href.endsWith('projects.html')) ThemeSwitcher.switchIconsProjects();
-    if (window.location.href.endsWith('experience.html')) ThemeSwitcher.switchIconsExperience();
-    if (window.location.href.endsWith('indivproject.html')) ThemeSwitcher.switchIconsIndiv();
+    if (window.location.href.endsWith('about-me')) ThemeSwitcher.switchIconsAboutMe();
+    if (window.location.href.endsWith('qualifications')) ThemeSwitcher.switchIconsQualifications();
+    if (window.location.href.endsWith('projects')) ThemeSwitcher.switchIconsProjects();
+    if (window.location.href.endsWith('experience')) ThemeSwitcher.switchIconsExperience();
+    if (window.location.href.endsWith('indivproject')) ThemeSwitcher.switchIconsIndiv();
   }
 
   _toggleSideMenu() {

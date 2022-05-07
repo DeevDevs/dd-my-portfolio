@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 // const path = require('path');
 
-const renderMainPage = function (req, res, next) {
+const renderProjectsPage = function (req, res, next) {
   //   res.sendFile(path.resolve(__dirname + '/../index.html'));
-  res.render('mainPageView');
+  res.render('projectsPage');
 };
 
-router.route('/').get(renderMainPage);
+router.route('/').get(renderProjectsPage);
 
 module.exports = router;

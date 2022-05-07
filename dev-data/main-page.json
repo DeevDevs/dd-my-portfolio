@@ -1,0 +1,62 @@
+{
+  "en": {
+    "frontEnd": {
+      "title": "Attractive Websites with Advanced Modern Features",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    },
+    "backEnd": {
+      "title": "Fast and Effective Server Side or Cutting-Edge API",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    },
+    "fullStack": {
+      "title": "Entire Web Project",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    },
+    "aboutMe": {
+      "title": "About Me",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    },
+    "qualifications": {
+      "title": "Qualifications",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    },
+    "myProjects": {
+      "title": "My Projects",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem maiores vitae ab quidem, perspiciatis veritatis, placeat officiis sint! Esse, tenetur cumque!"
+    }
+  },
+  "ru": {
+    "frontEnd": {
+      "title": "Привлекательные Сайты с Передовыми Современными Фичами",
+      "content": "Фронт, но неопровержимые выводы, а также тщательные исследования конкурентов призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    },
+    "backEnd": {
+      "title": "Быстрый и Надежный Сервер или API",
+      "content": "Бэк, но неопровержимые выводы, а также тщательные исследования конкурентов призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    },
+    "fullStack": {
+      "title": "Полноценный Проект",
+      "content": "Фулл, но неопровержимые выводы, а также тщательные исследования конкурентов призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    },
+    "aboutMe": {
+      "title": "Немного обо Мне",
+      "content": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост."
+    },
+    "qualifications": {
+      "title": "Квалификации",
+      "content": "И ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост."
+    },
+    "myProjects": {
+      "title": "Мои Проекты",
+      "content": "Ну ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост."
+    },
+    "workExperience": {
+      "title": "Опыт Работы",
+      "content": "О, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост."
+    }
+  }
+}

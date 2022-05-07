@@ -23,7 +23,7 @@ class ThemeSwitcher {
       sideMenuIconLearning.innerHTML = `<use href="/images/icons/all-icons.svg#learning-icon-night"></use>`;
       sideMenuIconProjects.innerHTML = `<use href="/images/icons/all-icons.svg#projects-icon-night"></use>`;
       sideMenuIconExperience.innerHTML = `<use href="/images/icons/all-icons.svg#experience-icon-night"></use>`;
-      runningCodeImage.src = '/images/js-code-white.png';
+      if (runningCodeImage) runningCodeImage.src = '/images/js-code-white.png';
     }
     if (this.theme === 'light') {
       logo.innerHTML = `<use href="/images/icons/all-icons.svg#logo-box-day"></use>`;
@@ -32,7 +32,7 @@ class ThemeSwitcher {
       sideMenuIconLearning.innerHTML = `<use href="/images/icons/all-icons.svg#learning-menu-icon-dark"></use>`;
       sideMenuIconProjects.innerHTML = `<use href="/images/icons/all-icons.svg#projects-menu-icon-dark"></use>`;
       sideMenuIconExperience.innerHTML = `<use href="/images/icons/all-icons.svg#experience-menu-icon-dark"></use>`;
-      runningCodeImage.src = '/images/js-code-darkblue.png';
+      if (runningCodeImage) runningCodeImage.src = '/images/js-code-darkblue.png';
     }
   }
 

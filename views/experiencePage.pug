@@ -1,0 +1,25 @@
+extends base
+
+block content
+  .intro-part__running-code-box(style='transform: translateY(2vh) scale(1)')
+    img.intro-part__animated-code(src='./images/js-code-darkblue.png', alt='')
+    .falling-down-div
+    .running-right-div
+  section.intro-part
+    .intro-part__glass
+    .intro-part__text-box
+      p.intro-part__text My Professional Experience
+    //- <p>LEARNING IS LIFELONG PROCESS</p>
+    .intro-part__icon-box
+      svg.intro-part__icon
+        use(href='./images/icons/all-icons.svg#experience-icon-day')
+  section.exp__main-part.section-hidden
+    .exp__no-exp-div
+      .exp__no-exp-logo-box
+        svg.exp__no-exp-logo
+          use(href='./images/icons/all-icons.svg#job-offer-icon')
+      .exp__no-exp-message
+        p.exp__no-exp-text Oops, I have not worked in IT for money yet. Would you like to offer me a job?
+
+block scripting 
+  script(type='module', defer src='/js/experience-controller.js')

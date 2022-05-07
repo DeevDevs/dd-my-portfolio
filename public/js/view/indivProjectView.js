@@ -47,16 +47,7 @@ class IndividualView {
       window.scrollTo(0, 0);
     };
 
-    window.addEventListener(
-      'load',
-      function () {
-        //counting the width of the screen to adjust height of the scrolled div
-        this.indivScrolledSection.style.height = window.innerWidth * 4 - (window.innerWidth - window.innerHeight);
-        this.maxWidthPossible = window.innerWidth * 4 - (window.innerWidth - window.innerHeight) - window.innerWidth;
-        //add desktop classes, if the user has desktop
-        if (window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1080) this.toggleSmartphoneMode();
-      }.bind(this)
-    );
+    window.addEventListener('load', this.sizeScrolledDiv.bind(this));
 
     // //counting the width of the screen to adjust height of the scrolled div
     // this.indivScrolledSection.style.height = window.innerWidth * 4 - (window.innerWidth - window.innerHeight);
@@ -88,6 +79,15 @@ class IndividualView {
     });
 
     this.scrollBackBtn.addEventListener('click', this.indivScrollBack.bind(this));
+  }
+
+  sizeScrolledDiv() {
+    //counting the width of the screen to adjust height of the scrolled div
+    this.indivScrolledSection.style.height = `${window.innerWidth * 4 - (window.innerWidth - window.innerHeight)}px`;
+    this.maxWidthPossible = window.innerWidth * 4 - (window.innerWidth - window.innerHeight) - window.innerWidth;
+    //add desktop classes, if the user has desktop
+    if (window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1080) this.toggleSmartphoneMode();
+    // this.indivScrolledSection.style.height = `${window.innerWidth * 4 - (window.innerWidth - window.innerHeight)}px`;
   }
 
   indivScrollBack() {

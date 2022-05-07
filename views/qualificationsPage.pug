@@ -1,0 +1,159 @@
+extends base
+
+block content
+  .intro-part__running-code-box(style='transform: translateY(2vh) scale(1)')
+    img.intro-part__animated-code(src='/images/js-code-darkblue.png', alt='')
+    .falling-down-div
+    .running-right-div
+  section.intro-part
+    .intro-part__glass
+    .intro-part__text-box
+      p.intro-part__text My Qualifications
+    //- <p>LEARNING IS LIFELONG PROCESS</p>
+    .intro-part__icon-box
+      svg.intro-part__icon
+        use(href='/images/icons/all-icons.svg#learning-icon-day')
+  section.choice-part.section-hidden
+    .close-quals-btn__box
+      .edu-category.close-quals-it Here is my IT-related educational experience.
+      .edu-category.close-quals-all Here is my entire educational experience.
+      button.close-quals__btn(type='button')
+        .xbtn
+          svg.x-btn-svg
+            use(href='/images/icons/all-icons.svg#x-button-dark')
+    .quals-category.quals.quals-short
+      #q1.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Long before time had a name
+      #q5.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2021, January: Groundhog month
+      #q6.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2021, February: Turning into a Ninja
+      #q7.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2021, April: Deep Dive Into Programming
+      #q8.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2022, January: Learning Design
+      #q9.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2022, February: Learning Back-end
+    .quals-category.quals.quals-long
+      .quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Long before time had a name
+      #q2.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Schoolkid turns into a Student
+      #q3.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Student turns into a Teacher (NOT)
+      #q4.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Neverending Student
+      #q5.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2021, January: Groundhog month
+      #q6.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2021, February: Turning into a Ninja
+      #q7.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2021, April: Deep Dive Into Programming
+      #q8.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2022, January: Learning Design
+      #q9.quals-box
+        .quals-box__image-container
+          img.quals-box__image(src='/images/temp.jpg')
+        p.quals-box__text Year 2022, February: Learning Back-end
+    .choice-part__towers
+      .choice-part__section-box
+        .tower-description
+          p Only IT-related educational experience
+        .towers.tower-short
+          .img-box.img-box__short(data-pos='1')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__short(data-pos='2')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__short(data-pos='3')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__short(data-pos='4')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__short(data-pos='5')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__short(data-pos='6')
+            img.tower__img(src='/images/temp.jpg')
+      .choice-part__section-box.choice-part__rev
+        .tower-description.tower-description__rev
+          p Entire educational experience
+        .towers.tower-long.towers__rev
+          .img-box.img-box__long(data-pos='1')
+            img.tower__img(src='./images/temp.jpg')
+          .img-box.img-box__long(data-pos='2')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='3')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='4')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='5')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='6')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='7')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='8')
+            img.tower__img(src='/images/temp.jpg')
+          .img-box.img-box__long(data-pos='9')
+            img.tower__img(src='/images/temp.jpg')
+
+block details-window
+  //- for the sake of smooth animation I hard coded some styles
+  .details-section(style='display: none; opacity: 0')
+    .details__name-box
+      p.details__name-text Name of the chosen stage
+    .details__description-box
+      p.details__desription-text
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, tempora facere velit expedita vel quod esse
+        | accusantium magnam, ipsum repudiandae exercitationem iure pariatur sed. Ratione nobis ipsa impedit nesciunt
+        | aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veniam quibusdam totam deleniti et sint,
+        | nemo omnis dolores distinctio tenetur? Excepturi sint nulla omnis expedita distinctio totam cupiditate iure
+        | possimus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+        | adipisicing elit. Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+        | consectetur Lorem ipsum dolor sit amet consectetur lorem Lorem ipsum dolor sit amet consectetur lorem ipsum
+        | dolor sit amet lorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ratione nobis quae
+        | recusandae autem quibusdam necessitatibus aliquam sint labore. Debitis, provident quos asperiores at sint
+        | maiores vero porro ea ad.
+    .details__image-box
+      img.details__image(src='./images/bg-learning.jpg')
+    button.details__button-close(type='button')
+      .xbtn
+        svg.x-btn-svg
+          use(href='./images/icons/all-icons.svg#x-button-dark')
+  .image-view__container(style='display: none; opacity: 0')
+    button.image-view__close-button(type='button')
+      .xbtn
+        svg.x-btn-svg
+          use(href='./images/icons/all-icons.svg#x-button-light')
+    .image-view__images-box
+      .image-view__single-image-box
+        img.image-view__image(src='./images/bg-projects.jpg', alt='')
+
+block scripting 
+  script(type='module', defer src='/js/qualifications-controller.js')

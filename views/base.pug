@@ -4,7 +4,7 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    // <meta http-equiv="Cache-control" content="public">
+    //- <meta http-equiv="Cache-control" content="public">
     link(rel='stylesheet', href='/sass/main.css')
     title DeevDevs: Homepage
   body 
@@ -14,6 +14,9 @@ html(lang='en')
 
     include _footer
 
-    include _side  
+    include _side
 
-    script(type='module', defer src='/js/controller.js')
+    block details-window  
+
+    block scripting
+    
