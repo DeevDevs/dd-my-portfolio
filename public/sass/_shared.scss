@@ -208,6 +208,28 @@
   }
 }
 
+.switch-language__btn {
+  color: var(--font-border-color);
+  border: none;
+  border-radius: 0.4rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  font-weight: 700;
+  background-color: var(--side-bg);
+  box-shadow: -2px 2px 2px var(--icons-shadow);
+  // margin-left: auto;
+
+  &:active {
+    box-shadow: -1px 2px 2px inset var(--icons-shadow);
+  }
+  &:hover {
+    box-shadow: -3px 3px 3px var(--icons-shadow);
+  }
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
 .icon__menu {
   height: 2.5rem;
   width: 2.5rem;

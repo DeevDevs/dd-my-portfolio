@@ -1,3 +1,4 @@
+// import axios from 'axios';
 import ThemeSwitcher from './nightView.js';
 
 class SharedView {
@@ -13,6 +14,7 @@ class SharedView {
   footerExtraDiv = document.querySelector('.footer-menu__extra');
   footerSubmitBtn = document.querySelector('.footer-menu__form-submit');
   footerWindow = 'contacts';
+  switchLangBtn = document.querySelector('.switch-language__btn');
 
   //running code-related variables
   runningCodeDiv = document.querySelector('.intro-part__running-code-box');
@@ -23,6 +25,7 @@ class SharedView {
   footerMenuObserver = new IntersectionObserver(this.hideExtraFooterBox.bind(this), { root: null, threshold: 0 });
 
   constructor() {
+    this.switchLangBtn.addEventListener('click', this.addHandlerChangeLanguage.bind(this));
     this.overlay.addEventListener('click', this._toggleSideMenu.bind(this));
     this.menuBtn.addEventListener('click', this._toggleSideMenu.bind(this));
     this.themeBtn.addEventListener(
@@ -39,6 +42,30 @@ class SharedView {
     document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
 
     this.makeDivFall();
+  }
+
+  async addHandlerChangeLanguage() {
+    try {
+      const currentLang = this.switchLangBtn.textContent;
+      const currentLink = window.location.href.split('/');
+      const currentPage = currentLink[currentLink.length - 1];
+      console.log(currentPage);
+      const res = await axios({
+        method: 'GET',
+        // url: 'http://127.0.0.1:8000/api/v1/users/login',
+        url: `http://127.0.0.1:3000/switch-language?lang=${currentLang}&page=${currentPage}`,
+      });
+      if (res.data.status === 'success') {
+        console.log(res.data.status);
+        // window.setTimeout(() => {
+        //   //this method allows us to make user go to a certain page that we assign
+        //   location.assign('/');
+        // }, 1500);
+      }
+      // console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   // running code-related functions
