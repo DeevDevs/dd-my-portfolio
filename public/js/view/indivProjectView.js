@@ -59,7 +59,9 @@ class IndividualView {
         console.log('resized');
         //counting the width of the screen to adjust height of the scrolled div
         this.maxWidthPossible = window.innerWidth * 4 - (window.innerWidth - window.innerHeight) - window.innerWidth;
-        this.indivScrolledSection.style.height = window.innerWidth * 4 - (window.innerWidth - window.innerHeight);
+        this.indivScrolledSection.style.height = `${
+          window.innerWidth * 4 - (window.innerWidth - window.innerHeight)
+        }px`;
         if (window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1080 && this.mode === 'smartphone') {
           this.toggleSmartphoneMode();
           this.mode = 'desktop';

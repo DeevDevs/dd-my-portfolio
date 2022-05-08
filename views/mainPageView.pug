@@ -8,7 +8,7 @@ block content
   section.welcome-section
     .intro-part__glass
     .welcome-phrase
-      p Welcome to My Portfolio
+      p= pageData.pageTitle
     .welcome-3d-container
       .vertical-rotation__div
         .spin-logo__div
@@ -22,7 +22,7 @@ block content
             use.spin-image(href='/images/icons/all-icons.svg#logo-box-day')
   section.advert__sections
     #section-1.section.advert__section.section-hidden
-      p.advert__section--headline Attractive Websites with Advanced Modern Features
+      p.advert__section--headline= pageData.frontName
       .advert__section--details
         .advert__section--image-container
           .mp-image-grid
@@ -36,14 +36,9 @@ block content
             img.advert__section--image.mp__one-eight(src='/images/cut-images3/b2.png')
             img.advert__section--image.mp__one-nine(src='/images/cut-images3/b3.png')
         .advert__section--text-container
-          p.advert__section--text
-            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-            | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-            | sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-            | sint! Esse, tenetur cumque!
+          p.advert__section--text= pageData.frontText
     #section-2.section.advert__section.section-hidden
-      p.advert__section--headline Fast and Effective Server Side or Cutting-Edge API
+      p.advert__section--headline= pageData.backName
       .advert__section--details.advert__section--details__central
         .advert__section--image-container
           .mp-image-grid__central
@@ -57,14 +52,9 @@ block content
             img.advert__section--image__central.mp__two-eight(src='/images/cut-images2/b2.jpg')
             img.advert__section--image__central.mp__two-nine(src='/images/cut-images2/b3.jpg')
         .advert__section--text-container
-          p.advert__section--text
-            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-            | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-            | sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-            | sint! Esse, tenetur cumque!
+          p.advert__section--text= pageData.backText
     #section-3.section.advert__section.section-hidden
-      p.advert__section--headline Entire Web Project
+      p.advert__section--headline= pageData.fullName
       .advert__section--details
         //- <div class="advert__section--image-container image__full">
         .advert__section--image-container
@@ -80,12 +70,7 @@ block content
             img.advert__section--image.mp__three-nine(src='/images/cut-images/b3.jpg')
           //- <img class="advert__section--image blurred" src="./images/img-full-stack-lazy.jpg" data-src="./images/img-full-stack.jpg">
         .advert__section--text-container
-          p.advert__section--text
-            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-            | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-            | sint! Esse, tenetur cumque! Ipsum dolor sit amet consectetur adipisicing elit. Quidem,alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime remmaiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-            | sint! Esse, tenetur cumque!
+          p.advert__section--text= pageData.fullText
   section#section-4.section.sec.section-hidden
     .arrow-container.arrow-left--container
       //- <img class="arrow-left" src="./images/icons/l-arrow-left-day.svg">
@@ -101,12 +86,8 @@ block content
         svg.sec__icon.about-me__icon
           use(href='/images/icons/all-icons.svg#icon-me-day')
       .about-me__description.sec__description
-        p.sec__description--title About me
-        p.sec__description--text
-          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-          | sint! Esse, tenetur cumque!
+        p.sec__description--title= pageData.linkMeTitle
+        p.sec__description--text= pageData.linkMeText
       .sec__learn-more
         a.sec__btn-link(href='./aboutme.html')
           button.about-me__learn-more__btn.sec__btn
@@ -114,18 +95,14 @@ block content
               use(href='/images/icons/all-icons.svg#icon-arrow-day')
             svg.sec__btn--circle
               use(href='/images/icons/all-icons.svg#icon-circle-day')
-        p.sec__learn-more--phrase Learn More
+        p.sec__learn-more--phrase= pageData.linkBtnText
     #learning.sec__main.lazy-bg
       .sec__icon-container
         svg.sec__icon.learning__icon
           use(href='/images/icons/all-icons.svg#learning-icon-day')
       .learning__description.sec__description
-        p.sec__description--title Qualifications
-        p.sec__description--text
-          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-          | sint! Esse, tenetur cumque!
+        p.sec__description--title= pageData.linkQualsTitle
+        p.sec__description--text= pageData.linkQualsText
       .sec__learn-more
         a.sec__btn-link(href='./qualifications.html')
           button.learning__learn-more__btn.sec__btn
@@ -133,18 +110,14 @@ block content
               use(href='/images/icons/all-icons.svg#icon-arrow-day')
             svg.sec__btn--circle
               use(href='/images/icons/all-icons.svg#icon-circle-day')
-        p.sec__learn-more--phrase Learn More
+        p.sec__learn-more--phrase= pageData.linkBtnText
     #projects.sec__main.lazy-bg
       .sec__icon-container
         svg.sec__icon.projects__icon
           use(href='/images/icons/all-icons.svg#projects-icon-day')
       .projects__description.sec__description
-        p.sec__description--title My Projects
-        p.sec__description--text
-          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-          | sint! Esse, tenetur cumque!
+        p.sec__description--title= pageData.linkProjectsTitle
+        p.sec__description--text= pageData.linkProjectsText
       .sec__learn-more
         a.sec__btn-link(href='./projects.html')
           button.projects__learn-more__btn.sec__btn
@@ -152,19 +125,15 @@ block content
               use(href='/images/icons/all-icons.svg#icon-arrow-day')
             svg.sec__btn--circle
               use(href='/images/icons/all-icons.svg#icon-circle-day')
-        p.sec__learn-more--phrase Learn More
+        p.sec__learn-more--phrase= pageData.linkBtnText
     #experience.sec__main.lazy-bg
       .sec__icon-container
         //- <img class="sec__icon experience__icon" src="images/icons/experience-icon-day.svg">
         svg.sec__icon.experience__icon
           use(href='/images/icons/all-icons.svg#experience-icon-day')
       .experience__description.sec__description
-        p.sec__description--title Work Experience
-        p.sec__description--text
-          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-          | alias dicta? Nesciunt, praesentium. Odit, adipisci dolore maxime rem
-          | maiores vitae ab quidem, perspiciatis veritatis, placeat officiis
-          | sint! Esse, tenetur cumque!
+        p.sec__description--title= pageData.linkExpTitle
+        p.sec__description--text= pageData.linkExpText
       .sec__learn-more
         a.sec__btn-link(href='./experience.html')
           button.experience__learn-more__btn.sec__btn
@@ -172,7 +141,7 @@ block content
               use(href='/images/icons/all-icons.svg#icon-arrow-day')
             svg.sec__btn--circle
               use(href='/images/icons/all-icons.svg#icon-circle-day')
-        p.sec__learn-more--phrase Learn More
+        p.sec__learn-more--phrase= pageData.linkBtnText
 
 block scripting  
   script(type='module', defer src='/js/controller.js')

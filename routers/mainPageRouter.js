@@ -1,12 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const mainPageController = require('./../controllers/mainPageController');
+const hfsController = require('./../controllers/hfsController');
 // const path = require('path');
 
-const renderMainPage = function (req, res, next) {
-  //   res.sendFile(path.resolve(__dirname + '/../index.html'));
-  res.render('mainPageView');
-};
+// const renderMainPage = async function (req, res, next) {
+//   const pageData = await MainPageModel.findOne({ lang: 'en' });
+//   // console.log(pageData);
+//   //   res.sendFile(path.resolve(__dirname + '/../index.html'));
+//   res.locals.pageData = pageData;
+//   console.log(res.locals);
+//   res.render('mainPageView', {
+//     title: 'Main Page',
+//   });
+// };
 
-router.route('/').get(renderMainPage);
+router.route('/').get(hfsController.addHFScontent, mainPageController.renderMainPage);
 
 module.exports = router;

@@ -1,0 +1,40 @@
+[
+  {
+    "lang": "en",
+    "home": "Home",
+    "aboutMe": "About me",
+    "quals": "Qualifications",
+    "projects": "Projects",
+    "exp": "Experience",
+    "contact": "Contact me",
+    "contactText": "You can contact me using the form below, or via email",
+    "formNamePh": "Your name",
+    "formEmailPh": "Your email",
+    "formMessagePh": "Your message",
+    "formBtn": "Submit",
+    "address": "Address",
+    "addressText": "Find me Online and in Real World",
+    "addressArea": "Currently in Oman, North Sharqiyah, Ibra",
+    "updateDate": "last updated in May 2022",
+    "copyrightText": "Copyright by Dmitriy Vnuchkov"
+  },
+  {
+    "lang": "ru",
+    "home": "На главную",
+    "aboutMe": "Обо мне",
+    "quals": "Квалификации",
+    "projects": "Проекты",
+    "exp": "Опыт",
+    "contact": "Контакты",
+    "contactText": "Вы можете связаться со мной через эту форму, или по электронной почте",
+    "formNamePh": "Ваше имя",
+    "formEmailPh": "Ваша электронная почта",
+    "formMessagePh": "Ваше сообщение",
+    "formBtn": "Отправить",
+    "address": "Адрес",
+    "addressText": "Найдите меня в виртуальном или реальном мире",
+    "addressArea": "На данный момент в Ибре, Северная Шаркия, Оман",
+    "updateDate": "последнее обновление в Мае 2022",
+    "copyrightText": "Авторские права: Дмитрий Внучков"
+  }
+]
