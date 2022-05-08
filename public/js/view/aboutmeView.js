@@ -126,4 +126,4 @@ class AboutMeView {
   }
 }
 
-export default new AboutMeView();
+export default AboutMeView;

@@ -13,8 +13,13 @@ const aboutMePageSchema = new mongoose.Schema({
   partThreeTitle: String,
   partThreeTextOne: String,
   partThreeTextTwo: String,
+  partFourTitle: String,
   partFourTextOne: String,
   partFourTextTwo: String,
+  partOnePreview: String,
+  partTwoPreview: String,
+  partThreePreview: String,
+  partFourPreview: String,
 });
 
 const AboutMePageModel = mongoose.model('AboutMePageContent', aboutMePageSchema);

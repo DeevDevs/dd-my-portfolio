@@ -8,7 +8,7 @@ block content
   section.intro-part
     .intro-part__glass
     .intro-part__text-box
-      p.intro-part__text About Me
+      p.intro-part__text= pageData.pageTitle
     .intro-part__photo-box
       img.intro-part__photo(src='/images/my-photo.jpg', alt='My Face')
   section.amp__main-part.section-hidden
@@ -17,12 +17,8 @@ block content
         .amp__flexed-image
           img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
         .amp__flexed-text__rev
-          h1.amp__headline.amp__sub-one__hello May the Force Be With You
-          p.amp-text.amp-text-left
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-            | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit
-            | voluptates dignissimos vero ea! natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate,
-            | amet laborum sint suscipit voluptates dignissimos vero ea!
+          h1.amp__headline.amp__sub-one__hello= pageData.partOneTitle
+          p.amp-text.amp-text-left= pageData.partOneText
     #0amp.sub-splitter
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='0amp')
@@ -30,31 +26,19 @@ block content
           //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
-          p.amp-headline__reveal-section(data-ampnum='0amp') Greetings, Visitor!
+          p.amp-headline__reveal-section(data-ampnum='0amp')= pageData.partOnePreview
     .amp__sub.amp-element-hidden
-      h2.amp__headline Professional Life
+      h2.amp__headline= pageData.partTwoTitle
       div
-        p.amp-text
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-          | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit
-          | voluptates dignissimos vero ea! Sed ducimus dignissimos sequi corrupti quaerat natus accusantium repellat
-          | aliquid?
-        p.amp-text
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-          | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit
-          | voluptates dignissimos vero ea! Sed ducimus dignissimos sequi corrupti quaerat natus accusantium repellat
-          | aliquid?
+        p.amp-text= pageData.partTwoTextOne
+        p.amp-text= pageData.partTwoTextTwo
       .amp__flexed-box
         .amp__img-box.amp__flexed-image
           img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
         .amp__img-box.amp__flexed-image
           img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
       div
-        p.amp-text
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-          | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit Sed
-          | ducimus dignissimos sequi corrupti quaerat natus accusantium repellat aliquid?Sed ducimus dignissimos sequi
-          | corrupti quaerat natus accusantium repellat aliquid? voluptates dignissimos vero ea!
+        p.amp-text= pageData.partTwoTextThree
     #1amp.sub-splitter
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='1amp')
@@ -62,22 +46,16 @@ block content
           //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
-          p.amp-headline__reveal-section(data-ampnum='1amp') My Professional Life These Days
+          p.amp-headline__reveal-section(data-ampnum='1amp')= pageData.partTwoPreview
     .amp__sub.amp-element-hidden
       .amp__img-box
-      h2.amp__headline Academic Life
+      h2.amp__headline= pageData.partThreeTitle
       .amp__flexed-box
         .amp__img-box.amp__flexed-image
           img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
         div
-          p.amp-text.amp__flexed-text
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-            | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit
-            | voluptates dignissimos vero ea!
-          p.amp-text.amp__flexed-text
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-            | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit
-            | voluptates dignissimos vero ea!
+          p.amp-text.amp__flexed-text= pageData.partThreeTextOne
+          p.amp-text.amp__flexed-text= pageData.partThreeTextTwo
     #2amp.sub-splitter
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='2amp')
@@ -85,27 +63,20 @@ block content
           //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
-          p.amp-headline__reveal-section(data-ampnum='2amp') Indeed, a Forever Student
+          p.amp-headline__reveal-section(data-ampnum='2amp')= pageData.partThreePreview
     .amp__sub.amp-element-hidden
       .amp__img-box
-      h2.amp__headline.amp__sub-four__headline Leisure Time
+      h2.amp__headline.amp__sub-four__headline= pageData.partFourTitle
       .amp__flexed-box__rev
         .amp__img-box.amp__flexed-image
           img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
         div
-          p.amp-text.amp__flexed-text__rev.amp-text-left
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-            | natus accusantium repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit
-            | voluptates dignissimos vero ea!
+          p.amp-text.amp__flexed-text__rev.amp-text-left= pageData.partFourTextOne
       .amp__flexed-box__rev
         .amp-img-box.amp__flexed-image
           img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
         div
-          p.amp-text.amp-text-left.amp__flexed-text__rev
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus dignissimos sequi corrupti quaerat
-            | Sed ducimus dignissimos sequi corrupti quaerat natus accusantium repellat aliquid? natus accusantium
-            | repellat aliquid? Dolore voluptatibus saepe cupiditate, amet laborum sint suscipit voluptates dignissimos
-            | vero ea!
+          p.amp-text.amp-text-left.amp__flexed-text__rev= pageData.partFourTextTwo
     #3amp.sub-splitter
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='3amp')
@@ -113,7 +84,7 @@ block content
           //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
-          p.amp-headline__reveal-section(data-ampnum='3amp') This Is How I Have Fun
+          p.amp-headline__reveal-section(data-ampnum='3amp')= pageData.partFourPreview
 
 block scripting 
-  script(type='module', defer src='/js/aboutme-controller.js')
+  script(type='module', defer src='/js/index.js')
