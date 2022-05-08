@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 const MainPageModel = require('./../models/mainPageModel');
 const HFSModel = require('./../models/hfsModel');
+const AboutMePageModel = require('./../models/aboutMePageModel');
 // const Review = require('./../../models/reviewModel');
 // const User = require('./../../models/userModel');
 
@@ -24,12 +25,14 @@ mongoose
 //Read json file
 const mainPages = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/main-page.json`, 'UTF-8'));
 const hfsContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/hfs.json`, 'UTF-8'));
+const aboutMePageContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/about-me-page.json`, 'UTF-8'));
 
 //import data into database
 const importData = async () => {
   try {
     // await MainPageModel.create(mainPages);
-    await HFSModel.create(hfsContent);
+    // await HFSModel.create(hfsContent);
+    await AboutMePageModel.create(aboutMePageContent);
     console.log('Data successfully loaded');
   } catch (error) {
     console.log(error);
@@ -41,7 +44,8 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     // await MainPageModel.deleteMany();
-    await HFSModel.deleteMany();
+    // await HFSModel.deleteMany();
+    await AboutMePageModel.deleteMany();
     console.log('Data successfully deleted');
   } catch (error) {
     console.log(error);
