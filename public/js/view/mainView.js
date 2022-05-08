@@ -193,4 +193,4 @@ class MainView {
   }
 }
 
-export default new MainView();
+export default MainView;

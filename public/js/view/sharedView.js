@@ -202,4 +202,4 @@ class SharedView {
   }
 }
 
-export default new SharedView();
+export default SharedView;

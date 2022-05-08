@@ -282,4 +282,4 @@ class ProjectsView {
   }
 }
 
-export default new ProjectsView();
+export default ProjectsView;
