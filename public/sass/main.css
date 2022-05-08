@@ -2670,14 +2670,14 @@ body {
           box-shadow: -2px 2px 2px var(--icons-shadow);
 }
 
-.switch-language__btn:active {
-  -webkit-box-shadow: -1px 2px 2px inset var(--icons-shadow);
-          box-shadow: -1px 2px 2px inset var(--icons-shadow);
-}
-
 .switch-language__btn:hover {
   -webkit-box-shadow: -3px 3px 3px var(--icons-shadow);
           box-shadow: -3px 3px 3px var(--icons-shadow);
+}
+
+.switch-language__btn:active {
+  -webkit-box-shadow: -1px 2px 2px inset var(--icons-shadow);
+          box-shadow: -1px 2px 2px inset var(--icons-shadow);
 }
 
 @media (max-width: 1080px) {
