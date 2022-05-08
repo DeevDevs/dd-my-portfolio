@@ -56,11 +56,9 @@ class SharedView {
         url: `http://127.0.0.1:3000/switch-language?lang=${currentLang}&page=${currentPage}`,
       });
       if (res.data.status === 'success') {
+        // this.switchLangBtn.textContent = currentLang === 'en' ? 'ru' : 'en';
         console.log(res.data.status);
-        // window.setTimeout(() => {
-        //   //this method allows us to make user go to a certain page that we assign
-        //   location.assign('/');
-        // }, 1500);
+        location.reload();
       }
       // console.log(res);
     } catch (err) {

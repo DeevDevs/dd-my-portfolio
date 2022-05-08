@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mainPageController = require('./../controllers/mainPageController');
 const hfsController = require('./../controllers/hfsController');
+const languageController = require('./../controllers/languageController');
 // const path = require('path');
 
 // const renderMainPage = async function (req, res, next) {
@@ -15,6 +16,8 @@ const hfsController = require('./../controllers/hfsController');
 //   });
 // };
 
-router.route('/').get(hfsController.addHFScontent, mainPageController.renderMainPage);
+router
+  .route('/')
+  .get(languageController.checkLanguageCookie, hfsController.addHFScontent, mainPageController.renderMainPage);
 
 module.exports = router;

@@ -6,7 +6,8 @@ const qualificationsRouter = require('./routers/qualificationsRouter.js');
 const projectsRouter = require('./routers/projectsRouter.js');
 const experienceRouter = require('./routers/experienceRouter.js');
 const indivProjectRouter = require('./routers/indivProjectRouter.js');
-const languageRouter = require('./routers/languageRouter.js');
+// const languageRouter = require('./routers/languageRouter.js');
+const cookieParser = require('cookie-parser');
 
 // const compression = require('compression');
 
@@ -18,6 +19,8 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
 
 // const sayHello = function (req, res, next) {
 //   console.log('HELLO');
