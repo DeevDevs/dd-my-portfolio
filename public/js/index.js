@@ -4,27 +4,33 @@ import ProjectsView from './view/projectsView.js';
 import AboutMeView from './view/aboutmeView.js';
 import ExperienceView from './view/experienceView.js';
 import QualificationsView from './view/qualificationsView.js';
+import IndividualView from './view/indivProjectView.js';
 
-const tempArr = window.location.href.split('/');
-const curPage = tempArr[tempArr.length - 1];
+// const tempArr = window.location.href.split('/');
+// const curPage = tempArr[tempArr.length - 1];
+const thisPageIs = document.getElementById('this-page').textContent;
 
-if (curPage === 'main-page') {
+if (thisPageIs === 'main-page') {
   new SharedView();
   new MainView();
 }
-if (curPage === 'about-me') {
+if (thisPageIs === 'about-me') {
   new SharedView();
   new AboutMeView();
 }
-if (curPage === 'projects') {
+if (thisPageIs === 'projects') {
   new SharedView();
   new ProjectsView();
 }
-if (curPage === 'experience') {
+if (thisPageIs === 'experience') {
   new SharedView();
   new ExperienceView();
 }
-if (curPage === 'qualifications') {
+if (thisPageIs === 'qualifications') {
   new SharedView();
   new QualificationsView();
+}
+if (thisPageIs === 'indiv-project') {
+  new SharedView();
+  new IndividualView();
 }

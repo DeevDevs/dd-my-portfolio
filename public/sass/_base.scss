@@ -194,3 +194,11 @@ body {
   border-radius: 5px;
   border: 2px solid var(--scrollbar--2);
 }
+
+#this-page {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}

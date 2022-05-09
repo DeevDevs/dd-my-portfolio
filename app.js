@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 
-app.use(express.json({ limit: '10kb' }));
+app.use(express.json({ limit: '20kb' }));
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));

@@ -173,7 +173,7 @@ class ProjectsView {
   whereClicks(e) {
     if (this.isDragging) return;
     if (e.clientX > window.innerWidth / 4 && e.clientX < (window.innerWidth * 3) / 4)
-      window.open('./indivproject.html', '_self');
+      window.open('/indivproject', '_self');
   }
 
   ////////////////////// FRONT DIV ANIMATION FUNCTIONS ///////////////////////////

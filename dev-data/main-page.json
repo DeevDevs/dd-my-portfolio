@@ -1,6 +1,7 @@
 [
   {
     "lang": "en",
+    "page": "main-page",
     "pageName": "Homepage",
     "pageTitle": "Welcome to My Portfolio",
     "frontName": "Attractive Websites with Advanced Modern Features",
@@ -22,6 +23,7 @@
 
   {
     "lang": "ru",
+    "page": "main-page",
     "pageName": "Главная Страница",
     "pageTitle": "Добро пожаловать в Мое Портфолио",
     "frontName": "Привлекательные Сайты с Передовыми Современными Фичами",

@@ -9,7 +9,9 @@ html(lang='en')
     script(src='https://unpkg.com/axios/dist/axios.min.js')
     title DeevDevs: #{pageData.pageName}
     //- title DeevDevs: 
-  body 
+  body
+    p#this-page= pageData.page
+
     include _header
 
     block content 

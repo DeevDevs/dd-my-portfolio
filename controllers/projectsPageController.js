@@ -6,7 +6,7 @@ exports.renderProjectsPage = async function (req, res, next) {
     const pageData = await ProjectsPageModel.findOne({
       lang: `${languageCookie ? languageCookie : 'en'}`,
     });
-
+    // console.log(pageData);
     res.locals.pageData = pageData;
     // console.log(res.locals);
     res.render('projectsPage');
@@ -14,5 +14,3 @@ exports.renderProjectsPage = async function (req, res, next) {
     console.log(err);
   }
 };
-
-//NEXT CREATE PROJECTS PAGE MODEL

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const mainPageSchema = new mongoose.Schema({
+  page: String,
   lang: String,
   pageTitle: String,
   pageName: String,

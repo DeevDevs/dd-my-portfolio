@@ -1,6 +1,7 @@
 [
   {
     "lang": "en",
+    "page": "qualifications",
     "pageTitle": "My Qualifications",
     "pageName": "Qualifications",
     "itExpPackTitle": "Here is my IT-related educational background.",
@@ -19,6 +20,7 @@
   },
   {
     "lang": "ru",
+    "page": "qualifications",
     "pageTitle": "Мои Квалификации",
     "pageName": "Квалификации",
     "itExpPackTitle": "Почитайте о моем IT образовании.",

@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
-// const path = require('path');
+const indivProjectPageController = require('./../controllers/indivProjectPageController');
+const hfsController = require('./../controllers/hfsController');
+const languageController = require('./../controllers/languageController');
 
-const renderIndivProjectPage = function (req, res, next) {
-  //   res.sendFile(path.resolve(__dirname + '/../index.html'));
-  res.render('indivProjectPage');
-};
-
-router.route('/').get(renderIndivProjectPage);
+router
+  .route('/')
+  .get(
+    languageController.checkLanguageCookie,
+    hfsController.addHFScontent,
+    indivProjectPageController.renderIndivProjectPage
+  );
 
 module.exports = router;

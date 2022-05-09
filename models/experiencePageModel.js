@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const experiencePageSchema = new mongoose.Schema({
   lang: String,
+  page: String,
   pageTitle: String,
   pageName: String,
   message: String,

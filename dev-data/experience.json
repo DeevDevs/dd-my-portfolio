@@ -1,12 +1,14 @@
 [
   {
     "lang": "en",
+    "page": "experience",
     "pageTitle": "My Professional Experience",
     "pageName": "My Experience",
     "message": "Oops, I have not worked in IT for money yet. Would you like to offer me a job?"
   },
   {
     "lang": "ru",
+    "page": "experience",
     "pageTitle": "Мои Профессиональный Опыт",
     "pageName": "Мои Опыт",
     "message": "Упс, я еще не работал в IT сфере за деньги. Вы хотели бы предложить мне работу?"

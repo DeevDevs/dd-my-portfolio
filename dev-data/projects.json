@@ -1,12 +1,14 @@
 [
   {
     "lang": "en",
+    "page": "projects",
     "pageTitle": "My Projects",
     "pageName": "My Projects",
     "wheelHeadDefault": "Spin the Wheel to Learn More"
   },
   {
     "lang": "ru",
+    "page": "projects",
     "pageTitle": "Мои Проекты",
     "pageName": "Мои Проекты",
     "wheelHeadDefault": "Крути Колесо - Увидишь Еще"

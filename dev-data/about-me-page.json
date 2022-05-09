@@ -1,6 +1,7 @@
 [
   {
     "lang": "en",
+    "page": "about-me",
     "pageTitle": "About Me",
     "pageName": "About Me",
     "partOneTitle": "May the Force Be With You",
@@ -23,6 +24,7 @@
 
   {
     "lang": "ru",
+    "page": "about-me",
     "pageTitle": "Обо мне",
     "pageName": "Обо Мне",
     "partOneTitle": "Да Пребудет С Тобой Сила",

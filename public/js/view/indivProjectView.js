@@ -233,4 +233,4 @@ class IndividualView {
   }
 }
 
-export default new IndividualView();
+export default IndividualView;
