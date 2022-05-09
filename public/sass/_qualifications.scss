@@ -146,10 +146,11 @@
 
 .choice-part__rev {
   flex-direction: column;
-  // padding-bottom: 4rem;
+  margin-top: 4rem;
 
   @media (min-width: 640px) {
     flex-direction: row-reverse;
+    margin-top: 3rem;
   }
 }
 
@@ -176,7 +177,7 @@
 }
 
 .tower-description__rev {
-  margin-top: 1rem;
+  margin-top: 4rem;
   @media (min-width: 640px) {
     padding-right: 2rem;
     padding-left: 0;

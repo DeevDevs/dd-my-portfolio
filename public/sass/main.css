@@ -4008,6 +4008,7 @@ a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 4rem;
 }
 
 @media (min-width: 640px) {
@@ -4016,6 +4017,7 @@ a:visited {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    margin-top: 3rem;
   }
 }
 
@@ -4048,7 +4050,7 @@ a:visited {
 }
 
 .tower-description__rev {
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 @media (min-width: 640px) {

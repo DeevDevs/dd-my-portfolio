@@ -13,7 +13,7 @@ class ProjectsView {
   secondaryImageContainers = document.querySelectorAll('.jad__content-secondary-img__container');
   draggedOverDivSupreme = document.querySelector('.supreme-div');
   btnSwitchFormat = document.querySelector('.btn__switch-format');
-
+  btnSwitchLanguage = document.querySelector('.switch-language__btn');
   projectViewFormat = 'wheel';
 
   mousePositionX;
@@ -26,14 +26,26 @@ class ProjectsView {
   dragDirection;
 
   projectNames = [
-    'Mapty: Workout Records',
-    'Bankist: Home Page',
-    'Bankist: Application',
-    'Natours: Your Travelling Guide',
-    'Forkify: Enrich Your Kitchen Arsenal',
-    'Connect Four',
-    'Pig Game',
-    'Portfolio Website',
+    [
+      'Mapty: Workout Records',
+      'Bankist: Home Page',
+      'Bankist: Application',
+      'Natours: Your Travelling Guide',
+      'Forkify: Enrich Your Kitchen Arsenal',
+      'Connect Four',
+      'Pig Game',
+      'Portfolio Website',
+    ],
+    [
+      'Mapty: Дневник Спорсмена',
+      'Bankist: Главная Страница',
+      'Bankist: Приложение',
+      'Natours: Ваш Туристический Гид',
+      'Forkify: Арсенал Кулинара',
+      'Cобери 4',
+      'Игра в Порося',
+      'Мое Портфолио',
+    ],
   ];
 
   observePrMainSection = new IntersectionObserver(this.bringFirstProject.bind(this), {
@@ -229,7 +241,9 @@ class ProjectsView {
   //function to identify and reveal project name
   displayFrontProjectName(projectId) {
     const idNum = parseInt(projectId);
-    this.mainProjectName.textContent = this.projectNames[idNum - 1];
+    this.btnSwitchLanguage.textContent === 'en'
+      ? (this.mainProjectName.textContent = this.projectNames[0][idNum - 1])
+      : (this.mainProjectName.textContent = this.projectNames[1][idNum - 1]);
   }
 
   //funtion to identify (and SOON REVEAL) project details

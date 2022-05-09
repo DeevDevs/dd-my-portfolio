@@ -310,4 +310,4 @@ class QualificationsView {
   }
 }
 
-export default new QualificationsView();
+export default QualificationsView;

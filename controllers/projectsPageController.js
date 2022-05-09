@@ -1,12 +1,8 @@
-const ProjectsPageModel = require('./../models/projectsPageModel');
+const ProjectsPageModel = require('../models/projectsPageModel');
 
 exports.renderProjectsPage = async function (req, res, next) {
   try {
     const languageCookie = req.languageCookie;
-    // console.log(languageCookie);
-    // const pageData = await MainPageModel.findOne({
-    //   lang: `${currentLanguageCookie ? currentLanguageCookie.mypfcookielang : 'en'}`,
-    // });
     const pageData = await ProjectsPageModel.findOne({
       lang: `${languageCookie ? languageCookie : 'en'}`,
     });

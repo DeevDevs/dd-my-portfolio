@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
-// const path = require('path');
+const hfsController = require('./../controllers/hfsController');
+const qualificationsPageController = require('./../controllers/qualificationsPageController');
+const languageController = require('./../controllers/languageController');
 
-const renderQualificationsPage = function (req, res, next) {
-  //   res.sendFile(path.resolve(__dirname + '/../index.html'));
-  res.render('qualificationsPage');
-};
-
-router.route('/').get(renderQualificationsPage);
+router
+  .route('/')
+  .get(
+    languageController.checkLanguageCookie,
+    hfsController.addHFScontent,
+    qualificationsPageController.renderQualificationsPage
+  );
 
 module.exports = router;
