@@ -8,6 +8,7 @@ const HFSModel = require('./../models/hfsModel');
 const AboutMePageModel = require('./../models/aboutMePageModel');
 const ProjectsPageModel = require('./../models/projectsPageModel');
 const ExperiencePageModel = require('./../models/experiencePageModel');
+const QualificationsPageModel = require('./../models/qualificationsPageModel');
 // const Review = require('./../../models/reviewModel');
 // const User = require('./../../models/userModel');
 
@@ -30,6 +31,7 @@ const hfsContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/hfs.json
 const aboutMePageContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/about-me-page.json`, 'UTF-8'));
 const projectsPageContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/projects.json`, 'UTF-8'));
 const experiencePageContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/experience.json`, 'UTF-8'));
+const qualificationsPageContent = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/qualifications.json`, 'UTF-8'));
 
 //import data into database
 const importData = async () => {
@@ -38,7 +40,8 @@ const importData = async () => {
     // await HFSModel.create(hfsContent);
     // await AboutMePageModel.create(aboutMePageContent);
     // await ProjectsPageModel.create(projectsPageContent);
-    await ExperiencePageModel.create(experiencePageContent);
+    // await ExperiencePageModel.create(experiencePageContent);
+    await QualificationsPageModel.create(qualificationsPageContent);
     console.log('Data successfully loaded');
   } catch (error) {
     console.log(error);
@@ -53,7 +56,8 @@ const deleteData = async () => {
     // await HFSModel.deleteMany();
     // await AboutMePageModel.deleteMany();
     // await ProjectsPageModel.deleteMany();
-    await ExperiencePageModel.deleteMany();
+    // await ExperiencePageModel.deleteMany();
+    await QualificationsPageModel.deleteMany();
     console.log('Data successfully deleted');
   } catch (error) {
     console.log(error);

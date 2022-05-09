@@ -1,0 +1,38 @@
+[
+  {
+    "lang": "en",
+    "pageTitle": "My Qualifications",
+    "pageName": "Qualifications",
+    "itExpPackTitle": "Here is my IT-related educational background.",
+    "itExpTitle": "Only IT-related educational background",
+    "allExpPackTitle": "Here is my entire educational background.",
+    "allExpTitle": "Entire educational background",
+    "stOneTitle": "Long before time had a name",
+    "stTwoTitle": "Schoolkid turns into a Student",
+    "stThreeTitle": "Student turns into a Teacher",
+    "stFourTitle": "Neverending Student",
+    "stFiveTitle": "Year 2021, January: Groundhog month",
+    "stSixTitle": "Year 2021, February: Turning into a Ninja",
+    "stSevenTitle": "Year 2021, April: Deep Dive Into Programming",
+    "stEightTitle": "Year 2022, January: Learning Design",
+    "stNineTitle": "Year 2022, February: Learning Back-end"
+  },
+  {
+    "lang": "ru",
+    "pageTitle": "Мои Квалификации",
+    "pageName": "Квалификации",
+    "itExpPackTitle": "Почитайте о моем IT образовании.",
+    "itExpTitle": "Образование связанное с IT",
+    "allExpPackTitle": "Посмотрите на мой академический путь в целом",
+    "allExpTitle": "Общий академический путь",
+    "stOneTitle": "Задолго до того, как возникло время",
+    "stTwoTitle": "Школьник становится студентом",
+    "stThreeTitle": "Студент становится педагогом",
+    "stFourTitle": "Вечный студент",
+    "stFiveTitle": "Год 2021, Январь: Месяц Сурка",
+    "stSixTitle": "Год 2021, Февраль: Путь ниндзя",
+    "stSevenTitle": "Год 2021, Апрель: В программирование с головой",
+    "stEightTitle": "Год 2022, Январь: Изучение веб-дизайна",
+    "stNineTitle": "Год 2022, Март: Изучение бэкенда"
+  }
+]
