@@ -10,6 +10,7 @@ const ProjectsPageModel = require('./../models/projectsPageModel');
 const ExperiencePageModel = require('./../models/experiencePageModel');
 const QualificationsPageModel = require('./../models/qualificationsPageModel');
 const IndivProjectPageModel = require('./../models/indivProjectPageModel');
+const DetailsQualsModel = require('./../models/detailsQualsModel');
 // const Review = require('./../../models/reviewModel');
 // const User = require('./../../models/userModel');
 
@@ -36,17 +37,19 @@ const qualificationsPageContent = JSON.parse(fs.readFileSync(`${__dirname}/../de
 const indivProjectPageContent = JSON.parse(
   fs.readFileSync(`${__dirname}/../dev-data/indiv-project-page.json`, 'UTF-8')
 );
+const detailsQualsData = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/details-quals.json`, 'UTF-8'));
 
 //import data into database
 const importData = async () => {
   try {
-    await MainPageModel.create(mainPages);
-    await HFSModel.create(hfsContent);
-    await AboutMePageModel.create(aboutMePageContent);
-    await ProjectsPageModel.create(projectsPageContent);
-    await ExperiencePageModel.create(experiencePageContent);
-    await QualificationsPageModel.create(qualificationsPageContent);
-    await IndivProjectPageModel.create(indivProjectPageContent);
+    // await MainPageModel.create(mainPages);
+    // await HFSModel.create(hfsContent);
+    // await AboutMePageModel.create(aboutMePageContent);
+    // await ProjectsPageModel.create(projectsPageContent);
+    // await ExperiencePageModel.create(experiencePageContent);
+    // await QualificationsPageModel.create(qualificationsPageContent);
+    // await IndivProjectPageModel.create(indivProjectPageContent);
+    await DetailsQualsModel.create(detailsQualsData);
     console.log('Data successfully loaded');
   } catch (error) {
     console.log(error);
@@ -57,13 +60,14 @@ const importData = async () => {
 //delete old data
 const deleteData = async () => {
   try {
-    await MainPageModel.deleteMany();
-    await HFSModel.deleteMany();
-    await AboutMePageModel.deleteMany();
-    await ProjectsPageModel.deleteMany();
-    await ExperiencePageModel.deleteMany();
-    await QualificationsPageModel.deleteMany();
-    await IndivProjectPageModel.deleteMany();
+    // await MainPageModel.deleteMany();
+    // await HFSModel.deleteMany();
+    // await AboutMePageModel.deleteMany();
+    // await ProjectsPageModel.deleteMany();
+    // await ExperiencePageModel.deleteMany();
+    // await QualificationsPageModel.deleteMany();
+    // await IndivProjectPageModel.deleteMany();
+    await DetailsQualsModel.deleteMany();
     console.log('Data successfully deleted');
   } catch (error) {
     console.log(error);

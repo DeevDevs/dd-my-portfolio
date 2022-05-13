@@ -1,0 +1,30 @@
+[
+  {
+    "lang": "en",
+    "qual": "q1",
+    "headline": "Long before time had a name",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/temp.jpg"
+  },
+  {
+    "lang": "en",
+    "qual": "q2",
+    "headline": "Schoolkid turns into a Student",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/bg-learning.jpg"
+  },
+  {
+    "lang": "ru",
+    "qual": "q1",
+    "headline": "Задолго до того, как возникло время",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/temp.jpg"
+  },
+  {
+    "lang": "ru",
+    "qual": "q2",
+    "headline": "Школьник Становится Студентом",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/bg-learning.jpg"
+  }
+]

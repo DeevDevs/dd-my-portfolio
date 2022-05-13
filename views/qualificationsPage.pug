@@ -8,15 +8,15 @@ block content
   section.intro-part
     .intro-part__glass
     .intro-part__text-box
-      p.intro-part__text My Qualifications
+      p.intro-part__text= pageData.pageTitle
     //- <p>LEARNING IS LIFELONG PROCESS</p>
     .intro-part__icon-box
       svg.intro-part__icon
         use(href='/images/icons/all-icons.svg#learning-icon-day')
   section.choice-part.section-hidden
     .close-quals-btn__box
-      .edu-category.close-quals-it Here is my IT-related educational experience.
-      .edu-category.close-quals-all Here is my entire educational experience.
+      .edu-category.close-quals-it= pageData.itExpPackTitle
+      .edu-category.close-quals-all= pageData.allExpPackTitle
       button.close-quals__btn(type='button')
         .xbtn
           svg.x-btn-svg
@@ -25,68 +25,68 @@ block content
       #q1.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Long before time had a name
+        p.quals-box__text= pageData.stOneTitle
       #q5.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2021, January: Groundhog month
+        p.quals-box__text= pageData.stFiveTitle
       #q6.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2021, February: Turning into a Ninja
+        p.quals-box__text= pageData.stSixTitle
       #q7.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2021, April: Deep Dive Into Programming
+        p.quals-box__text= pageData.stSevenTitle
       #q8.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2022, January: Learning Design
+        p.quals-box__text= pageData.stEightTitle
       #q9.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2022, February: Learning Back-end
+        p.quals-box__text= pageData.stNineTitle
     .quals-category.quals.quals-long
       #q1.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Long before time had a name
+        p.quals-box__text= pageData.stOneTitle
       #q2.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Schoolkid turns into a Student
+        p.quals-box__text= pageData.stTwoTitle
       #q3.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Student turns into a Teacher (NOT)
+        p.quals-box__text= pageData.stThreeTitle
       #q4.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Neverending Student
+        p.quals-box__text= pageData.stFourTitle
       #q5.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2021, January: Groundhog month
+        p.quals-box__text= pageData.stFiveTitle
       #q6.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2021, February: Turning into a Ninja
+        p.quals-box__text= pageData.stSixTitle
       #q7.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2021, April: Deep Dive Into Programming
+        p.quals-box__text= pageData.stSevenTitle
       #q8.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2022, January: Learning Design
+        p.quals-box__text= pageData.stEightTitle
       #q9.quals-box
         .quals-box__image-container
           img.quals-box__image(src='/images/temp.jpg')
-        p.quals-box__text Year 2022, February: Learning Back-end
+        p.quals-box__text= pageData.stNineTitle
     .choice-part__towers
       .choice-part__section-box
         .tower-description
-          p Only IT-related educational background
+          p= pageData.itExpTitle
         .towers.tower-short
           .img-box.img-box__short(data-pos='1')
             img.tower__img(src='/images/temp.jpg')
@@ -102,7 +102,7 @@ block content
             img.tower__img(src='/images/temp.jpg')
       .choice-part__section-box.choice-part__rev
         .tower-description.tower-description__rev
-          p Entire educational background
+          p= pageData.allExpTitle
         .towers.tower-long.towers__rev
           .img-box.img-box__long(data-pos='1')
             img.tower__img(src='./images/temp.jpg')
@@ -141,19 +141,19 @@ block details-window
         | recusandae autem quibusdam necessitatibus aliquam sint labore. Debitis, provident quos asperiores at sint
         | maiores vero porro ea ad.
     .details__image-box
-      img.details__image(src='./images/bg-learning.jpg')
+      img.details__image(src='/images/bg-learning.jpg')
     button.details__button-close(type='button')
       .xbtn
         svg.x-btn-svg
-          use(href='./images/icons/all-icons.svg#x-button-dark')
+          use(href='/images/icons/all-icons.svg#x-button-dark')
   .image-view__container(style='display: none; opacity: 0')
     button.image-view__close-button(type='button')
       .xbtn
         svg.x-btn-svg
-          use(href='./images/icons/all-icons.svg#x-button-light')
+          use(href='/images/icons/all-icons.svg#x-button-light')
     .image-view__images-box
       .image-view__single-image-box
-        img.image-view__image(src='./images/bg-projects.jpg', alt='')
+        img.image-view__image(src='/images/bg-projects.jpg', alt='')
 
 block scripting 
   script(type='module', defer src='/js/index.js')

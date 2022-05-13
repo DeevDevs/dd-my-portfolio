@@ -25,7 +25,9 @@ class QualificationsView {
   eduAll = document.querySelector('.close-quals-all');
   sectionDetails = document.querySelector('.details-section');
   detailsCloseBtn = document.querySelector('.details__button-close');
+  detailsName = document.querySelector('.details__name-text');
   detailsText = document.querySelector('.details__desription-text');
+  detailsImage = document.querySelector('.details__image');
   imageViewContainer = document.querySelector('.image-view__container');
   btnImageViewClose = document.querySelector('.image-view__close-button');
   overlay = document.querySelector('.overlay');
@@ -251,29 +253,51 @@ class QualificationsView {
 
   //////////////////////// DETAILS WINDOW FUNCTIONS /////////////////////
 
-  renderDisplayDetails(e) {
+  async renderDisplayDetails(e) {
     if (!e.target.closest('.quals-box')) return;
     const id = e.target.closest('.quals-box').id;
     console.log(id);
-    this.displayDetails();
+    await this.displayDetails(id);
     this.detailsText.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
-  displayDetails() {
-    if (this.sectionDetails.style.display === 'flex') {
-      this._makeElementDisappear(this.overlay, 300);
-      this._makeElementDisappear(this.sectionDetails, 200);
-      this.sectionDetails.style.transform = `translateY(3rem)`;
-    } else {
-      this._makeElementAppear(this.overlay, 300, 'block');
-      this.sectionDetails.style.display = 'flex';
-      setTimeout(
-        function () {
-          this.sectionDetails.style.opacity = 1;
-          this.sectionDetails.style.transform = `translateY(0)`;
-        }.bind(this),
-        20
-      );
+  async displayDetails(id) {
+    try {
+      // Render Loading Spinner
+
+      // Close details window
+      if (this.sectionDetails.style.display === 'flex') {
+        this._makeElementDisappear(this.overlay, 300);
+        this._makeElementDisappear(this.sectionDetails, 200);
+        this.sectionDetails.style.transform = `translateY(3rem)`;
+      } else {
+        // Open details window
+        this._makeElementAppear(this.overlay, 300, 'block');
+        this.sectionDetails.style.display = 'flex';
+        setTimeout(
+          function () {
+            this.sectionDetails.style.opacity = 1;
+            this.sectionDetails.style.transform = `translateY(0)`;
+          }.bind(this),
+          20
+        );
+        //Make server request
+        let qualData;
+        const res = await axios({
+          method: 'GET',
+          // url: 'http://127.0.0.1:8000/api/v1/users/login',
+          url: `http://127.0.0.1:3000/qual-details?id=${id}`,
+        });
+        if (res.data.message === 'success') {
+          //Add data to page
+          qualData = res.data.detailsData;
+          this.detailsName.textContent = qualData.headline;
+          this.detailsText.textContent = qualData.description;
+          this.detailsImage.src = qualData.imagePath;
+        }
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
 

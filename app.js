@@ -6,7 +6,7 @@ const qualificationsRouter = require('./routers/qualificationsRouter.js');
 const projectsRouter = require('./routers/projectsRouter.js');
 const experienceRouter = require('./routers/experienceRouter.js');
 const indivProjectRouter = require('./routers/indivProjectRouter.js');
-// const languageRouter = require('./routers/languageRouter.js');
+const detailsRouter = require('./routers/detailsRouter.js');
 const cookieParser = require('cookie-parser');
 
 // const compression = require('compression');
@@ -41,6 +41,6 @@ app.use('/indivproject', indivProjectRouter);
 
 const languageController = require('./controllers/languageController');
 app.use('/switch-language', languageController.createSendLanguageCookie);
-// app.use('/say-hello', router);
+app.use('/qual-details', detailsRouter);
 
 module.exports = app;
