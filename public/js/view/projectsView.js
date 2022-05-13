@@ -48,6 +48,8 @@ class ProjectsView {
     ],
   ];
 
+  projectDetails = [[], [], [], [], [], [], [], []];
+
   currentProject;
 
   projectLinks = [
@@ -270,19 +272,22 @@ class ProjectsView {
   //funtion to identify (and SOON REVEAL) project details
   async displayFrontProjectDetails(projectId) {
     try {
-      const idNum = parseInt(projectId);
       let projectData;
-      //request project details
-      const res = await axios({
-        method: 'GET',
-        // url: 'http://127.0.0.1:8000/api/v1/users/login',
-        url: `http://127.0.0.1:3000/details?prnumber=${idNum}`,
-      });
-      if (res.data.message === 'success') {
-        //render project details
-        projectData = [res.data.detailsData.detailsLeft, res.data.detailsData.detailsRight];
-        console.log(projectData);
-      }
+      const idNum = parseInt(projectId);
+      if (this.projectDetails[idNum - 1].length === 0) {
+        //request project details
+        const res = await axios({
+          method: 'GET',
+          // url: 'http://127.0.0.1:8000/api/v1/users/login',
+          url: `http://127.0.0.1:3000/details?prnumber=${idNum}`,
+        });
+        if (res.data.message === 'success') {
+          //render project details
+          projectData = [res.data.detailsData.detailsLeft, res.data.detailsData.detailsRight];
+          this.projectDetails[idNum - 1] = projectData;
+        }
+      } else projectData = this.projectDetails[idNum - 1];
+      console.log(this.projectDetails);
       this.wheelDetails.forEach((element, i) => {
         element.firstChild.textContent = projectData[i];
         element.style.opacity = 1;

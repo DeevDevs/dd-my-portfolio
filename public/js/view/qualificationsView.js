@@ -23,6 +23,7 @@ class QualificationsView {
   btnCloseQuals = document.querySelector('.close-quals__btn');
   eduIT = document.querySelector('.close-quals-it');
   eduAll = document.querySelector('.close-quals-all');
+
   sectionDetails = document.querySelector('.details-section');
   detailsCloseBtn = document.querySelector('.details__button-close');
   detailsName = document.querySelector('.details__name-text');
@@ -30,6 +31,7 @@ class QualificationsView {
   detailsImage = document.querySelector('.details__image');
   waitingOverlay = document.querySelector('.spinner-box--overlay');
   waitingSpinner = document.querySelector('.spinner-box');
+  errorMessageBox = document.querySelector('.error-message-box');
   imageViewContainer = document.querySelector('.image-view__container');
   btnImageViewClose = document.querySelector('.image-view__close-button');
   overlay = document.querySelector('.overlay');
@@ -304,7 +306,13 @@ class QualificationsView {
         }
       }
     } catch (err) {
-      console.log(err);
+      this.waitingSpinner.style.display = 'none';
+      this._makeElementAppear(this.errorMessageBox, 200, 'block');
+      setTimeout(() => {
+        this._makeElementDisappear(this.errorMessageBox, 200);
+        this._makeElementDisappear(this.waitingOverlay, 300);
+        this.displayDetails();
+      }, 2000);
     }
   }
 
