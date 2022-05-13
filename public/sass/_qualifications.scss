@@ -644,3 +644,50 @@
     }
   }
 }
+
+.spinner-box--overlay {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.538);
+  opacity: 0.3;
+  z-index: 100;
+  filter: blur(8px);
+  transition: opacity 0.3s linear;
+}
+
+.spinner-box {
+  display: none;
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  left: calc(50% - 1.5rem);
+  z-index: 200;
+  animation: waiting 1.5s linear infinite;
+}
+
+.icon__spinner {
+  height: 3rem;
+  width: 3rem;
+}
+
+@keyframes waiting {
+  0% {
+    transform: rotateZ(0deg);
+    // animation-play-state: running;
+  }
+  // 40% {
+  //   transform: rotateZ(360deg);
+  // }
+  100% {
+    transform: rotateZ(360deg);
+  }
+  // 90% {
+  //   transform: rotateZ(0deg);
+  //   // animation-play-state: paused;
+  // }
+  // 100% {
+  //   transform: rotateZ(0deg);
+  //   // animation-play-state: paused;
+  // }
+}

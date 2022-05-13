@@ -4,6 +4,6 @@ const detailsController = require('./../controllers/detailsController');
 
 const router = express.Router();
 
-router.route('/').get(languageController.checkLanguageCookie, detailsController.renderQualDetails);
+router.route('/').get(languageController.checkLanguageCookie, detailsController.renderDetails);
 
 module.exports = router;

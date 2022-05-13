@@ -28,6 +28,8 @@ class QualificationsView {
   detailsName = document.querySelector('.details__name-text');
   detailsText = document.querySelector('.details__desription-text');
   detailsImage = document.querySelector('.details__image');
+  waitingOverlay = document.querySelector('.spinner-box--overlay');
+  waitingSpinner = document.querySelector('.spinner-box');
   imageViewContainer = document.querySelector('.image-view__container');
   btnImageViewClose = document.querySelector('.image-view__close-button');
   overlay = document.querySelector('.overlay');
@@ -263,14 +265,15 @@ class QualificationsView {
 
   async displayDetails(id) {
     try {
-      // Render Loading Spinner
-
-      // Close details window
       if (this.sectionDetails.style.display === 'flex') {
+        // Close details window
         this._makeElementDisappear(this.overlay, 300);
         this._makeElementDisappear(this.sectionDetails, 200);
         this.sectionDetails.style.transform = `translateY(3rem)`;
       } else {
+        // Render Loading Spinner
+        this._makeElementAppear(this.waitingOverlay, 0, 'block');
+        this.waitingSpinner.style.display = 'block';
         // Open details window
         this._makeElementAppear(this.overlay, 300, 'block');
         this.sectionDetails.style.display = 'flex';
@@ -286,7 +289,7 @@ class QualificationsView {
         const res = await axios({
           method: 'GET',
           // url: 'http://127.0.0.1:8000/api/v1/users/login',
-          url: `http://127.0.0.1:3000/qual-details?id=${id}`,
+          url: `http://127.0.0.1:3000/details?id=${id}`,
         });
         if (res.data.message === 'success') {
           //Add data to page
@@ -294,6 +297,10 @@ class QualificationsView {
           this.detailsName.textContent = qualData.headline;
           this.detailsText.textContent = qualData.description;
           this.detailsImage.src = qualData.imagePath;
+          //Hide Spinner
+          this._makeElementDisappear(this.waitingOverlay, 300);
+          // this.waitingOverlay.style.display = 'none';
+          this.waitingSpinner.style.display = 'none';
         }
       }
     } catch (err) {

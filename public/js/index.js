@@ -9,7 +9,7 @@ import IndividualView from './view/indivProjectView.js';
 // const tempArr = window.location.href.split('/');
 // const curPage = tempArr[tempArr.length - 1];
 const thisPageIs = document.getElementById('this-page').textContent;
-
+console.log(thisPageIs);
 if (thisPageIs === 'main-page') {
   new SharedView();
   new MainView();

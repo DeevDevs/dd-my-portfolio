@@ -37,10 +37,10 @@ app.use('/about-me', aboutMeRouter);
 app.use('/qualifications', qualificationsRouter);
 app.use('/projects', projectsRouter);
 app.use('/experience', experienceRouter);
-app.use('/indivproject', indivProjectRouter);
+// app.use('/indivproject', indivProjectRouter);
 
 const languageController = require('./controllers/languageController');
 app.use('/switch-language', languageController.createSendLanguageCookie);
-app.use('/qual-details', detailsRouter);
+app.use('/details', detailsRouter);
 
 module.exports = app;

@@ -126,6 +126,10 @@ block content
 block details-window
   //- for the sake of smooth animation I hard coded some styles
   .details-section(style='display: none; opacity: 0')
+    .spinner-box--overlay
+    .spinner-box
+      svg.icon__spinner
+        use(href='/images/icons/all-icons.svg#icon-menu')
     .details__name-box
       p.details__name-text Name of the chosen stage
     .details__description-box

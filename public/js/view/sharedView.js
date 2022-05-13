@@ -68,7 +68,8 @@ class SharedView {
 
   // running code-related functions
   makeDivFall() {
-    if (window.location.href.endsWith('indivproject')) return;
+    const thisPage = document.getElementById('this-page').textContent;
+    if (thisPage === 'indiv-project') return;
     this.fallingDiv.style.transform = `translateY(${this.fallingDivTranslateValue}vh)`;
     this.fallingDivTranslateValue < 90
       ? (this.fallingDivTranslateValue += 2.25)

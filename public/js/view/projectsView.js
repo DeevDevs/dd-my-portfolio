@@ -48,6 +48,19 @@ class ProjectsView {
     ],
   ];
 
+  currentProject;
+
+  projectLinks = [
+    'mapty',
+    'bankist-page',
+    'bankist-app',
+    'natours-app',
+    'forkify-app',
+    'connect-four',
+    'pig-game',
+    'my-portfolio',
+  ];
+
   observePrMainSection = new IntersectionObserver(this.bringFirstProject.bind(this), {
     root: null,
     threshold: [
@@ -72,14 +85,14 @@ class ProjectsView {
   }
 
   //it brings first project preview to the center of the page and reveals details
-  bringFirstProject(entry, observer) {
+  async bringFirstProject(entry, observer) {
     if (!entry[0].isIntersecting) return;
     entry[0].target.classList.remove('section-hidden');
     if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
       this.wheelGridBox.style.transform = `translateX(${75 - this.intersectionCount * (75 / 20)}vw)`;
       this.intersectionCount++;
       if (this.intersectionCount >= 20 || entry[0].intersectionRatio >= 0.97) {
-        this.setWheelFinalPosition();
+        await this.setWheelFinalPosition();
         //prettier-ignore
         setTimeout(function () {this.wheelGridBox.style.transition = 'transform 0ms';}.bind(this),600);
         observer.unobserve(this.wheelContainer);
@@ -93,7 +106,7 @@ class ProjectsView {
       pos2 = 0;
     this.draggedOverDivSupreme.onmousedown = dragWhileMouseDown.bind(this);
 
-    function dragWhileMouseDown(e) {
+    async function dragWhileMouseDown(e) {
       this.isDragging = false;
       e = e || window.event;
       e.preventDefault();
@@ -133,7 +146,7 @@ class ProjectsView {
       }
     }
 
-    function closeProjectsDrag() {
+    async function closeProjectsDrag() {
       // stop moving when mouse button is released
       document.onmouseup = null;
       document.onmousemove = null;
@@ -150,20 +163,20 @@ class ProjectsView {
         Math.abs(this.shiftValue % 50) > 25
           ? (this.shiftValue = this.shiftValue - (50 - Math.abs(this.shiftValue % 50)))
           : (this.shiftValue = this.shiftValue + Math.abs(this.shiftValue % 50));
-      this.setWheelFinalPosition();
+      await this.setWheelFinalPosition();
     }
   }
 
   //this function places the closest project (as per the mechanics) to the center of the page
-  setWheelFinalPosition() {
+  async setWheelFinalPosition() {
     if (this.shiftValue > 0) this.shiftValue = 0;
     if (this.shiftValue < -350) this.shiftValue = -350;
     this.wheelGridBox.style.transition = `transform 0.8s cubic-bezier(0.24, 1.44, 0.44, 1.19)`;
     this.wheelGridBox.style.transform = `translateX(${this.shiftValue}vw)`;
     this.timerAfterMouseRelease = setTimeout(
-      function () {
+      async function () {
         this.wheelGridBox.style.transition = `transform 0.05s`;
-        this.identifyFrontDiv();
+        await this.identifyFrontDiv();
       }.bind(this),
       600
     );
@@ -173,7 +186,7 @@ class ProjectsView {
   whereClicks(e) {
     if (this.isDragging) return;
     if (e.clientX > window.innerWidth / 4 && e.clientX < (window.innerWidth * 3) / 4)
-      window.open('/indivproject', '_self');
+      window.open(`/projects/${this.projectLinks[this.currentProject - 1]}`, '_self');
   }
 
   ////////////////////// FRONT DIV ANIMATION FUNCTIONS ///////////////////////////
@@ -184,35 +197,43 @@ class ProjectsView {
     this.mousePositionX !== e.clientX ? (this.isMoving = true) : (this.isMoving = false);
     this.mousePositionX = e.clientX;
     //prettier-ignore
-    this.movingTimer = setTimeout(function () {this.isMoving = false;}.bind(this), 125);
+    this.movingTimer = setTimeout(function () {this.isMoving = false}.bind(this), 125);
   }
 
   //it identifies the front project
-  identifyFrontDiv() {
+  async identifyFrontDiv() {
     switch (this.shiftValue) {
       case 0:
-        this.revealProjectDetails('1-mapty');
+        this.currentProject = 1;
+        await this.revealProjectDetails('1-mapty');
         break;
       case -50:
-        this.revealProjectDetails('2-bankist');
+        this.currentProject = 2;
+        await this.revealProjectDetails('2-bankist');
         break;
       case -100:
-        this.revealProjectDetails('3-bankapp');
+        this.currentProject = 3;
+        await this.revealProjectDetails('3-bankapp');
         break;
       case -150:
-        this.revealProjectDetails('4-natours');
+        this.currentProject = 4;
+        await this.revealProjectDetails('4-natours');
         break;
       case -200:
-        this.revealProjectDetails('5-forkify');
+        this.currentProject = 5;
+        await this.revealProjectDetails('5-forkify');
         break;
       case -250:
-        this.revealProjectDetails('6-connect');
+        this.currentProject = 6;
+        await this.revealProjectDetails('6-connect');
         break;
       case -300:
-        this.revealProjectDetails('7-piggame');
+        this.currentProject = 7;
+        await this.revealProjectDetails('7-piggame');
         break;
       case -350:
-        this.revealProjectDetails('8-portfolio');
+        this.currentProject = 8;
+        await this.revealProjectDetails('8-portfolio');
         break;
       default:
         break;
@@ -220,7 +241,7 @@ class ProjectsView {
   }
 
   //it reveals the name of the front project and animates the front project
-  revealProjectDetails(projectId) {
+  async revealProjectDetails(projectId) {
     const frontDiv = document.getElementById(projectId);
     const mainContainer = frontDiv
       .querySelector('.justadiv__content')
@@ -235,7 +256,7 @@ class ProjectsView {
       container.style.transform = 'scale(1.1)';
     });
     this.displayFrontProjectName(projectId);
-    this.displayFrontProjectDetails(projectId);
+    await this.displayFrontProjectDetails(projectId);
   }
 
   //function to identify and reveal project name
@@ -247,11 +268,32 @@ class ProjectsView {
   }
 
   //funtion to identify (and SOON REVEAL) project details
-  displayFrontProjectDetails(projectId) {
-    const idNum = parseInt(projectId);
-    this.wheelDetails.forEach((element) => {
-      element.style.opacity = 1;
-    });
+  async displayFrontProjectDetails(projectId) {
+    try {
+      const idNum = parseInt(projectId);
+      let projectData;
+      //request project details
+      const res = await axios({
+        method: 'GET',
+        // url: 'http://127.0.0.1:8000/api/v1/users/login',
+        url: `http://127.0.0.1:3000/details?prnumber=${idNum}`,
+      });
+      if (res.data.message === 'success') {
+        //render project details
+        projectData = [res.data.detailsData.detailsLeft, res.data.detailsData.detailsRight];
+        console.log(projectData);
+      }
+      this.wheelDetails.forEach((element, i) => {
+        element.firstChild.textContent = projectData[i];
+        element.style.opacity = 1;
+      });
+    } catch (err) {
+      this.wheelDetails.forEach((element, i) => {
+        element.firstChild.textContent =
+          'Oops... Something went wrong. Information about this project is not accessible at the moment. Please, try again later.';
+        element.style.opacity = 1;
+      });
+    }
   }
 
   ////////////////////// MOVING SHADOW CODE ////////////////////////

@@ -11,6 +11,7 @@ const ExperiencePageModel = require('./../models/experiencePageModel');
 const QualificationsPageModel = require('./../models/qualificationsPageModel');
 const IndivProjectPageModel = require('./../models/indivProjectPageModel');
 const DetailsQualsModel = require('./../models/detailsQualsModel');
+const DetailsProjectsModel = require('./../models/detailsProjectsModel');
 // const Review = require('./../../models/reviewModel');
 // const User = require('./../../models/userModel');
 
@@ -38,6 +39,7 @@ const indivProjectPageContent = JSON.parse(
   fs.readFileSync(`${__dirname}/../dev-data/indiv-project-page.json`, 'UTF-8')
 );
 const detailsQualsData = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/details-quals.json`, 'UTF-8'));
+const detailsProjectsData = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/details-projects.json`, 'UTF-8'));
 
 //import data into database
 const importData = async () => {
@@ -48,8 +50,9 @@ const importData = async () => {
     // await ProjectsPageModel.create(projectsPageContent);
     // await ExperiencePageModel.create(experiencePageContent);
     // await QualificationsPageModel.create(qualificationsPageContent);
-    // await IndivProjectPageModel.create(indivProjectPageContent);
-    await DetailsQualsModel.create(detailsQualsData);
+    await IndivProjectPageModel.create(indivProjectPageContent);
+    // await DetailsQualsModel.create(detailsQualsData);
+    // await DetailsProjectsModel.create(detailsProjectsData);
     console.log('Data successfully loaded');
   } catch (error) {
     console.log(error);
@@ -66,8 +69,9 @@ const deleteData = async () => {
     // await ProjectsPageModel.deleteMany();
     // await ExperiencePageModel.deleteMany();
     // await QualificationsPageModel.deleteMany();
-    // await IndivProjectPageModel.deleteMany();
-    await DetailsQualsModel.deleteMany();
+    await IndivProjectPageModel.deleteMany();
+    // await DetailsQualsModel.deleteMany();
+    // await DetailsProjectsModel.deleteMany();
     console.log('Data successfully deleted');
   } catch (error) {
     console.log(error);
