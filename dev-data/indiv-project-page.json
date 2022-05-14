@@ -115,12 +115,35 @@
     "respImg": "/images/pr-images/pr-mapty-2.png"
   },
   {
+    "lang": "ru",
+    "page": "indiv-project",
+    "projectName": "bankist-app",
+    "pageName": "Банкир",
+    "btnScroll": "К началу",
+    "coverTitle": "Банкир: Приложение",
+    "coverImg": "/images/pr-images/pr-bankist-1.png",
+    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
+    "generalImgRight": "/images/pr-images/pr-bankist-1.png",
+    "behindText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "respText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "respImg": "/images/pr-images/pr-mapty-2.png"
+  },
+  {
     "lang": "en",
     "page": "indiv-project",
     "projectName": "mapty",
     "pageName": "Mapty App",
     "btnScroll": "Scroll back",
-    "coverTitle": "Mapty App",
+    "coverTitle": "Mapty Application",
     "coverImg": "/images/pr-images/pr-bankist-1.png",
     "generalText": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
@@ -134,6 +157,29 @@
     "respText": [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+    ],
+    "respImg": "/images/pr-images/pr-mapty-2.png"
+  },
+  {
+    "lang": "ru",
+    "page": "indiv-project",
+    "projectName": "mapty",
+    "pageName": "Mapty",
+    "btnScroll": "К началу",
+    "coverTitle": "Mapty: Приложение",
+    "coverImg": "/images/pr-images/pr-bankist-1.png",
+    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
+    "generalImgRight": "/images/pr-images/pr-bankist-1.png",
+    "behindText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "respText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
     ],
     "respImg": "/images/pr-images/pr-mapty-2.png"
   },
@@ -161,6 +207,29 @@
     "respImg": "/images/pr-images/pr-mapty-2.png"
   },
   {
+    "lang": "ru",
+    "page": "indiv-project",
+    "projectName": "natours-app",
+    "pageName": "Natours",
+    "btnScroll": "К началу",
+    "coverTitle": "Natours: Туристический Гид",
+    "coverImg": "/images/pr-images/pr-bankist-1.png",
+    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
+    "generalImgRight": "/images/pr-images/pr-bankist-1.png",
+    "behindText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "respText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "respImg": "/images/pr-images/pr-mapty-2.png"
+  },
+  {
     "lang": "en",
     "page": "indiv-project",
     "projectName": "forkify-app",
@@ -180,6 +249,29 @@
     "respText": [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+    ],
+    "respImg": "/images/pr-images/pr-mapty-2.png"
+  },
+  {
+    "lang": "ru",
+    "page": "indiv-project",
+    "projectName": "forkify-app",
+    "pageName": "Forkify",
+    "btnScroll": "К началу",
+    "coverTitle": "Forkify: Коллекция Рецептов",
+    "coverImg": "/images/pr-images/pr-bankist-1.png",
+    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
+    "generalImgRight": "/images/pr-images/pr-bankist-1.png",
+    "behindText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "respText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
     ],
     "respImg": "/images/pr-images/pr-mapty-2.png"
   },
@@ -207,6 +299,29 @@
     "respImg": "/images/pr-images/pr-mapty-2.png"
   },
   {
+    "lang": "ru",
+    "page": "indiv-project",
+    "projectName": "connect-four",
+    "pageName": "Собери Четыре",
+    "btnScroll": "К началу",
+    "coverTitle": "Игра: Собери Четыре",
+    "coverImg": "/images/pr-images/pr-bankist-1.png",
+    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
+    "generalImgRight": "/images/pr-images/pr-bankist-1.png",
+    "behindText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "respText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "respImg": "/images/pr-images/pr-mapty-2.png"
+  },
+  {
     "lang": "en",
     "page": "indiv-project",
     "projectName": "my-portfolio",
@@ -226,6 +341,29 @@
     "respText": [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+    ],
+    "respImg": "/images/pr-images/pr-mapty-2.png"
+  },
+  {
+    "lang": "ru",
+    "page": "indiv-project",
+    "projectName": "my-portfolio",
+    "pageName": "Портфолио",
+    "btnScroll": "К началу",
+    "coverTitle": "Сайт-визитка: Мое Портфолио",
+    "coverImg": "/images/pr-images/pr-bankist-1.png",
+    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalImgLeft": "/images/pr-images/pr-bankist-1.png",
+    "generalImgRight": "/images/pr-images/pr-bankist-1.png",
+    "behindText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+    ],
+    "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "respText": [
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
     ],
     "respImg": "/images/pr-images/pr-mapty-2.png"
   }
