@@ -22,6 +22,8 @@ class SharedView {
   runningDiv = document.querySelector('.running-right-div');
   fallingDivTranslateValue = 2.25;
 
+  theViewedPage = document.getElementById('this-page').textContent;
+
   footerMenuObserver = new IntersectionObserver(this.hideExtraFooterBox.bind(this), { root: null, threshold: 0 });
 
   constructor() {
@@ -33,6 +35,10 @@ class SharedView {
       function () {
         this._changeTheme();
         this._changeIcons();
+        const curTheme = localStorage.getItem('myFolioDark');
+        if (!curTheme || curTheme === 'disabled') {
+          localStorage.setItem('myFolioDark', 'enabled');
+        } else localStorage.setItem('myFolioDark', 'disabled');
       }.bind(this)
     );
     this.footerBtns.addEventListener('click', this.displayExtraFooterBox.bind(this));
@@ -177,12 +183,12 @@ class SharedView {
 
   _changeIcons() {
     ThemeSwitcher.switchIconsShared();
-    if (window.location.href.endsWith('main-page')) ThemeSwitcher.switchIconsMain();
-    if (window.location.href.endsWith('about-me')) ThemeSwitcher.switchIconsAboutMe();
-    if (window.location.href.endsWith('qualifications')) ThemeSwitcher.switchIconsQualifications();
-    if (window.location.href.endsWith('projects')) ThemeSwitcher.switchIconsProjects();
-    if (window.location.href.endsWith('experience')) ThemeSwitcher.switchIconsExperience();
-    if (window.location.href.endsWith('indivproject')) ThemeSwitcher.switchIconsIndiv();
+    if (this.theViewedPage === 'main-page') ThemeSwitcher.switchIconsMain();
+    if (this.theViewedPage === 'about-me') ThemeSwitcher.switchIconsAboutMe();
+    if (this.theViewedPage === 'qualifications') ThemeSwitcher.switchIconsQualifications();
+    if (this.theViewedPage === 'projects') ThemeSwitcher.switchIconsProjects();
+    if (this.theViewedPage === 'experience') ThemeSwitcher.switchIconsExperience();
+    if (this.theViewedPage === 'indiv-project') ThemeSwitcher.switchIconsIndiv();
   }
 
   _toggleSideMenu() {

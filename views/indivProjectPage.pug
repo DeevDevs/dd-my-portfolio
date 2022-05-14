@@ -4,6 +4,7 @@ mixin paragraph(section, text)
   p.indiv-par(class=`indiv-par-${section}`)= text
 
 block content 
+  .clue-elem.this-project__name= pageData.projectName
   .scroll-back__btn-div.scroll-back__div-hidden
     .scroll-back__btn-box
       svg.scroll-back__svg-btn-dot
@@ -22,7 +23,7 @@ block content
           p.indiv-headline-text.indiv-headline-text-two= `${pageData.lang === 'en' ? 'General Description' : 'В Общих Чертах'}`
         img.indiv-img__two-left(src='/images/pr-images/pr-bankist-1.png', alt='')
         .indiv-par-box.indiv-par-box-two
-          .indiv-par-inner-box-two
+          .indiv-par-inner-box-two.indiv-par-inner-box
             p.indiv-par.indiv-par-two= pageData.generalText
         img.indiv-img__two-right(src='/images/pr-images/pr-bankist-1.png', alt='')
       #3-indiv.indiv-section-box.indiv-box-three

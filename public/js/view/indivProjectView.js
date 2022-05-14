@@ -11,6 +11,7 @@ class IndividualView {
 
   maxWidthPossible;
   mode = 'desktop';
+  thisProjectName = document.querySelector('.this-project__name').textContent;
 
   //section 1
   scrollEvent;
@@ -37,7 +38,6 @@ class IndividualView {
   //section 4
   scrollEventFour;
   sectionFourImage = document.querySelector('.indiv-img__four');
-  // sectionFourNarrowScroll = -4;
   sectionFourWideScroll = -3;
 
   indivSectionsObserver = new IntersectionObserver(this.runScrollAnimation.bind(this), { root: null, threshold: 0.05 });
@@ -46,6 +46,8 @@ class IndividualView {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
+
+    this.setProjectColor(this.thisProjectName);
 
     window.addEventListener('load', this.sizeScrolledDiv.bind(this));
 
@@ -81,6 +83,24 @@ class IndividualView {
     });
 
     this.scrollBackBtn.addEventListener('click', this.indivScrollBack.bind(this));
+  }
+
+  setProjectColor(projectName) {
+    //prettier-ignore
+    const projects = [{name: 'mapty', color: '#738385de',},
+      {name: 'bankist-page', color: '#1b951bf5',},
+      {name: 'bankist-app', color: '#c7c055d5',},
+      {name: 'pig-game', color: '#af1e56dc',},
+      {name: 'natours-app', color: '#30b860ce',},
+      {name: 'forkify-app', color: '#da8c32d5',},
+      {name: 'connect-four', color: '#beb700d0',},
+      {name: 'my-portfolio', color: '#7f8dc9e3',},
+    ];
+    // console.log(projectName);
+    const settings = projects.find((pr) => pr.name === projectName);
+    // console.log(settings);
+    this.allIndivTextBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
+    this.allParagraphBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
   }
 
   sizeScrolledDiv() {

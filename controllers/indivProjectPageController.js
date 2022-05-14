@@ -8,7 +8,7 @@ exports.renderIndivProjectPage = async function (req, res, next) {
       lang: `${languageCookie ? languageCookie : 'en'}`,
       projectName: `${chosenProject}`,
     });
-    // console.log(pageData);
+    console.log(pageData);
     res.locals.pageData = pageData;
     // console.log(res.locals);
     res.render('indivProjectPage');

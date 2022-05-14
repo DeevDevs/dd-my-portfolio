@@ -98,6 +98,8 @@ html {
   --scrollback-btn: rgb(2, 52, 190);
 
   --footer-bg: rgba(140, 182, 255, 0.897);
+
+  --project-text-bg: #f0f6ffa8;
 }
 
 html[data-theme='dark'] {
@@ -134,6 +136,8 @@ html[data-theme='dark'] {
   --scrollback-btn: rgb(192, 207, 250);
 
   --footer-bg: rgba(0, 7, 110, 0.89);
+
+  --project-text-bg: #030d4db5;
 }
 
 * {
@@ -176,8 +180,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.8rem;
-  background-color: transparent;
+  width: 0;
+  @media (min-width: 1080px) {
+    width: 0.8rem;
+    background-color: transparent;
+  }
 }
 
 ::-webkit-scrollbar-button {
@@ -195,7 +202,7 @@ body {
   border: 2px solid var(--scrollbar--2);
 }
 
-#this-page {
+.clue-elem {
   visibility: hidden;
   height: 0;
   width: 0;

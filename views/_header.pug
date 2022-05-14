@@ -9,15 +9,15 @@ header.header-menu
   .top-menu
     ul.top-menu-list
       a(href='/main-page')
-        li.top-menu-li-active= hfsData.home
+        li(class=`${pageData.page === 'main-page' ? 'top-menu-li-active' : ''}`)= hfsData.home
       a(href='/about-me')
-        li= hfsData.aboutMe
+        li(class=`${pageData.page === 'about-me' ? 'top-menu-li-active' : ''}`)= hfsData.aboutMe
       a(href='/qualifications')
-        li= hfsData.quals
+        li(class=`${pageData.page === 'qualifications' ? 'top-menu-li-active' : ''}`)= hfsData.quals
       a(href='/projects')
-        li= hfsData.projects
+        li(class=`${pageData.page === 'projects' ? 'top-menu-li-active' : ''}`)= hfsData.projects
       a(href='/experience')
-        li= hfsData.exp
+        li(class=`${pageData.page === 'experience' ? 'top-menu-li-active' : ''}`)= hfsData.exp
   button.switch-language__btn(type='button')= hfsData.lang
   //- button.switch-language__btn(type='button')= hfsData.lang
   .theme-container

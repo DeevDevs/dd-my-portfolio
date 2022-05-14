@@ -8,29 +8,34 @@ import IndividualView from './view/indivProjectView.js';
 
 // const tempArr = window.location.href.split('/');
 // const curPage = tempArr[tempArr.length - 1];
+
+const pageSharedView = new SharedView();
+const currentTheme = localStorage.getItem('myFolioDark');
+if (currentTheme === 'enabled') {
+  pageSharedView._changeTheme();
+}
+
 const thisPageIs = document.getElementById('this-page').textContent;
-console.log(thisPageIs);
+// console.log(thisPageIs);
 if (thisPageIs === 'main-page') {
-  new SharedView();
   new MainView();
 }
 if (thisPageIs === 'about-me') {
-  new SharedView();
   new AboutMeView();
 }
 if (thisPageIs === 'projects') {
-  new SharedView();
   new ProjectsView();
 }
 if (thisPageIs === 'experience') {
-  new SharedView();
   new ExperienceView();
 }
 if (thisPageIs === 'qualifications') {
-  new SharedView();
   new QualificationsView();
 }
 if (thisPageIs === 'indiv-project') {
-  new SharedView();
   new IndividualView();
+}
+
+if (currentTheme === 'enabled') {
+  pageSharedView._changeIcons();
 }
