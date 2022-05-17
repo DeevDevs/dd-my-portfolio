@@ -4,13 +4,31 @@
     "page": "projects",
     "pageTitle": "My Projects",
     "pageName": "My Projects",
-    "wheelHeadDefault": "Spin the Wheel to Learn More"
+    "projectOne": "This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectTwo": "This is the second project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectThree": "This is the third project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectFour": "This is the fourth project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectFive": "This is the fifth project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectSix": "This is the sixth project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectSeven": "This is the seventh project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "projectEight": "This is the eighth project, where I applied my CSS knowledge to add responsiveness to the webpage. There are also a lot of functionality add-ons.",
+    "wheelHeadDefault": "Spin the Wheel to Learn More",
+    "learnMore": "Learn More"
   },
   {
     "lang": "ru",
     "page": "projects",
     "pageTitle": "Мои Проекты",
     "pageName": "Мои Проекты",
-    "wheelHeadDefault": "Крути Колесо - Увидишь Еще"
+    "projectOne": "Это первый проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементыю",
+    "projectTwo": "Это второй проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "projectThree": "Это третий проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "projectFour": "Это четвертый проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "projectFive": "Это пятый проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "projectSix": "Это шестой проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "projectSeven": "Это седьмой проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "projectEight": "Это восьмой проект, ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы.",
+    "wheelHeadDefault": "Крути Колесо - Увидишь Еще",
+    "learnMore": "Узнать больше"
   }
 ]

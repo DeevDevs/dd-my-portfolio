@@ -6,6 +6,15 @@ const projectsPageSchema = new mongoose.Schema({
   pageTitle: String,
   pageName: String,
   wheelHeadDefault: String,
+  projectOne: String,
+  projectTwo: String,
+  projectThree: String,
+  projectFour: String,
+  projectFive: String,
+  projectSix: String,
+  projectSeven: String,
+  projectEight: String,
+  learnMore: String,
 });
 
 const ProjectsPageModel = mongoose.model('ProjectPageContent', projectsPageSchema);

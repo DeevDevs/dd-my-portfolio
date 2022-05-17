@@ -19,26 +19,18 @@ block content
     .placedover-div
       .pr-wheel-details.pr-wheel-details-left
         p
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates, maiores ipsa, tenetur cumque
-          | laboriosam dolorum minus a quisquam fugiat consequuntur atque fuga, explicabo dolores excepturi. Quod minus
-          | voluptatibus dolorem?
       .pr-wheel-details-central
       .pr-wheel-details.pr-wheel-details-right
         p
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates, maiores ipsa, tenetur cumque
-          | laboriosam dolorum minus a quisquam fugiat consequuntur atque fuga, explicabo dolores excepturi. Quod minus
-          | voluptatibus dolorem?
     .placedover-div.supreme-div
     .pr-general-view
       #1-mapty.justadiv.jad-mapty
         .back-side
         .justadiv__project-name
-          p Mapty: Workout Records
+          p= `${pageData.lang === 'en' ? 'Mapty: Workout Records' : 'Mapty: Тренировки'}` 
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectOne
+          a.indv-project-link(href='/projects/mapty')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -53,12 +45,10 @@ block content
       #2-bankist.justadiv.jad-bankist
         .back-side
         .justadiv__project-name
-          p Bankist: Home Page
+          p= `${pageData.lang === 'en' ? 'Bankist: Homepage' : 'Банкир: Главная Страница'}`
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectTwo
+          a.indv-project-link(href='/projects/bankist-page')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -74,12 +64,10 @@ block content
       #3-bankapp.justadiv.jad-bankist-app
         .back-side
         .justadiv__project-name
-          p Bankist: Application
+          p= `${pageData.lang === 'en' ? 'Bankist: Application' : 'Банкир: Приложение'}`
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectThree
+          a.indv-project-link(href='/projects/bankist-app')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -91,12 +79,10 @@ block content
       #4-natours.justadiv.jad-natours
         .back-side
         .justadiv__project-name
-          p Natours: Your Travelling Guide
+          p= `${pageData.lang === 'en' ? 'Natours: Your Travelling Guide' : 'Natours: Ваш Тур Гид'}` 
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectFour
+          a.indv-project-link(href='/projects/natours-app')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -110,12 +96,10 @@ block content
       #5-forkify.justadiv.jad-forkify
         .back-side
         .justadiv__project-name
-          p Forkify: Enrich Your Kitchen Arsenal
+          p= `${pageData.lang === 'en' ? 'Forkify: Enrich Your Kitchen Arsenal' : 'Forkify: Коллекция Рецептов'}`
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectFive
+          a.indv-project-link(href='/projects/forkify-app')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -135,12 +119,10 @@ block content
       #6-connect.justadiv.jad-connect
         .back-side
         .justadiv__project-name
-          p Connect Four
+          p= `${pageData.lang === 'en' ? 'Connect Four' : 'Собери Четыре'}`
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectSix
+          a.indv-project-link(href='/projects/connect-four')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -154,12 +136,10 @@ block content
       #7-piggame.justadiv.jad-piggame
         .back-side
         .justadiv__project-name
-          p Pig Game
+          p= `${pageData.lang === 'en' ? 'Pig Game' : 'Игра в Порося'}`
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectSeven
+          a.indv-project-link(href='/projects/pig-game')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
@@ -171,12 +151,10 @@ block content
       #8-portfolio.justadiv.jad-portfolio
         .back-side
         .justadiv__project-name
-          p Portfolio Website
+          p= `${pageData.lang === 'en' ? 'Portfolio Website' : 'Мое Портфолио: Сайт'}`
         .justadiv__content__learn-more
-          p
-            | This is the first project, where I applied my CSS knowledge to add responsiveness to the webpage. There
-            | are also a lot of functionality add-ons.
-          a.indv-project-link(href='/indivproject')
+          p= pageData.projectEight
+          a.indv-project-link(href='/projects/my-portfolio')
             button.jad__btn__learn-more(type='button')
               svg.sec__btn--arrow
                 use(href='/images/icons/all-icons.svg#icon-arrow-night')
