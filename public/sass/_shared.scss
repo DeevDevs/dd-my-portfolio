@@ -17,6 +17,7 @@
 }
 
 .logo-container {
+  height: 8vh;
   vertical-align: middle;
   margin-left: 0.7rem;
   @media (min-width: 768px) {
@@ -26,7 +27,7 @@
 
 .logo {
   margin: auto;
-  // height: 4rem;
+  height: 4rem;
   width: 13rem;
   cursor: pointer;
   filter: drop-shadow(-3px 3px 2px var(--icons-shadow));

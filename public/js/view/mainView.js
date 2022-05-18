@@ -15,11 +15,12 @@ class MainView {
 
   allSectionsObserver = new IntersectionObserver(this.revealSection.bind(this), { root: null, threshold: 0.1 });
   mainSectionObserver = new IntersectionObserver(this.hideShowMenu.bind(this), { root: null, threshold: [0.6] });
-  imageObserver = new IntersectionObserver(this.loadLazyImages.bind(this), {
-    root: null,
-    threshold: 0,
-    rootMargin: '400px',
-  });
+  // imageObserver = new IntersectionObserver(this.loadLazyImages.bind(this), {
+  //   root: null,
+  //   threshold: 0,
+  //   rootMargin: '400px',
+  // });
+
   backgroundObserver = new IntersectionObserver(this.loadBackgroundImages.bind(this), {
     root: null,
     threshold: 0,
@@ -72,19 +73,29 @@ class MainView {
     if (entry[0].isIntersecting) {
       const thisSection = document.getElementById(entry[0].target.id);
       thisSection.classList.remove('section-hidden');
+      let images = thisSection.querySelectorAll('.advert__section--image');
+      console.log(images);
+      const central = thisSection.querySelectorAll('.advert__section--image__central');
+      console.log(central.length);
+      if (central.length > 0) {
+        central.forEach((img) => (img.src = img.dataset.path));
+        return;
+      }
+
+      images.forEach((img) => (img.src = img.dataset.path));
     }
   }
 
-  loadLazyImages(entry, observer) {
-    if (!entry[0].isIntersecting) return;
+  // loadLazyImages(entry, observer) {
+  //   if (!entry[0].isIntersecting) return;
 
-    entry[0].target.src = entry[0].target.dataset.src;
-    entry[0].target.addEventListener('load', function () {
-      entry[0].target.classList.remove('blurred');
-    });
+  //   entry[0].target.src = entry[0].target.dataset.src;
+  //   entry[0].target.addEventListener('load', function () {
+  //     entry[0].target.classList.remove('blurred');
+  //   });
 
-    observer.unobserve(entry[0].target);
-  }
+  //   observer.unobserve(entry[0].target);
+  // }
 
   loadBackgroundImages(entries, observer) {
     if (!entries[0].isIntersecting) return;
