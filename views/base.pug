@@ -8,9 +8,12 @@ html(lang='en')
     link(rel='stylesheet', href='/sass/main.css')
     script(src='https://unpkg.com/axios/dist/axios.min.js')
     title DeevDevs: #{pageData.pageName}
+    link(rel="icon", type="image/x-icon", href="/images/favicon.png")
     //- title DeevDevs: 
   body
     p#this-page.clue-elem= pageData.page
+    .loader
+      img.loader--icon(src='/images/loader-btn.png')
 
     include _header
 

@@ -87,11 +87,11 @@ class IndividualView {
 
   setProjectColor(projectName) {
     //prettier-ignore
-    const projects = [{name: 'mapty', color: '#738385de',},
-      {name: 'bankist-page', color: '#1b951bf5',},
-      {name: 'bankist-app', color: '#c7c055d5',},
+    const projects = [{name: 'mapty', color: 'rgba(106, 115, 116, 0.735)',},
+      {name: 'bankist-page', color: 'rgba(27, 149, 27, 0.743)',},
+      {name: 'bankist-app', color: 'rgba(227, 204, 52, 0.911)',},
       {name: 'pig-game', color: '#af1e56dc',},
-      {name: 'natours-app', color: '#30b860ce',},
+      {name: 'natours-app', color: 'rgba(39, 144, 76, 0.754)',},
       {name: 'forkify-app', color: '#da8c32d5',},
       {name: 'connect-four', color: '#beb700d0',},
       {name: 'my-portfolio', color: '#7f8dc9e3',},
@@ -100,7 +100,11 @@ class IndividualView {
     const settings = projects.find((pr) => pr.name === projectName);
     // console.log(settings);
     this.allIndivTextBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
-    this.allParagraphBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
+    if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
+      this.allParagraphBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
+    } else {
+      this.allParagraphBoxes.forEach((box) => (box.style.borderLeft = `6px solid ${settings.color}`));
+    }
   }
 
   sizeScrolledDiv() {

@@ -154,6 +154,7 @@ body {
   transition: background-color 0.5s ease;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
   justify-content: center;
   @media (max-height: 640px) and (max-width: 640px) {
     padding-top: 4rem;

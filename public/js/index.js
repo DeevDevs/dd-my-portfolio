@@ -39,3 +39,12 @@ if (thisPageIs === 'indiv-project') {
 if (currentTheme === 'enabled') {
   pageSharedView._changeIcons();
 }
+
+// window.addEventListener('load', function () {
+document.body.style.overflowY = 'visible';
+const loader = document.querySelector('.loader');
+loader.style.opacity = '0';
+setTimeout(() => {
+  loader.style.display = 'none';
+}, 200);
+// });

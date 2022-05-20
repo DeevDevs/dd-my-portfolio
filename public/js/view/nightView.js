@@ -10,6 +10,7 @@ class ThemeSwitcher {
   switchIconsShared() {
     this.switchThemeIdentifier();
     const logo = document.querySelector('.logo');
+    const sideMenuBtn = document.querySelector('.icon__menu');
     const sideMenuIconhome = document.querySelector('.side-menu-icon__home');
     const sideMenuIconAboutme = document.querySelector('.side-menu-icon__aboutme');
     const sideMenuIconLearning = document.querySelector('.side-menu-icon__learning');
@@ -17,6 +18,7 @@ class ThemeSwitcher {
     const sideMenuIconExperience = document.querySelector('.side-menu-icon__experience');
     const runningCodeImage = document.querySelector('.intro-part__animated-code');
     if (this.theme === 'dark') {
+      sideMenuBtn.innerHTML = `<use href="/images/icons/all-icons.svg#menu-bars-light"></use>`;
       logo.innerHTML = `<use href="/images/icons/all-icons.svg#logo-box-night"></use>`;
       sideMenuIconhome.innerHTML = `<use href="/images/icons/all-icons.svg#home-menu-icon-light"></use>`;
       sideMenuIconAboutme.innerHTML = `<use href="/images/icons/all-icons.svg#icon-me-night"></use>`;
@@ -26,6 +28,7 @@ class ThemeSwitcher {
       if (runningCodeImage) runningCodeImage.src = '/images/js-code-white.png';
     }
     if (this.theme === 'light') {
+      sideMenuBtn.innerHTML = `<use href="/images/icons/all-icons.svg#menu-bars-dark"></use>`;
       logo.innerHTML = `<use href="/images/icons/all-icons.svg#logo-box-day"></use>`;
       sideMenuIconhome.innerHTML = `<use href="/images/icons/all-icons.svg#home-menu-icon-dark"></use>`;
       sideMenuIconAboutme.innerHTML = `<use href="/images/icons/all-icons.svg#aboutme-menu-icon-dark"></use>`;

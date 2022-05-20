@@ -15,6 +15,7 @@ class SharedView {
   footerSubmitBtn = document.querySelector('.footer-menu__form-submit');
   footerWindow = 'contacts';
   switchLangBtn = document.querySelector('.switch-language__btn');
+  switchLangBtnSide = document.querySelector('.switch-language__btn--side');
 
   //running code-related variables
   runningCodeDiv = document.querySelector('.intro-part__running-code-box');
@@ -28,6 +29,7 @@ class SharedView {
 
   constructor() {
     this.switchLangBtn.addEventListener('click', this.addHandlerChangeLanguage.bind(this));
+    this.switchLangBtnSide.addEventListener('click', this.addHandlerChangeLanguage.bind(this));
     this.overlay.addEventListener('click', this._toggleSideMenu.bind(this));
     this.menuBtn.addEventListener('click', this._toggleSideMenu.bind(this));
     this.themeBtn.addEventListener(

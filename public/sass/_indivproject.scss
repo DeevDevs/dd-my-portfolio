@@ -198,10 +198,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  border-left: 6px solid rgba(27, 149, 27, 0.543);
+
   @media (min-width: 1080px) and (hover: hover) {
+    text-align: center;
     align-items: flex-start;
     flex-direction: row;
+    border-left: none;
+  }
+
+  & p {
+    padding-left: 0.5rem;
   }
 }
 
@@ -460,7 +467,7 @@
   width: 90%;
   max-width: 75rem;
   z-index: 1;
-  background-color: var(--logo-bg);
+  // background-color: var(--logo-bg);
   border-radius: 5px;
   @media (min-width: 1080px) and (hover: hover) {
     margin-top: 10vh;
@@ -605,7 +612,7 @@
   height: auto;
   width: 90%;
   z-index: 1;
-  background-color: var(--logo-bg);
+  // background-color: var(--logo-bg);
   border-radius: 5px;
   max-width: 75rem;
   @media (min-width: 640px) {
@@ -740,7 +747,7 @@
   height: auto;
   width: 90%;
   z-index: 1;
-  background-color: var(--logo-bg);
+  // background-color: var(--logo-bg);
   border-radius: 5px;
   max-width: 75rem;
   @media (min-width: 640px) {
