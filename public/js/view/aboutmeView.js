@@ -7,6 +7,7 @@ class AboutMeView {
   mainSection = document.querySelector('.amp__main-part');
   ampBtnsRevealSection = document.querySelectorAll('.amp-btn__reveal-section');
   ampHeadlinesRevealSection = document.querySelectorAll('.amp-headline__reveal-section');
+  allImages = document.querySelectorAll('.amp-img');
   sectionsHeight = [];
 
   // subObserver = new IntersectionObserver(this.rollInTheSub.bind(this), { root: null, threshold: 0.1 });
@@ -43,6 +44,7 @@ class AboutMeView {
     if (!entry[0].isIntersecting) return;
     if (entry[0].isIntersecting) {
       this.mainSection.classList.remove('section-hidden');
+      this.allImages.forEach((img) => (img.src = img.dataset.path));
     }
   }
 

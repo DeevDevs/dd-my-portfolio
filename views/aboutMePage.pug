@@ -14,8 +14,8 @@ block content
   section.amp__main-part.section-hidden
     .amp__sub.amp-element-hidden
       .amp__flexed-box__rev
-        .amp__flexed-image
-          img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
+        .amp__img-box.amp__flexed-image
+          img.amp-img(src='/images/yoda-lazy.jpg', alt='Yoda', data-path='/images/yoda.jpg')
         .amp__flexed-text__rev
           h1.amp__headline.amp__sub-one__hello= pageData.partOneTitle
           p.amp-text.amp-text-left= pageData.partOneText
@@ -34,9 +34,10 @@ block content
         p.amp-text= pageData.partTwoTextTwo
       .amp__flexed-box
         .amp__img-box.amp__flexed-image
-          img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
+          img.amp-img(src='/images/teacher-lazy.jpg', alt='teacher', data-path='/images/teacher.jpg')
+        br
         .amp__img-box.amp__flexed-image
-          img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
+          img.amp-img(src='/images/programmer-lazy.jpg', alt='Programmer Image', data-path='/images/programmer.jpg')
       div
         p.amp-text= pageData.partTwoTextThree
     #1amp.sub-splitter
@@ -48,12 +49,12 @@ block content
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
           p.amp-headline__reveal-section(data-ampnum='1amp')= pageData.partTwoPreview
     .amp__sub.amp-element-hidden
-      .amp__img-box
+      //- .amp__img-box
       h2.amp__headline= pageData.partThreeTitle
       .amp__flexed-box
         .amp__img-box.amp__flexed-image
-          img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
-        div
+          img.amp-img(src='/images/student-lazy.jpg', alt='Student Image', data-path='/images/student.jpg')
+        div.amp__text-box.amp__text-box-right
           p.amp-text.amp__flexed-text= pageData.partThreeTextOne
           p.amp-text.amp__flexed-text= pageData.partThreeTextTwo
     #2amp.sub-splitter
@@ -65,17 +66,18 @@ block content
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
           p.amp-headline__reveal-section(data-ampnum='2amp')= pageData.partThreePreview
     .amp__sub.amp-element-hidden
-      .amp__img-box
+      //- .amp__img-box
       h2.amp__headline.amp__sub-four__headline= pageData.partFourTitle
       .amp__flexed-box__rev
         .amp__img-box.amp__flexed-image
-          img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
-        div
+          img.amp-img(src='/images/runner-lazy.jpg', alt='Running Man', data-path='/images/runner.jpg')
+        div.amp__text-box
           p.amp-text.amp__flexed-text__rev.amp-text-left= pageData.partFourTextOne
+      br
       .amp__flexed-box__rev
-        .amp-img-box.amp__flexed-image
-          img.amp-img(src='/images/shao-hat-shadowed.png', alt='funny greeting gif')
-        div
+        .amp__img-box.amp__flexed-image
+          img.amp-img(src='/images/gamer-lazy.jpg', alt='Playing man', data-path='/images/gamer.jpg')
+        div.amp__text-box
           p.amp-text.amp-text-left.amp__flexed-text__rev= pageData.partFourTextTwo
     #3amp.sub-splitter
       .amp-splitter__reveal-section-div
