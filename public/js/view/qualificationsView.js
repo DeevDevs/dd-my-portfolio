@@ -150,7 +150,7 @@ class QualificationsView {
       //after 1200ms, make all the cards lose opacity one by one
       // prettier-ignore
       setTimeout(function () {this.imgBoxesShort.forEach((img) => {
-            setTimeout(function () {img.style.opacity = 0;}.bind(this),img.dataset.pos * 100);});
+            setTimeout(function () {img.style.opacity = 0;}.bind(this),img.dataset.pos * 50);});
         }.bind(this),1200);
     }
     if (e.target.closest('.tower-long')) {
@@ -167,7 +167,7 @@ class QualificationsView {
       //after 1200ms, make all the cards lose opacity one by one
       // prettier-ignore
       setTimeout(function () {this.imgBoxesLong.forEach((img) => {
-        setTimeout(function () {img.style.opacity = 0;}.bind(this),img.dataset.pos * 100);});
+        setTimeout(function () {img.style.opacity = 0;}.bind(this),img.dataset.pos * 50);});
     }.bind(this),1200);
     }
     //after 1900ms make the chosen quals show up with the description over them
