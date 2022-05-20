@@ -4,27 +4,125 @@
     "qual": "q1",
     "headline": "Long before time had a name",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-    "imagePath": "/images/temp.jpg"
+    "imagePath": "/images/quals/qual-1.jpg"
   },
   {
     "lang": "en",
     "qual": "q2",
     "headline": "Schoolkid turns into a Student",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-    "imagePath": "/images/bg-learning.jpg"
+    "imagePath": "/images/quals/qual-2.jpg"
+  },
+  {
+    "lang": "en",
+    "qual": "q3",
+    "headline": "Student turns into a Teacher",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-3.jpg"
+  },
+  {
+    "lang": "en",
+    "qual": "q4",
+    "headline": "Neverending Student",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-4.jpeg"
+  },
+  {
+    "lang": "en",
+    "qual": "q5",
+    "headline": "Year 2021, January: Groundhog month",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-5.png"
+  },
+  {
+    "lang": "en",
+    "qual": "q6",
+    "headline": "Year 2021, February: Turning into a Ninja",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-6.png"
+  },
+  {
+    "lang": "en",
+    "qual": "q7",
+    "headline": "Year 2021, April: Deep Dive Into Programming",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-7.png"
+  },
+  {
+    "lang": "en",
+    "qual": "q8",
+    "headline": "Year 2022, January: Learning Design",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-8.png"
+  },
+  {
+    "lang": "en",
+    "qual": "q9",
+    "headline": "Year 2022, February: Learning Back-end",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione asperiores nobis placeat! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod quisquam quas enim! Provident, eum non similique praesentium quod libero! Neque nisi corporis architecto inventore praesentium impedit ratione Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    "imagePath": "/images/quals/qual-9.png"
   },
   {
     "lang": "ru",
     "qual": "q1",
     "headline": "Задолго до того, как возникло время",
     "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-    "imagePath": "/images/temp.jpg"
+    "imagePath": "/images/quals/qual-1.jpg"
   },
   {
     "lang": "ru",
     "qual": "q2",
     "headline": "Школьник Становится Студентом",
     "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-    "imagePath": "/images/bg-learning.jpg"
+    "imagePath": "/images/quals/qual-2.jpg"
+  },
+  {
+    "lang": "ru",
+    "qual": "q3",
+    "headline": "Студент становится педагогом",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-3.jpg"
+  },
+  {
+    "lang": "ru",
+    "qual": "q4",
+    "headline": "Вечный студент",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-4.jpeg"
+  },
+  {
+    "lang": "ru",
+    "qual": "q5",
+    "headline": "Год 2021, Январь: Месяц Сурка",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-5.png"
+  },
+  {
+    "lang": "ru",
+    "qual": "q6",
+    "headline": "Год 2021, Февраль: Путь ниндзя",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-6.png"
+  },
+  {
+    "lang": "ru",
+    "qual": "q7",
+    "headline": "Год 2021, Апрель: В IT омут с головой",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-7.png"
+  },
+  {
+    "lang": "ru",
+    "qual": "q8",
+    "headline": "Год 2022, Январь: Изучение веб-дизайна",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-8.png"
+  },
+  {
+    "lang": "ru",
+    "qual": "q9",
+    "headline": "Год 2022, Март: Изучение бэкенда",
+    "description": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений. А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "imagePath": "/images/quals/qual-9.png"
   }
 ]

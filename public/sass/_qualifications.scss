@@ -533,7 +533,7 @@
 .details__image-box {
   min-height: 6rem;
   height: 15%;
-  max-height: 15%;
+  // max-height: 15%;
   min-width: 10rem;
   width: 40%;
   max-width: 15rem;
@@ -541,13 +541,12 @@
   border-radius: inherit;
   overflow: hidden;
   border: inherit;
-  object-fit: cover;
   filter: drop-shadow(0 0 10px var(--logo-image-shadow));
 
   @media (min-width: 480px) {
     min-height: 10rem;
     height: 22%;
-    max-height: 22%;
+    // max-height: 22%;
     width: 60%;
     max-width: 20rem;
     margin-bottom: 1.5rem;
@@ -555,7 +554,9 @@
 }
 
 .details__image {
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .details__button-close {
