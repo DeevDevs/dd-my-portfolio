@@ -248,14 +248,14 @@ class ProjectsView {
     const mainContainer = frontDiv
       .querySelector('.justadiv__content')
       .querySelector('.jad__content-main-img__container');
-    mainContainer.style.transform = 'scale(1.02)';
+    // mainContainer.style.transform = 'scale(1.02)';
     mainContainer.style.opacity = 1;
     const secondaryContainers = frontDiv
       .querySelector('.justadiv__content')
       .querySelectorAll('.jad__content-secondary-img__container');
     secondaryContainers.forEach((container) => {
       container.style.opacity = 1;
-      container.style.transform = 'scale(1.1)';
+      // container.style.transform = 'scale(1.1)';
     });
     this.displayFrontProjectName(projectId);
     await this.displayFrontProjectDetails(projectId);

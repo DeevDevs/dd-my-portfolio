@@ -17,31 +17,32 @@ block content
       #1-indiv.indiv-section-box.indiv-box-one
         .indiv-headline-text-box.indiv-headline-box-one
           p.indiv-headline-text.indiv-headline-text-one= pageData.coverTitle
-        img.indiv-img__one(src='/images/pr-images/pr-bankist-1.png', alt='')
+        img.indiv-img__one(src=`${pageData.coverImg}`, alt='')
       #2-indiv.indiv-section-box.indiv-box-two
         .indiv-headline-text-box.indiv-headline-box-two
           p.indiv-headline-text.indiv-headline-text-two= `${pageData.lang === 'en' ? 'General Description' : 'В Общих Чертах'}`
-        img.indiv-img__two-left(src='/images/pr-images/pr-bankist-1.png', alt='')
+        img.indiv-img__two-left(src=`${pageData.generalImgLeft}`, alt='')
         .indiv-par-box.indiv-par-box-two
           .indiv-par-inner-box-two.indiv-par-inner-box
             p.indiv-par.indiv-par-two= pageData.generalText
-        img.indiv-img__two-right(src='/images/pr-images/pr-bankist-1.png', alt='')
+        img.indiv-img__two-right(src=`${pageData.generalImgRight}`, alt='')
       #3-indiv.indiv-section-box.indiv-box-three
         .indiv-headline-text-box.indiv-headline-box-three
           p.indiv-headline-text.indiv-headline-text-three= `${pageData.lang === 'en' ? 'Behind the Scenes' : 'А Что За Кадром?'}`
-        img.indiv-img__three(src='/images/pr-images/pr-bankist-1.png', alt='')
+        img.indiv-img__three(src=`${pageData.behindImg}`, alt='')
         .indiv-par-box.indiv-par-box-three
           .indiv-par-inner-box-three
             each par of pageData.behindText
               +paragraph('three', par)
-      #4-indiv.indiv-section-box.indiv-box-four
-        .indiv-headline-text-box.indiv-headline-box-four
-          p.indiv-headline-text.indiv-headline-text-four= `${pageData.lang === 'en' ? 'Responsiveness' : 'Адаптивность'}`
-        .indiv-par-box.indiv-par-box-four
-          .indiv-par-inner-box-four
-            each par of pageData.respText
-              +paragraph('four', par)
-        img.indiv-img__four(src='/images/pr-images/pr-mapty-2.png', alt='')
+      - if(pageData.respText.length > 0)
+        #4-indiv.indiv-section-box.indiv-box-four
+          .indiv-headline-text-box.indiv-headline-box-four
+            p.indiv-headline-text.indiv-headline-text-four= `${pageData.lang === 'en' ? 'Responsiveness' : 'Адаптивность'}`
+          .indiv-par-box.indiv-par-box-four
+            .indiv-par-inner-box-four
+              each par of pageData.respText
+                +paragraph('four', par)
+          img.indiv-img__four(src=`${pageData.respImg}`, alt='')
   section.indiv-section__scrolled-div
 
 block scripting 

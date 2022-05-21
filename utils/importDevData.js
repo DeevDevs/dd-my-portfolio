@@ -49,9 +49,9 @@ const importData = async () => {
     // await AboutMePageModel.create(aboutMePageContent);
     // await ProjectsPageModel.create(projectsPageContent);
     // await ExperiencePageModel.create(experiencePageContent);
-    await QualificationsPageModel.create(qualificationsPageContent);
-    // await IndivProjectPageModel.create(indivProjectPageContent);
-    await DetailsQualsModel.create(detailsQualsData);
+    // await QualificationsPageModel.create(qualificationsPageContent);
+    await IndivProjectPageModel.create(indivProjectPageContent);
+    // await DetailsQualsModel.create(detailsQualsData);
     // await DetailsProjectsModel.create(detailsProjectsData);
     console.log('Data successfully loaded');
   } catch (error) {
@@ -68,9 +68,9 @@ const deleteData = async () => {
     // await AboutMePageModel.deleteMany();
     // await ProjectsPageModel.deleteMany();
     // await ExperiencePageModel.deleteMany();
-    await QualificationsPageModel.deleteMany();
-    // await IndivProjectPageModel.deleteMany();
-    await DetailsQualsModel.deleteMany();
+    // await QualificationsPageModel.deleteMany();
+    await IndivProjectPageModel.deleteMany();
+    // await DetailsQualsModel.deleteMany();
     // await DetailsProjectsModel.deleteMany();
     // console.log('Data successfully deleted');
   } catch (error) {

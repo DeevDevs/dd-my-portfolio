@@ -9,6 +9,7 @@ class IndividualView {
   allParagraphBoxes = document.querySelectorAll('.indiv-par-box');
   scrollBackBtn = document.querySelector('.scroll-back__btn-div');
 
+  totalNumOfSections;
   maxWidthPossible;
   mode = 'desktop';
   thisProjectName = document.querySelector('.this-project__name').textContent;
@@ -43,6 +44,8 @@ class IndividualView {
   indivSectionsObserver = new IntersectionObserver(this.runScrollAnimation.bind(this), { root: null, threshold: 0.05 });
 
   constructor() {
+    this.totalNumOfSections = document.getElementById('4-indiv') ? 4 : 3;
+
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
@@ -60,9 +63,10 @@ class IndividualView {
       function () {
         console.log('resized');
         //counting the width of the screen to adjust height of the scrolled div
-        this.maxWidthPossible = window.innerWidth * 4 - (window.innerWidth - window.innerHeight) - window.innerWidth;
+        this.maxWidthPossible =
+          window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight) - window.innerWidth;
         this.indivScrolledSection.style.height = `${
-          window.innerWidth * 4 - (window.innerWidth - window.innerHeight)
+          window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight)
         }px`;
         if (window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1080 && this.mode === 'smartphone') {
           this.toggleSmartphoneMode();
@@ -109,8 +113,11 @@ class IndividualView {
 
   sizeScrolledDiv() {
     //counting the width of the screen to adjust height of the scrolled div
-    this.indivScrolledSection.style.height = `${window.innerWidth * 4 - (window.innerWidth - window.innerHeight)}px`;
-    this.maxWidthPossible = window.innerWidth * 4 - (window.innerWidth - window.innerHeight) - window.innerWidth;
+    this.indivScrolledSection.style.height = `${
+      window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight)
+    }px`;
+    this.maxWidthPossible =
+      window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight) - window.innerWidth;
     //add desktop classes, if the user has desktop
     if (window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1080) this.toggleSmartphoneMode();
     // this.indivScrolledSection.style.height = `${window.innerWidth * 4 - (window.innerWidth - window.innerHeight)}px`;
@@ -133,7 +140,7 @@ class IndividualView {
       this.sectionTwoImageRight.style.transform = `translateY(0)`;
       this.sectionTwoImageLeft.style.transform = `translateY(0)`;
       this.sectionThreeImage.style.transform = `translateX(0)`;
-      this.sectionFourImage.style.transform = `translateY(0)`;
+      if (this.totalNumOfSections === 4) this.sectionFourImage.style.transform = `translateY(0)`;
     }
     if (window.innerWidth >= 1080) {
       this.indivContentSection.style.transform = `translateY(-8vh) translateX(0)`;
@@ -141,7 +148,7 @@ class IndividualView {
       this.sectionTwoImageRight.style.transform = `translateY(10rem)`;
       this.sectionTwoImageLeft.style.transform = `translateY(10rem)`;
       this.sectionThreeImage.style.transform = `translateX(0)`;
-      this.sectionFourImage.style.transform = `translateY(-3rem)`;
+      if (this.totalNumOfSections === 4) this.sectionFourImage.style.transform = `translateY(-3rem)`;
     }
   }
 
@@ -163,7 +170,7 @@ class IndividualView {
     if (entry[0].target.id === '4-indiv') {
       window.addEventListener('scroll', this.wideActivateIndivFour.bind(this));
     }
-    console.log(entry[0].target.id);
+    // console.log(entry[0].target.id);
     observer.unobserve(entry[0].target);
   }
 
