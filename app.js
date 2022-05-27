@@ -40,7 +40,9 @@ app.use('/experience', experienceRouter);
 // app.use('/indivproject', indivProjectRouter);
 
 const languageController = require('./controllers/languageController');
+const visitorMessageController = require('./controllers/visitorMessageController');
 app.use('/switch-language', languageController.createSendLanguageCookie);
 app.use('/details', detailsRouter);
+app.post('/message', visitorMessageController.receiveMessage);
 
 module.exports = app;

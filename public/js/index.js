@@ -5,6 +5,7 @@ import AboutMeView from './view/aboutmeView.js';
 import ExperienceView from './view/experienceView.js';
 import QualificationsView from './view/qualificationsView.js';
 import IndividualView from './view/indivProjectView.js';
+// import axios from 'axios';
 
 // const tempArr = window.location.href.split('/');
 // const curPage = tempArr[tempArr.length - 1];

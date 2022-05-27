@@ -8,11 +8,11 @@ footer#section-5.footer-menu
       .footer-menu__form-div
         form.footer-menu__form
           label.label-hidden(for='visitorName') visitorName
-          input#visitorName.footer-menu__form-name.footer__input-field(type='text', placeholder=`${hfsData.formNamePh}`, name='visitorName')
+          input#visitorName.footer-menu__form-name.footer__input-field(type='text', placeholder=`${hfsData.formNamePh}`, name='visitorName', maxlength='30')
           label.label-hidden(for='visitorEmail') visitorEmail
-          input.footer-menu__form-contacts.footer__input-field(type='text', placeholder=`${hfsData.formEmailPh}`, name='visitorEmail')
+          input.footer-menu__form-contacts.footer__input-field(type='text', placeholder=`${hfsData.formEmailPh}`, name='visitorEmail', maxlength='40')
           label.label-hidden(for='visitorMessage') visitorMessage
-          textarea.footer-menu__form-message.footer__input-field(type='text', placeholder=`${hfsData.formMessagePh}`, name='visitorMessage')  
+          textarea.footer-menu__form-message.footer__input-field(type='text', placeholder=`${hfsData.formMessagePh}`, name='visitorMessage', maxlength='400')  
           input.footer-menu__form-submit(type='submit' value=`${hfsData.formBtn}`)
           //- Send Message</button>
       .footer-menu__ad-cont-div.footer-menu__email-div

@@ -31,11 +31,13 @@ class QualificationsView {
   detailsImage = document.querySelector('.details__image');
   waitingOverlay = document.querySelector('.spinner-box--overlay');
   waitingSpinner = document.querySelector('.spinner-box');
-  errorMessageBox = document.querySelector('.error-message-box');
+  // errorMessageBox = document.querySelector('.error-message-box');
+  errorWindow = document.querySelector('.error-window');
+  errorMessage = document.querySelector('.error-message');
   imageViewContainer = document.querySelector('.image-view__container');
   btnImageViewClose = document.querySelector('.image-view__close-button');
   overlay = document.querySelector('.overlay');
-
+  switchLangBtn = document.querySelector('.switch-language__btn');
   qualsChosen;
   transformConditions;
 
@@ -306,13 +308,19 @@ class QualificationsView {
         }
       }
     } catch (err) {
+      this.errorMessage.textContent =
+        this.switchLangBtn.textContent === 'ru'
+          ? `Oops, something went wrong. Please, check your internet connection.`
+          : `Упс, что-то пошло не так. Пожалуйста, проверьте интернет соединение.`;
       this.waitingSpinner.style.display = 'none';
-      this._makeElementAppear(this.errorMessageBox, 200, 'block');
+      // this._makeElementAppear(this.errorMessageBox, 200, 'block');
+      this._makeElementAppear(this.errorWindow, 200, 'block');
       setTimeout(() => {
-        this._makeElementDisappear(this.errorMessageBox, 200);
+        // this._makeElementDisappear(this.errorMessageBox, 200);
+        this._makeElementDisappear(this.errorWindow, 200);
         this._makeElementDisappear(this.waitingOverlay, 300);
         this.displayDetails();
-      }, 2000);
+      }, 3000);
     }
   }
 

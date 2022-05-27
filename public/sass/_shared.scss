@@ -307,9 +307,13 @@
   height: auto;
   overflow-y: hidden;
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1080px) and (min-height: 768px) {
     min-height: calc(53vh + 2rem + 4.5rem);
   }
+
+  // @media (min-width: 1080px, max-he) {
+  //   min-height: calc(53vh + 2rem + 4.5rem);
+  // }
 }
 
 .footer-menu__buttons {
@@ -728,4 +732,43 @@ a:visited {
   top: 0;
   left: 0;
   transition: transform 6s linear, background-color 0.5s ease;
+}
+
+.error-window {
+  color: var(--font-border-color);
+  background-color: var(--section-bg);
+  width: 80vw;
+  position: fixed;
+  top: 20%;
+  left: 10vw;
+  border-radius: 5px;
+  border: 1px solid var(--icons-shadow);
+  transition: opacity 0.3s linear;
+  opacity: 0;
+  display: none;
+  z-index: 1000;
+
+  @media (min-width: 678px) {
+    width: 60vw;
+    left: 20vw;
+  }
+
+  @media (min-width: 1080px) {
+    width: 30rem;
+    left: calc(50vw - 15rem);
+  }
+
+  & p {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+
+    @media (min-width: 678px) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 1080px) {
+      font-size: 1.3rem;
+    }
+  }
 }

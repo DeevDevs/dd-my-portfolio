@@ -18,7 +18,7 @@ header.header-menu
         li(class=`${pageData.page === 'projects' ? 'top-menu-li-active' : ''}`)= hfsData.projects
       a(href='/experience')
         li(class=`${pageData.page === 'experience' ? 'top-menu-li-active' : ''}`)= hfsData.exp
-  button.switch-language__btn(type='button')= hfsData.lang
+  button.switch-language__btn(type='button')= `${hfsData.lang === 'ru' ? 'en' : 'ru'}`
   //- button.switch-language__btn(type='button')= hfsData.lang
   .theme-container
     button.theme-container__btn(type='button')

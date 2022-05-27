@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import ThemeSwitcher from './nightView.js';
 
 class SharedView {
@@ -16,6 +15,8 @@ class SharedView {
   footerWindow = 'contacts';
   switchLangBtn = document.querySelector('.switch-language__btn');
   switchLangBtnSide = document.querySelector('.switch-language__btn--side');
+  errorWindow = document.querySelector('.error-window');
+  errorMessage = document.querySelector('.error-message');
 
   //running code-related variables
   runningCodeDiv = document.querySelector('.intro-part__running-code-box');
@@ -54,7 +55,7 @@ class SharedView {
 
   async addHandlerChangeLanguage() {
     try {
-      const currentLang = this.switchLangBtn.textContent;
+      const currentLang = this.switchLangBtn.textContent === 'ru' ? 'en' : 'ru';
       const currentLink = window.location.href.split('/');
       const currentPage = currentLink[currentLink.length - 1];
       console.log(currentPage);
@@ -164,12 +165,55 @@ class SharedView {
     this.footerExtraDiv.classList.add('footer-menu__extra__hidden');
   }
 
-  submitFooterMessage(e) {
-    e.preventDefault();
-    const messageArr = new FormData(document.querySelector('.footer-menu__form'));
-    const messageObject = Object.fromEntries(messageArr);
-    console.log(messageObject);
-    document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
+  async submitFooterMessage(e) {
+    try {
+      e.preventDefault();
+      // console.log(this.switchLangBtn.textContent);
+      const messageArr = new FormData(document.querySelector('.footer-menu__form'));
+      const messageObject = Object.fromEntries(messageArr);
+      let res;
+      // send a message if it has not been sent from this device yet
+      // console.log(window.localStorage.getItem('ftrmsgsent') === null);
+      if (window.localStorage.getItem('ftrmsgsent') === null) {
+        res = await axios({
+          method: 'POST',
+          url: `http://127.0.0.1:3000/message`,
+          data: messageObject,
+        });
+      } else throw new Error(400);
+      //display error, if such email already exists, or if limit is exceeded
+      // console.log(res);
+      if (res.status !== 200) throw new Error(res.response);
+      //save a cookie/storage, if message is sent
+      window.localStorage.setItem('ftrmsgsent', 'true');
+      document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
+      //display success message
+      this.errorMessage.textContent =
+        this.switchLangBtn.textContent === 'ru'
+          ? `Message was successfully sent. I will contact you soon.`
+          : `Отлично! Сообщение отправлено. Я скоро с Вами свяжусь.`;
+      this._makeElementAppear(this.errorWindow, 200, 'block');
+      setTimeout(() => {
+        this._makeElementDisappear(this.errorWindow, 200);
+      }, 3000);
+    } catch (err) {
+      // console.log(err);
+      if (err.message === 'Network Error')
+        this.errorMessage.textContent =
+          this.switchLangBtn.textContent === 'ru'
+            ? `Oops, something went wrong. Please, check your internet connection.`
+            : `Упс, что-то пошло не так. Пожалуйста, проверьте интернет соединение.`;
+      if (err.message === '400' || (err.response.status && err.response.status === 400))
+        this.errorMessage.textContent =
+          this.switchLangBtn.textContent === 'ru'
+            ? `You have already tried to contact me via this form. Please, contact me via email.`
+            : `Вы уже пробовали связаться со мой через эту форму. Пожалуйста, попробуйте связаться через электронную почту.`;
+      this._makeElementAppear(this.errorWindow, 200, 'block');
+      setTimeout(() => {
+        this._makeElementDisappear(this.errorWindow, 200);
+      }, 3000);
+      // document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
+    }
   }
 
   _changeTheme() {
@@ -208,6 +252,26 @@ class SharedView {
       this.overlay.style.display = 'block';
       this.overlay.style.opacity = 1;
     }
+  }
+
+  _makeElementAppear(element, timer, display) {
+    element.style.display = display;
+    setTimeout(
+      function () {
+        element.style.opacity = 1;
+      }.bind(this),
+      timer
+    );
+  }
+
+  _makeElementDisappear(element, timer) {
+    element.style.opacity = 0;
+    setTimeout(
+      function () {
+        element.style.display = 'none';
+      }.bind(this),
+      timer
+    );
   }
 }
 
