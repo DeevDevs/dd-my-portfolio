@@ -4,10 +4,10 @@ exports.receiveMessage = async function (req, res, next) {
   try {
     // const message = req.body;
     const cookie = req.cookies.ftrmsgsent;
-    console.log(cookie);
     if (cookie) throw new Error();
     const emailInDB = await VisitorMessageModel.findOne({ visitorEmail: req.body.visitorEmail });
-    if (emailInDB) throw new Error();
+    const allMessages = await VisitorMessageModel.find({});
+    if (emailInDB || allMessages.length > 25) throw new Error();
     if (!emailInDB) {
       const newMessage = await VisitorMessageModel.create(req.body);
       // console.log(newMessage);
@@ -15,7 +15,7 @@ exports.receiveMessage = async function (req, res, next) {
       // console.log('all went well');
     }
   } catch (err) {
-    // console.log('smth went wrong');
-    res.status(400).json({ message: 'fail' });
+    console.log(err);
+    res.status(400).json({ message: 'fail', errorMessage: err._message });
   }
 };

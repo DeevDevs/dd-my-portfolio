@@ -22,6 +22,8 @@ const visitorMessageController = require('./controllers/visitorMessageController
 
 const app = express();
 
+app.enable('trust proxy');
+
 app.use(express.json({ limit: '20kb' }));
 
 app.set('view engine', 'pug');

@@ -197,17 +197,29 @@ class SharedView {
         this._makeElementDisappear(this.errorWindow, 200);
       }, 3000);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       if (err.message === 'Network Error')
         this.errorMessage.textContent =
           this.switchLangBtn.textContent === 'ru'
             ? `Oops, something went wrong. Please, check your internet connection.`
             : `Упс, что-то пошло не так. Пожалуйста, проверьте интернет соединение.`;
-      if (err.message === '400' || (err.response.status && err.response.status === 400))
-        this.errorMessage.textContent =
-          this.switchLangBtn.textContent === 'ru'
-            ? `You have already tried to contact me via this form. Please, contact me via email.`
-            : `Вы уже пробовали связаться со мой через эту форму. Пожалуйста, попробуйте связаться через электронную почту.`;
+      if (err.message === '400' || (err.response.status && err.response.status === 400)) {
+        const { errorMessage } = err.response.data;
+        // console.log(errorMessage);
+        if (errorMessage) {
+          this.errorMessage.textContent =
+            this.switchLangBtn.textContent === 'ru'
+              ? `Please, provide a valid email address.`
+              : `Пожалуйста, введите правильный электронный адрес`;
+        }
+        if (!errorMessage) {
+          this.errorMessage.textContent =
+            this.switchLangBtn.textContent === 'ru'
+              ? `You have already tried to contact me via this form. Please, contact me via email.`
+              : `Вы уже пробовали связаться со мой через эту форму. Пожалуйста, попробуйте связаться через электронную почту.`;
+        }
+      }
+
       this._makeElementAppear(this.errorWindow, 200, 'block');
       setTimeout(() => {
         this._makeElementDisappear(this.errorWindow, 200);
