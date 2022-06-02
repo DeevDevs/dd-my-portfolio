@@ -8,3 +8,4 @@ images/js-code-white.png
 node_modules/
 dev-data/cut-images3oldOriginal
 dev-data/cut-images2oldOriginals
+config.env

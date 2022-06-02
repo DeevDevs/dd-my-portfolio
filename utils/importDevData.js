@@ -12,6 +12,7 @@ const QualificationsPageModel = require('./../models/qualificationsPageModel');
 const IndivProjectPageModel = require('./../models/indivProjectPageModel');
 const DetailsQualsModel = require('./../models/detailsQualsModel');
 const DetailsProjectsModel = require('./../models/detailsProjectsModel');
+const VisitorMessageModel = require('./../models/visitorMessageModel');
 // const Review = require('./../../models/reviewModel');
 // const User = require('./../../models/userModel');
 
@@ -50,7 +51,7 @@ const importData = async () => {
     // await ProjectsPageModel.create(projectsPageContent);
     // await ExperiencePageModel.create(experiencePageContent);
     // await QualificationsPageModel.create(qualificationsPageContent);
-    await IndivProjectPageModel.create(indivProjectPageContent);
+    // await IndivProjectPageModel.create(indivProjectPageContent);
     // await DetailsQualsModel.create(detailsQualsData);
     // await DetailsProjectsModel.create(detailsProjectsData);
     console.log('Data successfully loaded');
@@ -69,10 +70,11 @@ const deleteData = async () => {
     // await ProjectsPageModel.deleteMany();
     // await ExperiencePageModel.deleteMany();
     // await QualificationsPageModel.deleteMany();
-    await IndivProjectPageModel.deleteMany();
+    // await IndivProjectPageModel.deleteMany();
     // await DetailsQualsModel.deleteMany();
     // await DetailsProjectsModel.deleteMany();
-    // console.log('Data successfully deleted');
+    await VisitorMessageModel.deleteMany();
+    console.log('Data successfully deleted');
   } catch (error) {
     console.log(error);
   }
