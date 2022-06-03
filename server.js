@@ -15,8 +15,16 @@ mongoose
   })
   .then(() => console.log('DB connections successful'));
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
+});
+
+// Related to SIGTERM from HEROKU
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received. SHUTTING DOWN gracefully...');
+  server.close(() => {
+    console.log('Process terminated!');
+  });
 });
