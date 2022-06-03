@@ -262,7 +262,7 @@ class QualificationsView {
   async renderDisplayDetails(e) {
     if (!e.target.closest('.quals-box')) return;
     const id = e.target.closest('.quals-box').id;
-    console.log(id);
+    // console.log(id);
     await this.displayDetails(id);
     this.detailsText.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }

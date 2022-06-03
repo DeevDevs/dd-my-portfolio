@@ -287,7 +287,7 @@ class ProjectsView {
           this.projectDetails[idNum - 1] = projectData;
         }
       } else projectData = this.projectDetails[idNum - 1];
-      console.log(this.projectDetails);
+      // console.log(this.projectDetails);
       this.wheelDetails.forEach((element, i) => {
         element.firstChild.textContent = projectData[i];
         element.style.opacity = 1;

@@ -53,7 +53,7 @@ class AboutMeView {
   countSectionHeight(sub) {
     const height = sub.offsetHeight;
     this.sectionsHeight.push(height);
-    console.log(this.sectionsHeight);
+    // console.log(this.sectionsHeight);
     sub.style.display = 'none';
   }
 

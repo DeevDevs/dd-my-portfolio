@@ -74,9 +74,9 @@ class MainView {
       const thisSection = document.getElementById(entry[0].target.id);
       thisSection.classList.remove('section-hidden');
       let images = thisSection.querySelectorAll('.advert__section--image');
-      console.log(images);
+      // console.log(images);
       const central = thisSection.querySelectorAll('.advert__section--image__central');
-      console.log(central.length);
+      // console.log(central.length);
       if (central.length > 0) {
         central.forEach((img) => (img.src = img.dataset.path));
         return;

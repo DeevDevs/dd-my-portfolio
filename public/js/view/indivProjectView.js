@@ -61,7 +61,7 @@ class IndividualView {
     window.addEventListener(
       'resize',
       function () {
-        console.log('resized');
+        // console.log('resized');
         //counting the width of the screen to adjust height of the scrolled div
         this.maxWidthPossible =
           window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight) - window.innerWidth;
@@ -154,7 +154,7 @@ class IndividualView {
 
   runScrollAnimation(entry, observer) {
     if (!window.matchMedia('(hover: hover)').matches) {
-      console.log(entry[0].target.id);
+      // console.log(entry[0].target.id);
       observer.unobserve(entry[0].target);
       return;
     }

@@ -52,6 +52,7 @@ const limiter = rateLimit({
 //here, we only address the routes that start with '/ api'
 app.use('*', limiter);
 
+app.use('/', mainPageRouter);
 app.use('/main-page', mainPageRouter);
 app.use('/about-me', aboutMeRouter);
 app.use('/qualifications', qualificationsRouter);
