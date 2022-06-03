@@ -62,7 +62,8 @@ class SharedView {
       const res = await axios({
         method: 'GET',
         // url: 'http://127.0.0.1:8000/api/v1/users/login',
-        url: `http://127.0.0.1:3000/switch-language?lang=${currentLang}&page=${currentPage}`,
+        // url: `http://127.0.0.1:3000/switch-language?lang=${currentLang}&page=${currentPage}`,
+        url: `/switch-language?lang=${currentLang}&page=${currentPage}`,
       });
       if (res.data.status === 'success') {
         // this.switchLangBtn.textContent = currentLang === 'en' ? 'ru' : 'en';
@@ -177,7 +178,8 @@ class SharedView {
       if (window.localStorage.getItem('ftrmsgsent') === null) {
         res = await axios({
           method: 'POST',
-          url: `http://127.0.0.1:3000/message`,
+          // url: `http://127.0.0.1:3000/message`,
+          url: `/message`,
           data: messageObject,
         });
       } else throw new Error(400);
