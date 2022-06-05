@@ -172,6 +172,8 @@ class SharedView {
       const messageArr = new FormData(document.querySelector('.footer-menu__form'));
       const messageObject = Object.fromEntries(messageArr);
       let res;
+      //check if the message has already been sent from this devDependencies
+      if (window.localStorage.getItem('ftrmsgsent') !== null) throw new Error('Already tried');
       // send a message if it has not been sent from this device yet
       if (window.localStorage.getItem('ftrmsgsent') === null) {
         res = await axios({
@@ -198,7 +200,7 @@ class SharedView {
         this._makeElementDisappear(this.errorWindow, 200);
       }, 3000);
     } catch (err) {
-      console.log(err.message);
+      // console.log(err.message);
       // rendering error message, if internet connection is lost
       if (err.message === 'Network Error') {
         this.errorWindowMessage.textContent =
@@ -207,7 +209,15 @@ class SharedView {
             : `Упс, что-то пошло не так. Пожалуйста, проверьте интернет соединение.`;
         return this._displayErrorMessageBox();
       }
-      // rendering error message, if such email already exists
+      // rendering error message, if localDatabase has records
+      if (err.message === 'Already tried') {
+        this.errorWindowMessage.textContent =
+          this.switchLangBtn.textContent === 'ru'
+            ? `You have already tried to contact me via this form. Please, contact me via email.`
+            : `Вы уже пробовали связаться со мой через эту форму. Пожалуйста, попробуйте связаться через электронную почту.`;
+        return this._displayErrorMessageBox();
+      }
+      // rendering error message, if such email already exists or the cookie record exists
       if (err.response.data.errorMessage && err.response.data.errorMessage === 'Duplicate') {
         this.errorWindowMessage.textContent =
           this.switchLangBtn.textContent === 'ru'
