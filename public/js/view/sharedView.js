@@ -16,7 +16,7 @@ class SharedView {
   switchLangBtn = document.querySelector('.switch-language__btn');
   switchLangBtnSide = document.querySelector('.switch-language__btn--side');
   errorWindow = document.querySelector('.error-window');
-  errorMessage = document.querySelector('.error-message');
+  errorWindowMessage = document.querySelector('.error-message');
 
   //running code-related variables
   runningCodeDiv = document.querySelector('.intro-part__running-code-box');
@@ -169,12 +169,10 @@ class SharedView {
   async submitFooterMessage(e) {
     try {
       e.preventDefault();
-      // console.log(this.switchLangBtn.textContent);
       const messageArr = new FormData(document.querySelector('.footer-menu__form'));
       const messageObject = Object.fromEntries(messageArr);
       let res;
       // send a message if it has not been sent from this device yet
-      // console.log(window.localStorage.getItem('ftrmsgsent') === null);
       if (window.localStorage.getItem('ftrmsgsent') === null) {
         res = await axios({
           method: 'POST',
@@ -182,15 +180,16 @@ class SharedView {
           url: `/message`,
           data: messageObject,
         });
-      } else throw new Error(400);
+      }
+      //throw an error, if there is no internet connection
+      else throw new Error();
       //display error, if such email already exists, or if limit is exceeded
-      // console.log(res);
       if (res.status !== 200) throw new Error(res.response);
       //save a cookie/storage, if message is sent
       window.localStorage.setItem('ftrmsgsent', 'true');
       document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
       //display success message
-      this.errorMessage.textContent =
+      this.errorWindowMessage.textContent =
         this.switchLangBtn.textContent === 'ru'
           ? `Message was successfully sent. I will contact you soon.`
           : `Отлично! Сообщение отправлено. Я скоро с Вами свяжусь.`;
@@ -199,35 +198,47 @@ class SharedView {
         this._makeElementDisappear(this.errorWindow, 200);
       }, 3000);
     } catch (err) {
-      // console.log(err);
-      if (err.message === 'Network Error')
-        this.errorMessage.textContent =
+      console.log(err.message);
+      // rendering error message, if internet connection is lost
+      if (err.message === 'Network Error') {
+        this.errorWindowMessage.textContent =
           this.switchLangBtn.textContent === 'ru'
             ? `Oops, something went wrong. Please, check your internet connection.`
             : `Упс, что-то пошло не так. Пожалуйста, проверьте интернет соединение.`;
-      if (err.message === '400' || (err.response.status && err.response.status === 400)) {
-        const { errorMessage } = err.response.data;
-        // console.log(errorMessage);
-        if (errorMessage) {
-          this.errorMessage.textContent =
-            this.switchLangBtn.textContent === 'ru'
-              ? `Please, provide a valid email address.`
-              : `Пожалуйста, введите правильный электронный адрес`;
-        }
-        if (!errorMessage) {
-          this.errorMessage.textContent =
-            this.switchLangBtn.textContent === 'ru'
-              ? `You have already tried to contact me via this form. Please, contact me via email.`
-              : `Вы уже пробовали связаться со мой через эту форму. Пожалуйста, попробуйте связаться через электронную почту.`;
-        }
+        return this._displayErrorMessageBox();
       }
-
-      this._makeElementAppear(this.errorWindow, 200, 'block');
-      setTimeout(() => {
-        this._makeElementDisappear(this.errorWindow, 200);
-      }, 3000);
-      // document.querySelectorAll('.footer__input-field').forEach((field) => (field.value = ''));
+      // rendering error message, if such email already exists
+      if (err.response.data.errorMessage && err.response.data.errorMessage === 'Duplicate') {
+        this.errorWindowMessage.textContent =
+          this.switchLangBtn.textContent === 'ru'
+            ? `You have already tried to contact me via this form. Please, contact me via email.`
+            : `Вы уже пробовали связаться со мой через эту форму. Пожалуйста, попробуйте связаться через электронную почту.`;
+        return this._displayErrorMessageBox();
+      }
+      // rendering error message, if the email is not valid
+      if (err.response.data.errorMessage && err.response.data.errorMessage.startsWith('VisitorMessages')) {
+        this.errorWindowMessage.textContent =
+          this.switchLangBtn.textContent === 'ru'
+            ? `Please, provide a valid email address.`
+            : `Пожалуйста, используйте существующую электронную почту.`;
+        return this._displayErrorMessageBox();
+      }
+      // rendering error message, if the DB is full
+      if (err.response.data.errorMessage && err.response.data.errorMessage === 'DB full') {
+        this.errorWindowMessage.textContent =
+          this.switchLangBtn.textContent === 'ru'
+            ? `Unfortunately, your message cannot be sent now. Please, try again later or contact me via email.`
+            : `К сожалению, я не могу отправить ваше сообщение сейчас. Пожалуйста, попробуйте позже, или свяжитесь со мной через электронную почту.`;
+        return this._displayErrorMessageBox();
+      }
     }
+  }
+
+  _displayErrorMessageBox() {
+    this._makeElementAppear(this.errorWindow, 200, 'block');
+    setTimeout(() => {
+      this._makeElementDisappear(this.errorWindow, 200);
+    }, 3000);
   }
 
   _changeTheme() {
