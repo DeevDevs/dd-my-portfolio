@@ -7,7 +7,7 @@ exports.receiveMessage = async function (req, res, next) {
     if (cookie) throw new Error();
     const emailInDB = await VisitorMessageModel.findOne({ visitorEmail: req.body.visitorEmail });
     const allMessages = await VisitorMessageModel.find({});
-    if (emailInDB || allMessages.length > 25) throw new Error();
+    if (emailInDB || allMessages.length > 25) throw new Error('Your email is in the database');
     if (!emailInDB) {
       const newMessage = await VisitorMessageModel.create(req.body);
       // console.log(newMessage);
