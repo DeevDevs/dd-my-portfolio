@@ -10,7 +10,7 @@ const aboutMePageSchema = new mongoose.Schema({
   partTwoTitle: String,
   partTwoTextOne: String,
   partTwoTextTwo: String,
-  partTwoTextThree: String,
+  // partTwoTextThree: String,
   partThreeTitle: String,
   partThreeTextOne: String,
   partThreeTextTwo: String,

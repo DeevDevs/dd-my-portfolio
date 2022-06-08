@@ -47,7 +47,7 @@ const importData = async () => {
   try {
     // await MainPageModel.create(mainPages);
     // await HFSModel.create(hfsContent);
-    // await AboutMePageModel.create(aboutMePageContent);
+    await AboutMePageModel.create(aboutMePageContent);
     // await ProjectsPageModel.create(projectsPageContent);
     // await ExperiencePageModel.create(experiencePageContent);
     // await QualificationsPageModel.create(qualificationsPageContent);
@@ -73,7 +73,7 @@ const deleteData = async () => {
     // await IndivProjectPageModel.deleteMany();
     // await DetailsQualsModel.deleteMany();
     // await DetailsProjectsModel.deleteMany();
-    await VisitorMessageModel.deleteMany();
+    // await VisitorMessageModel.deleteMany();
     console.log('Data successfully deleted');
   } catch (error) {
     console.log(error);
