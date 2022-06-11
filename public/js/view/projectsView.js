@@ -125,6 +125,7 @@ class ProjectsView {
       this.wheelDetails.forEach((element) => {
         element.style.opacity = 0;
       });
+      document.querySelector('.click-preview__message').style.opacity = 0;
 
       clearTimeout(this.timerAfterMouseRelease);
       this.isDragging = true;
@@ -261,12 +262,13 @@ class ProjectsView {
     await this.displayFrontProjectDetails(projectId);
   }
 
-  //function to identify and reveal project name
+  //function to identify and reveal project name and a message
   displayFrontProjectName(projectId) {
     const idNum = parseInt(projectId);
-    this.btnSwitchLanguage.textContent === 'en'
+    this.btnSwitchLanguage.textContent === 'ru'
       ? (this.mainProjectName.textContent = this.projectNames[0][idNum - 1])
       : (this.mainProjectName.textContent = this.projectNames[1][idNum - 1]);
+    document.querySelector('.click-preview__message').style.opacity = 1;
   }
 
   //funtion to identify (and SOON REVEAL) project details

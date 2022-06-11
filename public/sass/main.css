@@ -5802,9 +5802,9 @@ a:visited {
 .pr-wheel-details-left p {
   width: 20vw;
   line-height: 1.8;
-  margin-top: 7vh;
+  margin-top: 22vh;
   padding: 2rem 2rem 2rem 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   -webkit-transform: skew(-10deg) translateX(5rem);
           transform: skew(-10deg) translateX(5rem);
@@ -5813,7 +5813,6 @@ a:visited {
 @media (min-width: 1280px) {
   .pr-wheel-details-left p {
     line-height: 2;
-    margin-top: 11vh;
     padding: 1rem 1rem 1rem 1rem;
     font-size: 1.1rem;
   }
@@ -5821,7 +5820,6 @@ a:visited {
 
 @media (min-width: 1480px) {
   .pr-wheel-details-left p {
-    margin-top: 22vh;
     padding: 2rem;
     font-size: 1.2rem;
   }
@@ -5842,9 +5840,9 @@ a:visited {
   width: 22vw;
   line-height: 1.8;
   padding: 2rem 0rem 2rem 4rem;
-  margin-top: 7vh;
+  margin-top: 22vh;
   margin-left: 6vw;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   -webkit-transform: skew(-10deg) translateX(-5rem);
           transform: skew(-10deg) translateX(-5rem);
@@ -5853,7 +5851,7 @@ a:visited {
 @media (min-width: 1280px) {
   .pr-wheel-details-right p {
     line-height: 2;
-    margin-top: 11vh;
+    margin-top: 22vh;
     font-size: 1.1rem;
   }
 }
@@ -5878,6 +5876,20 @@ a:visited {
 
 .supreme-div {
   z-index: 9;
+}
+
+.click-preview__message {
+  opacity: 0;
+  font-size: 1.15rem;
+  position: absolute;
+  padding-right: 4rem;
+  bottom: 1.5rem;
+  -webkit-transform: skew(-10deg);
+          transform: skew(-10deg);
+  width: 100%;
+  text-align: center;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 
 .exp__main-part {
