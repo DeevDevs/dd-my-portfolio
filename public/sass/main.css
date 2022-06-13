@@ -3483,6 +3483,18 @@ a:visited {
   }
 }
 
+.project--links {
+  font-weight: 900;
+  -webkit-filter: drop-shadow(1px 0px 1px var(--icons-shadow));
+          filter: drop-shadow(1px 0px 1px var(--icons-shadow));
+}
+
+.project--links:hover {
+  font-weight: 1200;
+  -webkit-filter: drop-shadow(3px 3px 2px var(--icons-shadow));
+          filter: drop-shadow(3px 3px 2px var(--icons-shadow));
+}
+
 .bg-main {
   background-color: #030d4d;
 }
@@ -6718,7 +6730,7 @@ a:visited {
 .indiv-par-box-three {
   padding: 1.5rem 0;
   height: auto;
-  width: 90%;
+  width: 75%;
   z-index: 1;
   border-radius: 5px;
   max-width: 75rem;
@@ -6756,7 +6768,7 @@ a:visited {
         -ms-flex-align: start;
             align-items: flex-start;
     height: 55vh;
-    width: 95%;
+    width: 90%;
     overflow-y: scroll;
     -webkit-transform: skew(12deg);
             transform: skew(12deg);
@@ -6784,7 +6796,7 @@ a:visited {
 @media (min-width: 760px) {
   .indiv-par-three {
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -6793,7 +6805,7 @@ a:visited {
     text-align: left;
     margin: 1rem;
     padding: 0 2rem;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.8;
   }
 }

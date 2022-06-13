@@ -772,3 +772,15 @@ a:visited {
     }
   }
 }
+
+.project--links {
+  font-weight: 900;
+  // font-style: underline;
+  filter: drop-shadow(1px 0px 1px var(--icons-shadow));
+
+  &:hover {
+    font-weight: 1200;
+    filter: drop-shadow(3px 3px 2px var(--icons-shadow));
+    // text-decoration: underline;
+  }
+}
