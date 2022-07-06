@@ -304,6 +304,7 @@
     ],
     "behindImg": "/images/pr-images/portfolio/portfolio-2.png",
     "gitLink": "https://github.com/DeevDevs/dd-my-portfolio",
+    "projectLink": "https://deevdevs-my-portfolio.herokuapp.com/",
     "respText": [
       "I decided to give more information regarding the responsiveness of this project because the versions differ much from one another. For example, the representation of projects in the Projects page is static, when you try to open it using a smartphone. Once you open it in desktop, it will allow you to drag a kind of 'wheel', which implies the use of many more JS functions.",
       "Apart from that, the page with project details is also static in the mobile version, while in the desktop one you may see lots of additional transformations. These individual project pages are especially interesting, as the page scrolls right, instead of standard down direction.",
@@ -331,6 +332,7 @@
     ],
     "behindImg": "/images/pr-images/pr-bankist-1.png",
     "gitLink": "https://github.com/DeevDevs/dd-my-portfolio",
+    "projectLink": "https://deevdevs-my-portfolio.herokuapp.com/",
     "respText": [
       "Я решил добавить немного информации касательно адаптивности этого проекта, потому что мобильная и настольная версии существенно отличаются друг от друга. Для начала, отображение проектов на соответствующей странице статично в мобильной версии, тогда как в браузере все выглядит более интересно. Последняя позволяет пользователю листать проекты перетаскиванием, и задействованы дополнительные анимации.",
       "Еще, старница с деталями проектов намного более динамичная в настольной версии. Одна из ключевых особенностей этой странице, это то что она прокручивается слева направо.",

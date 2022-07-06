@@ -7,20 +7,20 @@ mixin links(gitLink, projectLink)
   if pageData.lang === 'en'
     br
     | Feel free to 
-    a(href=`${gitLink}` class='project--links' target='_blank') see the code in Git
+    a(href=`${gitLink}` class='project--links' target='_blank')u see the code in Git
     | .
     br
     | Also, you might want to 
-    a(href=`${projectLink}` class='project--links' target='_blank') have a look at the project 
+    a(href=`${projectLink}` class='project--links' target='_blank')u have a look at the project 
     | itself.
   if pageData.lang === 'ru'
     br
     | Вы можете 
-    a(href=`${gitLink}` class='project--links' target='_blank') посмотреть на код в Git
+    a(href=`${gitLink}` class='project--links' target='_blank')u посмотреть на код в Git
     | .
     br
     | A еще вы можете 
-    a(href=`${projectLink}` class='project--links' target='_blank') взглянуть на сам проект
+    a(href=`${projectLink}` class='project--links' target='_blank')u взглянуть на сам проект
     | .
 
 block content 
