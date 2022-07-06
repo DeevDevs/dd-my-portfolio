@@ -6,13 +6,9 @@ exports.renderAboutMePage = async function (req, res, next) {
     const pageData = await AboutMePageModel.findOne({
       lang: `${languageCookie ? languageCookie : 'en'}`,
     });
-
     res.locals.pageData = pageData;
-    // console.log(res.locals);
     res.render('aboutMePage');
   } catch (err) {
-    console.log(err);
+    console.log(err); // add here an error controller
   }
 };
-
-// exports.editModel = async function () {};

@@ -15,11 +15,6 @@ class MainView {
 
   allSectionsObserver = new IntersectionObserver(this.revealSection.bind(this), { root: null, threshold: 0.1 });
   mainSectionObserver = new IntersectionObserver(this.hideShowMenu.bind(this), { root: null, threshold: [0.6] });
-  // imageObserver = new IntersectionObserver(this.loadLazyImages.bind(this), {
-  //   root: null,
-  //   threshold: 0,
-  //   rootMargin: '400px',
-  // });
 
   backgroundObserver = new IntersectionObserver(this.loadBackgroundImages.bind(this), {
     root: null,
@@ -74,28 +69,15 @@ class MainView {
       const thisSection = document.getElementById(entry[0].target.id);
       thisSection.classList.remove('section-hidden');
       let images = thisSection.querySelectorAll('.advert__section--image');
-      // console.log(images);
       const central = thisSection.querySelectorAll('.advert__section--image__central');
-      // console.log(central.length);
       if (central.length > 0) {
         central.forEach((img) => (img.src = img.dataset.path));
         return;
       }
-
       images.forEach((img) => (img.src = img.dataset.path));
+      observer.unobserve(entry[0].target);
     }
   }
-
-  // loadLazyImages(entry, observer) {
-  //   if (!entry[0].isIntersecting) return;
-
-  //   entry[0].target.src = entry[0].target.dataset.src;
-  //   entry[0].target.addEventListener('load', function () {
-  //     entry[0].target.classList.remove('blurred');
-  //   });
-
-  //   observer.unobserve(entry[0].target);
-  // }
 
   loadBackgroundImages(entries, observer) {
     if (!entries[0].isIntersecting) return;
@@ -120,26 +102,23 @@ class MainView {
 
   //////////////////////// Swiping functions TESTING //////////////////////////////
 
-  getTouches(evt) {
-    return (
-      evt.touches || // browser API
-      evt.originalEvent.touches
-    ); // jQuery
+  getTouches(e) {
+    return e.touches || e.originalEvent.touches;
   }
 
-  handleTouchStart(evt) {
-    const firstTouch = this.getTouches(evt)[0];
+  handleTouchStart(e) {
+    const firstTouch = this.getTouches(e)[0];
     this.xDown = firstTouch.clientX;
     this.yDown = firstTouch.clientY;
   }
 
-  handleTouchMove(evt) {
+  handleTouchMove(e) {
     if (!this.xDown || !this.yDown) {
       return;
     }
 
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
+    var xUp = e.touches[0].clientX;
+    var yUp = e.touches[0].clientY;
 
     var xDiff = this.xDown - xUp;
     var yDiff = this.yDown - yUp;
@@ -153,14 +132,6 @@ class MainView {
         this.swipeSlide('left');
       }
     }
-    // else {
-    //   if (yDiff > 0) {
-    //     /* down swipe */
-    //   } else {
-    //     /* up swipe */
-    //   }
-    // }
-    /* reset values */
     this.xDown = null;
     this.yDown = null;
   }
@@ -189,7 +160,6 @@ class MainView {
   addIntroMovingShadow(e) {
     const shadowParameters = this.movingShadow(e, this.introBox, 15);
     this.introText.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 4px var(--icons-shadow))`;
-    // this.introIcon.style.filter = `drop-shadow(${shadowParameters[0]}px ${shadowParameters[1]}px 8px var(--icons-shadow))`;
   }
 
   movingShadow(e, element = e.target, maxShadow) {

@@ -7,16 +7,14 @@
     "btnScroll": "Scroll back",
     "coverTitle": "Bankist: Homepage",
     "coverImg": "/images/pr-images/BankistHP/bankisthp-1.png",
-    "generalText": "It a single web-page project, where I practiced implementation of DOM manipulations using Vanilla Javascript. My contribution to the project only includes JS code. Nevertheless, it was a great opportunity to develop the skills of adding listeners, changing styles and triggering transformation. All the other links displayed in the webpage are empty. The webpage was eventually deployed using Netlify platform and has only desktop format.",
+    "generalText": "It a single web-page project, where I practiced implementation of DOM manipulations using Vanilla Javascript. I trained together with Jonas Shmedtmann - the course leader. My contribution to the project only includes JS code. Nevertheless, it was a great opportunity to develop the skills of adding listeners, changing styles and triggering transformation. All the other links displayed in the webpage are empty. The webpage was eventually deployed using Netlify platform and has only desktop format.",
     "generalImgLeft": "/images/pr-images/BankistHP/bankisthp-2.png",
     "generalImgRight": "/images/pr-images/BankistHP/bankisthp-5.png",
     "behindText": [
-      "There are a couple of things that are happening behind the scenes. First of all, the page has various intersection observers working to make the page more dynamic on scroll. It makes each coming section of the page appear a little later after the scroll took place. It definitely enhances the UX.",
-      "Another feature is lazy images, which also happens thanks to the intersection observer and is not noticeable by the user. This way, page loading speed is increased dramatically. Menu fade animation occurs thanks to child/parent event propagation. The rest of the animations happen due to standard transform manipulations."
+      "There are a couple of things that are happening behind the scenes. First of all, the page has various intersection observers working to make the page more dynamic on scroll. It makes each coming section of the page appear a little later after the scroll took place. It definitely enhances the UI.",
+      "Another feature is lazy images, which also happens thanks to the intersection observer and is not noticeable by the user. This way, page loading speed is increased dramatically. Menu fade animation occurs thanks to child/parent event propagation."
     ],
-    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png",
-    "respText": [],
-    "respImg": ""
+    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png"
   },
   {
     "lang": "ru",
@@ -26,17 +24,15 @@
     "btnScroll": "К началу",
     "coverTitle": "Банкир: Главная Страница",
     "coverImg": "/images/pr-images/BankistHP/bankisthp-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Это проект объемом в одну веб-страницу, где я практиковался в манипуляции DOM-объектами используя только Vanilla Javascript. Мой вклад в проект включал исключительно Javascript код. Тем не менее, это была отличная возможность активно использовать приемники событий, изменять стили элементов, и нициировать трансформации на странице. В конце концов, я запустил этот проект через Netlify платформу и она рассчитана только на настольные браузеры.",
     "generalImgLeft": "/images/pr-images/BankistHP/bankisthp-2.png",
     "generalImgRight": "/images/pr-images/BankistHP/bankisthp-5.png",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Есть некоторые процессы, которые происходят частично или полностью незаметно для пользователя. Например, есть несколько Intersection Observer API, которые делают страницу более динамичной. Когда пользователь спускается к следующей секции страницы, она проявляется динамично, и не сразу. Это делает UI более приятным.",
+      "Еще одна особенность, это 'ленивые изображения', которые тоже работают на основе Intersection Observer API. Так, изображения значительно более низкого качества загружаются вначале, и лишь потом, если пользователь решит посмотреть другую секцию страницы, их более качественная версия запрашивается браузером. Таким образом скорость загрузки веб-страницы значительно выше.",
+      "Также следует отметить, что затемнение элементов меню происходить благодаря Event Propagation через связь между родительскими и дочерними элементами."
     ],
-    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png",
-    "respText": [],
-    "respImg": ""
+    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png"
   },
   {
     "lang": "en",
@@ -50,7 +46,7 @@
     "generalImgLeft": "/images/pr-images/pig/pig-1-cut.png",
     "generalImgRight": "",
     "behindText": [
-      "There isn’t much to describe, when it comes to the code itself. It was my first attempt to manipulate DOM elements and trigger dynamic changes od styles and data in the webpage. The code includes a set of event listeners that change the DOM elements’ classes to make the game more pleasant visually. The mechanics of the code and logic are pretty simple too and are based on if else conditionals. Finally, a function returns default values, when players start a new game."
+      "There isn’t much to describe, when it comes to the code itself. Buttons manipulate DOM elements and trigger dynamic changes of styles and data in the webpage. The code includes a set of event listeners that change the DOM elements’ classes to make the game more pleasant visually. The mechanics of the code and logic are pretty simple too and are based on if else conditionals. Finally, a function returns default values, when players start a new game."
     ],
     "behindImg": "/images/pr-images/pig/pig-2-cut.png",
     "respText": [],
@@ -64,13 +60,11 @@
     "btnScroll": "К началу",
     "coverTitle": "Игра в Порося",
     "coverImg": "/images/pr-images/pig/pig-3.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Это самый первый проект, над которым я работал, изучая Javascript. 'Порося' - это простая игра построенная с помощью Vanilla Javascript. Мой вклад включает в себя только JS код. Я решил добавить этот проект в свое портфолио, чтобы ярче отобразить прогресс, который происходит в моих навыках владения языком программирования. Эта игра также запущена на платформе Netlify и доступна только версия для настольных браузеров.",
     "generalImgLeft": "/images/pr-images/pig/pig-1-cut.png",
     "generalImgRight": "",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Не так много вещей происходит на заднем плане. Кнопки провоцируют изменения в DOM-элементах и их стилях. Это делает игру привлекательнее для игроков. JS код очень прост, и состоит из ряда if else условий. Она рассчитана на двух пользователей сидящих за одним компютером,и поэтому динамика перехода хода от одного игрока к другому также выражена в изменении стилей."
     ],
     "behindImg": "/images/pr-images/pig/pig-2-cut.png",
     "respText": [],
@@ -103,13 +97,12 @@
     "btnScroll": "К началу",
     "coverTitle": "Банкир: Приложение",
     "coverImg": "/images/pr-images/bankistAPP/bankistapp-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Этот проект был отличной возможностью потренироваться в работе с объектами, датами и строками. Этот проект был намного сложнее игры 'Порося' (которую вы можете увидеть в списке проектов), и мой вклад также включает JS код. Я запустил его на Netlify и в доступе только версия для настольных браузеров. Когда страница загружена, требуется ввести имя пользователя (введите 'js' или 'jd') и пароль ('1111' или '2222' соответственно).",
     "generalImgLeft": "/images/pr-images/bankistAPP/bankistapp-3.png",
     "generalImgRight": "",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Данные, которые отображаются на странице, хранятся в Javascript коде, и внесенные изменения нигде не сохраняются после того, как сессия завершена. Основной целью проекта была практика современных методов для массивов (map, filter, reduce), а также сортировка. Эти методы широко используются в разных элементах/частях проекта.",
+      "Также, можно отметить активное использование методов в работе со строками, и в формировании и форматировании дат и времени."
     ],
     "behindImg": "/images/pr-images/bankistAPP/bankistapp-2.png",
     "respText": [],
@@ -141,13 +134,13 @@
     "btnScroll": "К началу",
     "coverTitle": "Mapty: Приложение",
     "coverImg": "/images/pr-images/mapty/mapty-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Mapty это один из самых крупных проектов, над которыми я работал. Я дважды улучшал версию приложения, добавляя в нее новые функции и улучшал дизайн. Базовая версия влючала в себя работу с одним сторонним API (Leaflet) и с методами геолокаций. Позже, я добавил ряд апгрейдов в функциональной часли проекта, а также еще один сторонний API. В дальнейшем, был проработан CSS код, который сделал проект адаптивным. Проект запущен на Netlify, и доступны настольная и мобильная версии приложения.",
     "generalImgLeft": "/images/pr-images/mapty/mapty-2.png",
     "generalImgRight": "/images/pr-images/mapty/mapty-3.png",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "В начале, базовая версия приложения включала в себя работу с геолокациями, и отображением найденной локации и введенных данных в виде тренировки. Оно работало на основе методов из Leaflet API, манипуляций DOM-элементов, и методов для геолокаций.",
+      "Затем я добавил ряд новых функций, таких как возможность удалять одну или все тренировки, сортировать тренировки в списке основываясь на разных параметрах, рисовать на карте путь пройденный во время тренировки, а также отображение погоды в день/время тренировки с помощью Open-meteo API.",
+      "Позже, когда я улучшил свои знания в разметке и каскадных таблиц стилей, я решил сделать это приложение адаптивным. В результате, хоть я и не следовать принципу 'сначала мобильная версия', объемный апдейт CSS стилей и добавление кнопок на страничке сделали проект доступным на мобильных устройствах."
     ],
     "behindImg": "/images/pr-images/mapty/mapty-4.png"
   },
@@ -163,15 +156,13 @@
     "generalImgLeft": "/images/pr-images/natours/natours-2.png",
     "generalImgRight": "/images/pr-images/natours/natours-3.png",
     "behindText": [
-      "It is one of the largest projects I worked on. At the first stages, I worked on creating routes and adding middlewares using express, which is much more comfortable than native Node.js code. With the help of integrated identification system of the MongoDB, I connected the routes and the database to build up a REST API, which I then tested through Postman.",
+      "It is one of the largest projects I worked on. At the first stages, I worked on creating routes and adding middlewares using Express, which is much more comfortable than native Node.js code. With the help of integrated identification system of the MongoDB, I connected the routes and the database to build up a REST API, which I then tested through Postman.",
       "Then I worked on authorization usign the JWT services and standard cookies. Hence, part of the routes - booking and autorization procedures, as well as changing the user data (name, password, photo) - are well-protected. For example, in case a user forgot his password, then an email is rendered and sent to the user's email (this functionality is not added to the interface because the user emails are fake), for security purposes. In addition, the API is also capable of being manipulated by an imaginary admin, or an imaginary guide. For that, feel free to have a look at the code and documentation in GIT.",
       "When it came to rendering, I made it so that pages are built using PUG templates. Necessary requests are integrated using axios. The data in requests and responses are projected from possible malware, and the website itself is secure.",
       "Booking of websites is also supported by the stripe platform services. Although it is not real and the test version of stripe payment process is shown to the user, it is created according to all the standards of secure connection.",
       "As you might have mentioned, not all the features (links and tabs) are functioning in the website. I am still working on this project and they will appear soon."
     ],
-    "behindImg": "/images/pr-images/natours/natours-5.png",
-    "respText": [],
-    "respImg": ""
+    "behindImg": "/images/pr-images/natours/natours-5.png"
   },
   {
     "lang": "ru",
@@ -181,17 +172,17 @@
     "btnScroll": "К началу",
     "coverTitle": "Natours: Туристический Гид",
     "coverImg": "/images/pr-images/natours/natours-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Я работал над этим проектом, когда учился создавать API и рендерить веб-страницы на сервере с помощью Node.js и фреймворка Express, с использованием датабазы MongoDB. Вначале, я работал над API и тестировал его в приложении Postman. Затем под прицелом были рендеринг страниц и запуск в соответствии с современными требованиями (безопасность, CORS, и так далее) на платформе Heroku. Я не участвовал в разработке самих страниц и стилей. Этот проект доступен только в настольной версии, и чтобы попробовать его в деле, вы можете зарегистрироваться с помощью 'laura@example.com' (пароль: test1234).",
     "generalImgLeft": "/images/pr-images/natours/natours-2.png",
     "generalImgRight": "/images/pr-images/natours/natours-3.png",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Это один из крупнейшх проектов, над которыми я работал. На начальном этапе, я участвовал в создании роутов и связующего программного обеспечения (middlewares) с помощью Express, что сделало работу в Node.js приятной и комфортной. С помощью системы поиска встроенной в базу данных MongoDB, я связывал базу и роуты для создания REST API, которое потом тестировал в Postman.",
+      "Затем в перечне задач было создание безопасных роутов с использованием JWT и cookie-данных. Таким образом, часть роутов связанных непосредственно с зарегистрированым пользователем - авторизация, резервация туров, изменение личных данных и пароля пользователя - надежно защищены. Вдобавок API позволяет проводить манипуляции с данными пользователей или туров воображаемому админу, или гидам (вы можете посмотреть на документацию в GIT).",
+      "Рендеринг веб-страниц проводится на стороне сервера с помощью специально созданных шаблонов PUG. Часть запросов выполняемых пользователем производятся с помощью Axios. Информация в запросах также защищена от возможного вредоносного вмешательства.",
+      "Резервирование туров также включает в себя воображаемую оплату. Так, проект связан со сторонней платформой Stripe, и поддерживает безопасное соединение с платформой на момент проведения оплаты.",
+      "Некоторые ссылки и кнопки на странице проекта (регистрация, функциональность для админов) не работают, потому что я до сих пор работаю над этим проектом."
     ],
-    "behindImg": "/images/pr-images/natours/natours-5.png",
-    "respText": [],
-    "respImg": ""
+    "behindImg": "/images/pr-images/natours/natours-5.png"
   },
   {
     "lang": "en",
@@ -219,13 +210,13 @@
     "btnScroll": "К началу",
     "coverTitle": "Forkify: Коллекция Рецептов",
     "coverImg": "/images/pr-images/forkify/forkify-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Это был последний проект, над которым я работал, когда изучал Javscript вместе с Йонасом Шмедтманном. Это приложение на основе API? которое включает в себя различные технологии от ES6 до SASS, а также популярную на сегодняшний день архитектуру MVC. API было специально разработано для этого проекта, и мой вклад в базовую версию проекта включал в себя JS код. Я, конечно, не оставил проект в базовой версии, и добавл ряд фунцкий и особенностей позднее. Этот проект запущен на платформе Netlify и имеет только версию для настольных браузеров.",
     "generalImgLeft": "/images/pr-images/forkify/forkify-3.png",
     "generalImgRight": "/images/pr-images/forkify/forkify-2.png",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Базовая версия приложения Forkify включает в себя функции поиска рецепта, постраничный вид результатов поиска, закладки, изменения количества порции, и добавление нового рецепта. Благодаря MVC архитектуре, каждая часть приложения отображается отдельным View модулем. В то время как Model берет на себя всю работу с данными, один Controller играет роль связующего звена и главным хранителем ключевых функций.",
+      "Следуя этой архитектуре, я добавил несколько апгрейдов, включающих в себя возможность создания списка покупок, планирования недельного меню, а также создание и отслеживание специального ключа, наличие которого позволяет добавлять новые рецепты в базу данных API. Для того, чтобы работа с планированием недельного меню была более приятна пользователю, я добавил функции drag and drop (между основным окном рецепта и самим недельным планом, а также внутри плана).",
+      "В заключении, беря во внимание возможность наличия представителей ЗОЖ в числе потенциальный пользователей, я добавил возможность посчитать приблизительное количество калорий в блюде, за что отвечает еще одно стороннее API - Spoonacular."
     ],
     "behindImg": "/images/pr-images/forkify/forkify-4.png",
     "respText": [],
@@ -246,10 +237,9 @@
       "First of all, it is important to mention that the algorithm behind the game is a simple grid system, which is eventually represented to the user in the form of a box with empty circles. As it was the challenge that I completed in the Codewars platform, it passed all the tests and is completely reliable. ",
       "The algorithm includes various manipulations with arrays and strings, as well as a lot of basic Math. In the end, switch/break and if/else conditionals with functions integrated into them make the game work. So far, the game is only for one computer and does not have any server-side. However, for the sake of back-end practice, I am thinking of building a small API for it and making this game possible online."
     ],
-    "behindImg": "/images/pr-images/connect/connect-3.png",
-    "respText": [],
-    "respImg": ""
+    "behindImg": "/images/pr-images/connect/connect-3.png"
   },
+
   {
     "lang": "ru",
     "page": "indiv-project",
@@ -258,18 +248,16 @@
     "btnScroll": "К началу",
     "coverTitle": "Игра: Собери Четыре",
     "coverImg": "/images/pr-images/connect/connect-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Собери 4, это первая игра и первый проект который я создал полностью самостоятельно. Но включает в себя относительно простой алгоритм, который основан на популярной настолькной игре. После того, как я прописал этот алгоритм на платформе Codewars, я решил обернуть его в HTML и CSS, и затем запустил на платформе Netlify. Доступна только версия для настольных браузеров.",
     "generalImgLeft": "/images/pr-images/connect/connect-2.png",
     "generalImgRight": "/images/pr-images/connect/connect-4.png",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Для начала, алгоритм в основе игры - это своего рода таблица состоящая из массивов (такой род алгоритмов некоторые разработчики называют grid). Они соответствуют кружкам в игре, и их заполнение отображается на grid. Благодаря платформе Codewards, алгоритм был полностью протестирован и вполне надежен.",
+      "Функции в системе алгоритма работают со строками и массивами, а также включают в себя немало простой математики. Все расчеты производятся в браузере, а игра рассчитана на двух игроков сидящих за одним компьютером. Но я подумываю над тем, чтобы создать простенький API и сделать эту игру возможной онлайн."
     ],
-    "behindImg": "/images/pr-images/connect/connect-3.png",
-    "respText": [],
-    "respImg": ""
+    "behindImg": "/images/pr-images/connect/connect-3.png"
   },
+
   {
     "lang": "en",
     "page": "indiv-project",
@@ -282,8 +270,8 @@
     "generalImgLeft": "/images/pr-images/portfolio/portfolio-3.png",
     "generalImgRight": "/images/pr-images/portfolio/portfolio-7.png",
     "behindText": [
-      "First, I decided to work on the HTML and CSS to understand, what kind of pages I need to build my server-side for. Now, I followed the mobile first approach, and used SASS and PUG to make my front-end work more pleasant and usable by the end. It was challenging to add 3D effects, and it was my first time to create and add SVG elements.",
-      "I tried to follow the MVC architecture. However, as the website is mostly representative and there is little functionality for the user to manipulate data, I decided to integrate the controlling function into the View Modules. As some manipulations require sending request, I used good old Axios for that.",
+      "First, I decided to work on the HTML and CSS to understand, what kind of pages I need to build my server-side for. Now, I followed the mobile first approach, and used SASS and PUG to make my front-end work more pleasant and usable by the end. It was a bit challenging to add 3D effects, and it was my first time to create and add SVG elements.",
+      "I tried to follow the MVC architecture. However, as the website is mostly representative and there is little functionality for the user to manipulate data, I decided to integrate the controlling function into the View Modules. As some manipulations require sending request, I used good old Axios for that. Also, the pages have plenty of intersection observers and animations added to them, mouse movement listeners. I tried to add new functionality to each page to make them differ from one another.",
       "Then, I started developing the server-side, where every page is rendered. Apart from that, server is connected to the MongoDB database, where the content is stored. I used Mongoose to create schemas for every page, and for the details of qualifications and projects. It was especially effective for that I stored data in two languages.",
       "Because the website allows users to change the language and the theme, as well as send a message to me, I decided to use cookies to help me control this activity. You can also notice the effective use of local storage to make it really complicated for the user to send multiple messages. Finally, the website is secure and protected from possible malware thanks to a set of certain NPM packages.",
       "As it was my first full stack project and I was practicing my coding skills, I understand that it is just the first version. With time, I am planning to add information about other projects that I will work on (if it is allowed by the copyright) and develop the portfolio itself. Surely, the 2.0 version of the portfolio will be much better with more advanced features and functionality."
@@ -304,18 +292,21 @@
     "btnScroll": "К началу",
     "coverTitle": "Сайт-визитка: Мое Портфолио",
     "coverImg": "/images/pr-images/portfolio/portfolio-1.png",
-    "generalText": "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
+    "generalText": "Портфолио - мой последний индивидуальный проект на лето 2022 года. После того, как я прошел курс Node.js и запустил проект Natours, мне захотелось потренироваться, и еще я подумал что уже могу быть интересен потенциальным работодателям. Поэтому я взялся за это портфолио, и разработал все, начиная с серверной части, и заканчивая UI. После этого, я запустил его на платформе Heroku, и в доступе как настольная, так и мобильная версии (включая два языка, и темную и светлую темы).",
     "generalImgLeft": "/images/pr-images/portfolio/portfolio-3.png",
     "generalImgRight": "/images/pr-images/portfolio/portfolio-7.png",
     "behindText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Вначале я взялся за front-end, чтобы лучше понимать, под что мне нужно будет строить сервер и базу данных. В отличие от проекта Mapty, тут я следовал принципу 'вначале мобильная версия', и для этого активно использовал SASS и PUG. Было увлекательно добавлять 3D эффекты, и я впервые создавал и добавлял SVG элементы.",
+      "Я попытался создавать портфолио на основе архитектуры MVC, но в силу того что пользователям не приходится часто производить какие-либо манипуляции с данными на странице, я объединил контролирующие функции и View модули. Для отправления запросов пользователем (отправка сообщения, изменение языка, и т.д.) в работу пошел старый добрый Axios. Также, каждая страница имеет ряд Intersection Observer API, которые делают ее более динамичной. Я постарался сделать так, чтобы каждая страничка была по своему уникальной.",
+      "Затем, я начал разрабатывать программно-аппаратную часть, в которой происходит рендеринг каждой странички. Помимо этого, я подключил базу данных MongoDB, в которой хранится почти весь контент на двух языках.",
+      "Для того, чтобы была возможность изменять язык и тему сайта, я использую cookie-данные. Также, вы можете заметить использование веб-хранилища, чтобы защитить пользователя от повторного отправления сообщений через форму. Вдобавок, портфолио защищено от вредоносных программ благодаря использованию пакетов NPM.",
+      "В силу того, что это мой первый full-stack проект в котором я, по сути, тренировал свои навыки, могу сказать что это первая версия моего портфолио. Со временем, я планирую добавлять информацию о проектах и моем академическом и профессиональном прогрессе. Надеюсь, что скоро тут будет Мое портфолио - версия 2.0."
     ],
     "behindImg": "/images/pr-images/pr-bankist-1.png",
     "respText": [
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений.",
-      "А ещё предприниматели в сети интернет являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира постоянный количественный рост и сфера нашей активности создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса глубокомысленных рассуждений."
+      "Я решил добавить немного информации касательно адаптивности этого проекта, потому что мобильная и настольная версии существенно отличаются друг от друга. Для начала, отображение проектов на соответствующей странице статично в мобильной версии, тогда как в браузере все выглядит более интересно. Последняя позволяет пользователю листать проекты перетаскиванием, и задействованы дополнительные анимации.",
+      "Еще, старница с деталями проектов намного более динамичная в настольной версии. Одна из ключевых особенностей этой странице, это то что она прокручивается слева направо.",
+      "С другой стороны, отображение нижнего колонтитула практически статично в настольной версии, тогда как в мобильной пользователь может его развернуть."
     ],
     "respImg": "/images/pr-images/portfolio/portfolio-5.png"
   }

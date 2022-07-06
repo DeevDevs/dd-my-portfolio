@@ -116,11 +116,9 @@ class ThemeSwitcher {
     const introIcon = document.querySelector('.intro-part__icon');
     if (this.theme === 'dark') {
       introIcon.innerHTML = `<use href="/images/icons/all-icons.svg#projects-icon-night"></use>`;
-      // xBtns.forEach((btn) => (btn.innerHTML = `<use href="/images/icons/all-icons.svg#x-button-light"></use>`));
     }
     if (this.theme === 'light') {
       introIcon.innerHTML = `<use href="/images/icons/all-icons.svg#projects-icon-day"></use>`;
-      // xBtns.forEach((btn) => (btn.innerHTML = `<use href="/images/icons/all-icons.svg#x-button-dark"></use>`));
     }
   }
 

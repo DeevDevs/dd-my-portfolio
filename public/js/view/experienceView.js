@@ -7,7 +7,6 @@ class ExperienceView {
   expSectionObserver = new IntersectionObserver(this.revealExpSection.bind(this), { root: null, threshold: 0 });
 
   constructor() {
-    // console.log(this.mainExpSection);
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.expSectionObserver.observe(this.mainExpSection);
   }
@@ -16,6 +15,7 @@ class ExperienceView {
     if (!entry[0].isIntersecting) return;
     if (entry[0].isIntersecting) {
       this.mainExpSection.classList.remove('section-hidden');
+      observer.unobserve(entry[0].target);
     }
   }
 

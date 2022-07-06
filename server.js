@@ -3,7 +3,6 @@ const dotenv = require('dotenv');
 const app = require('./app.js');
 
 dotenv.config({ path: `./config.env` });
-// const DB = `mongodb+srv://Dmitriy:Atlas2021@myportfoliocluster.dbews.mongodb.net/myPortfolio?retryWrites=true&w=majority`;
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 
 mongoose

@@ -3495,60 +3495,6 @@ a:visited {
           filter: drop-shadow(3px 3px 2px var(--icons-shadow));
 }
 
-.bg-main {
-  background-color: #030d4d;
-}
-
-.bg-secondary {
-  background-color: #001392;
-}
-
-.bg-background {
-  background: #3f50be;
-}
-
-.text-main {
-  color: #f0f6ff;
-}
-
-.text-secondary {
-  color: #bfcaf4;
-}
-
-.text-background {
-  color: #dbe8ff;
-}
-
-.about-me-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-me.jpg") center/cover no-repeat border-box !important;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-me.jpg") center/cover no-repeat border-box !important;
-}
-
-.learning-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-learning.jpg") center/cover no-repeat border-box !important;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-learning.jpg") center/cover no-repeat border-box !important;
-}
-
-.projects-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-projects.jpg") center/cover no-repeat border-box !important;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-projects.jpg") center/cover no-repeat border-box !important;
-}
-
-.experience-dark {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/bg-experience.jpg") center/cover no-repeat border-box !important;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/bg-experience.jpg") center/cover no-repeat border-box !important;
-}
-
-.welcome-night {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 61, 212, 0.75)), to(rgba(38, 61, 212, 0.75))), url("../images/light-speed.jpg") center/cover no-repeat border-box;
-  background: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75)), url("../images/light-speed.jpg") center/cover no-repeat border-box;
-}
-
-.shadow-night {
-  -webkit-box-shadow: 0px 0px 5px #bfcaf4;
-          box-shadow: 0px 0px 5px #bfcaf4;
-}
-
 .intro-part__photo-box {
   min-height: 10rem;
   min-width: 10rem;
@@ -5832,7 +5778,7 @@ a:visited {
 
 @media (min-width: 1480px) {
   .pr-wheel-details-left p {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 3rem;
     font-size: 1.2rem;
   }
 }
@@ -5842,7 +5788,7 @@ a:visited {
     margin-top: 33vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 1rem;
     font-size: 1.2rem;
     max-width: 40rem;
   }
@@ -5862,6 +5808,7 @@ a:visited {
 
 @media (min-width: 1280px) {
   .pr-wheel-details-right p {
+    padding: 2rem;
     line-height: 2;
     margin-top: 22vh;
     font-size: 1.1rem;

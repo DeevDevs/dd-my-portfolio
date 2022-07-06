@@ -10,7 +10,6 @@ class AboutMeView {
   allImages = document.querySelectorAll('.amp-img');
   sectionsHeight = [];
 
-  // subObserver = new IntersectionObserver(this.rollInTheSub.bind(this), { root: null, threshold: 0.1 });
   ampSectionObserver = new IntersectionObserver(this.revealAmpSection.bind(this), { root: null, threshold: 0 });
 
   constructor() {
@@ -35,7 +34,6 @@ class AboutMeView {
     this.allAmpSubs.forEach((sub) => this.countSectionHeight(sub));
     this.ampSectionObserver.observe(this.mainSection);
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
-    // this.allAmpSubs.forEach((sub) => this.subObserver.observe(sub));
   }
 
   ////////// OBSERVERS //////////////
@@ -45,6 +43,7 @@ class AboutMeView {
     if (entry[0].isIntersecting) {
       this.mainSection.classList.remove('section-hidden');
       this.allImages.forEach((img) => (img.src = img.dataset.path));
+      observer.unobserve(entry[0].target);
     }
   }
 
@@ -53,7 +52,6 @@ class AboutMeView {
   countSectionHeight(sub) {
     const height = sub.offsetHeight;
     this.sectionsHeight.push(height);
-    // console.log(this.sectionsHeight);
     sub.style.display = 'none';
   }
 
@@ -100,13 +98,6 @@ class AboutMeView {
       this.ampHeadlinesRevealSection[num].style.display = 'none';
     }, 400);
   }
-
-  // rollInTheSub(entry, observer) {
-  //   if (!entry[0].isIntersecting) return;
-  //   console.log(entry[0]);
-  //   entry[0].target.style.transform = 'translateX(0vw)';
-  //   entry[0].target.style.opacity = '1';
-  // }
 
   ////////////////////// MOVING SHADOW CODE ////////////////////////
 

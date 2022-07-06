@@ -54,15 +54,9 @@ class IndividualView {
 
     window.addEventListener('load', this.sizeScrolledDiv.bind(this));
 
-    // //counting the width of the screen to adjust height of the scrolled div
-    // this.indivScrolledSection.style.height = window.innerWidth * 4 - (window.innerWidth - window.innerHeight);
-    // this.maxWidthPossible = window.innerWidth * 4 - (window.innerWidth - window.innerHeight) - window.innerWidth;
-
     window.addEventListener(
       'resize',
       function () {
-        // console.log('resized');
-        //counting the width of the screen to adjust height of the scrolled div
         this.maxWidthPossible =
           window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight) - window.innerWidth;
         this.indivScrolledSection.style.height = `${
@@ -100,9 +94,7 @@ class IndividualView {
       {name: 'connect-four', color: '#beb700d0',},
       {name: 'my-portfolio', color: '#7f8dc9e3',},
     ];
-    // console.log(projectName);
     const settings = projects.find((pr) => pr.name === projectName);
-    // console.log(settings);
     this.allIndivTextBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
     if (window.innerWidth >= 1080 && window.matchMedia('(hover: hover)').matches) {
       this.allParagraphBoxes.forEach((box) => (box.style.backgroundColor = settings.color));
@@ -120,7 +112,6 @@ class IndividualView {
       window.innerWidth * this.totalNumOfSections - (window.innerWidth - window.innerHeight) - window.innerWidth;
     //add desktop classes, if the user has desktop
     if (window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1080) this.toggleSmartphoneMode();
-    // this.indivScrolledSection.style.height = `${window.innerWidth * 4 - (window.innerWidth - window.innerHeight)}px`;
   }
 
   indivScrollBack() {
@@ -154,7 +145,6 @@ class IndividualView {
 
   runScrollAnimation(entry, observer) {
     if (!window.matchMedia('(hover: hover)').matches) {
-      // console.log(entry[0].target.id);
       observer.unobserve(entry[0].target);
       return;
     }
@@ -170,7 +160,6 @@ class IndividualView {
     if (entry[0].target.id === '4-indiv') {
       window.addEventListener('scroll', this.wideActivateIndivFour.bind(this));
     }
-    // console.log(entry[0].target.id);
     observer.unobserve(entry[0].target);
   }
 
@@ -186,7 +175,6 @@ class IndividualView {
         this.scrollBackBtn.classList.remove('scroll-back__div-hidden');
       }
       this.indivContentSection.style.transform = `translateY(-8vh) translateX(-${this.scrollEvent}px)`;
-      //headline image one
       this.headlineImageWideScroll = this.headlineImageWideScroll - (window.pageYOffset - this.scrollEvent) / 40;
       this.headlineImage.style.transform = `translateX(${this.headlineImageWideScroll}rem)`;
     }
@@ -198,8 +186,6 @@ class IndividualView {
         this.indivMainSection.classList.remove('main-scroll-started');
         this.scrollBackBtn.classList.add('scroll-back__div-hidden');
       }
-
-      //headline image one
       this.headlineImageWideScroll = this.headlineImageWideScroll + (this.scrollEvent - window.pageYOffset) / 40;
       this.headlineImage.style.transform = `translateX(${this.headlineImageWideScroll}rem)`;
     }
@@ -210,9 +196,7 @@ class IndividualView {
 
   wideActivateIndivTwo() {
     if (window.innerWidth <= 1080) return;
-    // console.log(window.pageYOffset - this.scrollEventTwo);
     if (this.scrollEventTwo < window.pageYOffset) {
-      //headline image one
       this.sectionTwoWideScroll = this.sectionTwoWideScroll - (window.pageYOffset - this.scrollEventTwo) / 90;
       this.sectionTwoImageRight.style.transform = `translateY(${
         this.sectionTwoWideScroll > 0 ? -this.sectionTwoWideScroll : Math.abs(this.sectionTwoWideScroll)
@@ -220,15 +204,12 @@ class IndividualView {
       this.sectionTwoImageLeft.style.transform = `translateY(${this.sectionTwoWideScroll}rem)`;
     }
     if (this.scrollEventTwo > window.pageYOffset) {
-      //headline image one
       this.sectionTwoWideScroll = this.sectionTwoWideScroll + (this.scrollEventTwo - window.pageYOffset) / 90;
       this.sectionTwoImageRight.style.transform = `translateY(${
         this.sectionTwoWideScroll > 0 ? -this.sectionTwoWideScroll : Math.abs(this.sectionTwoWideScroll)
       }rem)`;
       this.sectionTwoImageLeft.style.transform = `translateY(${this.sectionTwoWideScroll}rem)`;
     }
-
-    // console.log(this.sectionTwoWideScroll, (window.pageYOffset - this.scrollEventTwo) / 30);
     //renew scrollEvent
     this.scrollEventTwo = window.pageYOffset;
   }
@@ -236,12 +217,10 @@ class IndividualView {
   wideActivateIndivThree() {
     if (window.innerWidth <= 1080) return;
     if (this.scrollEventThree < window.pageYOffset) {
-      //headline image one
       this.sectionThreeScroll = this.sectionThreeScroll + (window.pageYOffset - this.scrollEventThree) / 40;
       this.sectionThreeImage.style.transform = `translateX(-${this.sectionThreeScroll}rem)`;
     }
     if (this.scrollEventThree > window.pageYOffset) {
-      //headline image one
       this.sectionThreeScroll = this.sectionThreeScroll - (this.scrollEventThree - window.pageYOffset) / 40;
       this.sectionThreeImage.style.transform = `translateX(-${this.sectionThreeScroll}rem)`;
     }
@@ -251,12 +230,10 @@ class IndividualView {
   wideActivateIndivFour() {
     if (window.innerWidth <= 1080) return;
     if (this.scrollEventFour < window.pageYOffset) {
-      //headline image one
       this.sectionFourWideScroll = this.sectionFourWideScroll + (window.pageYOffset - this.scrollEventFour) / 400;
       this.sectionFourImage.style.transform = `translateY(${this.sectionFourWideScroll}rem)`;
     }
     if (this.scrollEventFour > window.pageYOffset) {
-      //headline image one
       this.sectionFourWideScroll = this.sectionFourWideScroll - (this.scrollEventFour - window.pageYOffset) / 400;
       this.sectionFourImage.style.transform = `translateY(${this.sectionFourWideScroll}rem)`;
     }

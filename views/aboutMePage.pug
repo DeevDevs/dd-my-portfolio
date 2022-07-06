@@ -23,7 +23,6 @@ block content
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='0amp')
           .amp-btn-down__hover-div
-          //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
           p.amp-headline__reveal-section(data-ampnum='0amp')= pageData.partOnePreview
@@ -44,12 +43,10 @@ block content
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='1amp')
           .amp-btn-down__hover-div
-          //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
           p.amp-headline__reveal-section(data-ampnum='1amp')= pageData.partTwoPreview
     .amp__sub.amp-element-hidden
-      //- .amp__img-box
       h2.amp__headline= pageData.partThreeTitle
       .amp__flexed-box
         .amp__img-box.amp__flexed-image
@@ -61,12 +58,10 @@ block content
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='2amp')
           .amp-btn-down__hover-div
-          //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
           p.amp-headline__reveal-section(data-ampnum='2amp')= pageData.partThreePreview
     .amp__sub.amp-element-hidden
-      //- .amp__img-box
       h2.amp__headline.amp__sub-four__headline= pageData.partFourTitle
       .amp__flexed-box__rev
         .amp__img-box.amp__flexed-image
@@ -83,10 +78,6 @@ block content
       .amp-splitter__reveal-section-div
         button.amp-btn__reveal-section(type='button', data-ampnum='3amp')
           .amp-btn-down__hover-div
-          //- <div class="amp-btn-down__anim-div"></div>
           svg.amp-btn-down__icon
             use(href='/images/icons/all-icons.svg#arrow-down-dark')
           p.amp-headline__reveal-section(data-ampnum='3amp')= pageData.partFourPreview
-
-//- block scripting 
-//-   script(type='module', defer src='/js/index.js')

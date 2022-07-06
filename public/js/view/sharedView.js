@@ -58,7 +58,6 @@ class SharedView {
       const currentLang = this.switchLangBtn.textContent === 'ru' ? 'en' : 'ru';
       const currentLink = window.location.href.split('/');
       const currentPage = currentLink[currentLink.length - 1];
-      // console.log(currentPage);
       const res = await axios({
         method: 'GET',
         // url: 'http://127.0.0.1:8000/api/v1/users/login',
@@ -66,13 +65,10 @@ class SharedView {
         url: `/switch-language?lang=${currentLang}&page=${currentPage}`,
       });
       if (res.data.status === 'success') {
-        // this.switchLangBtn.textContent = currentLang === 'en' ? 'ru' : 'en';
-        // console.log(res.data.status);
         location.reload();
       }
-      // console.log(res);
     } catch (err) {
-      // console.log(err);
+      console.log(err); // add error handler
     }
   }
 
@@ -157,7 +153,6 @@ class SharedView {
         }
       }
     }
-    // console.log('scrolling');
     setTimeout(() => document.body.scrollIntoView({ block: 'end', behavior: 'smooth' }), 100);
   }
 
@@ -200,7 +195,6 @@ class SharedView {
         this._makeElementDisappear(this.errorWindow, 200);
       }, 3000);
     } catch (err) {
-      // console.log(err.message);
       // rendering error message, if internet connection is lost
       if (err.message === 'Network Error') {
         this.errorWindowMessage.textContent =

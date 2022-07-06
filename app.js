@@ -13,7 +13,6 @@ const aboutMeRouter = require('./routers/aboutMeRouter.js');
 const qualificationsRouter = require('./routers/qualificationsRouter.js');
 const projectsRouter = require('./routers/projectsRouter.js');
 const experienceRouter = require('./routers/experienceRouter.js');
-// const indivProjectRouter = require('./routers/indivProjectRouter.js');
 const detailsRouter = require('./routers/detailsRouter.js');
 const cookieParser = require('cookie-parser');
 
@@ -49,7 +48,6 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   message: 'Too many requests from this IP, please try again in 1 hour!',
 });
-//here, we only address the routes that start with '/ api'
 app.use('*', limiter);
 
 app.use('/', mainPageRouter);
@@ -58,10 +56,7 @@ app.use('/about-me', aboutMeRouter);
 app.use('/qualifications', qualificationsRouter);
 app.use('/projects', projectsRouter);
 app.use('/experience', experienceRouter);
-// app.use('/indivproject', indivProjectRouter);
 
-// const languageController = require('./controllers/languageController');
-// const visitorMessageController = require('./controllers/visitorMessageController');
 app.use('/switch-language', languageController.createSendLanguageCookie);
 app.use('/details', detailsRouter);
 app.post('/message', visitorMessageController.receiveMessage);

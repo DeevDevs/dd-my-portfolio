@@ -56,7 +56,6 @@ block content
     #section-3.section.advert__section.section-hidden
       p.advert__section--headline= pageData.fullName
       .advert__section--details
-        //- <div class="advert__section--image-container image__full">
         .advert__section--image-container
           .mp-image-grid
             img.advert__section--image.mp__three-one(src='/images/cut-images/t1.jpg', data-path=`images/cut-images/t1.jpg`)
@@ -68,21 +67,17 @@ block content
             img.advert__section--image.mp__three-seven(src='/images/cut-images/b1.jpg', data-path=`images/cut-images/b1.jpg`)
             img.advert__section--image.mp__three-eight(src='/images/cut-images/b2.jpg', data-path=`images/cut-images/b2.jpg`)
             img.advert__section--image.mp__three-nine(src='/images/cut-images/b3.jpg', data-path=`images/cut-images/b3.jpg`)
-          //- <img class="advert__section--image blurred" src="./images/img-full-stack-lazy.jpg" data-src="./images/img-full-stack.jpg">
         .advert__section--text-container
           p.advert__section--text= pageData.fullText
   section#section-4.section.sec.section-hidden
     .arrow-container.arrow-left--container
-      //- <img class="arrow-left" src="./images/icons/l-arrow-left-day.svg">
       svg.l-arrow.l-arrow-left
         use(href='/images/icons/all-icons.svg#l-arrow-left-day')
     .arrow-container.arrow-right--container
-      //- <img class="arrow-right" src="./images/icons/l-arrow-right-day.svg">
       svg.l-arrow.l-arrow-right
         use(href='/images/icons/all-icons.svg#l-arrow-right-day')
     #about-me.sec__main.lazy-bg
       .sec__icon-container
-        //- <img class="sec__icon about-me__icon" src="images/icons/icon-me-day.svg">
         svg.sec__icon.about-me__icon
           use(href='/images/icons/all-icons.svg#icon-me-day')
       .about-me__description.sec__description
@@ -128,7 +123,6 @@ block content
         p.sec__learn-more--phrase= pageData.linkBtnText
     #experience.sec__main.lazy-bg
       .sec__icon-container
-        //- <img class="sec__icon experience__icon" src="images/icons/experience-icon-day.svg">
         svg.sec__icon.experience__icon
           use(href='/images/icons/all-icons.svg#experience-icon-day')
       .experience__description.sec__description
@@ -142,6 +136,3 @@ block content
             svg.sec__btn--circle
               use(href='/images/icons/all-icons.svg#icon-circle-day')
         p.sec__learn-more--phrase= pageData.linkBtnText
-
-//- block scripting  
-//-   script(type='module', defer src='/js/index.js')

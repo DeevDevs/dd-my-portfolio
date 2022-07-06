@@ -97,7 +97,8 @@ class ProjectsView {
         await this.setWheelFinalPosition();
         //prettier-ignore
         setTimeout(function () {this.wheelGridBox.style.transition = 'transform 0ms';}.bind(this),600);
-        observer.unobserve(this.wheelContainer);
+        // observer.unobserve(this.wheelContainer);
+        observer.unobserve(entry[0].target);
       }
     }
   }
@@ -289,7 +290,6 @@ class ProjectsView {
           this.projectDetails[idNum - 1] = projectData;
         }
       } else projectData = this.projectDetails[idNum - 1];
-      // console.log(this.projectDetails);
       this.wheelDetails.forEach((element, i) => {
         element.firstChild.textContent = projectData[i];
         element.style.opacity = 1;

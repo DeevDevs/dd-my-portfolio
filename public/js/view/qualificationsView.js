@@ -31,7 +31,7 @@ class QualificationsView {
   detailsImage = document.querySelector('.details__image');
   waitingOverlay = document.querySelector('.spinner-box--overlay');
   waitingSpinner = document.querySelector('.spinner-box');
-  // errorMessageBox = document.querySelector('.error-message-box');
+
   errorWindow = document.querySelector('.error-window');
   errorMessage = document.querySelector('.error-message');
   imageViewContainer = document.querySelector('.image-view__container');
@@ -44,7 +44,6 @@ class QualificationsView {
   qualSectionObserver = new IntersectionObserver(this.cardLikeImages.bind(this), { root: null, threshold: 0.1 });
 
   constructor() {
-    // console.log(window.matchMedia('(hover: hover)').matches);
     this.introBox.addEventListener('mousemove', this.addIntroMovingShadow.bind(this));
     this.qualSectionObserver.observe(this.choiceBox);
 
@@ -262,7 +261,6 @@ class QualificationsView {
   async renderDisplayDetails(e) {
     if (!e.target.closest('.quals-box')) return;
     const id = e.target.closest('.quals-box').id;
-    // console.log(id);
     await this.displayDetails(id);
     this.detailsText.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
@@ -331,7 +329,6 @@ class QualificationsView {
     const imageSource = imageBox.getElementsByTagName('img')[0].src;
     document.querySelector('.image-view__image').src = imageSource;
     this._makeElementAppear(this.imageViewContainer, 50, 'block');
-    // this.imageViewContainer.style.display = 'block';
   }
 
   hideDetailsImage() {

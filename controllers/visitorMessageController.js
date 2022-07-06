@@ -2,7 +2,6 @@ const VisitorMessageModel = require('./../models/visitorMessageModel');
 
 exports.receiveMessage = async function (req, res, next) {
   try {
-    // const message = req.body;
     const cookie = req.cookies.ftrmsgsent;
     if (cookie) throw new Error('Duplicate');
     const emailInDB = await VisitorMessageModel.findOne({ visitorEmail: req.body.visitorEmail });
@@ -14,7 +13,7 @@ exports.receiveMessage = async function (req, res, next) {
       res.cookie('ftrmsgsent', 'true').status(200).json({ message: 'success', data: newMessage });
     }
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
     res.status(400).json({ message: 'fail', errorMessage: err.message });
   }
 };

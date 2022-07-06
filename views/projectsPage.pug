@@ -9,12 +9,10 @@ block content
     .intro-part__glass
     .intro-part__text-box
       p.intro-part__text= pageData.pageTitle
-    // <p>LEARNING IS LIFELONG PROCESS</p>
     .intro-part__icon-box
       svg.intro-part__icon
         use(href='/images/icons/all-icons.svg#projects-icon-day')
   section.pr-main-section.section-hidden
-    // <div class="switch-format__btn-box"><button class="btn__switch-format" type="button">BLAH</button></div>
     .pr-main__project-name= pageData.wheelHeadDefault
     .placedover-div
       .pr-wheel-details.pr-wheel-details-left
@@ -23,7 +21,7 @@ block content
       .pr-wheel-details.pr-wheel-details-right
         p
     .placedover-div.supreme-div
-      .click-preview__message= 'Click on the preview to learn more'
+      .click-preview__message= `${pageData.lang === 'en' ? 'Click on the preview to learn more' : 'Нажмите на превью чтобы узнать больше'}`
     .pr-general-view
       #1-mapty.justadiv.jad-mapty
         .back-side
@@ -170,6 +168,3 @@ block content
               img.jad__content-secondary-img.jad-portfolio-image-three(src='/images/pr-images/portfolio/small/portfolio-6.png', alt='')
             .jad__content-secondary-img__container.jad-portfolio-image-four-container
               img.jad__content-secondary-img.jad-portfolio-image-four(src='/images/pr-images/portfolio/small/portfolio-7.png', alt='')
-
-//- block scripting 
-//-   script(type='module', defer src='/js/index.js')

@@ -1,4 +1,4 @@
-import '@babel/polyfill'; // it kinda improves/adapts javascript features
+import '@babel/polyfill';
 import SharedView from './view/sharedView.js';
 import MainView from './view/mainView.js';
 import ProjectsView from './view/projectsView.js';
@@ -6,10 +6,6 @@ import AboutMeView from './view/aboutmeView.js';
 import ExperienceView from './view/experienceView.js';
 import QualificationsView from './view/qualificationsView.js';
 import IndividualView from './view/indivProjectView.js';
-// import axios from 'axios';
-
-// const tempArr = window.location.href.split('/');
-// const curPage = tempArr[tempArr.length - 1];
 
 const pageSharedView = new SharedView();
 const currentTheme = localStorage.getItem('myFolioDark');
@@ -18,7 +14,6 @@ if (currentTheme === 'enabled') {
 }
 
 const thisPageIs = document.getElementById('this-page').textContent;
-// console.log(thisPageIs);
 if (thisPageIs === 'main-page') {
   new MainView();
 }
@@ -42,11 +37,9 @@ if (currentTheme === 'enabled') {
   pageSharedView._changeIcons();
 }
 
-// window.addEventListener('load', function () {
 document.body.style.overflowY = 'visible';
 const loader = document.querySelector('.loader');
 loader.style.opacity = '0';
 setTimeout(() => {
   loader.style.display = 'none';
 }, 200);
-// });

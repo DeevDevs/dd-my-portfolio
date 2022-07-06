@@ -1,56 +1,10 @@
-$day-theme-main: #f0f6ff;
-$day-theme-secondary: #bfcaf4;
-$day-theme-background: #dbe8ff;
-$night-theme-secondary: #001392;
-$night-theme-background: #3f50be;
-$night-theme-main: #030d4d;
-$night-linear-gradient: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75));
-
-// $themes: (
-//   default: (
-//     logo: url('../images/icons/all-icons.svg#logo-box-day'),
-//     backgr: $day-theme-main,
-//     fontt: $night-theme-secondary,
-//   ),
-//   dark: (
-//     logo: url('../images/icons/all-icons.svg#logo-box-day'),
-//     backgr: $day-theme-main,
-//     fontt: $day-theme-secondary,
-//   ),
-// );
-
-// :root {
-//   --night-theme-secondary: #001392;
-//   --day-theme-secondary: #bfcaf4;
-
-//   [data-theme='dark'] {
-//     --night-theme-secondary: #bfcaf4;
-//     --day-theme-secondary: #001392;
-//   }
-// }
-
-// @mixin themed() {
-//   @each $theme, $map in $themes {
-//     .theme--#{$theme} & {
-//       $theme-map: () !global;
-//       @each $key, $submap in $map {
-//         $value: map-get(map-get($themes, $theme), '#{$key}');
-//         $theme-map: map-merge(
-//           $theme-map,
-//           (
-//             $key: $value,
-//           )
-//         ) !global;
-//       }
-//       @content;
-//       $theme-map: null !global;
-//     }
-//   }
-// }
-
-// @function t($key) {
-//   @return map-get($theme-map, $key);
-// }
+// $day-theme-main: #f0f6ff;
+// $day-theme-secondary: #bfcaf4;
+// $day-theme-background: #dbe8ff;
+// $night-theme-secondary: #001392;
+// $night-theme-background: #3f50be;
+// $night-theme-main: #030d4d;
+// $night-linear-gradient: linear-gradient(rgba(38, 61, 212, 0.75), rgba(38, 61, 212, 0.75));
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');

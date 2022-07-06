@@ -1,15 +1,22 @@
 doctype html
-html(lang='en')
+html(prefix='og: http://ogp.me/ns#')
   head
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    //- <meta http-equiv="Cache-control" content="public">
+    meta(property='og:title' content='DeevDevs - The Portfolio')
+    meta(property='og:image' content='https://i.ibb.co/YTxGC44/portfolio-preview.png')
+    meta(property='og:description' content='Have a look at the portfolio of a yet novice web-developer - Dmitriy Vnuchkov. Perhaps, you would want him to do a project for you, or invite him to join your team. Feel free to learn more about his academic and professional background, as well as the projects he has participated in.')
+    meta(property='og:url' content='https://deevdevs-my-portfolio.herokuapp.com/')
+    meta(property='og:image:alt' content='Preview of the website')
+    meta(property='og:image:width' content='1200')
+    meta(property='og:image:height' content='630')
+    meta(property='og:type' content='website')
+
     link(rel='stylesheet', href='/sass/main.css')
     script(src='https://unpkg.com/axios/dist/axios.min.js')
     title DeevDevs: #{pageData.pageName}
     link(rel="icon", type="image/x-icon", href="/images/favicon.png")
-    //- title DeevDevs: 
   body
     p#this-page.clue-elem= pageData.page
     .loader

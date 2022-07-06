@@ -10,7 +10,6 @@
   max-width: 100%;
   min-height: 92vh;
   overflow: hidden;
-  // background: var(--intro-section-bg), url('../images/light-speed.jpg') center / cover no-repeat border-box;
   @media (min-width: 1080px) {
     flex-direction: row;
   }
@@ -69,7 +68,6 @@
   margin: auto;
   transform-style: preserve-3d;
   animation: rotationY 4s cubic-bezier(0.86, 0.57, 0.24, 0.49) infinite forwards;
-  // filter: drop-shadow(5px 5px 5px black);
 }
 
 .spin-logo__div {
@@ -80,9 +78,6 @@
   height: 4rem;
   transform: rotateX(10deg);
   animation: rotation 8s cubic-bezier(0.71, -1.05, 0.34, 2.38) infinite forwards;
-  // &:active {
-  //   animation: rotation 4s linear infinite forwards;
-  // }
 }
 
 .spin-image {
@@ -96,7 +91,6 @@
   height: 4rem;
   transform: translateZ(1rem) translateX(1rem);
   background-color: var(--logo-bg);
-  // background-color: yellow;
   box-shadow: 0px 0px 6px var(--logo-image-shadow);
 }
 
@@ -227,7 +221,6 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 2rem;
-  // filter: drop-shadow(0 1px 1px inset var(--icons-headlines-shadow));
 
   @media (min-width: 1080px) {
     display: flex;
@@ -237,37 +230,6 @@
     max-width: 100%;
   }
 }
-
-// .advert__section--image-container {
-//   display: flex;
-//   justify-content: center;
-//   width: 85vw;
-//   max-width: 35rem;
-//   overflow: hidden;
-//   // max-height: calc(85vw / 2);
-//   transition: transform 0.5s linear;
-//   // transform: skew(10deg);
-//   // box-shadow: 0 0 8px var(--logo-image-shadow);
-
-//   @media (min-width: 1080px) {
-//     min-width: 50%;
-//     margin: auto;
-//   }
-// }
-
-// .advert__section--image {
-//   margin: 0.5rem 0;
-//   max-width: 95%;
-//   box-shadow: 0 0 8px var(--logo-image-shadow);
-//   // transform: skew(-10deg) scale(1.2);
-
-//   @media (min-width: 1080px) {
-//     width: 90%;
-//     max-width: 40rem;
-//     height: auto;
-//     box-shadow: 5px 5px 5px var(--logo-image-shadow);
-//   }
-// }
 
 .blurred {
   filter: blur(10px);
@@ -420,19 +382,15 @@
 }
 
 #about-me.lazy-bg {
-  // background-image: none;
   background-image: var(--main-sections-bg);
 }
 #learning.lazy-bg {
-  // background-image: none;
   background-color: var(--main-sections-bg);
 }
 #projects.lazy-bg {
-  // background-image: none;
   background-image: var(--main-sections-bg);
 }
 #experience.lazy-bg {
-  // background-image: none;
   background-image: var(--main-sections-bg);
 }
 
@@ -563,10 +521,6 @@
     transform: scale(1) translateX(-4rem);
     transition: transform 0.5s ease-in-out;
   }
-
-  // @media (max-height: 640px) {
-  //   top: 0;
-  // }
 }
 
 .sec__btn--circle {
@@ -722,7 +676,6 @@
 
 .mp__one-four {
   animation: front-only 12s cubic-bezier(0.35, 0.8, 0, 1.02) 2s infinite forwards;
-  // animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .mp__one-five {
@@ -759,7 +712,6 @@
 
 .mp__two-four {
   animation: back-only-central 15s cubic-bezier(1, -0.34, 0.02, 1.46) 2s infinite forwards;
-  // animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .mp__two-five {
