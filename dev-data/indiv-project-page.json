@@ -7,14 +7,16 @@
     "btnScroll": "Scroll back",
     "coverTitle": "Bankist: Homepage",
     "coverImg": "/images/pr-images/BankistHP/bankisthp-1.png",
-    "generalText": "It a single web-page project, where I practiced implementation of DOM manipulations using Vanilla Javascript. I trained together with Jonas Shmedtmann - the course leader. My contribution to the project only includes JS code. Nevertheless, it was a great opportunity to develop the skills of adding listeners, changing styles and triggering transformation. All the other links displayed in the webpage are empty. The webpage was eventually deployed using Netlify platform and has only desktop format.",
+    "generalText": "It a single web-page project, where I practiced implementation of DOM manipulations using Vanilla Javascript. I trained together with Jonas Schmedtmann - the course leader. My contribution to the project only includes JS code. Nevertheless, it was a great opportunity to develop the skills of adding listeners, changing styles and triggering transformation. All the other links displayed in the webpage are empty. The webpage was eventually deployed using Netlify platform and has only desktop format.",
     "generalImgLeft": "/images/pr-images/BankistHP/bankisthp-2.png",
     "generalImgRight": "/images/pr-images/BankistHP/bankisthp-5.png",
     "behindText": [
       "There are a couple of things that are happening behind the scenes. First of all, the page has various intersection observers working to make the page more dynamic on scroll. It makes each coming section of the page appear a little later after the scroll took place. It definitely enhances the UI.",
       "Another feature is lazy images, which also happens thanks to the intersection observer and is not noticeable by the user. This way, page loading speed is increased dramatically. Menu fade animation occurs thanks to child/parent event propagation."
     ],
-    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png"
+    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png",
+    "gitLink": "https://github.com/DeevDevs/dd-bankist-homepage",
+    "projectLink": "https://deevdevs-bankist-homepage.netlify.app/"
   },
   {
     "lang": "ru",
@@ -32,7 +34,9 @@
       "Еще одна особенность, это 'ленивые изображения', которые тоже работают на основе Intersection Observer API. Так, изображения значительно более низкого качества загружаются вначале, и лишь потом, если пользователь решит посмотреть другую секцию страницы, их более качественная версия запрашивается браузером. Таким образом скорость загрузки веб-страницы значительно выше.",
       "Также следует отметить, что затемнение элементов меню происходить благодаря Event Propagation через связь между родительскими и дочерними элементами."
     ],
-    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png"
+    "behindImg": "/images/pr-images/BankistHP/bankisthp-3.png",
+    "gitLink": "https://github.com/DeevDevs/dd-bankist-homepage",
+    "projectLink": "https://deevdevs-bankist-homepage.netlify.app/"
   },
   {
     "lang": "en",
@@ -49,6 +53,8 @@
       "There isn’t much to describe, when it comes to the code itself. Buttons manipulate DOM elements and trigger dynamic changes of styles and data in the webpage. The code includes a set of event listeners that change the DOM elements’ classes to make the game more pleasant visually. The mechanics of the code and logic are pretty simple too and are based on if else conditionals. Finally, a function returns default values, when players start a new game."
     ],
     "behindImg": "/images/pr-images/pig/pig-2-cut.png",
+    "gitLink": "https://github.com/DeevDevs/dd-pig-game",
+    "projectLink": "https://deevdevs-pig-game.netlify.app/",
     "respText": [],
     "respImg": ""
   },
@@ -67,6 +73,8 @@
       "Не так много вещей происходит на заднем плане. Кнопки провоцируют изменения в DOM-элементах и их стилях. Это делает игру привлекательнее для игроков. JS код очень прост, и состоит из ряда if else условий. Она рассчитана на двух пользователей сидящих за одним компютером,и поэтому динамика перехода хода от одного игрока к другому также выражена в изменении стилей."
     ],
     "behindImg": "/images/pr-images/pig/pig-2-cut.png",
+    "gitLink": "https://github.com/DeevDevs/dd-pig-game",
+    "projectLink": "https://deevdevs-pig-game.netlify.app/",
     "respText": [],
     "respImg": ""
   },
@@ -86,6 +94,8 @@
       "This project was also a great opportunity to learn how to use classes for DOM manipulations and style changing. Along with that, it includes methods of creating and formatting dates, as well as working with dates, time and locations."
     ],
     "behindImg": "/images/pr-images/bankistAPP/bankistapp-2.png",
+    "gitLink": "https://github.com/DeevDevs/dd-bankist-app",
+    "projectLink": "https://deevdevs-bankist-app.netlify.app/",
     "respText": [],
     "respImg": ""
   },
@@ -105,6 +115,8 @@
       "Также, можно отметить активное использование методов в работе со строками, и в формировании и форматировании дат и времени."
     ],
     "behindImg": "/images/pr-images/bankistAPP/bankistapp-2.png",
+    "gitLink": "https://github.com/DeevDevs/dd-bankist-app",
+    "projectLink": "https://deevdevs-bankist-app.netlify.app/",
     "respText": [],
     "respImg": ""
   },
@@ -116,7 +128,7 @@
     "btnScroll": "Scroll back",
     "coverTitle": "Mapty Application",
     "coverImg": "/images/pr-images/mapty/mapty-1.png",
-    "generalText": "Mapty is one of the big projects I participated in. I upgraded it twice after I first built it together with Jonas Shmedtmann, when I was learning Javascript. Initially, it included working with one third-party API, and learn to use geolocation methods. Then I was suggested to add a set of upgrades using one more API and Javascript. Finally, after I learnt more about adaptation and plenty of CSS features, I added responsiveness to this project. Eventually I deployed it on Netlify. It is available in both desktop and mobile versions.",
+    "generalText": "Mapty is one of the big projects I participated in. I upgraded it twice after I first built it together with Jonas Schmedtmann, when I was learning Javascript. Initially, it included working with one third-party API, and learn to use geolocation methods. Then I was suggested to add a set of upgrades using one more API and Javascript. Finally, after I learnt more about adaptation and plenty of CSS features, I added responsiveness to this project. Eventually I deployed it on Netlify. It is available in both desktop and mobile versions.",
     "generalImgLeft": "/images/pr-images/mapty/mapty-2.png",
     "generalImgRight": "/images/pr-images/mapty/mapty-4.png",
     "behindText": [
@@ -124,7 +136,9 @@
       "Then, I added some extra functionality. Now, users are able to edit and delete workouts, sort them and change the way workouts are displayed in the map, draw the workout path, and finally see the weather condition on the day of the workout in that specific place. The last feature required adding another third-party API - Open-Meteo.",
       "Later, when I learnt more about HTML and CSS, I decided to practice my skills in making webpages responsibe. Hence, I adapted this project, which required me to add a set of extra buttons and a lot of CSS rules."
     ],
-    "behindImg": "/images/pr-images/mapty/mapty-3.png"
+    "behindImg": "/images/pr-images/mapty/mapty-3.png",
+    "gitLink": "https://github.com/DeevDevs/dd-mapty-app",
+    "projectLink": "https://deevdevs-mapty-app.netlify.app/"
   },
   {
     "lang": "ru",
@@ -142,7 +156,9 @@
       "Затем я добавил ряд новых функций, таких как возможность удалять одну или все тренировки, сортировать тренировки в списке основываясь на разных параметрах, рисовать на карте путь пройденный во время тренировки, а также отображение погоды в день/время тренировки с помощью Open-meteo API.",
       "Позже, когда я улучшил свои знания в разметке и каскадных таблиц стилей, я решил сделать это приложение адаптивным. В результате, хоть я и не следовать принципу 'сначала мобильная версия', объемный апдейт CSS стилей и добавление кнопок на страничке сделали проект доступным на мобильных устройствах."
     ],
-    "behindImg": "/images/pr-images/mapty/mapty-4.png"
+    "behindImg": "/images/pr-images/mapty/mapty-4.png",
+    "gitLink": "https://github.com/DeevDevs/dd-mapty-app",
+    "projectLink": "https://deevdevs-mapty-app.netlify.app/"
   },
   {
     "lang": "en",
@@ -162,7 +178,9 @@
       "Booking of websites is also supported by the stripe platform services. Although it is not real and the test version of stripe payment process is shown to the user, it is created according to all the standards of secure connection.",
       "As you might have mentioned, not all the features (links and tabs) are functioning in the website. I am still working on this project and they will appear soon."
     ],
-    "behindImg": "/images/pr-images/natours/natours-5.png"
+    "behindImg": "/images/pr-images/natours/natours-5.png",
+    "gitLink": "https://github.com/DeevDevs/dd-natours",
+    "projectLink": "https://deevdevs-natours.herokuapp.com/"
   },
   {
     "lang": "ru",
@@ -182,7 +200,9 @@
       "Резервирование туров также включает в себя воображаемую оплату. Так, проект связан со сторонней платформой Stripe, и поддерживает безопасное соединение с платформой на момент проведения оплаты.",
       "Некоторые ссылки и кнопки на странице проекта (регистрация, функциональность для админов) не работают, потому что я до сих пор работаю над этим проектом."
     ],
-    "behindImg": "/images/pr-images/natours/natours-5.png"
+    "behindImg": "/images/pr-images/natours/natours-5.png",
+    "gitLink": "https://github.com/DeevDevs/dd-natours",
+    "projectLink": "https://deevdevs-natours.herokuapp.com/"
   },
   {
     "lang": "en",
@@ -200,7 +220,9 @@
       "Following the architecture, I added a set of features that allow users to make a shopping list, prepare a menu plan for the week, and control presence of a special API key that allows users to add recipes to the database. I also make it possible to change the number of ingredients that the user wants to have in his recipe. In addition, to make the weekly menu plan more pleasant to work with, I added the drag/drop functionality (between the main window and the plan, and within the plan).",
       "Finally, keeping in mind that this apllication might be loved by those having a healthy lifestyle, I added a third-party API (Spoonacular) that allows users to count the number of calories in one serving. It is a single-click process that is limited by the API which is not free. However, it was great opportunity to integrate another API."
     ],
-    "behindImg": "/images/pr-images/forkify/forkify-4.png"
+    "behindImg": "/images/pr-images/forkify/forkify-4.png",
+    "gitLink": "https://github.com/DeevDevs/dd-forkify-app",
+    "projectLink": "https://deevdevs-forkify-app.netlify.app/"
   },
   {
     "lang": "ru",
@@ -219,8 +241,8 @@
       "В заключении, беря во внимание возможность наличия представителей ЗОЖ в числе потенциальный пользователей, я добавил возможность посчитать приблизительное количество калорий в блюде, за что отвечает еще одно стороннее API - Spoonacular."
     ],
     "behindImg": "/images/pr-images/forkify/forkify-4.png",
-    "respText": [],
-    "respImg": ""
+    "gitLink": "https://github.com/DeevDevs/dd-forkify-app",
+    "projectLink": "https://deevdevs-forkify-app.netlify.app/"
   },
   {
     "lang": "en",
@@ -237,7 +259,9 @@
       "First of all, it is important to mention that the algorithm behind the game is a simple grid system, which is eventually represented to the user in the form of a box with empty circles. As it was the challenge that I completed in the Codewars platform, it passed all the tests and is completely reliable. ",
       "The algorithm includes various manipulations with arrays and strings, as well as a lot of basic Math. In the end, switch/break and if/else conditionals with functions integrated into them make the game work. So far, the game is only for one computer and does not have any server-side. However, for the sake of back-end practice, I am thinking of building a small API for it and making this game possible online."
     ],
-    "behindImg": "/images/pr-images/connect/connect-3.png"
+    "behindImg": "/images/pr-images/connect/connect-3.png",
+    "gitLink": "https://github.com/DeevDevs/dd-connect-four",
+    "projectLink": "https://deevdevs-connect-four.netlify.app/"
   },
 
   {
@@ -255,7 +279,9 @@
       "Для начала, алгоритм в основе игры - это своего рода таблица состоящая из массивов (такой род алгоритмов некоторые разработчики называют grid). Они соответствуют кружкам в игре, и их заполнение отображается на grid. Благодаря платформе Codewards, алгоритм был полностью протестирован и вполне надежен.",
       "Функции в системе алгоритма работают со строками и массивами, а также включают в себя немало простой математики. Все расчеты производятся в браузере, а игра рассчитана на двух игроков сидящих за одним компьютером. Но я подумываю над тем, чтобы создать простенький API и сделать эту игру возможной онлайн."
     ],
-    "behindImg": "/images/pr-images/connect/connect-3.png"
+    "behindImg": "/images/pr-images/connect/connect-3.png",
+    "gitLink": "https://github.com/DeevDevs/dd-connect-four",
+    "projectLink": "https://deevdevs-connect-four.netlify.app/"
   },
 
   {
@@ -277,6 +303,7 @@
       "As it was my first full stack project and I was practicing my coding skills, I understand that it is just the first version. With time, I am planning to add information about other projects that I will work on (if it is allowed by the copyright) and develop the portfolio itself. Surely, the 2.0 version of the portfolio will be much better with more advanced features and functionality."
     ],
     "behindImg": "/images/pr-images/portfolio/portfolio-2.png",
+    "gitLink": "https://github.com/DeevDevs/dd-my-portfolio",
     "respText": [
       "I decided to give more information regarding the responsiveness of this project because the versions differ much from one another. For example, the representation of projects in the Projects page is static, when you try to open it using a smartphone. Once you open it in desktop, it will allow you to drag a kind of 'wheel', which implies the use of many more JS functions.",
       "Apart from that, the page with project details is also static in the mobile version, while in the desktop one you may see lots of additional transformations. These individual project pages are especially interesting, as the page scrolls right, instead of standard down direction.",
@@ -303,6 +330,7 @@
       "В силу того, что это мой первый full-stack проект в котором я, по сути, тренировал свои навыки, могу сказать что это первая версия моего портфолио. Со временем, я планирую добавлять информацию о проектах и моем академическом и профессиональном прогрессе. Надеюсь, что скоро тут будет Мое портфолио - версия 2.0."
     ],
     "behindImg": "/images/pr-images/pr-bankist-1.png",
+    "gitLink": "https://github.com/DeevDevs/dd-my-portfolio",
     "respText": [
       "Я решил добавить немного информации касательно адаптивности этого проекта, потому что мобильная и настольная версии существенно отличаются друг от друга. Для начала, отображение проектов на соответствующей странице статично в мобильной версии, тогда как в браузере все выглядит более интересно. Последняя позволяет пользователю листать проекты перетаскиванием, и задействованы дополнительные анимации.",
       "Еще, старница с деталями проектов намного более динамичная в настольной версии. Одна из ключевых особенностей этой странице, это то что она прокручивается слева направо.",

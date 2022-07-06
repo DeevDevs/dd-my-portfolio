@@ -51,7 +51,7 @@ const importData = async () => {
     // await ProjectsPageModel.create(projectsPageContent);
     // await ExperiencePageModel.create(experiencePageContent);
     // await QualificationsPageModel.create(qualificationsPageContent);
-    // await IndivProjectPageModel.create(indivProjectPageContent);
+    await IndivProjectPageModel.create(indivProjectPageContent);
     // await DetailsQualsModel.create(detailsQualsData);
     // await DetailsProjectsModel.create(detailsProjectsData);
     console.log('Data successfully loaded');
@@ -70,7 +70,7 @@ const deleteData = async () => {
     // await ProjectsPageModel.deleteMany();
     // await ExperiencePageModel.deleteMany();
     // await QualificationsPageModel.deleteMany();
-    // await IndivProjectPageModel.deleteMany();
+    await IndivProjectPageModel.deleteMany();
     // await DetailsQualsModel.deleteMany();
     // await DetailsProjectsModel.deleteMany();
     // await VisitorMessageModel.deleteMany();

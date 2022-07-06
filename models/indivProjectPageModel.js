@@ -16,6 +16,8 @@ const indivProjectPageSchema = new mongoose.Schema({
   generalImgRight: String,
   behindText: [String],
   behindImg: String,
+  gitLink: String,
+  projectLink: String,
   respText: [String],
   respImg: String,
 });
